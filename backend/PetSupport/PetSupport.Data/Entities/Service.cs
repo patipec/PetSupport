@@ -4,14 +4,14 @@ using System.Text;
 
 namespace PetSupport.Data.Entities
 {
-    public class Service
+    public class Service: BaseEntity
     {
-        public int Id;
-        public string ImageId;
-        public ServiceType Name;
-        public string Description;
-        public Unit Unit;
-        public decimal Price;
+        public int Id { get; set; }
+        public string ImageId { get; set; }
+        public ServiceType Name { get; set; }
+        public string Description { get; set; }
+        public Unit Unit { get; set; }
+        public decimal Price { get; set; }
     }
 
     public enum Unit

@@ -2,16 +2,12 @@
 
 namespace PetSupport.Data.Entities
 {
-    public class Petsitter
+    public class Petsitter: User
     {
-        public int Id;
-        public string FirstName;
-        public string LastName;
-        public string Email;
-        public string PhoneNumber;
-        public string Password;
-        public string Photo;
-        public string City;
-        public List<Service> Services;
+       public string Description { get; set; }
+        public string Password { get; set; }
+        public string Photo { get; set; }
+        public string City { get; set; }
+        public List<Service> Services { get; set; }
     }
 }
