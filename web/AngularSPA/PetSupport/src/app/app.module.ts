@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { MaterialModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from  '@angular/material/toolbar';
@@ -35,7 +34,6 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatButtonModule,
     MatIconModule,
     LayoutModule,
-    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
