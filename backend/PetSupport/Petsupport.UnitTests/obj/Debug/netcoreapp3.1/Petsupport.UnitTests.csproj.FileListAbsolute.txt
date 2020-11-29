@@ -1,0 +1,5 @@
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\Petsupport.UnitTests\bin\Debug\netcoreapp3.1\Petsupport.UnitTests.deps.json
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\Petsupport.UnitTests\bin\Debug\netcoreapp3.1\Petsupport.UnitTests.dll
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\Petsupport.UnitTests\obj\Debug\netcoreapp3.1\Petsupport.UnitTests.csprojAssemblyReference.cache
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\Petsupport.UnitTests\obj\Debug\netcoreapp3.1\Petsupport.UnitTests.AssemblyInfoInputs.cache
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\Petsupport.UnitTests\obj\Debug\netcoreapp3.1\Petsupport.UnitTests.AssemblyInfo.cs
