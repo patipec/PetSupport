@@ -7,9 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetSupport.Core", "PetSuppo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetSupport.Infrastrcture.Data", "PetSupport.Repo\PetSupport.Infrastrcture.Data.csproj", "{B15C2908-F2E3-49E4-B0F5-10277B6373B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetSupport.API", "PetSupport.API\PetSupport.API.csproj", "{C6551B9D-97D0-44CA-87C4-8BC8E9FAF1E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetSupport.API", "PetSupport.API\PetSupport.API.csproj", "{C6551B9D-97D0-44CA-87C4-8BC8E9FAF1E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetSitter.XUnitTests", "PetSitter.XUnitTests\PetSitter.XUnitTests.csproj", "{D387B668-DB26-43D5-9E88-CAE0DBB50CC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetSitter.XUnitTests", "PetSitter.XUnitTests\PetSitter.XUnitTests.csproj", "{D387B668-DB26-43D5-9E88-CAE0DBB50CC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{406984FB-F31A-459C-A1E7-C938266894E1}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
