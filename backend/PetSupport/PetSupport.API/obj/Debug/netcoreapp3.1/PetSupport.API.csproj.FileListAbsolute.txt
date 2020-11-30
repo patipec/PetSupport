@@ -1,0 +1,10 @@
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.API\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.API\bin\Debug\netcoreapp3.1\PetSupport.API.exe
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.API\obj\Debug\netcoreapp3.1\PetSupport.API.csprojAssemblyReference.cache
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.API\obj\Debug\netcoreapp3.1\PetSupport.API.AssemblyInfoInputs.cache
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.API\obj\Debug\netcoreapp3.1\PetSupport.API.AssemblyInfo.cs
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.API\obj\Debug\netcoreapp3.1\PetSupport.API.RazorTargetAssemblyInfo.cache
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.API\obj\Debug\netcoreapp3.1\staticwebassets\PetSupport.API.StaticWebAssets.Manifest.cache
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.API\obj\Debug\netcoreapp3.1\staticwebassets\PetSupport.API.StaticWebAssets.xml

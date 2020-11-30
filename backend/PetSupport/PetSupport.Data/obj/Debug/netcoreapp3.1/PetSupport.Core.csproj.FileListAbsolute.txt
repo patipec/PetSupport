@@ -1,0 +1,8 @@
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.Data\bin\Debug\netcoreapp3.1\PetSupport.Core.deps.json
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.Data\bin\Debug\netcoreapp3.1\PetSupport.Core.runtimeconfig.json
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.Data\bin\Debug\netcoreapp3.1\PetSupport.Core.runtimeconfig.dev.json
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.Data\bin\Debug\netcoreapp3.1\PetSupport.Core.dll
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.Data\obj\Debug\netcoreapp3.1\PetSupport.Core.csprojAssemblyReference.cache
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.Data\obj\Debug\netcoreapp3.1\PetSupport.Core.AssemblyInfoInputs.cache
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.Data\obj\Debug\netcoreapp3.1\PetSupport.Core.AssemblyInfo.cs
+C:\Users\patip\source\repos\PetSupport\backend\PetSupport\PetSupport.Data\obj\Debug\netcoreapp3.1\PetSupport.Core.genruntimeconfig.cache
