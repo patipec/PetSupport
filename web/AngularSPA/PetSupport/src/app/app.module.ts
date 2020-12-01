@@ -8,6 +8,8 @@ import { MatIconModule } from  '@angular/material/icon';
 import { MatSidenavModule } from  '@angular/material/sidenav';
 import { MatListModule } from  '@angular/material/list';
 import { MatButtonModule } from  '@angular/material/button';
+import { MatGridListModule } from  '@angular/material/grid-list';
+import { MatDividerModule } from  '@angular/material/divider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +38,8 @@ import { BecomePetsitterComponent } from './become-petsitter/become-petsitter.co
     MatButtonModule,
     MatIconModule,
     LayoutModule,
+    MatDividerModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
