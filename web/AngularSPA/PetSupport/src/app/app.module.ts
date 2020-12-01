@@ -15,6 +15,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { PettsitersComponent } from './petsitters/pettsiters/pettsiters.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { BecomePetsitterComponent } from './become-petsitter/become-petsitter.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     MainPageComponent,
     PettsitersComponent,
     MainNavComponent,
+    BecomePetsitterComponent,
   ],
   imports: [
     BrowserModule,
