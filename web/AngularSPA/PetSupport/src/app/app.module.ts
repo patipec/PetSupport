@@ -11,7 +11,7 @@ import { MatButtonModule } from  '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainPageComponent } from './main-page/main-page/main-page.component';
+import { MainPageComponent } from './main-page/main-page.component';
 import { PettsitersComponent } from './petsitters/pettsiters/pettsiters.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
