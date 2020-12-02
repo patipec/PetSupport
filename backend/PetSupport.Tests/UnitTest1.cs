@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace PetSupport.XUnitTests
+namespace PetSupport.Tests
 {
     public class UnitTest1
     {
