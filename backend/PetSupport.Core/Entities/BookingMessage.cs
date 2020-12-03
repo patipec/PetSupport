@@ -7,9 +7,10 @@ namespace PetSupport.Data.Entities
 {
     class BookingMessage: BaseEntity
     {
-       
-       public int PetsitterId { get; set; }
+        public int PetsitterId { get; set; }
         public int ClientId { get; set; }
         public string Text { get; set; }
+
     }
+    
 }
