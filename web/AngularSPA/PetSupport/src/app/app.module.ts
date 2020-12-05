@@ -24,6 +24,7 @@ import {MaterialModule} from './shared/material.module';
 import {MainNavComponent} from './main-nav/main-nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import {BecomePetsitterComponent} from './become-petsitter/become-petsitter.component';
+import { YellowWavesComponent } from './common/decorations/yellow-waves/yellow-waves.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import {BecomePetsitterComponent} from './become-petsitter/become-petsitter.comp
     LongFormComponent,
     MainNavComponent,
     BecomePetsitterComponent,
+    YellowWavesComponent,
   ],
 
   imports: [
