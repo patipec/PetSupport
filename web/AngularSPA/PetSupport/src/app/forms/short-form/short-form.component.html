@@ -38,24 +38,49 @@
                [class.field-error]="form.submitted && nameField.invalid">
         <div [hidden]="!form.submitted || nameField.valid" class="warrning">Please fill city</div>
         </div>
-        <div class="row">
-        <label for="startDate">From</label>
-        <input id="startDate" name="startDate" class="form-control" placeholder="Date from"
-               [(ngModel)]="shortFormSettings.startDate"
-               required #nameField="ngModel"
-               (blur)="onBlur(nameField)"
-               [class.field-error]="form.submitted && nameField.invalid">
-        <div [hidden]="!form.submitted || nameField.valid" class="warrning">Please select start date</div>
-        </div>
-          <div class="row">
-        <label for="stopDate">To</label>
-        <input id="stopDate" name="stopDate" class="form-control" placeholder="Date to"
-               [(ngModel)]="shortFormSettings.stopDate"
-               required #nameField="ngModel"
-               (blur)="onBlur(nameField)"
-               [class.field-error]="form.submitted && nameField.invalid">
-        <div [hidden]="!form.submitted || nameField.valid" class="warrning">Please select stop date</div>
-          </div>
+<!--        <div class="row">-->
+<!--        <label for="startDate">From</label>-->
+<!--        <input id="startDate" name="startDate" class="form-control" placeholder="Date from"-->
+<!--               [(ngModel)]="shortFormSettings.startDate"-->
+<!--               required #nameField="ngModel"-->
+<!--               (blur)="onBlur(nameField)"-->
+<!--               [class.field-error]="form.submitted && nameField.invalid">-->
+<!--        <div [hidden]="!form.submitted || nameField.valid" class="warrning">Please select start date</div>-->
+<!--        </div>-->
+<!--          <div class="row">-->
+<!--        <label >To</label>-->
+<!--        <input id="stopDate" name="stopDate" class="form-control" placeholder="Date to"-->
+<!--               [(ngModel)]="shortFormSettings.stopDate"-->
+<!--               required #nameField="ngModel"-->
+<!--               (blur)="onBlur(nameField)"-->
+<!--               [class.field-error]="form.submitted && nameField.invalid">-->
+<!--        <div [hidden]="!form.submitted || nameField.valid" class="warrning">Please select stop date</div>-->
+<!--          </div>-->
+        <mat-form-field color="accent" appearance="fill">
+          <mat-label></mat-label>
+          <input matInput [matDatepicker]="picker2" id="startDate" name="startDate" class="form-control" placeholder="Date to"
+                 [(ngModel)]="shortFormSettings.startDate"
+                 required #nameField="ngModel"
+                 (blur)="onBlur(nameField)"
+                 [class.field-error]="form.submitted && nameField.invalid">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        </mat-form-field>
+
+
+        <mat-form-field color="accent" appearance="fill">
+<!--          <mat-label></mat-label>-->
+          <input matInput [matDatepicker]="picker1" id="stopDate" name="stopDate" class="form-control" placeholder="Date to"
+                 [(ngModel)]="shortFormSettings.stopDate"
+                 required #nameField="ngModel"
+                 (blur)="onBlur(nameField)"
+                 [class.field-error]="form.submitted && nameField.invalid">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+
+
         <div class="row">
         <label for="pet">Pet</label>
         <input id="pet" name="typePet" class="form-control" placeholder="Pet"
@@ -71,5 +96,7 @@
       </div>      </div>
   </form>
 </div>
+
+
 
 {{ form.value | json }}

@@ -1,11 +1,7 @@
-mat-form-field {
-  margin-right: 12px;
+mat-date-range-input {
+  width: 10vw;
 }
-
-.example-form-field {
-  margin: 0 8px 16px 0;
-}
-/* HIDE RADIO */
+  /* HIDE RADIO */
 [type=radio] {
   position: absolute;
   opacity: 0;
@@ -32,18 +28,18 @@ label img {
   border-radius: 40px;
 }
 button img{
-  width: 2vw;
+  width: 1.5vw;
   justify-content: center;
 }
 button {
   all: unset;
-  width:  15vw;
-  height: 5vw;
+  width:  3vw;
+  height: 3vw;
   border: solid 1px slategray;
   border-radius: 50%;
   background-color: orange;
   text-align: center;
-  margin-top: 10px;
+  margin: auto;
 }
 /*label {*/
 /*  height: 10vh;*/
@@ -105,4 +101,13 @@ label{
 }
 label:first-child{
   margin-left: -10px;
+}
+
+.basic-container {
+  padding: 30px;
+}
+.version-info {
+  font-size: 8pt;
+  float: right;
+  margin: 8px;
 }

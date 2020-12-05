@@ -3,6 +3,7 @@ import {NgForm, NgModel} from '@angular/forms';
 import { ServiceType } from '../form-data/service-type.service';
 import { IShortForm } from '../form-data/IShortForm';
 import { Observable } from 'rxjs';
+import {FormGroup, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-short-form',
@@ -10,17 +11,19 @@ import { Observable } from 'rxjs';
   styleUrls: ['./short-form.component.css']
 })
 export class ShortFormComponent implements OnInit {
-  shortFormSettings: IShortForm = {
+
+    shortFormSettings: IShortForm = {
     service: '',
     city: '',
-    startDate: new Date(),
-    stopDate: new Date(),
-    typePet: ''
+    range: new FormGroup({
+      start: new FormControl(),
+      end: new FormControl()
+    }),
+    startDate: new FormControl(),
+    stopDate: new FormControl(),
+    typePet: '',
   };
   servicesTypes$: Observable<string[]>;
-  constructor(private servicesType: ServiceType) {
-    this.servicesTypes$ = this.servicesType.getServicesTypes();
-  }
 
   ngOnInit(): void {
   }

@@ -33,17 +33,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42717d11-a62a-4424-9be7-c03adbce2040" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/src/app/forms/form-data/IShortForm.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/src/app/forms/form-data/service-type.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/src/assets/shortFormImages/cocker-spaniel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/src/assets/shortFormImages/dog-heart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/src/assets/shortFormImages/dog-smiley.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/src/assets/shortFormImages/search.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularSPA/PetSupport/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularSPA/PetSupport/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularSPA/PetSupport/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularSPA/PetSupport/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularSPA/PetSupport/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AngularSPA/PetSupport/src/app/forms/form-data/IShortForm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/src/app/forms/form-data/IShortForm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularSPA/PetSupport/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/AngularSPA/PetSupport/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +68,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ps-demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../hero-angular/heroangular" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -85,13 +81,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jablo\OneDrive\Desktop\PetSupport\web\AngularSPA\PetSupport\src\app\forms\short-form\shortFormImages" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jablo\OneDrive\Desktop\PetSupport\web\AngularSPA\PetSupport\src\app" />
       <recent name="C:\Users\jablo\OneDrive\Desktop\PetSupport\web\AngularSPA\PetSupport\src\assets\shortFormImages" />
       <recent name="C:\Users\jablo\OneDrive\Desktop\PetSupport\web\AngularSPA\PetSupport\src\assets" />
       <recent name="C:\Users\jablo\OneDrive\Desktop\PetSupport\web\AngularSPA\PetSupport" />
-      <recent name="C:\Users\jablo\OneDrive\Desktop\PetSupport\web\AngularSPA\PetSupport\src\app\forms\short-form\shortFormImages" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jablo\OneDrive\Desktop\PetSupport\web\AngularSPA\PetSupport\src\app\forms\short-form\shortFormImages" />
     </key>
   </component>
@@ -137,6 +134,10 @@
       <workItem from="1606996376838" duration="2824000" />
       <workItem from="1607006155420" duration="293000" />
       <workItem from="1607019836046" duration="4319000" />
+      <workItem from="1607024184502" duration="4082000" />
+      <workItem from="1607029816728" duration="1508000" />
+      <workItem from="1607075923787" duration="12695000" />
+      <workItem from="1607157255851" duration="320000" />
     </task>
     <servers />
   </component>
@@ -164,42 +165,51 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="230" y="38" width="1089" height="786" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607023979019" />
-    <state x="-1234" y="217" key="FileChooserDialogImpl" timestamp="1606935503956">
-      <screen x="-1920" y="6" width="1920" height="1040" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1607157573692">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="-1234" y="217" key="FileChooserDialogImpl/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1606935503956" />
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1606933781638" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1607024159544">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607157573692" />
+    <state width="1515" height="281" key="GridCell.Tab.0.bottom" timestamp="1607102944215">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607024159544" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1607024159544">
+    <state width="1899" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1607030310184" />
+    <state width="1515" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607102944215" />
+    <state width="1515" height="281" key="GridCell.Tab.0.center" timestamp="1607102944215">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607024159544" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1607024159544">
+    <state width="1899" height="281" key="GridCell.Tab.0.center/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1607030310184" />
+    <state width="1515" height="281" key="GridCell.Tab.0.center/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607102944215" />
+    <state width="1515" height="281" key="GridCell.Tab.0.left" timestamp="1607102944215">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607024159544" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1607024159544">
+    <state width="1899" height="281" key="GridCell.Tab.0.left/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1607030310184" />
+    <state width="1515" height="281" key="GridCell.Tab.0.left/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607102944215" />
+    <state width="1515" height="281" key="GridCell.Tab.0.right" timestamp="1607102944215">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607024159544" />
+    <state width="1899" height="281" key="GridCell.Tab.0.right/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1607030310184" />
+    <state width="1515" height="281" key="GridCell.Tab.0.right/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607102944215" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1607024114748">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607024114748" />
-    <state x="-1253" y="107" width="585" height="837" key="find.popup" timestamp="1607021969330">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607024449850">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607024449850" />
+    <state x="-1253" y="107" width="585" height="837" key="find.popup" timestamp="1607030183882">
       <screen x="-1920" y="6" width="1920" height="1040" />
     </state>
-    <state x="-1253" y="107" width="585" height="837" key="find.popup/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1607021969330" />
+    <state x="-1253" y="107" width="585" height="837" key="find.popup/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1607030183882" />
+    <state x="534" y="80" width="549" height="664" key="find.popup/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607024353397" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1606940901112">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1606940901112" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607005466027">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607024363784">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607005466027" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607024363784" />
   </component>
 </project>
