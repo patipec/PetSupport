@@ -1,4 +1,4 @@
-/*@import "~@angular/material/prebuilt-themes/indigo-pink.css";*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -9,5 +9,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color: black;
 }
 
+html, body { height: 100%; margin: 0 }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* Typical PetSupport colours */
+.PSyellow-background {
+    background-color: #FFCB3D;
+}
+.PSyellow {
+    color: #FFCB3D;
+}
+.PSgreen-background {
+    background-color: #0B814A;
+}
+.PSgreen {
+    color: #0B814A;
+}
 
 

@@ -1,10 +1,12 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {MainPageComponent} from './main-page/main-page/main-page.component';
+import { BecomePetsitterComponent } from './become-petsitter/become-petsitter.component';
+import {MainPageComponent} from './main-page/main-page.component';
 import {PettsitersComponent} from './petsitters/pettsiters/pettsiters.component';
 
 const routes: Routes = [
   {path: 'main-page', component: MainPageComponent},
+  {path: 'become-petsitter', component: BecomePetsitterComponent},
   {path: 'petsitters', component: PettsitersComponent},
   { path: '',   redirectTo: '/main-page', pathMatch: 'full' },
 
@@ -13,7 +15,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
