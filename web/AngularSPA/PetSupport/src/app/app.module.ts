@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+// import { FormGroup} from "@angular/forms";
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +18,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { PettsitersComponent } from './petsitters/pettsiters/pettsiters.component';
+import { ShortFormComponent } from './forms/short-form/short-form.component';
+import { LongFormComponent } from './forms/long-form/long-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule} from './shared/material.module';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { BecomePetsitterComponent } from './become-petsitter/become-petsitter.component';
@@ -24,9 +31,10 @@ import { BecomePetsitterComponent } from './become-petsitter/become-petsitter.co
     AppComponent,
     MainPageComponent,
     PettsitersComponent,
-    MainNavComponent,
-    BecomePetsitterComponent,
+    ShortFormComponent,
+    LongFormComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -40,6 +48,11 @@ import { BecomePetsitterComponent } from './become-petsitter/become-petsitter.co
     LayoutModule,
     MatDividerModule,
     MatGridListModule,
+    FormsModule,
+    MaterialModule,
+    ReactiveFormsModule
+    MainNavComponent,
+    BecomePetsitterComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
