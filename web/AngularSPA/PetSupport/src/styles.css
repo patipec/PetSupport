@@ -1,7 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
-/* for sidenav to take a whole page */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.svg-icon.search-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  color: black;
+}
 
 html, body { height: 100%; margin: 0 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -20,4 +26,5 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .PSgreen {
     color: #0B814A;
 }
+
 
