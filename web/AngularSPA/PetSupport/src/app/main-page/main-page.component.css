@@ -55,6 +55,13 @@ section.main-container .main-description {
 /* Service-container */
 .service-container .container-title {
     padding-top: 20px;
+    padding-bottom: 45px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.service-container .service-title {
+    padding-top: 20px;
     padding-bottom: 20px;
     font-size: 40px;
     font-weight: bold;
@@ -106,13 +113,31 @@ section.advantages .image-container img {
     margin: 40px 20px;
 }
 
+.small-icons {
+    width: 40px;
+    margin: 10px 20px;
+    padding-top: 20px;
+}
+
 section.advantages img.dashboard {
-    max-width: 350px;
+    max-width: 360px;
     border-radius: 20px;
     margin: 0 auto;
 }
 
+section.advantages img.dashboard2 {
+    max-width: 100%;
+    border-radius: 20px;
+    margin: 0 auto;
+}
 
+.tlo {
+    width: 100%; 
+    height: 30%;
+    position: relative;
+    background-color: lightgrey;
+    background-size: cover;
+}
 
 @media only screen and (max-width: 375px) {
     section.main-container smart-button {
@@ -121,8 +146,28 @@ section.advantages img.dashboard {
 }
 
 
+/* Buttons */
+smart-button {
+    width: auto;
+    height: auto;
+}
 
+.btn-success.outlined {
+    --smart-button-outlined-color: white;
+    --smart-button-outlined-border: white;
+}
 
+.btn-success {
+    background: top right/210% 210% #00f2c3;
+    background-image: linear-gradient(to bottom left,#0067b8,#0098f0,#0067b8);
+    -webkit-transition: all .15s ease;
+    -moz-transition: all .15s ease;
+    -o-transition: all .15s ease;
+    transition: all .15s ease;
+    box-shadow: none;
+    color: #fff;
+}
 
-
-
+.btn-right {
+    float: right;
+}
