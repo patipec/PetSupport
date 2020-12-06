@@ -1,6 +1,8 @@
-using PetSupport.Data.Entities;
+using PetSupport.Core.Entities;
+using PetSupport.Core.Enums;
 
-namespace PetSupport.API.Dtos.OutDtos
+
+namespace PetSupport.API2.Dtos.OutDtos
 {
     public class ServiceDTO : BaseEntity
     {

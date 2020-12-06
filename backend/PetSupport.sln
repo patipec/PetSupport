@@ -10,6 +10,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetSupport.Tests", "PetSupport.Tests\PetSupport.Tests.csproj", "{868BCEDD-B6A0-49BE-A2C3-5B8F47D2AB56}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petsupport.API2", "Petsupport.API2\Petsupport.API2.csproj", "{791B64F6-3F6E-4E03-9BB2-83CC74EF6D18}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AE1A3F59-8B9A-444A-9A3C-8D528DFC08CF} = {AE1A3F59-8B9A-444A-9A3C-8D528DFC08CF}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

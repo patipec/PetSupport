@@ -1,6 +1,5 @@
 using System;
 using PetSupport.Core.Entities;
-using PetSupport.Data.Entities;
 
 namespace PetSupport.API.Dtos.OutDtos
 {

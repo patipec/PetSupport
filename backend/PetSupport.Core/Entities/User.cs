@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
-namespace PetSupport.Data.Entities
+
+namespace PetSupport.Core.Entities
 {
     public class User: BaseEntity
     {

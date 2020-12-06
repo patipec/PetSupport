@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PetSupport.Data.Entities
+namespace PetSupport.Core.Entities
 {
     public class BaseEntity
     {

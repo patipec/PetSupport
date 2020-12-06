@@ -1,6 +1,6 @@
-using PetSupport.Data.Entities;
+using PetSupport.Core.Entities;
 
-namespace PetSupport.API.Dtos.OutDtos
+namespace Petsupport.API2.Dtos.InDtos
 {
     public class CreateBookingMessageDTO : BaseEntity
     {

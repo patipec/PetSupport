@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using PetSupport.Core.Entities;
 
-namespace PetSupport.Data.Entities
+namespace PetSupport.Core.Entities
 {
     public class Petsitter: User
     {
@@ -10,6 +9,6 @@ namespace PetSupport.Data.Entities
         public string Password { get; set; }
         public string PhotoId { get; set; }
         public string City { get; set; }
-        public IQueryable<Service> Services { get; set; }
+        public List<PetsitterService> Services { get; set; }
     }
 }
