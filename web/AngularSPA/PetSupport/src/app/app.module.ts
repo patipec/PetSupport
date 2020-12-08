@@ -25,6 +25,10 @@ import {MainNavComponent} from './main-nav/main-nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import {BecomePetsitterComponent} from './become-petsitter/become-petsitter.component';
 import { YellowWavesComponent } from './common/decorations/yellow-waves/yellow-waves.component';
+import { BasicInfoComponent } from './register-form/basic-info/basic-info.component';
+import { AddressComponent } from './register-form/address/address.component';
+import { ServicesComponent } from './register-form/services/services.component';
+import { PersonalInfoComponent } from './register-form/personal-info/personal-info.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,10 @@ import { YellowWavesComponent } from './common/decorations/yellow-waves/yellow-w
     MainNavComponent,
     BecomePetsitterComponent,
     YellowWavesComponent,
+    BasicInfoComponent,
+    AddressComponent,
+    ServicesComponent,
+    PersonalInfoComponent,
   ],
 
   imports: [
