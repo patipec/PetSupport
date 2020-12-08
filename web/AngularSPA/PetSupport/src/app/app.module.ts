@@ -54,6 +54,7 @@ import { YellowWavesComponent } from './common/decorations/yellow-waves/yellow-w
     FormsModule,
     MaterialModule,
     ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
