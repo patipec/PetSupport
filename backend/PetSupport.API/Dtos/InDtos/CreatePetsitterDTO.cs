@@ -16,7 +16,6 @@ namespace PetSupport.API.Dtos.OutDtos
         public string City { get; set; }
         public string ZipCode { get; set; }
         
-        //TODO: check this property    
-        //public ICollection<PetSitterService> Services { get; set; }
+        public ICollection<PetSitterServiceDTO> Services { get; set; }
     }
 }
