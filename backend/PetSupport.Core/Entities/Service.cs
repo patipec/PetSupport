@@ -10,7 +10,6 @@ namespace PetSupport.Core.Entities
         public string Description { get; set; }
         public Unit Unit { get; set; }
         public decimal Price { get; set; }
-
-        
     }
+    
 }

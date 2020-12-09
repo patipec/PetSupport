@@ -1,6 +1,7 @@
 ﻿namespace PetSupport.Core.Entities
+
 {
-    class BookingMessage: BaseEntity
+    public class BookingMessage: BaseEntity
     {
         public int PetsitterId { get; set; }
         public int ClientId { get; set; }
