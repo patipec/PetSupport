@@ -9,7 +9,7 @@ namespace PetSupport.Core.Entities
     {
         public int PetsitterId  { get; set; }
         public int ServiceId { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
 
         //Relationships
         public Petsitter Petsitter { get; set; }
