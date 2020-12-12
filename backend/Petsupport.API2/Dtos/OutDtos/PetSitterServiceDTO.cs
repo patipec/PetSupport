@@ -1,4 +1,4 @@
-namespace PetSupport.API.Dtos.OutDtos
+namespace PetSupport.API2.Dtos.OutDtos
 {
     public class PetSitterServiceDTO
     {

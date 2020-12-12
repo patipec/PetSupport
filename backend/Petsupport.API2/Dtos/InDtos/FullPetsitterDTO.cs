@@ -1,7 +1,8 @@
 using System.Collections.Generic;
-using PetSupport.Data.Entities;
+using PetSupport.API2.Dtos.OutDtos;
+using PetSupport.Core.Entities;
 
-namespace PetSupport.API.Dtos.OutDtos
+namespace Petsupport.API2.Dtos.InDtos
 {
     public class FullPetsitterDTO: BaseEntity
     {
