@@ -1,5 +1,5 @@
 mat-date-range-input {
-  width: 10vw;
+  width: 150px;
 }
   /* HIDE RADIO */
 [type=radio] {
@@ -20,39 +20,35 @@ mat-date-range-input {
 }
 
 label img {
-  padding: 3vh 4vw;
-  width: 3vw;
+  padding: 30px 80px;
+  width: 60px;
   margin: 1vw;
   display: inline-block;
   border: slategray solid 1px;
   border-radius: 40px;
+  background-color: white;
 }
 button img{
-  width: 1.5vw;
+  width: 30px;
   justify-content: center;
 }
 button {
   all: unset;
-  width:  3vw;
-  height: 3vw;
+  width:  60px;
+  height: 60px;
   border: solid 1px slategray;
   border-radius: 50%;
   background-color: orange;
   text-align: center;
   margin: auto;
 }
-/*label {*/
-/*  height: 10vh;*/
-/*}*/
-/*input, label {*/
-/*  display:inline-block;*/
-/*}*/
-.body{
-  margin:auto;
-}
+
 .container{
+  padding: 0px;
+  margin: 0 auto;
+  display: flex;
   width: 850px;
-  margin:auto;
+  justify-content: center;
 
 }
 .form-group{
@@ -60,6 +56,7 @@ button {
   margin-left: 20px;
   display: flex;
   justify-content: center;
+
 }
 input{
   border: none;
@@ -70,7 +67,6 @@ input{
   display: flex;
   flex-direction: column;
   padding: 10px;
-  /*margin: 10px;*/
   width: 20%;
 }
 .row:first-child{
@@ -94,6 +90,7 @@ input{
   border-radius: 35px;
   justify-content: center;
   margin:auto;
+  background-color: white;
 }
 label{
   color:darkgreen;

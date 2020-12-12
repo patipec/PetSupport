@@ -1,0 +1,129 @@
+/* Main container */
+section.main-container {
+    height: 75vh;
+    min-height: 450px;
+    /*background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) ), url(/../assets/MainPage/main-photo.jpg);*/
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.main-container-holder {
+    display: block;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding-top: 120px;
+    padding-bottom: 20px;
+}
+
+.main-container-holder-about {
+    max-width: 450px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+}
+
+
+section.main-container .main-text {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    line-height: 48px;
+
+}
+
+section.main-container .main-description {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    color: #ccc;
+
+}
+/* Main container ^ */
+
+.service-container {
+    padding-left: 30%;
+    padding-right: 30%;
+    background: white;
+    text-align: center;
+    margin: 0;
+}
+
+/* Service-container */
+.service-container .container-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.service-container .container-description {
+    font-size: 21px;
+}
+
+
+section.advantages {
+    background: white;
+    padding-top: 60px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+    section.advantages .advantages-holder,
+    section.advantages .image-holder {
+        align-self: center;
+    }
+
+div.advantage {
+    width: 70%;
+    float: right;
+    margin-top: 10px;
+    margin-right: 60px;
+    margin-bottom: 25px;
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: 50% 50%;
+}
+
+/* Advantages */
+    div.advantage .left-advantage,
+    div.advantage .right-advantage {
+        display: grid;
+        grid-template-columns: 110px calc(100% - 110px);
+    }
+
+    div.advantage .info-title {
+        font-weight: bold;
+        font-size: 21px;
+        margin-bottom: 15px;
+    }
+
+section.advantages .image-container img {
+    width: 40px;
+    margin: 40px 20px;
+}
+
+section.advantages img.dashboard {
+    max-width: 350px;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+
+
+@media only screen and (max-width: 375px) {
+    section.main-container smart-button {
+        width: 130px;
+    }
+}
+
+
+
+
+
+
+
