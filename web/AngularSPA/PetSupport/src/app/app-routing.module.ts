@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import { BecomePetsitterComponent } from './become-petsitter/become-petsitter.component';
 import {MainPageComponent} from './main-page/main-page.component';
 import {PettsitersComponent} from './petsitters/pettsiters/pettsiters.component';
+import { AddressComponent } from './register-form/address/address.component';
 import { BasicInfoComponent } from './register-form/basic-info/basic-info.component';
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path: 'become-petsitter', component: BecomePetsitterComponent},
   {path: 'petsitters', component: PettsitersComponent},
   {path: 'register-form/basic-info', component: BasicInfoComponent},
+  {path: 'register-form/address', component: AddressComponent},
   { path: '',   redirectTo: '/main-page', pathMatch: 'full' },
 
   /*   ** is last route, add new only above ^^^  */
