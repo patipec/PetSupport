@@ -17,7 +17,7 @@ export class LongFormComponent implements OnInit {
         startDate: new Date(),
         stopDate: new Date()
       }),
-      location: 'Warsaw',
+      location: '',
       numberOfPets: 1,
       priceRange: this.fb.group({
         minValue: '',

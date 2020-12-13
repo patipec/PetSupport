@@ -1,17 +1,27 @@
 /*Main container*/
 .container{
-max-width: 300px;
+  max-width: 300px;
+  display: flex;
   justify-content: center;
   padding: 20px;
   background-color: rgb(254, 203, 64);
 }
+form{
+  justify-content: center;
+  display: inline-block;
+}
+span{
+  position: relative;
+  top: 5px;
+  margin-right: 10px;
+}
 /*Div containers for every field form */
 .priceRange{
-  max-width:230px;
+  max-width:250px;
 }
 /*Date range*/
 .dateRange{
-display: flex;
+  display: flex;
   flex-direction: row;
 }
 .dateRange label {
@@ -31,9 +41,11 @@ display: flex;
 .form-range-to{
   display: inline-block;
 }
-/*Location*/
-.location{
 
+#location{
+  margin-top:10px;
+  width: 90px;
+  padding: 5px;
 }
 .numberOfPets{
 
@@ -41,14 +53,34 @@ display: flex;
 .service{
 
 }
+select{
+  margin-top:10px;
+  width: 100px;
+  padding: 5px;
+  border: solid 1px lightblue;
+}
 .rateRange{
-
+  max-width:250px;
 }
 .animalType{
 
 }
 .hasPet{
 
+}
+/*Input styling*/
+input{
+  width: 100px;
+  padding: 5px;
+  /*justify-content: center;*/
+  border: solid 1px lightblue;
+}
+label{
+  margin-top:10px;
+}
+
+div{
+  margin-top:10px;
 }
 
 /*BUTTONS*/
