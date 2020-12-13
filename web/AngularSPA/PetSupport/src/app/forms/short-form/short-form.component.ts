@@ -25,9 +25,23 @@ export class ShortFormComponent implements OnInit {
   };
   servicesTypes$: Observable<string[]>;
 
+  btnCheck: boolean;
+  btnStyle = 'form-check-label';
+
+  // onServiceClick(): void{
+  //   this.
+  //   this.btnCheck === true ? 'btn-default' : 'btn-change';
+  // }
+
+  // setBackgroundColor(): void{
+  //   this.btnStyle === 'btn-default' ? this.btnStyle = 'btn-change' : this.btnStyle = 'btn-default';
+  // }
   ngOnInit(): void {
   }
-
+  //
+  // checkTest = function(boolChecked){
+  //   console.log(boolChecked);
+  // }
   onSubmit(form: NgForm): void{
     // if (form.valid){
     //   this.servicesTypes.postUserSettingsForm(this.userSettings).subscribe(

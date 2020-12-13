@@ -1,64 +1,52 @@
 <div class="container">
   <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
-<!--      PET SELECTION  -->
+      <!--      PET SELECTION  -->
       <div class="serviceContainer">
-      <label class="form-check-label" for="boarding">
-        <input type="radio" name="service" value="boarding"
-               [(ngModel)]="shortFormSettings.service" id="boarding" checked>
-        <img src="assets/shortFormImages/cocker-spaniel.png">
-      </label>
+        <label class="form-check-label" for="boarding">
+          <input type="radio" name="service" value="boarding"
+                 [(ngModel)]="shortFormSettings.service" id="boarding" checked
+                 ng-value="isButtonChecked" ng-checked="checkTest(master)">
+<!--                 {{btnCheck}} == checked (click)="onSth(btnCheck)">-->
+<!--          *ngIf="checked === true">-->
+          <img src="assets/shortFormImages/cocker-spaniel.png">
+          Boarding
+        </label>
 
-      <label class="form-check-label" for="houseSitting">
-        <input type="radio" name="service" value="houseSitting"
-               [(ngModel)]="shortFormSettings.service" id="houseSitting">
-        <img src="assets/shortFormImages/dog-heart.png">
+        <label class="form-check-label" for="houseSitting">
+          <input type="radio" name="service" value="houseSitting"
+                 [(ngModel)]="shortFormSettings.service" id="houseSitting">
+          <img src="assets/shortFormImages/dog-heart.png">
+          House Sitting
+        </label>
 
-      </label>
-
-      <label class="form-check-label" for="walking">
-        <input type="radio" name="service" value="walking"
-               [(ngModel)]="shortFormSettings.service" id="walking">
-        <img src="assets/shortFormImages/dog-smiley.png">
-      </label>
+        <label class="form-check-label" for="walking">
+          <input type="radio" name="service" value="walking"
+                 [(ngModel)]="shortFormSettings.service" id="walking">
+          <img src="assets/shortFormImages/dog-smiley.png">
+          Walking
+        </label>
       </div>
 
-      </div>
+    </div>
 
-<!-- SEARCH USER SELECTION-->
+    <!-- SEARCH USER SELECTION-->
     <div class="secondFormPart">
       <div class="form-group">
 
         <div class="row">
-        <label for="name">Location</label>
-        <input id="name" name="city" class="form-control" placeholder="Type city or zip code"
-               [(ngModel)]="shortFormSettings.city"
-               required #nameField="ngModel"
-               (blur)="onBlur(nameField)"
-               [class.field-error]="form.submitted && nameField.invalid">
-        <div [hidden]="!form.submitted || nameField.valid" class="warrning">Please fill city</div>
+          <label for="name">Location</label>
+          <input id="name" name="city" class="form-control" placeholder="Type city or zip code"
+                 [(ngModel)]="shortFormSettings.city"
+                 required #nameField="ngModel"
+                 (blur)="onBlur(nameField)"
+                 [class.field-error]="form.submitted && nameField.invalid">
+          <div [hidden]="!form.submitted || nameField.valid" class="warrning">Please fill city</div>
         </div>
-<!--        <div class="row">-->
-<!--        <label for="startDate">From</label>-->
-<!--        <input id="startDate" name="startDate" class="form-control" placeholder="Date from"-->
-<!--               [(ngModel)]="shortFormSettings.startDate"-->
-<!--               required #nameField="ngModel"-->
-<!--               (blur)="onBlur(nameField)"-->
-<!--               [class.field-error]="form.submitted && nameField.invalid">-->
-<!--        <div [hidden]="!form.submitted || nameField.valid" class="warrning">Please select start date</div>-->
-<!--        </div>-->
-<!--          <div class="row">-->
-<!--        <label >To</label>-->
-<!--        <input id="stopDate" name="stopDate" class="form-control" placeholder="Date to"-->
-<!--               [(ngModel)]="shortFormSettings.stopDate"-->
-<!--               required #nameField="ngModel"-->
-<!--               (blur)="onBlur(nameField)"-->
-<!--               [class.field-error]="form.submitted && nameField.invalid">-->
-<!--        <div [hidden]="!form.submitted || nameField.valid" class="warrning">Please select stop date</div>-->
-<!--          </div>-->
         <mat-form-field color="accent" appearance="fill">
-          <mat-label></mat-label>
-          <input matInput [matDatepicker]="picker2" id="startDate" name="startDate" class="form-control" placeholder="Date to"
+          <mat-label>Date from</mat-label>
+          <input matInput [matDatepicker]="picker2" id="startDate" name="startDate" class="form-control"
+                 placeholder="Date from"
                  [(ngModel)]="shortFormSettings.startDate"
                  required #nameField="ngModel"
                  (blur)="onBlur(nameField)"
@@ -69,8 +57,9 @@
 
 
         <mat-form-field color="accent" appearance="fill">
-<!--          <mat-label></mat-label>-->
-          <input matInput [matDatepicker]="picker1" id="stopDate" name="stopDate" class="form-control" placeholder="Date to"
+                    <mat-label>Date to</mat-label>
+          <input matInput [matDatepicker]="picker1" id="stopDate" name="stopDate" class="form-control"
+                 placeholder="Date to"
                  [(ngModel)]="shortFormSettings.stopDate"
                  required #nameField="ngModel"
                  (blur)="onBlur(nameField)"
@@ -80,19 +69,20 @@
         </mat-form-field>
 
 
-
         <div class="row">
-        <label for="pet">Pet</label>
-        <input id="pet" name="typePet" class="form-control" placeholder="Pet"
-               [(ngModel)]="shortFormSettings.typePet"
-               required #nameField="ngModel"
-               (blur)="onBlur(nameField)"
-               [class.field-error]="form.submitted && nameField.invalid">
-        <div [hidden]="!form.submitted || nameField.valid" class="warrning">Please select type of pet you have</div>
+          <label for="pet">Pet</label>
+          <input id="pet" name="typePet" class="form-control" placeholder="Pet"
+                 [(ngModel)]="shortFormSettings.typePet"
+                 required #nameField="ngModel"
+                 (blur)="onBlur(nameField)"
+                 [class.field-error]="form.submitted && nameField.invalid">
+          <div [hidden]="!form.submitted || nameField.valid" class="warrning">Please select type of pet you have</div>
         </div>
         <button>
           <img src="assets/shortFormImages/search.png">
         </button>
-      </div>      </div>
+      </div>
+    </div>
   </form>
 </div>
+

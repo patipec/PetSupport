@@ -1,6 +1,18 @@
-mat-date-range-input {
+.mat-date-range-input {
   width: 150px;
+  /*padding-right: 10px;*/
+
 }
+mat-form-field{
+  padding:0px 10px;
+  background-color: white;
+  border-right: solid lavender 1px;
+}
+mat-label{
+  color:darkgreen;
+  font-weight: bold;
+}
+
   /* HIDE RADIO */
 [type=radio] {
   position: absolute;
@@ -8,26 +20,45 @@ mat-date-range-input {
   width: 0;
   height: 0;
 }
-
+.container{
+  padding: 0px;
+  margin: 160px auto 0px;
+  display: flex;
+  width: 850px;
+  justify-content: center;
+}
 /* IMAGE STYLES */
 [type=radio] + img {
   cursor: pointer;
 }
 
 /* CHECKED STYLES */
-[type=radio]:checked + img {
-  background-color: lightgray;
+[type=radio]:checked + img
+{
+  background-color: lightblue ;
+
+}
+.form-check-label {
+
 }
 
-label img {
+.form-check-label {
   padding: 30px 80px;
-  width: 60px;
+  width: 80px;
   margin: 1vw;
   display: inline-block;
   border: slategray solid 1px;
-  border-radius: 40px;
+  border-radius: 100px;
   background-color: white;
+  justify-content: center;
+
 }
+.form-check-label img{
+  width: 60px;
+  justify-content: center;
+}
+
+
 button img{
   width: 30px;
   justify-content: center;
@@ -39,18 +70,9 @@ button {
   border: solid 1px slategray;
   border-radius: 50%;
   background-color: orange;
-  text-align: center;
   margin: auto;
 }
 
-.container{
-  padding: 0px;
-  margin: 0 auto;
-  display: flex;
-  width: 850px;
-  justify-content: center;
-
-}
 .form-group{
   font-size: 12px;
   margin-left: 20px;
@@ -62,19 +84,18 @@ input{
   border: none;
   font-size: 1.2em;
   margin-left: -10px;
+  /*border-left: 2px solid green;*/
 }
 .row{
   display: flex;
   flex-direction: column;
   padding: 10px;
   width: 20%;
+  text-align: left;
+  border-right: solid lavender 1px;
 }
-.row:first-child{
-  margin-right: 20px;
-}
-.row:last-child{
-  padding: 0px;
-  margin: 0px;
+.row:nth-last-child(2){
+  border-right: 0px;
 }
 
 .warrning{
@@ -88,7 +109,6 @@ input{
   border:solid black 2px;
   -moz-border-radius: 15px;
   border-radius: 35px;
-  justify-content: center;
   margin:auto;
   background-color: white;
 }
@@ -96,9 +116,9 @@ label{
   color:darkgreen;
   font-weight: bold;
 }
-label:first-child{
-  margin-left: -10px;
-}
+/*label:first-child{*/
+/*  margin-left: -10px;*/
+/*}*/
 
 .basic-container {
   padding: 30px;
@@ -107,4 +127,21 @@ label:first-child{
   font-size: 8pt;
   float: right;
   margin: 8px;
+}
+row:first-child{
+  /*padding-left: 10px;*/
+  background-color: black;
+}
+row:last-child{
+  /*padding-left: 10px;*/
+  background-color: black;
+}
+#pet{
+  padding-left: 10px;
+}
+#name{
+  padding-left: 10px;
+}
+button:hover{
+  background-color: darkgreen;
 }

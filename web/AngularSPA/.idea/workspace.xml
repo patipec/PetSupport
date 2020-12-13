@@ -65,20 +65,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="979e553d-caeb-4a60-9102-e2057cec8899" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/AngularSPA.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PetSupport/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/PetSupport/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PetSupport/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/PetSupport/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PetSupport/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/PetSupport/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PetSupport/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PetSupport/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PetSupport/src/app/forms/form-data/ILongForm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PetSupport/src/app/forms/form-data/ILongForm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PetSupport/src/app/forms/form-data/service-type.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PetSupport/src/app/forms/form-data/service-type.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PetSupport/src/app/forms/long-form/long-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/PetSupport/src/app/forms/long-form/long-form.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PetSupport/src/app/forms/long-form/long-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/PetSupport/src/app/forms/long-form/long-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PetSupport/src/app/forms/long-form/long-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PetSupport/src/app/forms/long-form/long-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PetSupport/src/app/forms/short-form/short-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/PetSupport/src/app/forms/short-form/short-form.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PetSupport/src/app/main-page/main-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/PetSupport/src/app/main-page/main-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PetSupport/src/app/forms/short-form/short-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/PetSupport/src/app/forms/short-form/short-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PetSupport/src/app/forms/short-form/short-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PetSupport/src/app/forms/short-form/short-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PetSupport/src/app/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/PetSupport/src/app/main-page/main-page.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -93,7 +105,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../hero-angular" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -113,6 +125,8 @@
       <option name="presentableId" value="Default" />
       <updated>1607796727456</updated>
       <workItem from="1607796728522" duration="2164000" />
+      <workItem from="1607810229269" duration="1628000" />
+      <workItem from="1607852459696" duration="17256000" />
     </task>
     <servers />
   </component>
@@ -129,11 +143,30 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1607862540180">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607862540180" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1607852689005">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607852689005" />
     <state x="478" y="145" width="579" height="534" key="find.popup" timestamp="1607797461276">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="478" y="145" width="579" height="534" key="find.popup/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607797461276" />
+    <state x="379" y="183" key="run.anything.popup" timestamp="1607861645550">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1607808384580" />
+    <state x="379" y="183" key="run.anything.popup/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607861645550" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607855694453">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="382" y="128" width="672" height="600" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1607809777219" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1607855694453" />
   </component>
 </project>

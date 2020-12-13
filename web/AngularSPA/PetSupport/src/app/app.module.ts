@@ -25,6 +25,8 @@ import {MainNavComponent} from './main-nav/main-nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import {BecomePetsitterComponent} from './become-petsitter/become-petsitter.component';
 import { YellowWavesComponent } from './common/decorations/yellow-waves/yellow-waves.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { RangeSlider } from './forms/shared/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { YellowWavesComponent } from './common/decorations/yellow-waves/yellow-w
     MainNavComponent,
     BecomePetsitterComponent,
     YellowWavesComponent,
+    RangeSlider
   ],
 
   imports: [
@@ -54,6 +57,7 @@ import { YellowWavesComponent } from './common/decorations/yellow-waves/yellow-w
     FormsModule,
     MaterialModule,
     ReactiveFormsModule,
+    NgxSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

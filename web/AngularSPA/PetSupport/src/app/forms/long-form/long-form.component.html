@@ -1,1 +1,79 @@
-<p>long-form works!</p>
+<div class="container">
+  <form [formGroup]="longFormSettings" (ngSubmit)="onSubmit()">
+    <div class="priceRange">
+
+      <span class="material-icons">local_offer</span><b>Price Range</b><br>
+    <app-slider></app-slider>
+    </div>
+    <div formGroupName="dateRange">
+      <span class="material-icons">date_range</span><b>Dates<br></b>
+      <div class="form-range-from">
+        <label for="startDate"></label>
+        <input type="date" id="startDate" name="startDate"
+                placeholder="17/07/2017"
+               formControlName="startDate">
+      </div>
+
+      <div class="form-range-to">
+        <!--        <label for="startDate">Date</label>-->
+        <input type="date" id="stopDate"
+               name="stopDate"
+               placeholder="27/07/2017"
+               formControlName="stopDate">
+      </div>
+
+    </div>
+    <div class="location">
+      <label for="location"><b><span class="material-icons">person</span>Location</b><br></label>
+      <input id="location" name="location"
+             class="form-control" placeholder="Type city or zip code"
+             formControlName="location">
+    </div>
+    <div class="numberOfPets">
+      <label for="numberOfPets"><b>Pets to care</b><br></label>
+
+      <select name="numberOfPets" id="numberOfPets">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="more">more</option>
+      </select>
+    </div>
+    <div class="service">
+      <label for="service"><b>Service</b><br></label>
+
+      <select name="service" id="service">
+        <option value="boarding">Boarding</option>
+        <option value="houseSitting">House Sitting</option>
+        <option value="walking">Walking</option>
+      </select>
+    </div>
+    <div class="rateRange">
+      <app-slider></app-slider>
+      (this above need to be fixed)
+    </div>
+    <div class="animalType"><span class="material-icons">person</span><b>Animal Type</b> <br>
+      <select name="petType" id="petType">
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="mix">Both</option>
+      </select>
+    </div>
+    <div class="hasPet">
+      <span class="material-icons">person</span><b>Has own pet</b><br>
+      <select name="petType" id="petType">
+        <option value="yes">yes</option>
+        <option value="no">no</option>
+      </select>
+    </div>
+    <button class="reset">RESET FILTERS</button>
+    <button class="apply">APPLY FILTERS</button>
+  </form>
+</div>
+<br>Dirty: {{ longFormSettings.dirty }}
+<br>Touched: {{ longFormSettings.touched }}
+<br>Valid: {{ longFormSettings.valid }}
+<br>Value: {{ longFormSettings.value | json }}
+<br>&nbsp;

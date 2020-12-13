@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ServiceType {
   constructor() { }
-
   getServicesTypes(): Observable<string[]>{
     return of(['Monthly', 'Annual', 'Lifetime']);
   }
+
 }
