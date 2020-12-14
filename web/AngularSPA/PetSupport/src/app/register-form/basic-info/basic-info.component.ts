@@ -13,7 +13,7 @@ export class BasicInfoComponent implements OnInit {
   
   submitted = false;
 
-  @ViewChild('loginForm') signupForm: NgForm;
+  @ViewChild('loginForm') loginForm: NgForm;
 
   user = {
     name:'',
@@ -30,7 +30,7 @@ export class BasicInfoComponent implements OnInit {
 
   suggestUserName() {
     const suggestedName = 'SuperUser';
-    this.signupForm.form.patchValue({
+    this.loginForm.form.patchValue({
       userData: {
         name: suggestedName
       }
@@ -39,13 +39,13 @@ export class BasicInfoComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    this.user.name = this.signupForm.value.userData.name;
-    this.user.surname = this.signupForm.value.userData.surname;
-    this.user.email = this.signupForm.value.userData.email;
-    this.user.phone = this.signupForm.value.userData.phone;
-    this.user.password = this.signupForm.value.userData.password;
+    this.user.name = this.loginForm.value.userData.name;
+    this.user.surname = this.loginForm.value.userData.surname;
+    this.user.email = this.loginForm.value.userData.email;
+    this.user.phone = this.loginForm.value.userData.phone;
+    this.user.password = this.loginForm.value.userData.password;
 
-    this.signupForm.reset();
+    this.loginForm.reset();
   }
   
 //***** HTTP METHODS (POST)****//
@@ -55,7 +55,7 @@ export class BasicInfoComponent implements OnInit {
       ).subscribe(responseData => {
         console.log(responseData);
       });
-      this.signupForm.reset();
+      this.loginForm.reset();
     }
 
 }
