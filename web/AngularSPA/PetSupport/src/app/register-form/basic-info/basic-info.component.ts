@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-basic-info',
@@ -22,7 +23,7 @@ export class BasicInfoComponent implements OnInit {
     password: ''
   };
 
-  constructor() { }
+  constructor( private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -46,5 +47,15 @@ export class BasicInfoComponent implements OnInit {
 
     this.signupForm.reset();
   }
+  
+//***** HTTP METHODS (POST)****//
+  onCreatePost(postData: {title: string; content: string}) {
+    this.http.post('https://ng-component-guide-78d02-default-rtdb.firebaseio.com/posts.json', 
+    postData
+      ).subscribe(responseData => {
+        console.log(responseData);
+      });
+      this.signupForm.reset();
+    }
 
 }

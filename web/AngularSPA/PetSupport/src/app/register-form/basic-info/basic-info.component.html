@@ -4,7 +4,7 @@
             <div class="card-title">Basic Info</div>
             <hr>
             <br><br>
-            <form class="my-form" #loginForm=ngForm (ngSubmit)="onSubmit()">
+            <form class="my-form" #loginForm=ngForm (ngSubmit)="onCreatePost(loginForm.value)">
                 <div 
                 id="user-data" 
                 ngModelGroup="userData"
@@ -78,7 +78,8 @@
                             <button mat-raised-button 
                             type="submit" 
                             color="primary"
-                            [disabled]="!loginForm.valid">SEND</button>
+                            href="address"
+                            [disabled]="!loginForm.valid">NEXT</button>
                     </mat-card-actions>    
                 </div>
             </form>

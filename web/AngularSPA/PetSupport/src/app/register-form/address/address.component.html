@@ -6,7 +6,7 @@
                 <hr>
                 <br><br>
 
-                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                <form [formGroup]="signupForm" (ngSubmit)="onCreatePost(signupForm.value)">
                 <div formGroupName="userData">
                 
                     <mat-form-field appearance="fill" class="width-100">

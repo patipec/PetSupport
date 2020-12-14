@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 
 @Component({
@@ -21,9 +22,10 @@ export class AddressComponent {
             'zipcode': new FormControl(null, Validators.required, this.forbiddenZipCode),
             'country': new FormControl('Poland')
         }),
-        
       });
     }
+
+    constructor( private http: HttpClient) { }
 
     onSubmit() {
       console.log(this.signupForm);
@@ -42,7 +44,12 @@ export class AddressComponent {
       return promise;
     }
 
-
-
-
+    onCreatePost(postData: {title: string; content: string}) {
+      this.http.post('https://ng-component-guide-78d02-default-rtdb.firebaseio.com/posts.json', 
+      postData
+        ).subscribe(responseData => {
+          console.log(responseData);
+        });
+        this.signupForm.reset();
+      }
 }
