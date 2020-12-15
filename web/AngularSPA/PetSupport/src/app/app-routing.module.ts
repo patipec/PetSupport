@@ -5,6 +5,7 @@ import {MainPageComponent} from './main-page/main-page.component';
 import {PettsitersComponent} from './petsitters/pettsiters/pettsiters.component';
 import { AddressComponent } from './register-form/address/address.component';
 import { BasicInfoComponent } from './register-form/basic-info/basic-info.component';
+import { PersonalInfoComponent } from './register-form/personal-info/personal-info.component';
 
 const routes: Routes = [
   {path: 'main-page', component: MainPageComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'petsitters', component: PettsitersComponent},
   {path: 'register-form/basic-info', component: BasicInfoComponent},
   {path: 'register-form/address', component: AddressComponent},
+  {path: 'register-form/personal-info', component: PersonalInfoComponent},
   { path: '',   redirectTo: '/main-page', pathMatch: 'full' },
 
   /*   ** is last route, add new only above ^^^  */
