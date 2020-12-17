@@ -8,60 +8,88 @@
 
                 <form [formGroup]="signupForm" (ngSubmit)="onCreatePost(signupForm.value)">
                 <div formGroupName="userData">
-                    
+                    <div class="title-name">
+                        Birthday
+                    </div>
                     <mat-form-field appearance="fill" class="width-100">
-                        <mat-label>Street</mat-label>
+                        <mat-label>Birthday</mat-label>
                         <input matInput
                         type="text"
-                        id="street"
-                        name="street"
-                        formControlName="street">
-                        <span *ngIf="!signupForm.get('userData.street').valid && signupForm.get('userData.street').touched" 
+                        id="birthday"
+                        name="birthday"
+                        formControlName="birthday">
+                        <span *ngIf="!signupForm.get('userData.birthday').valid && signupForm.get('userData.birthday').touched" 
                         class="help-block">Please enter a valid Street</span>
                     </mat-form-field>
                     <br>
+                    <div class="title-name">
+                        Short title about you
+                        <div class="title-info">
+                            Make your headline short, descriptive and genuine. This will be your first introduction to pet owners
+                            when they search for service.
+                        </div>
+                    </div>
                     <mat-form-field appearance="fill" class="width-100">
-                        <mat-label>House nr / Flat nr</mat-label>
+                        <mat-label>Short title about you</mat-label>
                         <input matInput
                         type="text"
-                        id="housenr"
-                        name="housenr"
-                        formControlName="housenr">
-                        <span *ngIf="!signupForm.get('userData.housenr').valid && signupForm.get('userData.housenr').touched" 
+                        id="title"
+                        name="title"
+                        formControlName="title">
+                        <span *ngIf="!signupForm.get('userData.title').valid && signupForm.get('userData.title').touched" 
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                     <br>
+                    <div class="title-name">
+                        Short title about you
+                        <div class="title-info">
+                            Describe any past experiences you've had with pets, Lead with what sets you apart from other
+                            sitters. Do you have any special skills?
+                        </div>
+                    </div>
                     <mat-form-field appearance="fill" class="width-100">
-                        <mat-label>City</mat-label>
+                        <mat-label>Experience</mat-label>
                         <input matInput
                         type="text"
-                        id="city"
-                        name="city"
-                        formControlName="city">
-                        <span *ngIf="!signupForm.get('userData.city').valid && signupForm.get('userData.city').touched" 
+                        id="experience"
+                        name="experience"
+                        formControlName="experience">
+                        <span *ngIf="!signupForm.get('userData.experience').valid && signupForm.get('userData.experience').touched" 
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
-                
                     <br>
+                    <div class="title-name">
+                        Short title about you
+                        <div class="title-info">
+                            Let pet owners know about your availability for each service you want to provide. For example do
+                            you work full time or part time etc.
+                        </div>
+                    </div>
                     <mat-form-field appearance="fill" class="width-100">
-                        <mat-label>Zip Code</mat-label>
+                        <mat-label>Availability</mat-label>
                         <input matInput 
-                        placeholder="Ex. 12-345"
-                        id="zipcode"
-                        name="zipcode"
-                        formControlName="zipcode">
-                        <span *ngIf="!signupForm.get('userData.zipcode').valid && signupForm.get('userData.zipcode').touched" 
+                        id="availability"
+                        name="availability"
+                        formControlName="availability">
+                        <span *ngIf="!signupForm.get('userData.availability').valid && signupForm.get('userData.availability').touched" 
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                     <br>
+                    <div class="title-name">
+                        Short title about you
+                        <div class="title-info">
+                            Describe the environment where you will provide home services as well as amentities that set you
+                            apart such as large yards, daily runs, nearby dog parks etc.
+                        </div>
+                    </div>
                     <mat-form-field appearance="fill" class="width-100">
-                        <mat-label>Country</mat-label>
+                        <mat-label>Environment</mat-label>
                         <input matInput
                         type="text"
-                        id="country"
-                        name="country"
-                        formControlName="country">
-                        <span *ngIf="!signupForm.get('userData.country').valid && signupForm.get('userData.country').touched" 
+                        id="environment"
+                        name="environment"
+                        formControlName="environment">
+                        <span *ngIf="!signupForm.get('userData.environment').valid && signupForm.get('userData.environment').touched" 
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                         <div>
@@ -73,7 +101,7 @@
                         <button mat-raised-button 
                         type="submit" 
                         color="primary"
-                        >LOGIN</button>
+                        >NEXT</button>
                  </mat-card-actions> 
                 </div>
                 </form>

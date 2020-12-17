@@ -15,11 +15,11 @@ export class PersonalInfoComponent implements OnInit {
     ngOnInit() {
       this.signupForm = new FormGroup({
         'userData': new FormGroup({
-            'street': new FormControl(null, Validators.required),
-            'housenr': new FormControl(null, Validators.required),
-            'city': new FormControl(null, Validators.required),
-            'zipcode': new FormControl(null, Validators.required, this.forbiddenZipCode),
-            'country': new FormControl('Poland')
+            'birthday': new FormControl(null, Validators.required),
+            'title': new FormControl(null, Validators.required),
+            'experience': new FormControl(null, Validators.required),
+            'availability': new FormControl(null, Validators.required, this.forbiddenZipCode),
+            'environment': new FormControl(null, Validators.required)
         }),
       });
     }

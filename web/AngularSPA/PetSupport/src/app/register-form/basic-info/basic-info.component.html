@@ -75,10 +75,11 @@
                         </mat-form-field>
                     <br>
                     <mat-card-actions>
-                            <button mat-raised-button 
+                            <a mat-raised-button 
                             type="submit" 
                             color="primary"
-                            [disabled]="!loginForm.valid">NEXT</button>
+                            routerLink="/register-form/address"
+                            [disabled]="!loginForm.valid">NEXT</a>
                     </mat-card-actions>    
                 </div>
             </form>

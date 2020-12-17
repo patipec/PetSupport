@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { IRegistrationForm } from '../IRegistration-data';
 
 @Component({
   selector: 'app-services',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesComponent implements OnInit {
 
-  constructor() { }
+  signupForm: IRegistrationForm = {
+    service: '',
+    typePet: '',
+  };
 
+  servicesTypes$: Observable<string[]>;
+
+  
   ngOnInit(): void {
-  }
+    }
 
+    onSubmit(signupForm: NgForm): void{
+    }
 }
+
+

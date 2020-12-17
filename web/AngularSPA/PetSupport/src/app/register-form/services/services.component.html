@@ -1,4 +1,51 @@
-<p>services works!</p>
+
+<mat-grid-list cols="1" rowHeight="500px">
+  <mat-grid-tile style="position:inherit;">
+      <div class="example-container">
+          <div class="card-title">Services</div>
+          <hr>
+          <br><br>
+
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm)">
+          <div formGroupName="userData">
+          
+            <div class="serviceContainer">
+              <label class="form-check-label" for="boarding">
+                <input type="radio" name="service" value="boarding"
+                      [(ngModel)]="signupForm.service" id="boarding" checked>
+                <img src="assets/shortFormImages/cocker-spaniel.png">
+              </label>
+      
+              <label class="form-check-label" for="houseSitting">
+                <input type="radio" name="service" value="houseSitting"
+                      [(ngModel)]="signupForm.service" id="houseSitting">
+                <img src="assets/shortFormImages/dog-heart.png">
+      
+              </label>
+      
+              <label class="form-check-label" for="walking">
+                <input type="radio" name="service" value="walking"
+                      [(ngModel)]="signupForm.service" id="walking">
+                <img src="assets/shortFormImages/dog-smiley.png">
+              </label>
+            </div>
+            <div>               
+            </div>
+              <br> 
+              <mat-card-actions>
+                  <a mat-raised-button 
+                  type="submit" 
+                  color="primary"
+                  routerLink="/register-form/personal-info"
+                  >NEXT</a>
+           </mat-card-actions> 
+          </div>
+          </form>
+      </div>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
 <!-- 
         <label id="example-radio-group-label">Gender: </label>
           <br><br>

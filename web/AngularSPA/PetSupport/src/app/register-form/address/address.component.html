@@ -70,10 +70,11 @@
                     <br> 
                     <span *ngIf="!signupForm.valid && signupForm.touched"></span>
                     <mat-card-actions>
-                        <button mat-raised-button 
+                        <a mat-raised-button 
                         type="submit" 
                         color="primary"
-                        >LOGIN</button>
+                        routerLink="/register-form/services"
+                        >NEXT</a>
                  </mat-card-actions> 
                 </div>
                 </form>
