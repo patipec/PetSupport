@@ -1,0 +1,113 @@
+mat-date-range-input {
+  width: 10vw;
+}
+  /* HIDE RADIO */
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  background-color: lightgray;
+}
+
+label img {
+  padding: 3vh 4vw;
+  width: 3vw;
+  margin: 1vw;
+  display: inline-block;
+  border: slategray solid 1px;
+  border-radius: 40px;
+}
+button img{
+  width: 1.5vw;
+  justify-content: center;
+}
+button {
+  all: unset;
+  width:  3vw;
+  height: 3vw;
+  border: solid 1px slategray;
+  border-radius: 50%;
+  background-color: orange;
+  text-align: center;
+  margin: auto;
+}
+/*label {*/
+/*  height: 10vh;*/
+/*}*/
+/*input, label {*/
+/*  display:inline-block;*/
+/*}*/
+.body{
+  margin:auto;
+}
+.container{
+  width: 850px;
+  margin:auto;
+
+}
+.form-group{
+  font-size: 12px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+}
+input{
+  border: none;
+  font-size: 1.2em;
+  margin-left: -10px;
+}
+.row{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  /*margin: 10px;*/
+  width: 20%;
+}
+.row:first-child{
+  margin-right: 20px;
+}
+.row:last-child{
+  padding: 0px;
+  margin: 0px;
+}
+
+.warrning{
+  color: red;
+}
+.shortFormSearchIcon{
+  margin-left: 20px;
+}
+
+.secondFormPart{
+  border:solid black 2px;
+  -moz-border-radius: 15px;
+  border-radius: 35px;
+  justify-content: center;
+  margin:auto;
+}
+label{
+  color:darkgreen;
+  font-weight: bold;
+}
+label:first-child{
+  margin-left: -10px;
+}
+
+.basic-container {
+  padding: 30px;
+}
+.version-info {
+  font-size: 8pt;
+  float: right;
+  margin: 8px;
+}

@@ -1,11 +1,15 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {MainPageComponent} from './main-page/main-page/main-page.component';
+import { BecomePetsitterComponent } from './become-petsitter/become-petsitter.component';
+import {MainPageComponent} from './main-page/main-page.component';
 import {PettsitersComponent} from './petsitters/pettsiters/pettsiters.component';
+import { TableSchematicTestComponent } from './table-schematic-test/table-schematic-test.component';
 
 const routes: Routes = [
   {path: 'main-page', component: MainPageComponent},
+  {path: 'become-petsitter', component: BecomePetsitterComponent},
   {path: 'petsitters', component: PettsitersComponent},
+  {path: 'table-schematic-test', component: TableSchematicTestComponent},
   { path: '',   redirectTo: '/main-page', pathMatch: 'full' },
 
   /*   ** is last route, add new only above ^^^  */
@@ -13,7 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
