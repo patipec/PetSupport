@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using PetSupport.API2.Dtos.OutDtos;
 using PetSupport.Core.Entities;
 
 namespace Petsupport.API2.Dtos.InDtos
@@ -15,7 +17,6 @@ namespace Petsupport.API2.Dtos.InDtos
         public string City { get; set; }
         public string ZipCode { get; set; }
         
-        //TODO: check this property    
-        //public ICollection<PetSitterService> Services { get; set; }
+        public ICollection<PetSitterServiceDTO> Services { get; set; }
     }
 }
