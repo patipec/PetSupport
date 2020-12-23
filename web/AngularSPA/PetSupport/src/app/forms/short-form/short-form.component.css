@@ -36,7 +36,7 @@ mat-label{
 .form-check-label {
   padding: 10px 50px;
   max-width: 80px;
-  margin: 1vw;
+  margin: 20px;
   display: inline-block;
   border: slategray solid 1px;
   border-radius: 100px;
@@ -44,14 +44,14 @@ mat-label{
   justify-content: center;
 
 }
-.form-check-label img{
+img{
   max-width: 60%;
   justify-content: center;
 }
 
 button img{
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   justify-content: center;
 }
 button {
@@ -63,13 +63,23 @@ button {
   background-color: rgb(254, 203, 64);
   margin: auto 0 auto auto;
 }
+.form-check-label input{
+  all: unset;
+  /*display: table;*/
+  /*padding: 15px 40px;*/
+  /*margin: 30px;*/
+  /*width: 180px;*/
+  /*border: slategray solid 1px;*/
+  /*border-radius: 100px;*/
+  /*background-color: white;*/
+  /*justify-content: center;*/
+}
 
 .form-group{
   font-size: 12px;
   margin-left: 20px;
   display: flex;
   justify-content: center;
-
 }
 input{
   border: none;
@@ -110,9 +120,6 @@ label{
   color:darkgreen;
   font-weight: bold;
 }
-/*.basic-container {*/
-/*  padding: 30px;*/
-/*}*/
 .version-info {
   font-size: 8pt;
   float: right;
@@ -134,4 +141,10 @@ row:last-child{
 }
 button:hover{
   background-color: orange;
+}
+
+label div.form-check-label input{
+  color: white;
+  font-size: 0;
+  user-select: none;
 }

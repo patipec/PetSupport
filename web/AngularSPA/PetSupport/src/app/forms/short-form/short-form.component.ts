@@ -12,23 +12,23 @@ import {DatePipe} from '@angular/common';
 })
 export class ShortFormComponent implements OnInit {
 
-  private shortFormSettings: FormGroup;
+  public shortFormSettings: FormGroup;
 
   constructor(private fb: FormBuilder, private datePipe: DatePipe) {}
   ngOnInit(): void {
     this.shortFormSettings = this.fb.group ({
-      service: [''],
-      city: [''],
+      service: ['walking'],
+      location: [''],
       dateRange: this.fb.group({
-        startDate: this.datePipe.transform(new Date(), 'yyyy-MM-dd'),
-        stopDate: this.datePipe.transform(new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd')
+        startDate: this.datePipe.transform(new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 'dd-MM-yyyy'),
+        stopDate: this.datePipe.transform(new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 'dd-MM-yyyy')
       }),
       typePet: '',
   });
   }
 
   onServiceClick(serviceValue: string): void{
-
+    this.shortFormSettings.get('service').setValue(serviceValue);
   }
 
   // setBackgroundColor(): void{
@@ -36,7 +36,7 @@ export class ShortFormComponent implements OnInit {
   // }
 
 
-  onSubmit(form: NgForm): void{
+  onSubmit(): void{
 
   }
 

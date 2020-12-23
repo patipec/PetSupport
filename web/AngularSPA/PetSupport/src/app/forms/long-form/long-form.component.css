@@ -9,6 +9,9 @@
   padding: 20px;
   background-color: rgb(254, 203, 64);
 }
+.form-check-label input{
+  all:unset;
+}
 form{
   justify-content: center;
   display: inline-block;

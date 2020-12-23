@@ -2,50 +2,54 @@
   <form [formGroup]="shortFormSettings" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <!--      PET SELECTION  -->
-      <div class="serviceContainer">
-        <div class="form-check-label"
-             name="boarding"
-             value="boarding"
-             formControlName="service"
-             id="boarding"
-             (click)="onServiceClick('boarding')"
-             [ngStyle]="shortFormSettings.get('service').value == 'boarding' &&
+      <label for="boarding">
+      <div class="form-check-label" [ngStyle]="shortFormSettings.get('service').value == 'boarding' &&
              {
               'border': 'solid darkgreen 2px', 'background-color': 'rgb(254, 203, 64)'
               }">
+        <input type="button"
+               name="boarding"
+               value=""
+               formControlName="service"
+               id="boarding"
+               (click)="onServiceClick('boarding')">
         <img src="assets/shortFormImages/cocker-spaniel.png">
         Boarding
-        </div>
-
-        <div class="form-check-label"
-             type="button"
-             name="houseSitting"
-             value="houseSitting"
-             formControlName="service"
-             id="houseSitting"
-             (click)="onServiceClick('houseSitting')"
-             [ngStyle]="shortFormSettings.get('service').value == 'houseSitting' &&
+      </div>
+     </label>
+      <label for="houseSitting">
+        <div class="form-check-label" [ngStyle]="shortFormSettings.get('service').value == 'houseSitting' &&
              {
               'border': 'solid darkgreen 2px', 'background-color': 'rgb(254, 203, 64)'
              }">
-        <img src="assets/shortFormImages/dog-heart.png">
-        House Sitting
-        </div>
+          <input type="button"
+                 name="houseSitting"
+                 value=""
+                 formControlName="service"
+                 id="houseSitting"
+                 (click)="onServiceClick('houseSitting')">
 
-        <div class="form-check-label"name="walking"
-             value="walking"
-             formControlName="service"
-             id="walking"
-             (click)="onServiceClick('walking')"
-             [ngStyle]="shortFormSettings.get('service').value == 'walking' &&
+          <img src="assets/shortFormImages/dog-heart.png">
+          House Sitting
+        </div>
+      </label>
+      <label for="walking">
+        <div class="form-check-label" [ngStyle]="shortFormSettings.get('service').value == 'walking' &&
              {
               'border': 'solid darkgreen 2px', 'background-color': 'rgb(254, 203, 64)'
              }">
-        <img src="assets/shortFormImages/dog-smiley.png">
-        Walking
+
+          <input type="button" class="form-check-label"
+                 value=""
+                 formControlName="service"
+                 id="walking"
+                 (click)="onServiceClick('walking')">
+
+          <img src="assets/shortFormImages/dog-smiley.png">
+          Walking
         </div>
-      </div>
-      </div>
+      </label>
+    </div>
 
     <!-- SEARCH USER SELECTION-->
     <div class="secondFormPart">
@@ -53,6 +57,7 @@
         <div class="row">
           <label for="location">Location</label>
           <input id="location"
+                 type="text"
                  name="location"
                  class="form-control"
                  placeholder="Location"
@@ -61,7 +66,7 @@
         <div formGroupName="dateRange">
           <mat-form-field color="accent" appearance="fill">
             <mat-label>From</mat-label>
-            <input matInput [matDatepicker]="picker1" formControlName="startDate">
+            <input matInput [matDatepicker]="picker1" formControlName="stopDate">
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
           </mat-form-field>
@@ -87,6 +92,7 @@
         </button>
       </div>
     </div>
+
   </form>
 </div>
 <br>Valid: {{ shortFormSettings.valid }}
