@@ -1,59 +1,64 @@
-mat-date-range-input {
-  width: 10vw;
+.mat-date-range-input {
+  /*width: 50px;*/
 }
-  /* HIDE RADIO */
-[type=radio] {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
+div{
+  width: auto;
+}
+mat-form-field{
+  display: inline-block;
+  justify-content: center;
+  padding:6px 10px 0px 10px;
+  background-color: white;
+  border-right: solid lavender 1px;
+  width: 185px;
+}
+mat-label{
+  color:darkgreen;
+  font-weight: bold;
+  font-size: 12px;
+  margin-left: 20px;
 }
 
-/* IMAGE STYLES */
-[type=radio] + img {
-  cursor: pointer;
+.container{
+  padding: 0px;
+  margin: 120px auto 0px;
+  display: flex;
+  max-width: 850px;
+  justify-content: center;
 }
 
-/* CHECKED STYLES */
-[type=radio]:checked + img {
-  background-color: lightgray;
+.serviceContainer{
+  display: flex;
 }
 
-label img {
-  padding: 3vh 4vw;
-  width: 3vw;
-  margin: 1vw;
+.form-check-label {
+  padding: 10px 50px;
+  max-width: 80px;
+  margin: 20px;
   display: inline-block;
   border: slategray solid 1px;
-  border-radius: 40px;
+  border-radius: 100px;
+  background-color: white;
+  justify-content: center;
+
 }
+img{
+  max-width: 60px;
+  justify-content: center;
+}
+
 button img{
-  width: 1.5vw;
+  width: 40px;
+  height: 40px;
   justify-content: center;
 }
 button {
-  all: unset;
-  width:  3vw;
-  height: 3vw;
+  width:  60px;
+  height: 60px;
   border: solid 1px slategray;
   border-radius: 50%;
-  background-color: orange;
-  text-align: center;
-  margin: auto;
-}
-/*label {*/
-/*  height: 10vh;*/
-/*}*/
-/*input, label {*/
-/*  display:inline-block;*/
-/*}*/
-.body{
-  margin:auto;
-}
-.container{
-  width: 850px;
-  margin:auto;
-
+  background-color: rgb(254, 203, 64);
+  margin: auto 0 auto auto;
 }
 .form-group{
   font-size: 12px;
@@ -61,29 +66,17 @@ button {
   display: flex;
   justify-content: center;
 }
-input{
-  border: none;
-  font-size: 1.2em;
-  margin-left: -10px;
-}
 .row{
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  /*margin: 10px;*/
-  width: 20%;
+  width: auto;
+  text-align: left;
+  border-right: solid lavender 1px;
 }
-.row:first-child{
-  margin-right: 20px;
-}
-.row:last-child{
-  padding: 0px;
-  margin: 0px;
+.row:nth-last-child(2){
+  width:15%;
 }
 
-.warrning{
-  color: red;
-}
 .shortFormSearchIcon{
   margin-left: 20px;
 }
@@ -92,22 +85,50 @@ input{
   border:solid black 2px;
   -moz-border-radius: 15px;
   border-radius: 35px;
-  justify-content: center;
   margin:auto;
+  background-color: white;
+  height: 70px;
 }
 label{
   color:darkgreen;
   font-weight: bold;
 }
-label:first-child{
-  margin-left: -10px;
-}
-
-.basic-container {
-  padding: 30px;
-}
 .version-info {
   font-size: 8pt;
   float: right;
   margin: 8px;
+}
+
+row:last-child{
+  background-color: black;
+}
+#pet{
+  padding-left: 10px;
+  z-index: 100;
+}
+#name{
+  padding-left: 10px;
+}
+button:hover{
+  background-color: orange;
+}
+.location{
+width: 140px;
+}
+.location input{
+  width: 100px;
+ }
+.location{
+  position: relative;
+  z-index: 100;
+}
+
+label div.form-check-label input{
+  color: white;
+  font-size: 0;
+  display: none;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex mat-datepicker {
+  background-color: white;
+  color: black;
 }
