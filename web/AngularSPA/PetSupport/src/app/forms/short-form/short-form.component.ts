@@ -1,59 +1,43 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm, NgModel} from '@angular/forms';
-import { ServiceType } from '../form-data/service-type.service';
-import { IShortForm } from '../form-data/IShortForm';
+import {FormGroup, NgForm} from '@angular/forms';
+import { FormBuilder, FormControl} from '@angular/forms';
 import { Observable } from 'rxjs';
-import {FormGroup, FormControl} from '@angular/forms';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-short-form',
   templateUrl: './short-form.component.html',
-  styleUrls: ['./short-form.component.css']
+  styleUrls: ['./short-form.component.css'],
+  providers: [DatePipe]
 })
 export class ShortFormComponent implements OnInit {
 
-    shortFormSettings: IShortForm = {
-    service: '',
-    city: '',
-    range: new FormGroup({
-      start: new FormControl(),
-      end: new FormControl()
-    }),
-    startDate: new FormControl(),
-    stopDate: new FormControl(),
-    typePet: '',
-  };
-  servicesTypes$: Observable<string[]>;
+  private shortFormSettings: FormGroup;
 
-  btnCheck: boolean;
-  btnStyle = 'form-check-label';
+  constructor(private fb: FormBuilder, private datePipe: DatePipe) {}
+  ngOnInit(): void {
+    this.shortFormSettings = this.fb.group ({
+      service: [''],
+      city: [''],
+      dateRange: this.fb.group({
+        startDate: this.datePipe.transform(new Date(), 'yyyy-MM-dd'),
+        stopDate: this.datePipe.transform(new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd')
+      }),
+      typePet: '',
+  });
+  }
 
-  // onServiceClick(): void{
-  //   this.
-  //   this.btnCheck === true ? 'btn-default' : 'btn-change';
-  // }
+  onServiceClick(serviceValue: string): void{
+
+  }
 
   // setBackgroundColor(): void{
   //   this.btnStyle === 'btn-default' ? this.btnStyle = 'btn-change' : this.btnStyle = 'btn-default';
   // }
-  ngOnInit(): void {
-  }
-  //
-  // checkTest = function(boolChecked){
-  //   console.log(boolChecked);
-  // }
+
+
   onSubmit(form: NgForm): void{
-    // if (form.valid){
-    //   this.servicesTypes.postUserSettingsForm(this.userSettings).subscribe(
-    //     result => console.log('success: ', result),
-    //     error => this.onHttpError(error)
-    //   );
-    // }else{
-    //   this.postError = true;
-    //   this.postErrorMessage = 'Please fix above errors';
-    // }
+
   }
-  onBlur(field: NgModel): void{
-    console.log('in OnBlur', field.valid);
-  }
+
 }
