@@ -1,14 +1,13 @@
-﻿using PetSupport.Core.Enums;
 using PetSupport.Core.Entities;
+using PetSupport.Core.Enums;
 
-namespace PetSupport.Core.Entities
+namespace PetSupport.API2.Dtos.OutDtos
 {
-    public class Service: BaseEntity
+    public class ServiceDTO : BaseEntity
     {
         public string ImageId { get; set; }
-        public ServiceType Name { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
         public Unit Unit { get; set; }
     }
-    
 }
