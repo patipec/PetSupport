@@ -106,11 +106,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c25cba1-58ce-47d8-84b8-03d890a90b42" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Entities/BaseEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Entities/BookingMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Entities/Client.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Entities/Petsitter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Entities/PetsitterService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Entities/Service.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Entities/User.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Enums/ServiceType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Enums/Unit.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/PetSupport - Backup.Core.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/PetSupport.Core.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/Data/DataContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/Migrations/20201211090655_INIT2.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/Migrations/20201211090655_INIT2.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/PetSupport.Infrastructure.Data.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/Seed/FakeData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/Seed/FakeDataModelBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Tests/PetSupport.Tests.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Tests/UnitTest1.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/PetSupport.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Controllers/WeatherForecastController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/InDtos/CreateBookingMessageDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/InDtos/CreatePetsitterDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/InDtos/FullPetsitterDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/InDtos/RequestPetSitterServiceDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/InDtos/UpdatePetsitterDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/BookingMessageBriefDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/BookingMessageFullDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/ClientDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/FindPetSitterLongFormDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/FindPetSitterShortFormDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/PetSitterServiceDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/PetsittersDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/ServiceDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Petsupport.API2.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Properties/launchSettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Startup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/WeatherForecast.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/appsettings.Development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/appsettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/Backgrounds/bg-confirmation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/Backgrounds/bg-contact-form.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/Backgrounds/bg-registration.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/MainPage/heart-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/MainPage/main-photo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/MainPage/main-photo4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/MainPage/main-photo5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/MainPage/sun.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/long-form/long-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/long-form/long-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/main-page/main-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/main-page/main-page.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/main-page/main-page.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +210,7 @@
       <updated>1608719756459</updated>
       <workItem from="1608719757946" duration="17611000" />
       <workItem from="1608740532422" duration="1017000" />
-      <workItem from="1608741561661" duration="8508000" />
+      <workItem from="1608741561661" duration="9132000" />
     </task>
     <servers />
   </component>

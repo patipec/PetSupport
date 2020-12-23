@@ -58,6 +58,7 @@ import { RangeSlider } from './forms/shared/slider/slider.component';
     MaterialModule,
     ReactiveFormsModule,
     NgxSliderModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
