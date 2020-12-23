@@ -11,7 +11,6 @@ mat-form-field{
   background-color: white;
   border-right: solid lavender 1px;
   width: 185px;
-
 }
 mat-label{
   color:darkgreen;
@@ -30,7 +29,6 @@ mat-label{
 
 .serviceContainer{
   display: flex;
-
 }
 
 .form-check-label {
@@ -45,7 +43,7 @@ mat-label{
 
 }
 img{
-  max-width: 60%;
+  max-width: 60px;
   justify-content: center;
 }
 
@@ -55,7 +53,6 @@ button img{
   justify-content: center;
 }
 button {
-  all: unset;
   width:  60px;
   height: 60px;
   border: solid 1px slategray;
@@ -63,34 +60,15 @@ button {
   background-color: rgb(254, 203, 64);
   margin: auto 0 auto auto;
 }
-.form-check-label input{
-  all: unset;
-  /*display: table;*/
-  /*padding: 15px 40px;*/
-  /*margin: 30px;*/
-  /*width: 180px;*/
-  /*border: slategray solid 1px;*/
-  /*border-radius: 100px;*/
-  /*background-color: white;*/
-  /*justify-content: center;*/
-}
-
 .form-group{
   font-size: 12px;
   margin-left: 20px;
   display: flex;
   justify-content: center;
 }
-input{
-  border: none;
-  font-size: 1.2em;
-  /*margin-left: -10px;*/
-  /*border-left: 2px solid green;*/
-}
 .row{
   display: flex;
   flex-direction: column;
-  padding: 10px;
   width: auto;
   text-align: left;
   border-right: solid lavender 1px;
@@ -99,12 +77,8 @@ input{
   width:15%;
 }
 
-.warrning{
-  color: red;
-}
 .shortFormSearchIcon{
   margin-left: 20px;
-
 }
 
 .secondFormPart{
@@ -114,7 +88,6 @@ input{
   margin:auto;
   background-color: white;
   height: 70px;
-
 }
 label{
   color:darkgreen;
@@ -125,16 +98,13 @@ label{
   float: right;
   margin: 8px;
 }
-row:first-child{
-  /*padding-left: 10px;*/
-  background-color: black;
-}
+
 row:last-child{
-  /*padding-left: 10px;*/
   background-color: black;
 }
 #pet{
   padding-left: 10px;
+  z-index: 100;
 }
 #name{
   padding-left: 10px;
@@ -142,9 +112,23 @@ row:last-child{
 button:hover{
   background-color: orange;
 }
+.location{
+width: 140px;
+}
+.location input{
+  width: 100px;
+ }
+.location{
+  position: relative;
+  z-index: 100;
+}
 
 label div.form-check-label input{
   color: white;
   font-size: 0;
-  user-select: none;
+  display: none;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex mat-datepicker {
+  background-color: white;
+  color: black;
 }

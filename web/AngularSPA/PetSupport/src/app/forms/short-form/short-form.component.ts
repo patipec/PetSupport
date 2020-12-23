@@ -17,13 +17,13 @@ export class ShortFormComponent implements OnInit {
   constructor(private fb: FormBuilder, private datePipe: DatePipe) {}
   ngOnInit(): void {
     this.shortFormSettings = this.fb.group ({
-      service: ['walking'],
+      service: [''],
       location: [''],
       dateRange: this.fb.group({
         startDate: this.datePipe.transform(new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 'dd-MM-yyyy'),
         stopDate: this.datePipe.transform(new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 'dd-MM-yyyy')
       }),
-      typePet: '',
+      typePet: [''],
   });
   }
 

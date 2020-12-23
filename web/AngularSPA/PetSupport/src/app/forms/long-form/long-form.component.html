@@ -3,20 +3,21 @@
     <div class="priceRange" formGroupName="priceRange">
 
       <span class="material-icons">local_offer</span><b>Price Range</b><br>
-    <app-slider [currSign]="setSignForSlider('$')" [floor]="0" [ceil]="1000" (getInfo)="onSliderChange($event)"></app-slider>
-<!--      <ngx-slider (valueChange)="onSliderChange($event)"></ngx-slider>-->
+      <app-slider [currSign]="setSignForSlider('$')" [floor]="0" [ceil]="1000"
+                  (getInfo)="onSliderChange($event)"></app-slider>
+      <!--      <ngx-slider (valueChange)="onSliderChange($event)"></ngx-slider>-->
     </div>
 
     <div formGroupName="dateRange">
       <span class="material-icons">date_range</span><b>Dates<br></b>
       <div class="form-range-from">
         <label for="startDate"></label>
-        <input type="date"  id="startDate" name="startDate"
+        <input type="date" id="startDate" name="startDate"
                formControlName="startDate">
       </div>
 
       <div class="form-range-to">
-                <label for="stopDate"></label>
+        <label for="stopDate"></label>
         <input type="date" id="stopDate"
                name="stopDate"
                formControlName="stopDate">
