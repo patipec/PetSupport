@@ -55,20 +55,20 @@ section.main-container .main-description {
 /* Service-container */
 .service-container .container-title {
     padding-top: 20px;
-    padding-bottom: 45px;
-    font-size: 40px;
+    padding-bottom: 20px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 .service-container .service-title {
     padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 40px;
+    padding-bottom: 11px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 .service-container .container-description {
-    font-size: 21px;
+    font-size: 17px;
 }
 
 
@@ -87,11 +87,11 @@ section.advantages {
 div.advantage {
     width: 70%;
     float: right;
-    margin-top: 10px;
-    margin-right: 60px;
+    margin-top: 20px;
+    margin-right: 70px;
     margin-bottom: 25px;
     display: grid;
-    grid-column-gap: 20px;
+    grid-column-gap: 30px;
     grid-template-columns: 50% 50%;
 }
 
@@ -99,7 +99,7 @@ div.advantage {
     div.advantage .left-advantage,
     div.advantage .right-advantage {
         display: grid;
-        grid-template-columns: 110px calc(100% - 110px);
+        /*grid-template-columns: 110px calc(100% - 110px); */
     }
 
     div.advantage .info-title {
@@ -115,12 +115,11 @@ section.advantages .image-container img {
 
 .small-icons {
     width: 40px;
-    margin: 10px 20px;
     padding-top: 20px;
 }
 
 section.advantages img.dashboard {
-    max-width: 360px;
+    max-width: 420px;
     border-radius: 20px;
     margin: 0 auto;
 }

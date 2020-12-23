@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 // import { FormGroup} from "@angular/forms";
@@ -28,6 +28,10 @@ import { BasicInfoComponent } from './register-form/basic-info/basic-info.compon
 import { AddressComponent } from './register-form/address/address.component';
 import { ServicesComponent } from './register-form/services/services.component';
 import { PersonalInfoComponent } from './register-form/personal-info/personal-info.component';
+import { FooterComponent } from './footer/footer.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { CardCaruselComponent } from './main-page/card-carusel/card-carusel.component';
+import { ServicesCardsComponent } from './main-page/services-cards/services-cards.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +47,9 @@ import { PersonalInfoComponent } from './register-form/personal-info/personal-in
     AddressComponent,
     ServicesComponent,
     PersonalInfoComponent,
+    FooterComponent,
+    CardCaruselComponent,
+    ServicesCardsComponent,
   ],
 
   imports: [
@@ -61,8 +68,10 @@ import { PersonalInfoComponent } from './register-form/personal-info/personal-in
     FormsModule,
     MaterialModule,
     ReactiveFormsModule,
+    MatCarouselModule.forRoot(),
 
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
