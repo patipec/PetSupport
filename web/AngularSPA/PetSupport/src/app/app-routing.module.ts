@@ -13,8 +13,8 @@ import {ServicesComponent} from './register-form/services/services.component';
 const routes: Routes = [
   {path: 'main-page', component: MainPageComponent},
   {path: 'become-petsitter', component: BecomePetsitterComponent},
-  {path: 'petsitters', component: PettsittersComponent},
   {path: 'petsitters/:id', component: PetsitterComponent},
+  {path: 'petsitters', component: PettsittersComponent},
   {path: 'register-form/basic-info', component: BasicInfoComponent},
   {path: 'register-form/address', component: AddressComponent},
   {path: 'register-form/services', component: ServicesComponent},
