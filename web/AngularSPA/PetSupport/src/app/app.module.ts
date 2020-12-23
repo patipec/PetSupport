@@ -32,6 +32,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { CardCaruselComponent } from './main-page/card-carusel/card-carusel.component';
 import { ServicesCardsComponent } from './main-page/services-cards/services-cards.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { RangeSlider } from './forms/shared/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,7 @@ import { ServicesCardsComponent } from './main-page/services-cards/services-card
     FooterComponent,
     CardCaruselComponent,
     ServicesCardsComponent,
+    RangeSlider
   ],
 
   imports: [
@@ -69,6 +72,7 @@ import { ServicesCardsComponent } from './main-page/services-cards/services-card
     MaterialModule,
     ReactiveFormsModule,
     MatCarouselModule.forRoot(),
+    NgxSliderModule
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

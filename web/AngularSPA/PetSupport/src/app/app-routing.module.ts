@@ -8,6 +8,7 @@ import { BasicInfoComponent } from './register-form/basic-info/basic-info.compon
 import { PersonalInfoComponent } from './register-form/personal-info/personal-info.component';
 import { ServicesComponent } from './register-form/services/services.component';
 
+
 const routes: Routes = [
   {path: 'main-page', component: MainPageComponent},
   {path: 'become-petsitter', component: BecomePetsitterComponent},

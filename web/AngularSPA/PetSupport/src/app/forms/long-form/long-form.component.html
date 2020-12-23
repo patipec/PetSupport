@@ -1,1 +1,92 @@
-<p>long-form works!</p>
+<div class="container">
+  <form [formGroup]="longFormSettings" (ngSubmit)="onSubmit()">
+    <div class="priceRange" formGroupName="priceRange">
+
+      <span class="material-icons">local_offer</span><b>Price Range</b><br>
+      <app-slider [currSign]="setSignForSlider('$')" [floor]="0" [ceil]="1000"
+                  (getInfo)="onSliderChange($event)"></app-slider>
+      <!--      <ngx-slider (valueChange)="onSliderChange($event)"></ngx-slider>-->
+    </div>
+
+    <div formGroupName="dateRange">
+      <span class="material-icons">date_range</span><b>Dates<br></b>
+      <div class="form-range-from">
+        <label for="startDate"></label>
+        <input type="date" id="startDate" name="startDate"
+               formControlName="startDate">
+      </div>
+
+      <div class="form-range-to">
+        <label for="stopDate"></label>
+        <input type="date" id="stopDate"
+               name="stopDate"
+               formControlName="stopDate">
+      </div>
+    </div>
+
+    <div class="location">
+      <label for="location"><b><span class="material-icons">location_on</span>Location</b><br></label>
+      <input id="location"
+             name="location"
+             class="form-control"
+             placeholder="City"
+             formControlName="location">
+    </div>
+
+    <div class="numberOfPets">
+      <label for="numberOfPets"><span class="material-icons">pets</span><b>Pets to care</b><br></label>
+
+      <select name="numberOfPets" id="numberOfPets" formControlName="numberOfPets">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="more">more</option>
+      </select>
+    </div>
+
+    <div class="service">
+      <label for="service"><span class="material-icons">support</span><b>Service</b><br></label>
+      <select name="service" id="service" formControlName="service">
+        <option value="boarding">Boarding</option>
+        <option value="houseSitting">House Sitting</option>
+        <option value="walking">Walking</option>
+      </select>
+    </div>
+
+    <div class="rateRange" formGroupName="rateRange">
+      <div class="rate-label"><span class="material-icons">star_half</span><b>Rates</b><br></div>
+      <app-slider [currSign]="setSignForSlider('★ ')"
+                  [floor]="0" [ceil]="5" [minValue]="2" [maxValue]="4"></app-slider>
+    </div>
+
+    <div class="animalType"><span class="material-icons">person</span><b>Animal Type</b> <br>
+      <select name="petType"
+              id="petType"
+              formControlName="petType">
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="mix">Both</option>
+      </select>
+    </div>
+
+    <div class="hasPet">
+      <span class="material-icons">person</span><b>Has own pet</b><br>
+      <select name="hasPet"
+              id="hasPet"
+              formControlName="hasPet">
+        <option value="true">yes</option>
+        <option value="false">no</option>
+      </select>
+    </div>
+
+    <button class="reset">RESET FILTERS</button>
+    <button class="apply">APPLY FILTERS</button>
+  </form>
+</div>
+<br>Dirty: {{ longFormSettings.dirty }}
+<br>Touched: {{ longFormSettings.touched }}
+<br>Valid: {{ longFormSettings.valid }}
+<br>Value: {{ longFormSettings.value | json }}
+<br>&nbsp;
