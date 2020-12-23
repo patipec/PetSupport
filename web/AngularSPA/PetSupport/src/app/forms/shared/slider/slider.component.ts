@@ -1,26 +1,43 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import { Options, LabelType } from '@angular-slider/ngx-slider';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css']
 })
-export class RangeSlider {
+export class RangeSlider implements OnInit{
+  @Output()
+  getInfo = new EventEmitter<any>();
+  @Input()
+  floor = 0;
+  @Input()
+  ceil = 1000;
+  @Input()
   minValue = 100;
-  maxValue = 1000;
-  options: Options = {
-    floor: 0,
-    ceil: 1000,
-    translate: (value: number, label: LabelType): string => {
-      switch (label) {
-        case LabelType.Low:
-          return `$` + value;
-        case LabelType.High:
-          return `$` + value;
-        default:
-          return `$` + value;
+  @Input()
+  maxValue = 900;
+  @Input()
+  currSign = '$';
+
+  options: Options;
+  ngOnInit(): void {
+    this.options = {
+      floor: this.floor,
+      ceil: this.ceil,
+      translate: (value: number, label: LabelType): string => {
+        switch (label) {
+          case LabelType.Low:
+            return `${(this.currSign)}` + value;
+          case LabelType.High:
+            return `${(this.currSign)}` + value;
+          default:
+            return '';
+        }
       }
-    }
-  };
+    };
+  }
+
+
 }

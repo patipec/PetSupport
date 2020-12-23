@@ -1,1 +1,1 @@
-<ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+<ngx-slider (userChange)="this.getInfo.emit($event)"  [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>

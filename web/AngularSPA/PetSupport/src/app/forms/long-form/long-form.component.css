@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Slab&display=swap');
 /*Main container*/
 .container{
   max-width: 300px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto Slab', serif;
   display: flex;
   justify-content: center;
   padding: 20px;
@@ -20,23 +23,41 @@ span{
   max-width:250px;
 }
 /*Date range*/
-.dateRange{
-  display: flex;
-  flex-direction: row;
+/*.dateRange{*/
+/*  background-color: white;*/
+/*  display: flex;*/
+/*  flex-direction: row;*/
+/*}*/
+/*.dateRange label {*/
+/*  display: block;*/
+/*}*/
+
+mat-form-field{
+  width: 240px;
+  /*padding:0px 10px 0px 0;*/
 }
-.dateRange label {
-  display: block;
+#startDate{
+  font-size: 12px;
+  width: 120px;
+  padding: 5px 0 5px 5px;
+}
+#stopDate{
+  font-size: 12px;
+  width: 120px;
+  padding: 5px 0 5px 5px;
+}
+
+mat-form-field {
+  background-color: white;
 }
 .form-range-from{
   display: inline-block;
-  margin-right: 30px;
+  margin-right: 10px;
 }
-.form-range-from input{
-  width: 100px;
-}
-.form-range-from, .form-range-to input{
-  width: 100px;
-}
+/**/
+/*.form-range-from, .form-range-to input{*/
+/*  width: 100px;*/
+/*}*/
 
 .form-range-to{
   display: inline-block;
@@ -50,17 +71,24 @@ span{
 .numberOfPets{
 
 }
-.service{
-
+.service select{
+  font-size: 10px;
+  padding: 8px 5px;
 }
 select{
   margin-top:10px;
   width: 100px;
   padding: 5px;
   border: solid 1px lightblue;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto Slab', serif;
 }
 .rateRange{
   max-width:250px;
+}
+.rate-label{
+  text-align: center;
+
 }
 .animalType{
 
@@ -71,9 +99,11 @@ select{
 /*Input styling*/
 input{
   width: 100px;
-  padding: 5px;
+  /*padding: 5px;*/
   /*justify-content: center;*/
   border: solid 1px lightblue;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto Slab', serif;
 }
 label{
   margin-top:10px;
@@ -89,7 +119,7 @@ button{
   margin: 20px auto 10px;
   width: 120px;
   padding: 10px 20px;
-  font-size: 6pt;
+  font-size: 9px;
   border-radius: 50px;
 }
 .reset{
@@ -104,3 +134,6 @@ button{
 button:hover{
   background-color: green;
 }
+
+
+

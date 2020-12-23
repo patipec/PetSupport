@@ -1,50 +1,41 @@
 .mat-date-range-input {
-  width: 150px;
-  /*padding-right: 10px;*/
-
+  /*width: 50px;*/
+}
+div{
+  width: auto;
 }
 mat-form-field{
-  padding:0px 10px;
+  display: inline-block;
+  justify-content: center;
+  padding:6px 10px 0px 10px;
   background-color: white;
   border-right: solid lavender 1px;
+  width: 185px;
+
 }
 mat-label{
   color:darkgreen;
   font-weight: bold;
+  font-size: 12px;
+  margin-left: 20px;
 }
 
-  /* HIDE RADIO */
-[type=radio] {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
 .container{
   padding: 0px;
-  margin: 160px auto 0px;
+  margin: 120px auto 0px;
   display: flex;
-  width: 850px;
+  max-width: 850px;
   justify-content: center;
 }
-/* IMAGE STYLES */
-[type=radio] + img {
-  cursor: pointer;
-}
 
-/* CHECKED STYLES */
-[type=radio]:checked + img
-{
-  background-color: lightblue ;
-
-}
-.form-check-label {
+.serviceContainer{
+  display: flex;
 
 }
 
 .form-check-label {
-  padding: 30px 80px;
-  width: 80px;
+  padding: 10px 50px;
+  max-width: 80px;
   margin: 1vw;
   display: inline-block;
   border: slategray solid 1px;
@@ -54,13 +45,13 @@ mat-label{
 
 }
 .form-check-label img{
-  width: 60px;
+  max-width: 60%;
   justify-content: center;
 }
 
-
 button img{
   width: 30px;
+  height: 30px;
   justify-content: center;
 }
 button {
@@ -69,8 +60,8 @@ button {
   height: 60px;
   border: solid 1px slategray;
   border-radius: 50%;
-  background-color: orange;
-  margin: auto;
+  background-color: rgb(254, 203, 64);
+  margin: auto 0 auto auto;
 }
 
 .form-group{
@@ -83,19 +74,19 @@ button {
 input{
   border: none;
   font-size: 1.2em;
-  margin-left: -10px;
+  /*margin-left: -10px;*/
   /*border-left: 2px solid green;*/
 }
 .row{
   display: flex;
   flex-direction: column;
   padding: 10px;
-  width: 20%;
+  width: auto;
   text-align: left;
   border-right: solid lavender 1px;
 }
 .row:nth-last-child(2){
-  border-right: 0px;
+  width:15%;
 }
 
 .warrning{
@@ -103,6 +94,7 @@ input{
 }
 .shortFormSearchIcon{
   margin-left: 20px;
+
 }
 
 .secondFormPart{
@@ -111,18 +103,16 @@ input{
   border-radius: 35px;
   margin:auto;
   background-color: white;
+  height: 70px;
+
 }
 label{
   color:darkgreen;
   font-weight: bold;
 }
-/*label:first-child{*/
-/*  margin-left: -10px;*/
+/*.basic-container {*/
+/*  padding: 30px;*/
 /*}*/
-
-.basic-container {
-  padding: 30px;
-}
 .version-info {
   font-size: 8pt;
   float: right;
@@ -143,5 +133,5 @@ row:last-child{
   padding-left: 10px;
 }
 button:hover{
-  background-color: darkgreen;
+  background-color: orange;
 }

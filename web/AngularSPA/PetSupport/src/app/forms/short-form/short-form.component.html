@@ -1,82 +1,94 @@
 <div class="container">
-  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <form [formGroup]="shortFormSettings" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <!--      PET SELECTION  -->
       <div class="serviceContainer">
-        <label class="form-check-label" for="boarding">
-          <input type="radio" name="service" value="boarding"
-                 [(ngModel)]="shortFormSettings.service" id="boarding" checked
-                 ng-value="isButtonChecked" ng-checked="checkTest(master)">
-<!--                 {{btnCheck}} == checked (click)="onSth(btnCheck)">-->
-<!--          *ngIf="checked === true">-->
-          <img src="assets/shortFormImages/cocker-spaniel.png">
-          Boarding
-        </label>
+        <div class="form-check-label"
+             name="boarding"
+             value="boarding"
+             formControlName="service"
+             id="boarding"
+             (click)="onServiceClick('boarding')"
+             [ngStyle]="shortFormSettings.get('service').value == 'boarding' &&
+             {
+              'border': 'solid darkgreen 2px', 'background-color': 'rgb(254, 203, 64)'
+              }">
+        <img src="assets/shortFormImages/cocker-spaniel.png">
+        Boarding
+        </div>
 
-        <label class="form-check-label" for="houseSitting">
-          <input type="radio" name="service" value="houseSitting"
-                 [(ngModel)]="shortFormSettings.service" id="houseSitting">
-          <img src="assets/shortFormImages/dog-heart.png">
-          House Sitting
-        </label>
+        <div class="form-check-label"
+             type="button"
+             name="houseSitting"
+             value="houseSitting"
+             formControlName="service"
+             id="houseSitting"
+             (click)="onServiceClick('houseSitting')"
+             [ngStyle]="shortFormSettings.get('service').value == 'houseSitting' &&
+             {
+              'border': 'solid darkgreen 2px', 'background-color': 'rgb(254, 203, 64)'
+             }">
+        <img src="assets/shortFormImages/dog-heart.png">
+        House Sitting
+        </div>
 
-        <label class="form-check-label" for="walking">
-          <input type="radio" name="service" value="walking"
-                 [(ngModel)]="shortFormSettings.service" id="walking">
-          <img src="assets/shortFormImages/dog-smiley.png">
-          Walking
-        </label>
+        <div class="form-check-label"name="walking"
+             value="walking"
+             formControlName="service"
+             id="walking"
+             (click)="onServiceClick('walking')"
+             [ngStyle]="shortFormSettings.get('service').value == 'walking' &&
+             {
+              'border': 'solid darkgreen 2px', 'background-color': 'rgb(254, 203, 64)'
+             }">
+        <img src="assets/shortFormImages/dog-smiley.png">
+        Walking
+        </div>
       </div>
-
-    </div>
+      </div>
 
     <!-- SEARCH USER SELECTION-->
     <div class="secondFormPart">
       <div class="form-group">
-
         <div class="row">
-          <label for="name">Location</label>
-          <input id="name" name="city" class="form-control" placeholder="Type city or zip code"
-                 [(ngModel)]="shortFormSettings.city"
-                 required #nameField="ngModel"
-                 (blur)="onBlur(nameField)"
-                 [class.field-error]="form.submitted && nameField.invalid">
-          <div [hidden]="!form.submitted || nameField.valid" class="warrning">Please fill city</div>
+          <label for="location">Location</label>
+          <input id="location"
+                 name="location"
+                 class="form-control"
+                 placeholder="Location"
+                 formControlName="location">
         </div>
-        <mat-form-field color="accent" appearance="fill">
-          <mat-label>Date from</mat-label>
-          <input matInput [matDatepicker]="picker2" id="startDate" name="startDate" class="form-control"
-                 placeholder="Date from"
-                 [(ngModel)]="shortFormSettings.startDate"
-                 required #nameField="ngModel"
-                 (blur)="onBlur(nameField)"
-                 [class.field-error]="form.submitted && nameField.invalid">
-          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-          <mat-datepicker #picker2 color="primary"></mat-datepicker>
-        </mat-form-field>
+        <div formGroupName="dateRange">
+          <mat-form-field color="accent" appearance="fill">
+            <mat-label>Date from</mat-label>
+            <input matInput [value]="shortFormSettings.get('dateRange.startDate').value" [matDatepicker]=""
+                   id="startDate"
+                   name="startDate"
+                   class="form-control"
+                   placeholder="Date from"
+                   formControlName="startDate">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1 color="primary"></mat-datepicker>
+          </mat-form-field>
 
 
-        <mat-form-field color="accent" appearance="fill">
-                    <mat-label>Date to</mat-label>
-          <input matInput [matDatepicker]="picker1" id="stopDate" name="stopDate" class="form-control"
-                 placeholder="Date to"
-                 [(ngModel)]="shortFormSettings.stopDate"
-                 required #nameField="ngModel"
-                 (blur)="onBlur(nameField)"
-                 [class.field-error]="form.submitted && nameField.invalid">
-          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-          <mat-datepicker #picker1></mat-datepicker>
-        </mat-form-field>
-
+          <mat-form-field color="accent" appearance="fill">
+                      <mat-label>Date to</mat-label>
+            <input matInput [matDatepicker]="picker2" id="stopDate" name="stopDate" class="form-control"
+                   placeholder="Date to"
+                   formControlName="stopDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
 
         <div class="row">
           <label for="pet">Pet</label>
-          <input id="pet" name="typePet" class="form-control" placeholder="Pet"
-                 [(ngModel)]="shortFormSettings.typePet"
-                 required #nameField="ngModel"
-                 (blur)="onBlur(nameField)"
-                 [class.field-error]="form.submitted && nameField.invalid">
-          <div [hidden]="!form.submitted || nameField.valid" class="warrning">Please select type of pet you have</div>
+          <input id="pet"
+                 name="typePet"
+                 class="form-control"
+                 placeholder="Pet"
+                 formControlName="typePet">
         </div>
         <button>
           <img src="assets/shortFormImages/search.png">
@@ -85,4 +97,7 @@
     </div>
   </form>
 </div>
+<br>Valid: {{ shortFormSettings.valid }}
+<br>Value: {{ shortFormSettings.value | json }}
+<br>&nbsp;
 
