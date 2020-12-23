@@ -1,0 +1,46 @@
+.example-radio-button{margin-left: 7px;}
+mat-grid-tile {
+  background:#fafafa;
+}
+
+
+mat-form-field {
+
+  width: 3vw;
+  margin: 7px;
+  display: inline-block;
+  border: slategray solid 1px;
+  border-radius: 40px;
+}
+
+.card-title {
+    color: #0B814A;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.width-50{width: 49%;}
+.ml-1{margin-left: 1%;}
+.ml-2{margin-left: 2%;}
+.width-100{width: 100%;
+        width: 700px;}
+.width-25{width: 25%;}
+
+.title-name {
+  color: #0B814A;
+  font-size: 13px;
+  font-weight:600;
+  margin-left: 1.5em;
+  margin-top: 1em;
+}
+
+.title-info {
+  color: darkgray;
+  font-size: 12px;
+  font-weight: normal;
+}

@@ -12,7 +12,6 @@ export class PettsittersComponent implements OnInit, AfterViewInit, OnDestroy {
   colspanFilter = 1;
   colspanMap = 2;
   colspanList = 3;
-  colspanFooter = 6;
   width$ = new BehaviorSubject<number>(0);
   observer;
   @ViewChild('host')
@@ -47,14 +46,12 @@ export class PettsittersComponent implements OnInit, AfterViewInit, OnDestroy {
           this.colspanFilter = 1;
           this.colspanMap = 1;
           this.colspanList = 1;
-          this.colspanFooter = 1;
           return;
         }
         this.cols = 6;
         this.colspanFilter = 1;
         this.colspanMap = 2;
         this.colspanList = 3;
-        this.colspanFooter = 6;
       }
     );
   }

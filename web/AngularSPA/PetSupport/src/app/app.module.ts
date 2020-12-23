@@ -1,10 +1,9 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-// import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 // import { FormGroup} from "@angular/forms";
 
-import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -28,6 +27,16 @@ import { PetsitterComponent } from './petsitters/petsitter/petsitter.component';
 import { PetsittersListComponent } from './petsitters/petsitters-list/petsitters-list.component';
 import { PetsitterListTileComponent } from './petsitters/petsitters-list/petsitter-list-tile/petsitter-list-tile.component';
 import {PettsittersComponent} from './petsitters/pettsiters/pettsiters.component';
+import { BasicInfoComponent } from './register-form/basic-info/basic-info.component';
+import { AddressComponent } from './register-form/address/address.component';
+import { ServicesComponent } from './register-form/services/services.component';
+import { PersonalInfoComponent } from './register-form/personal-info/personal-info.component';
+import { FooterComponent } from './footer/footer.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { CardCaruselComponent } from './main-page/card-carusel/card-carusel.component';
+import { ServicesCardsComponent } from './main-page/services-cards/services-cards.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { RangeSlider } from './forms/shared/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +50,15 @@ import {PettsittersComponent} from './petsitters/pettsiters/pettsiters.component
     PetsitterComponent,
     PetsittersListComponent,
     PetsitterListTileComponent,
-    PettsittersComponent
+    PettsittersComponent,
+    BasicInfoComponent,
+    AddressComponent,
+    ServicesComponent,
+    PersonalInfoComponent,
+    FooterComponent,
+    CardCaruselComponent,
+    ServicesCardsComponent,
+    RangeSlider
   ],
 
   imports: [
@@ -60,8 +77,11 @@ import {PettsittersComponent} from './petsitters/pettsiters/pettsiters.component
     FormsModule,
     MaterialModule,
     ReactiveFormsModule,
+    MatCarouselModule.forRoot(),
+    NgxSliderModule
 
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
