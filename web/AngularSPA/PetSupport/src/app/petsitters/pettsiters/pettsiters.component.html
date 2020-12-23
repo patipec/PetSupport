@@ -1,1 +1,12 @@
-<p>pettsiters works!</p>
+<div #host>
+  <mat-grid-list  [cols]="cols" rowHeight ="1:3"  gutterSize="9px" >
+    <mat-grid-tile [colspan]="colspanFilter">
+      <app-long-form></app-long-form>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="colspanList">
+      <app-petsitters-list class="petsitter-list"></app-petsitters-list>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="colspanMap"> Map </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
