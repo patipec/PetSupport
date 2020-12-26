@@ -56,12 +56,10 @@
 
       <div class="form-group">
         <div class="location">
-          <label for="location"><b>Location</b><br></label>
-          <input formControlName="location"
-                 id="location"
-                 name="location"
-                 placeholder="City"
-                 type="text">
+          <mat-form-field color="accent" appearance="fill">
+            <mat-label >Location</mat-label>
+            <input matInput formControlName="location">
+          </mat-form-field>
         </div>
 
         <div formGroupName="dateRange">
@@ -81,12 +79,10 @@
         </div>
 
         <div class="row">
-          <label for="pet">Pet</label>
-          <input id="pet"
-                 name="typePet"
-                 class="form-control"
-                 placeholder="Pet"
-                 formControlName="typePet">
+          <mat-form-field color="accent" appearance="fill">
+            <mat-label >Pet</mat-label>
+            <input matInput formControlName="typePet">
+          </mat-form-field>
         </div>
         <button>
           <img src="assets/shortFormImages/search.png">

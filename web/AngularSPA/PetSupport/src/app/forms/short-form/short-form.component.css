@@ -8,10 +8,11 @@ mat-form-field{
   display: inline-block;
   justify-content: center;
   padding:6px 10px 0px 10px;
-  background-color: white;
+  /*background-color: white;*/
   border-right: solid lavender 1px;
-  width: 185px;
+  width: 150px;
 }
+
 mat-label{
   color:darkgreen;
   font-weight: bold;
@@ -71,7 +72,7 @@ button {
   flex-direction: column;
   width: auto;
   text-align: left;
-  border-right: solid lavender 1px;
+  /*border-right: solid lavender 1px;*/
 }
 .row:nth-last-child(2){
   width:15%;
@@ -112,16 +113,6 @@ row:last-child{
 button:hover{
   background-color: orange;
 }
-.location{
-width: 140px;
-}
-.location input{
-  width: 100px;
- }
-.location{
-  position: relative;
-  z-index: 100;
-}
 
 label div.form-check-label input{
   color: white;
@@ -131,4 +122,8 @@ label div.form-check-label input{
 .mat-form-field-appearance-fill .mat-form-field-flex mat-datepicker {
   background-color: white;
   color: black;
+}
+
+::ng-deep.mat-form-field-appearance-fill .mat-form-field-flex{
+  background-color: white;
 }
