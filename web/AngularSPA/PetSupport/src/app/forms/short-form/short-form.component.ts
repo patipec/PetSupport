@@ -3,6 +3,7 @@ import {FormGroup, NgForm} from '@angular/forms';
 import { FormBuilder, FormControl} from '@angular/forms';
 import { Observable } from 'rxjs';
 import {DatePipe} from '@angular/common';
+import { DateAdapter } from '@angular/material/core';
 
 @Component({
   selector: 'app-short-form',
@@ -14,14 +15,16 @@ export class ShortFormComponent implements OnInit {
 
   public shortFormSettings: FormGroup;
 
-  constructor(private fb: FormBuilder, private datePipe: DatePipe) {}
+  constructor(private fb: FormBuilder, private datePipe: DatePipe, private dateAdapter: DateAdapter<Date>) {
+    this.dateAdapter.setLocale('en-GB');
+  }
   ngOnInit(): void {
     this.shortFormSettings = this.fb.group ({
       service: [''],
       location: [''],
       dateRange: this.fb.group({
-        startDate: this.datePipe.transform(new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 'dd-MM-yyyy'),
-        stopDate: this.datePipe.transform(new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 'dd-MM-yyyy')
+        startDate: [this.datePipe.transform(new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 'dd-MM-yyyy')],
+        stopDate: [this.datePipe.transform(new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 'dd-MM-yyyy')]
       }),
       typePet: [''],
   });
