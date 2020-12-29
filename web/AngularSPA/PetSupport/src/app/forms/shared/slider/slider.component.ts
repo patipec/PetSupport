@@ -26,6 +26,7 @@ export class RangeSlider implements OnInit{
     this.options = {
       floor: this.floor,
       ceil: this.ceil,
+      step: 0.25,
       translate: (value: number, label: LabelType): string => {
         switch (label) {
           case LabelType.Low:

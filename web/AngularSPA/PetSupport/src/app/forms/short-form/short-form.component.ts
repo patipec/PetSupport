@@ -42,6 +42,7 @@ export class ShortFormComponent implements OnInit {
 
     if (startFrom && endTo) {
       invalid = new Date(startFrom).valueOf() > new Date(endTo).valueOf();
+      console.log(startFrom);
     }
     return invalid ? { invalidRange: true} : null;
 }

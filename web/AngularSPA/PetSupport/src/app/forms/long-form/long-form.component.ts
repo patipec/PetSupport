@@ -8,7 +8,7 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./long-form.component.css'],
   providers: [DatePipe]
 })
-export class LongFormComponent implements OnInit, OnChanges {
+export class LongFormComponent implements OnInit {
   longFormSettings: FormGroup;
   currSign: string;
   constructor(private fb: FormBuilder, private datePipe: DatePipe) { }
@@ -22,8 +22,8 @@ export class LongFormComponent implements OnInit, OnChanges {
       location: '',
       numberOfPets: 1,
       priceRange: this.fb.group({
-        minValue: '',
-        maxValue: ''
+        minValue: '20',
+        maxValue: '300'
       }),
       rateRange: this.fb.group({
         minRate: '',
@@ -33,25 +33,29 @@ export class LongFormComponent implements OnInit, OnChanges {
       petType: 'dog',
       hasPet: true,
     });
-    // console.log(this.longFormSettings.get('priceRange.minValue'));
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('sth');
   }
 
   onSubmit(): void{
     console.log('Saved: ' + JSON.stringify(this.longFormSettings.value));
   }
 
-  onSliderChange(event: any): void{
-    // console.log(event);
-    // this.sliderPriceMin = event.value;
-    // console.log(event.value);
-    // console.log(event.highValue);
+  onSliderPriceChange(event: any): void{
+    this.longFormSettings.patchValue({
+      priceRange: {
+        minValue: event.value,
+        maxValue: event.highValue
+       }
+     });
+    }
 
-
-  }
+    onSliderRateChange(event: any): void {
+      this.longFormSettings.patchValue({
+        rateRange: {
+          minRate: event.value,
+          maxRate: event.highValue
+        }
+      });
+    }
   setSignForSlider(sign: string): string{
     this.currSign = sign;
     return this.currSign;
