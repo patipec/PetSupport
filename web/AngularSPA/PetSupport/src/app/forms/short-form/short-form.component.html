@@ -1,0 +1,102 @@
+<div class="container">
+  <form [formGroup]="shortFormSettings" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <!--      PET SELECTION  -->
+      <label for="boarding">
+      <div class="form-check-label" [ngStyle]="shortFormSettings.get('service').value == 'boarding' &&
+             {
+              'border': 'solid darkgreen 2px', 'background-color': 'rgb(254, 203, 64)'
+              }">
+        <input type="button"
+               name="boarding"
+               value=""
+               formControlName="service"
+               id="boarding"
+               (click)="onServiceClick('boarding')">
+        <img src="assets/shortFormImages/cocker-spaniel.png">
+        Boarding
+      </div>
+     </label>
+      <label for="houseSitting">
+        <div class="form-check-label" [ngStyle]="shortFormSettings.get('service').value == 'houseSitting' &&
+             {
+              'border': 'solid darkgreen 2px', 'background-color': 'rgb(254, 203, 64)'
+             }">
+          <input type="button"
+                 name="houseSitting"
+                 value=""
+                 formControlName="service"
+                 id="houseSitting"
+                 (click)="onServiceClick('houseSitting')">
+
+          <img src="assets/shortFormImages/dog-heart.png">
+          House Sitting
+        </div>
+      </label>
+      <label for="walking">
+        <div class="form-check-label" [ngStyle]="shortFormSettings.get('service').value == 'walking' &&
+             {
+              'border': 'solid darkgreen 2px', 'background-color': 'rgb(254, 203, 64)'
+             }">
+
+          <input type="button" class="form-check-label"
+                 value=""
+                 formControlName="service"
+                 id="walking"
+                 (click)="onServiceClick('walking')">
+
+          <img src="assets/shortFormImages/dog-smiley.png">
+          Walking
+        </div>
+      </label>
+    </div>
+    <!-- SEARCH USER SELECTION-->
+
+    <div class="secondFormPart">
+
+      <div class="form-group">
+        <div class="location">
+          <label for="location"><b>Location</b><br></label>
+          <input formControlName="location"
+                 id="location"
+                 name="location"
+                 placeholder="City"
+                 type="text">
+        </div>
+
+        <div formGroupName="dateRange">
+          <mat-form-field color="accent" appearance="fill">
+            <mat-label >From</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="stopDate">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="fill">
+            <mat-label>To</mat-label>
+            <input matInput [matDatepicker]="picker2" formControlName="stopDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <label for="pet">Pet</label>
+          <input id="pet"
+                 name="typePet"
+                 class="form-control"
+                 placeholder="Pet"
+                 formControlName="typePet">
+        </div>
+        <button>
+          <img src="assets/shortFormImages/search.png">
+        </button>
+      </div>
+    </div>
+
+  </form>
+</div>
+<br>Valid: {{ shortFormSettings.valid }}
+<br>Value: {{ shortFormSettings.value | json }}
+<br>&nbsp;
+

@@ -1,0 +1,18 @@
+<div class="flex-row tile-container" (click)="navigateToPetsitterDetails(petsitter.Id)">
+  <img src="assets/Icons/ServiceIcons/dog.png">
+  <div class="flex-column">
+    <h3>{{petsitter.Name}}</h3>
+    <div class="flex-row subtitle" >
+      <h4 style="margin-right: 15px">
+        {{petsitter.City}}
+      </h4>
+      <span></span>
+      <h4>
+        {{petsitter.Price}} $/h
+      </h4>
+    </div>
+    <div>
+      {{petsitter.Description}}
+    </div>
+  </div>
+</div>

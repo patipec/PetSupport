@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PettsitersComponent } from './pettsiters.component';
+import { LongFormComponent } from './long-form.component';
 
-describe('PettsitersComponent', () => {
-  let component: PettsitersComponent;
-  let fixture: ComponentFixture<PettsitersComponent>;
+describe('LongFormComponent', () => {
+  let component: LongFormComponent;
+  let fixture: ComponentFixture<LongFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PettsitersComponent ]
+      declarations: [ LongFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PettsitersComponent);
+    fixture = TestBed.createComponent(LongFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
