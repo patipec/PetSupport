@@ -25,15 +25,6 @@ span{
 .priceRange{
   max-width:250px;
 }
-/*Date range*/
-/*.dateRange{*/
-/*  background-color: white;*/
-/*  display: flex;*/
-/*  flex-direction: row;*/
-/*}*/
-/*.dateRange label {*/
-/*  display: block;*/
-/*}*/
 
 mat-form-field{
   width: 240px;

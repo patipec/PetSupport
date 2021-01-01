@@ -16,22 +16,24 @@ export class LongFormComponent implements OnInit {
   ngOnInit(): void {
     this.longFormSettings = this.fb.group({
       dateRange: this.fb.group({
-        startDate: this.datePipe.transform(new Date(), 'yyyy-MM-dd'),
-        stopDate: this.datePipe.transform(new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd')
+        startDate: [this.datePipe.transform(new Date(), 'yyyy-MM-dd'),
+          [Validators.required]],
+        stopDate: [this.datePipe.transform(new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd'),
+          [Validators.required]]
       }),
-      location: '',
-      numberOfPets: 1,
+      location: [''],
+      numberOfPets: [1],
       priceRange: this.fb.group({
-        minValue: '20',
-        maxValue: '300'
+        minValue: ['30', [Validators.required]],
+        maxValue: ['300', [Validators.required]]
       }),
       rateRange: this.fb.group({
-        minRate: '',
-        maxRate: ''
+        minRate: ['2', [Validators.required]],
+        maxRate: ['4', [Validators.required]]
       }),
-      service: 'boarding',
-      petType: 'dog',
-      hasPet: true,
+      service: ['boarding', [Validators.required]],
+      petType: ['dog', [Validators.required]],
+      hasPet: [true],
     });
   }
 

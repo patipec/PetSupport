@@ -25,6 +25,7 @@
     "@angular/platform-browser-dynamic": "~11.0.2",
     "@angular/router": "~11.0.2",
     "@ngmodule/material-carousel": "^0.6.0",
+    "@rxweb/reactive-form-validators": "^2.1.2",
     "@syncfusion/ej2-angular-inputs": "^18.3.53",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

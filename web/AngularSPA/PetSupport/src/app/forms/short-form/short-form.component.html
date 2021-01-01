@@ -61,7 +61,14 @@
             <input matInput formControlName="location">
           </mat-form-field>
         </div>
-
+        <span class="error-form-display">
+          <span *ngIf="shortFormSettings.get('location').errors?.required">
+            Please enter location where you want to do a service!
+          </span>
+          <span *ngIf="shortFormSettings.get('location').errors?.pattern">
+            The location should contains only letters!
+          </span>
+        </span>
         <div formGroupName="dateRange">
           <mat-form-field color="accent" appearance="fill">
             <mat-label >From</mat-label>
@@ -69,13 +76,6 @@
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
           </mat-form-field>
-<!--          <mat-error *ngIf="shortFormSettings.get('shortFormSettings.startDate')-->
-<!--                                             .hasError('matStartDateInvalid')">-->
-<!--            Invalid start date.-->
-<!--          </mat-error>-->
-<!--          <mat-error *ngIf="shortFormSettings.get('dateRange').hasError('invalidDOBYear')">-->
-<!--            Select year greater than 2000.-->
-<!--          </mat-error>-->
 
           <mat-form-field color="accent" appearance="fill">
             <mat-label>To</mat-label>
@@ -84,10 +84,6 @@
             <mat-datepicker #picker2 color="primary"></mat-datepicker>
           </mat-form-field>
         </div>
-<!--        <mat-error *ngIf="shortFormSettings.get('shortFormSettings.stopDate')-->
-<!--                                             .hasError('invalidRange')">-->
-<!--          Invalid end date.-->
-<!--        </mat-error>-->
 
         <div class="row">
           <mat-form-field color="accent" appearance="fill">

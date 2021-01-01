@@ -21,11 +21,11 @@ export class ShortFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.shortFormSettings = this.fb.group({
-      service: ['houseSitting', Validators.required],
-      location: ['Warsaw', Validators.required],
+      service: ['houseSitting', [Validators.required]],
+      location: ['Warsaw', [Validators.required, Validators.pattern(/^[a-zA-Z-,]+(\s{0, 1}[a-zA-Z-, ])*$/)]],
       dateRange: this.fb.group({
-        startDate: [this.datePipe.transform(new Date(), 'yyyy-MM-dd'), Validators.required],
-        stopDate: [this.datePipe.transform(new Date(Date.now() + 2 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd'), Validators.required]
+        startDate: [this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [Validators.required]],
+        stopDate: [this.datePipe.transform(new Date(Date.now() + 2 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd'), [Validators.required]]
       }, this.compareTwoDates),
       typePet: ['Dog', Validators.required],
     });
@@ -47,8 +47,6 @@ export class ShortFormComponent implements OnInit {
     return invalid ? { invalidRange: true} : null;
 }
 
-onSubmit()
-:
-void {}
+onSubmit(): void {}
 
 }
