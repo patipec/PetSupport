@@ -1,4 +1,5 @@
-﻿using PetSupport.Core.Enums;
+﻿using System.Collections.Generic;
+using PetSupport.Core.Enums;
 using PetSupport.Core.Entities;
 
 namespace PetSupport.Core.Entities
@@ -9,7 +10,10 @@ namespace PetSupport.Core.Entities
         public ServiceType Name { get; set; }
         public string Description { get; set; }
         public Unit Unit { get; set; }
-        //public double Price { get; set; }
+        
+        //Relationships
+
+        public List<PetsitterService> PetsiterServices { get; set; }
     }
     
 }
