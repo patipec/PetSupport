@@ -10,13 +10,11 @@ namespace PetSupport.Core.Entities
         public ServiceType Name { get; set; }
         public string Description { get; set; }
         public Unit Unit { get; set; }
-<<<<<<< HEAD
-        
+
         //Relationships
 
         public List<PetsitterService> PetsiterServices { get; set; }
-=======
->>>>>>> 378e6988b0505d78bdb6b0485db026cbbb1995d0
+
     }
     
 }
