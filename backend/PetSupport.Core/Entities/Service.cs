@@ -11,9 +11,7 @@ namespace PetSupport.Core.Entities
         public string Description { get; set; }
         public Unit Unit { get; set; }
 
-        //Relationships
 
-        public List<PetsitterService> PetsiterServices { get; set; }
 
     }
     

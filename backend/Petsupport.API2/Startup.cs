@@ -35,6 +35,7 @@ namespace PetSupport.API2
             // services.AddScoped<Petsitter, PetsittersDTO>();
 
             services.AddScoped<IPetsitterRepository, PetsitterRepository>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
