@@ -1,22 +1,28 @@
 .container {
-  width: 500px;
-  /*padding: 50px;*/
-  margin: 100px auto;
+  margin: 10px auto;
   text-align: center;
-  /*justify-content: center;*/
+  justify-content: center;
+}
 
-  /*background-color: white;*/
+.pets-icon img{
+  width: 130px;
+  position: relative;
+  left: 200px;
+  top: 112px;
 }
 mat-card{
-  width: 80%;
+  justify-content: center;
+  width: 500px;
   margin: 20px;
   padding: 60px;
+  margin: 100px auto;
   /*border: solid black 1px;*/
+
 }
 h2 {
   text-align: left;
   font-size: 26px;
-  margin: 10px 0px 30px 5px;
+  margin: 10px 0px 30px 25px;
   font-weight: bold;
 }
 mat-form-field {
@@ -25,15 +31,17 @@ mat-form-field {
   -moz-border-radius: 15px;
   border-radius: 35px;
   padding: 0px 0px 2px;
-  margin-bottom: 30px;
   font-size: 12px;
   font-weight: normal;
   display: flex;
   justify-content: center;
+  margin: 0px auto 30px;
+  width: 90%;
 }
 mat-form-field input {
-  border: none;
+
   justify-content: center;
+
 }
 ::ng-deep.mat-form-field-wrapper{
   width: 80%;
@@ -44,7 +52,7 @@ mat-form-field input {
   color: white;
   font-size: 12px;
   font-weight: normal;
-  width: 100%;
+  width: 90%;
   -moz-border-radius: 15px;
   border-radius: 35px;
   padding: 5px 0 ;
@@ -58,9 +66,9 @@ mat-form-field input {
   font-size: 10px;
 }
 .or-container span {
-  /*position: absolute;*/
   bottom: 10px;
   line-height: 2.5em;
+  font-weight: bold;
 }
 .green-or-space{
   width: 60px;
@@ -70,7 +78,7 @@ mat-form-field input {
   border-radius: 10px;
 }
 .social-media{
-  margin: 15px 0px;
+  margin: 15px auto;
   display: flex;
   flex-direction: column;
 }
@@ -80,11 +88,12 @@ mat-form-field input {
   background-color: white;
   margin: 15px 0px;
   font-size: 12px;
-  font-weight: normal;
-  width: 100%;
+  font-weight: bold;
+  width: 90%;
   -moz-border-radius: 15px;
   border-radius: 35px;
   padding: 10px 0 ;
+  margin: 15px auto;
 }
 .facebook:hover{
   border-color: #41B883;
@@ -95,13 +104,13 @@ mat-form-field input {
   border-color: #0B814A;
   background-color: white;
   font-size: 12px;
-  font-weight: normal;
-  width: 100%;
+  font-weight: bold;
+  width: 90%;
   -moz-border-radius: 15px;
   border-radius: 35px;
   padding: 10px 0 ;
-  /*justify-content: center;*/
   text-align: center;
+  margin: 15px auto;
 }
 
 .google:hover{
