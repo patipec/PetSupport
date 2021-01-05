@@ -1,9 +1,9 @@
 mat-grid-tile {
-  background-color: lightblue;
+  background-color: white;
   width: 100%;
 }
 .petsitter-list {
-  padding: 20px;
+  padding: 10px;
   width: 100%;
   height: 100%;
 }
@@ -14,9 +14,9 @@ mat-grid-tile {
 .mtg-pl {
   width: 40%;
 }
-.mtg-fb {
-  width: 30%;
-}
+/*.mtg-fb {*/
+/*  width: 30%;*/
+/*}*/
 .div {
   height: 100vh;
 }

@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Slab&display=swap');
 /*Main container*/
 .container{
-  max-width: 300px;
+  max-width: 100%;
+  height: 100vh;
   font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto Slab', serif;
   display: flex;
@@ -13,6 +14,7 @@
   all:unset;
 }
 form{
+  /*margin-top: 15vh;*/
   justify-content: center;
   display: inline-block;
 }
@@ -82,19 +84,12 @@ select{
 }
 .rate-label{
   text-align: center;
-
 }
-.animalType{
 
-}
-.hasPet{
-
-}
 /*Input styling*/
 input{
   width: 100px;
-  /*padding: 5px;*/
-  /*justify-content: center;*/
+
   border: solid 1px lightblue;
   font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto Slab', serif;
@@ -111,7 +106,7 @@ div{
 button{
   font-weight: bold;
   margin: 20px auto 10px;
-  width: 120px;
+  width: 115px;
   padding: 10px 20px;
   font-size: 9px;
   border-radius: 50px;
@@ -119,7 +114,7 @@ button{
 .reset{
   background-color: rgb(254, 203, 64);
   border: solid 2px white;
-  margin-right: 30px;
+  margin-right: 10px;
 }
 .apply{
   background-color: darkgreen;
