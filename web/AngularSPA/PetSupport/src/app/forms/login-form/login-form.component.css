@@ -1,0 +1,132 @@
+.container {
+  width: 500px;
+  /*padding: 50px;*/
+  margin: 100px auto;
+  text-align: center;
+  /*justify-content: center;*/
+
+  /*background-color: white;*/
+}
+mat-card{
+  width: 80%;
+  margin: 20px;
+  padding: 60px;
+  /*border: solid black 1px;*/
+}
+h2 {
+  text-align: left;
+  font-size: 26px;
+  margin: 10px 0px 30px 5px;
+  font-weight: bold;
+}
+mat-form-field {
+  display: block;
+  border: solid #41B883 2px;
+  -moz-border-radius: 15px;
+  border-radius: 35px;
+  padding: 0px 0px 2px;
+  margin-bottom: 30px;
+  font-size: 12px;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+}
+mat-form-field input {
+  border: none;
+  justify-content: center;
+}
+::ng-deep.mat-form-field-wrapper{
+  width: 80%;
+}
+
+.continue-btn{
+  background-color:#0B814A;
+  color: white;
+  font-size: 12px;
+  font-weight: normal;
+  width: 100%;
+  -moz-border-radius: 15px;
+  border-radius: 35px;
+  padding: 5px 0 ;
+}
+.continue-btn:hover{
+  background-color: #41B883;
+}
+
+.or-container{
+  display: inline-flex;
+  font-size: 10px;
+}
+.or-container span {
+  /*position: absolute;*/
+  bottom: 10px;
+  line-height: 2.5em;
+}
+.green-or-space{
+  width: 60px;
+  height: 5px;
+  margin: 10px 10px;
+  background-color: #99ffcc;
+  border-radius: 10px;
+}
+.social-media{
+  margin: 15px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.facebook{
+  display: flex;
+  border-color: #0B814A;
+  background-color: white;
+  margin: 15px 0px;
+  font-size: 12px;
+  font-weight: normal;
+  width: 100%;
+  -moz-border-radius: 15px;
+  border-radius: 35px;
+  padding: 10px 0 ;
+}
+.facebook:hover{
+  border-color: #41B883;
+}
+
+.google{
+  display: flex;
+  border-color: #0B814A;
+  background-color: white;
+  font-size: 12px;
+  font-weight: normal;
+  width: 100%;
+  -moz-border-radius: 15px;
+  border-radius: 35px;
+  padding: 10px 0 ;
+  /*justify-content: center;*/
+  text-align: center;
+}
+
+.google:hover{
+  border-color: #41B883;
+}
+
+.img-facebook{
+  width: 20%;
+}
+.desc-facebook{
+  width: 60%;
+  text-align: center;
+}
+
+.img-google{
+  width: 20%;
+}
+.desc-google{
+  width: 60%;
+  text-align: center;
+}
+
+
+.social-media button img {
+  width: 20px;
+  height: 20px;
+  justify-content: left;
+}
