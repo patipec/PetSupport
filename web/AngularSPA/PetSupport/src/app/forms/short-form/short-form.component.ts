@@ -1,9 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormGroup, NgForm, ValidatorFn, Validators} from '@angular/forms';
-import {FormBuilder, FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {DatePipe} from '@angular/common';
-import {DateAdapter} from '@angular/material/core';
+import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormGroup, NgForm, ValidatorFn, Validators } from '@angular/forms';
+import { FormBuilder, FormControl } from '@angular/forms';
+
+import { DatePipe } from '@angular/common';
+import { DateAdapter } from '@angular/material/core';
+
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-short-form',
@@ -15,7 +18,10 @@ export class ShortFormComponent implements OnInit {
 
   public shortFormSettings: FormGroup;
 
-  constructor(private fb: FormBuilder, private datePipe: DatePipe, private dateAdapter: DateAdapter<Date>) {
+  constructor(private fb: FormBuilder,
+              private datePipe: DatePipe,
+              private dateAdapter: DateAdapter<Date>,
+              private http: HttpClient) {
     this.dateAdapter.setLocale('en-GB');
   }
 
@@ -27,7 +33,7 @@ export class ShortFormComponent implements OnInit {
         startDate: [this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [Validators.required]],
         stopDate: [this.datePipe.transform(new Date(Date.now() + 2 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd'), [Validators.required]]
       }, this.compareTwoDates),
-      typePet: ['Dog', Validators.required],
+      typePet: ['Dog', [Validators.required, Validators.pattern(/^[a-zA-Z-,]+(\s{0, 1}[a-zA-Z-, ])*$/)]]
     });
   }
 

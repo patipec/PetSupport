@@ -13,7 +13,6 @@ mat-label{
   color:darkgreen;
   font-weight: bold;
   font-size: 12px;
-  margin-left: 20px;
 }
 
 .container{
@@ -62,7 +61,7 @@ button {
 }
 .form-group{
   font-size: 12px;
-  margin-left: 20px;
+  margin-left: 0px;
   display: flex;
   justify-content: center;
 }
@@ -81,7 +80,6 @@ button {
 }
 
 .secondFormPart{
-  border:solid black 2px;
   -moz-border-radius: 15px;
   border-radius: 35px;
   margin:auto;
@@ -120,4 +118,9 @@ label div.form-check-label input{
 
 ::ng-deep.mat-form-field-appearance-fill .mat-form-field-flex{
   background-color: white;
+}
+
+.error-form-display{
+  color:red;
+  font-size: 12px;
 }
