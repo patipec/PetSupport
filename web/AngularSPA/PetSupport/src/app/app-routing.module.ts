@@ -8,7 +8,7 @@ import {AddressComponent} from './forms/register-form/address/address.component'
 import {BasicInfoComponent} from './forms/register-form/basic-info/basic-info.component';
 import {PersonalInfoComponent} from './forms/register-form/personal-info/personal-info.component';
 import {ServicesComponent} from './forms/register-form/services/services.component';
-import {LoginFormComponent} from "./forms/login-form/login-form.component";
+import {LoginFormComponent} from './forms/login-form/login-form.component';
 
 
 const routes: Routes = [

@@ -19,7 +19,7 @@ export class PetsitterListTileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public navigateToPetsitterDetails(petsitterId) {
+  public navigateToPetsitterDetails(petsitterId): void {
     this.router.navigate([petsitterId], {relativeTo: this.route});
   }
 }
