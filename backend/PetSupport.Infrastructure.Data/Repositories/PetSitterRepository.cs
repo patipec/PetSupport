@@ -12,12 +12,12 @@ namespace PetSupport.Infrastructure.Data.Repository
         {
         }
 
-        public async Task<Petsitter[]> GetAllPetsitersByCityAndService(string city, int serviceId)
-        {
-            IQueryable<Petsitter> query = _context.Petsitters
-                .Include(p => p.Services)
-                .Where(p => p.City == city);
-            return await query.ToArrayAsync();
-        }
+        // public async Task<Petsitter[]> GetAllPetsitersByCityAndService(string city, int serviceId)
+        // {
+        //     IQueryable<Petsitter> query = _context.Petsitters
+        //         .Include(p => p.Services)
+        //         .Where(p => p.City == city);
+        //     return await query.ToArrayAsync();
+        // }
     }
 }
