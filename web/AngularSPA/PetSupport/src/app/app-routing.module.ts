@@ -8,6 +8,7 @@ import {AddressComponent} from './register-form/address/address.component';
 import {BasicInfoComponent} from './register-form/basic-info/basic-info.component';
 import {PersonalInfoComponent} from './register-form/personal-info/personal-info.component';
 import {ServicesComponent} from './register-form/services/services.component';
+import {LoginFormComponent} from "./forms/login-form/login-form.component";
 
 
 const routes: Routes = [
@@ -20,6 +21,9 @@ const routes: Routes = [
   {path: 'register-form/services', component: ServicesComponent},
   {path: 'register-form/personal-info', component: PersonalInfoComponent},
   {path: '', redirectTo: '/main-page', pathMatch: 'full'},
+
+  {path: 'register-form/login', component: LoginFormComponent},
+  {path: 'login', component: LoginFormComponent},
 
   /*   ** is last route, add new only above ^^^  */
   {path: '**', component: MainPageComponent} // We can add 404 page here later

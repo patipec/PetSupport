@@ -1,5 +1,5 @@
 <div class="flex-row tile-container" (click)="navigateToPetsitterDetails(petsitter.Id)">
-  <img src="assets/Icons/ServiceIcons/dog.png">
+  <img src="{{ petsitter.ImageId}}">
   <div class="flex-column">
     <h3>{{petsitter.Name}}</h3>
     <div class="flex-row subtitle" >
