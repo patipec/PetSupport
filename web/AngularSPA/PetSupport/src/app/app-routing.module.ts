@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {BecomePetsitterComponent} from './become-petsitter/become-petsitter.component';
-import {MainPageComponent} from './main-page/main-page.component';
-import {PettsittersComponent} from './petsitters/pettsiters/pettsiters.component';
-import {PetsitterComponent} from './petsitters/petsitter/petsitter.component';
-import {AddressComponent} from './register-form/address/address.component';
-import {BasicInfoComponent} from './register-form/basic-info/basic-info.component';
-import {PersonalInfoComponent} from './register-form/personal-info/personal-info.component';
-import {ServicesComponent} from './register-form/services/services.component';
+import {BecomePetsitterComponent} from './pages/become-petsitter/become-petsitter.component';
+import {MainPageComponent} from './pages/main-page/main-page.component';
+import {PettsittersComponent} from './pages/petsitters/pettsiters/pettsiters.component';
+import {PetsitterComponent} from './pages/petsitters/petsitter/petsitter.component';
+import {AddressComponent} from './forms/register-form/address/address.component';
+import {BasicInfoComponent} from './forms/register-form/basic-info/basic-info.component';
+import {PersonalInfoComponent} from './forms/register-form/personal-info/personal-info.component';
+import {ServicesComponent} from './forms/register-form/services/services.component';
 import {LoginFormComponent} from "./forms/login-form/login-form.component";
 
 

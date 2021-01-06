@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Petsitter } from '../../common/models/petsitter';
+import { Petsitter } from '../../../common/models/petsitter';
 import { HttpClient } from '@angular/common/http';
 
 
