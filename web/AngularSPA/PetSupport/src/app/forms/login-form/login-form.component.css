@@ -2,6 +2,7 @@
   margin: 10px auto;
   text-align: center;
   justify-content: center;
+
 }
 
 .pets-icon img{
@@ -12,12 +13,12 @@
 }
 mat-card{
   justify-content: center;
-  width: 500px;
+  width: 450px;
   margin: 20px;
-  padding: 60px;
+  padding: 80px 60px;
   margin: 100px auto;
-  /*border: solid black 1px;*/
-
+  border: solid black 1px;
+  box-shadow: 5px 5px 30px 1px lightblue !important;
 }
 h2 {
   text-align: left;
