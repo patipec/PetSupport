@@ -30,7 +30,7 @@ namespace PetSupport.API2.Controllers
         }
 
         // GET: api/Petsitters/5
-        [HttpGet("{id}")]
+        [HttpGet("api/Petsitters/{id}/details")]
         public async Task<ActionResult<Petsitter>> GetPetsitter(int id)
         {
             var petsitter = await _context.Petsitters.FindAsync(id);
@@ -44,7 +44,7 @@ namespace PetSupport.API2.Controllers
         }
 
         // PUT: api/Petsitters/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPetsitter(int id, Petsitter petsitter)
         {
