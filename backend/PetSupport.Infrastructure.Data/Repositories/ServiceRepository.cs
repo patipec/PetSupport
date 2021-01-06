@@ -8,7 +8,7 @@ using PetSupport.Core.Interfaces;
 
 namespace PetSupport.Infrastructure.Data.Repositories
 {
-    class ServiceRepository: IServiceRepository, IRepository<Service>
+    class ServiceRepository: IServiceRepository
     {
         public IEnumerable<Service> GetAll()
         {

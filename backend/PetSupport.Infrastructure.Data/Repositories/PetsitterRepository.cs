@@ -12,32 +12,12 @@ namespace PetSupport.Infrastructure.Data.Repositories
             throw new System.NotImplementedException();
         }
 
-        PetsitterService IRepository<PetsitterService>.Get(long id)
+        Petsitter IRepository<Petsitter>.Get(long id)
         {
             throw new System.NotImplementedException();
         }
 
-        public void Insert(PetsitterService entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Update(PetsitterService entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Delete(PetsitterService entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Remove(PetsitterService entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        IEnumerable<PetsitterService> IRepository<PetsitterService>.GetAll()
+        IEnumerable<Petsitter> IRepository<Petsitter>.GetAll()
         {
             throw new System.NotImplementedException();
         }
