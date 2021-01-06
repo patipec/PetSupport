@@ -107,7 +107,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9c25cba1-58ce-47d8-84b8-03d890a90b42" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/login-form/login-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/login-form/login-form.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/petsitters/petsitters-list/petsitters-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/petsitters/petsitters-list/petsitters-list.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +181,7 @@
       <workItem from="1609758251796" duration="599000" />
       <workItem from="1609796063533" duration="651000" />
       <workItem from="1609835959290" duration="532000" />
-      <workItem from="1609922745858" duration="1124000" />
+      <workItem from="1609922745858" duration="2779000" />
     </task>
     <servers />
   </component>
