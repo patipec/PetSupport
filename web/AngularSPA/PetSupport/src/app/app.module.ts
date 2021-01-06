@@ -37,6 +37,7 @@ import { CardCaruselComponent } from './main-page/card-carusel/card-carusel.comp
 import { ServicesCardsComponent } from './main-page/services-cards/services-cards.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { RangeSlider } from './forms/shared/slider/slider.component';
+import { Test2Component } from './register-form/test2/test2.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { RangeSlider } from './forms/shared/slider/slider.component';
     FooterComponent,
     CardCaruselComponent,
     ServicesCardsComponent,
-    RangeSlider
+    RangeSlider,
+    Test2Component
   ],
 
   imports: [

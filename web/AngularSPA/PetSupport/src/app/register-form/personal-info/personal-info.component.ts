@@ -2,15 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import { RegistrationService } from '../registration.service';
 
 @Component({
   selector: 'app-personal-info',
   templateUrl: './personal-info.component.html',
   styleUrls: ['./personal-info.component.css']
 })
+
+
 export class PersonalInfoComponent implements OnInit {
 
-    signupForm: FormGroup;
+  signupForm: FormGroup;
     
     ngOnInit() {
       this.signupForm = new FormGroup({
@@ -18,37 +21,30 @@ export class PersonalInfoComponent implements OnInit {
             'birthday': new FormControl(null, Validators.required),
             'title': new FormControl(null, Validators.required),
             'experience': new FormControl(null, Validators.required),
-            'availability': new FormControl(null, Validators.required, this.forbiddenZipCode),
+            'availability': new FormControl(null, Validators.required),
             'environment': new FormControl(null, Validators.required)
         }),
       });
     }
 
-    constructor( private http: HttpClient) { }
-
-    onSubmit() {
+    constructor( private registrationService: RegistrationService ) { }
+    
+      
+    onSubmit(control) {
       console.log(this.signupForm);
+
+      //zapisać dane do registration service z tego formularza, zanim wysle na backend
+      this.registrationService.setBirthday(this.signupForm.controls['userData.birthday'].value);
+      this.registrationService.setTitle(this.signupForm.controls['userData.title'].value);
+      this.registrationService.setExperience(this.signupForm.controls['userData.experience'].value);
+      this.registrationService.setAvailability(this.signupForm.controls['userData.availability'].value);
+      this.registrationService.setEnvironment(this.signupForm.controls['userData.environment'].value);
+
+      //po zapisaniu do serwisu ostatniego formularza personal info (powyzej)
+      //uruchamiamy metode z servisu która wyśle wszystkie dane z serwisu na backend
+      //robimy to w tym miejsu, ponieważ to zdarzenie bedzie miało miejsce po naciśnieciu przyciusku NEXT na ostatniej str z formularzem
+      this.registrationService.saveUser();
     }
 
-    forbiddenZipCode(control: FormControl): Promise<any> | Observable<any> {
-      const promise = new Promise<any>((resolve, reject) => {
-        setTimeout(() => {
-          if (control.value === '12-345') {
-            resolve({'ZipCodeIsForbidden': true});
-          } else {
-            resolve(null);
-          }
-        }, 2000);
-      });
-      return promise;
-    }
 
-    onCreatePost(postData: {title: string; content: string}) {
-      this.http.post('https://ng-component-guide-78d02-default-rtdb.firebaseio.com/posts.json', 
-      postData
-        ).subscribe(responseData => {
-          console.log(responseData);
-        });
-        this.signupForm.reset();
-      }
 }

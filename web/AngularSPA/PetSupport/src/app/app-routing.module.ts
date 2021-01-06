@@ -8,6 +8,7 @@ import {AddressComponent} from './register-form/address/address.component';
 import {BasicInfoComponent} from './register-form/basic-info/basic-info.component';
 import {PersonalInfoComponent} from './register-form/personal-info/personal-info.component';
 import {ServicesComponent} from './register-form/services/services.component';
+import { Test2Component } from './register-form/test2/test2.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'petsitters/:id', component: PetsitterComponent},
   {path: 'petsitters', component: PettsittersComponent},
   {path: 'register-form/basic-info', component: BasicInfoComponent},
+  {path: 'register-form/test2', component: Test2Component},
   {path: 'register-form/address', component: AddressComponent},
   {path: 'register-form/services', component: ServicesComponent},
   {path: 'register-form/personal-info', component: PersonalInfoComponent},

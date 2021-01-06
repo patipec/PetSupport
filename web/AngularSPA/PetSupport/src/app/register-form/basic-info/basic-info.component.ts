@@ -13,6 +13,8 @@ export class BasicInfoComponent implements OnInit {
   
   submitted = false;
 
+  forbiddenNames = [];
+
   @ViewChild('loginForm') loginForm: NgForm;
 
   user = {

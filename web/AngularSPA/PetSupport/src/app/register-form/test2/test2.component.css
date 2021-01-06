@@ -28,26 +28,6 @@ input.ng-invalid.ng-touched {
 .ml-1{margin-left: 1%;}
 .ml-2{margin-left: 2%;}
 .width-100{width: 100%;
-        width: 700px;}
+        width: 340px;}
 .width-25{width: 25%;}
 
-.title-name {
-  color: #0B814A;
-  font-size: 13px;
-  font-weight:600;
-  margin-left: 1.5em;
-  margin-top: 1em;
-}
-
-.title-info {
-  color: darkgray;
-  font-size: 12px;
-  font-weight: normal;
-}
-
-.example-container {
-  position: relative;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  margin: 0 auto;
-}
