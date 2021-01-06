@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PetSupport.Core.Entities;
+using PetSupport.Infrastructure.Data.Seed;
 
 namespace PetSupport.Infrastructure.Data.Data
 {
@@ -10,11 +11,16 @@ namespace PetSupport.Infrastructure.Data.Data
         {
 
         }
+        
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Petsitter> Petsitters { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<PetsitterService> PetSupportServices { get; set; }
+        public DbSet<BookingMessage> BookingMessages { get; set; }
 
-        private DbSet<Client> Clients { get; set; }
-        private DbSet<Petsitter> Petsitters { get; set; }
-        private DbSet<Service> Services { get; set; }
-        private DbSet<PetsitterService> PetSupportServices { get; set; }
-        private DbSet<BookingMessage> BookingMessages { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.SeedFakeData();
+        }
     }
 }
