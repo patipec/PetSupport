@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using PetSupport.Core.Entities;
@@ -10,17 +11,22 @@ namespace PetSupport.Infrastructure.Data.Repositories
 {
     class ServiceRepository: IServiceRepository
     {
-        public IEnumerable<Service> GetAll()
+        public Task<Service> GetByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Service Get(long id)
+        public Task<IEnumerable<Service>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public void Insert(Service entity)
+        public Task<IEnumerable<Service>> FindByConditionAsync(Expression<Func<Service, bool>> expression)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Add(Service entity)
         {
             throw new NotImplementedException();
         }
@@ -30,17 +36,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public void Delete(Service entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(Service entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SaveChanges()
+        public Task<bool> SaveChangesAsync()
         {
             throw new NotImplementedException();
         }

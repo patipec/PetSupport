@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
@@ -7,49 +10,34 @@ namespace PetSupport.Infrastructure.Data.Repositories
 {
     public class PetsitterRepository : IRepository<Petsitter>, IPetsitterRepository
     {
-        public IEnumerable<Petsitter> GetAll()
+        public Task<Petsitter> GetByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        Petsitter IRepository<Petsitter>.Get(long id)
+        public Task<IEnumerable<Petsitter>> GetAllAsync()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        IEnumerable<Petsitter> IRepository<Petsitter>.GetAll()
+        public Task<IEnumerable<Petsitter>> FindByConditionAsync(Expression<Func<Petsitter, bool>> expression)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public Petsitter Get(long id)
+        public void Add(Petsitter entity)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void Insert(Petsitter entity)
-        {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Update(Petsitter entity)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public void Delete(Petsitter entity)
+        public Task<bool> SaveChangesAsync()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void Remove(Petsitter entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void SaveChanges()
-        {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }
