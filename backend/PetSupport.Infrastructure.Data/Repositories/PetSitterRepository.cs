@@ -1,23 +1,55 @@
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using System.Collections.Generic;
 using PetSupport.Core.Entities;
+using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
 
-namespace PetSupport.Infrastructure.Data.Repository
+namespace PetSupport.Infrastructure.Data.Repositories
 {
-    public class PetSitterRepository : GenericRepository<Petsitter>
+    public class PetsitterRepository : IRepository<Petsitter>, IPetsitterRepository
     {
-        public PetSitterRepository(DataContext context) : base(context)
+        public IEnumerable<Petsitter> GetAll()
         {
+            throw new System.NotImplementedException();
         }
 
-        // public async Task<Petsitter[]> GetAllPetsitersByCityAndService(string city, int serviceId)
-        // {
-        //     IQueryable<Petsitter> query = _context.Petsitters
-        //         .Include(p => p.Services)
-        //         .Where(p => p.City == city);
-        //     return await query.ToArrayAsync();
-        // }
+        Petsitter IRepository<Petsitter>.Get(long id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        IEnumerable<Petsitter> IRepository<Petsitter>.GetAll()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Petsitter Get(long id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Insert(Petsitter entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Update(Petsitter entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Delete(Petsitter entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Remove(Petsitter entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void SaveChanges()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
