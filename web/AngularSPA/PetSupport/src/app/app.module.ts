@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-// import { FormGroup} from "@angular/forms";
+
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -37,6 +37,9 @@ import { CardCaruselComponent } from './main-page/card-carusel/card-carusel.comp
 import { ServicesCardsComponent } from './main-page/services-cards/services-cards.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { RangeSlider } from './forms/shared/slider/slider.component';
+import { MapComponent } from './map/map.component';
+import { LoginFormComponent } from './forms/login-form/login-form.component';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +61,9 @@ import { RangeSlider } from './forms/shared/slider/slider.component';
     FooterComponent,
     CardCaruselComponent,
     ServicesCardsComponent,
-    RangeSlider
+    RangeSlider,
+    MapComponent,
+    LoginFormComponent
   ],
 
   imports: [
@@ -79,7 +84,6 @@ import { RangeSlider } from './forms/shared/slider/slider.component';
     ReactiveFormsModule,
     MatCarouselModule.forRoot(),
     NgxSliderModule
-
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

@@ -1,16 +1,19 @@
-﻿using System.Collections.Generic;
-using PetSupport.Core.Entities;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace PetSupport.Core.Interfaces
 {
-    public interface IRepository<T> where T: BaseEntity
+    public interface IRepository<T>
     {
-        IEnumerable<T> GetAll();
-        T Get(long id);
-        void Insert(T entity);
+        Task<T> GetByIdAsync(int id);
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<IEnumerable<T>> FindByConditionAsync(Expression<Func<T, bool>> expression);
+        void Add(T entity);
         void Update(T entity);
-        void Delete(T entity);
-        void Remove(T entity);
-        void SaveChanges();
+        Task<bool> SaveChangesAsync();
     }
 }

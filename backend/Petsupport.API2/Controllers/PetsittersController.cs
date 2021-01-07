@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Petsupport.API2.Dtos.OutDtos;
 using PetSupport.Core.Entities;
+using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
 
 namespace PetSupport.API2.Controllers
@@ -15,6 +18,8 @@ namespace PetSupport.API2.Controllers
     public class PetsittersController : ControllerBase
     {
         private readonly DataContext _context;
+        private readonly IRepository<Petsitter> _petSitterRepository;
+        private readonly IMapper _mapper;
 
         public PetsittersController(DataContext context)
         {
@@ -66,12 +71,15 @@ namespace PetSupport.API2.Controllers
                     return NotFound();
                 }
                 else
-                {
+        public PetsittersController(IRepository<Petsitter> petSitterRepository, IMapper mapper)
+        {
                     throw;
                 }
             }
 
             return NoContent();
+            this._petSitterRepository = petSitterRepository;
+            this._mapper = mapper;
         }
 
         // POST: api/Petsitters
@@ -91,7 +99,9 @@ namespace PetSupport.API2.Controllers
         {
             var petsitter = await _context.Petsitters.FindAsync(id);
             if (petsitter == null)
-            {
+        [HttpGet]
+        public async Task<ActionResult<PetsitterDTO[]>> Get()
+        {
                 return NotFound();
             }
 
@@ -99,11 +109,17 @@ namespace PetSupport.API2.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
+            var results = await _petSitterRepository.GetAllAsync();
+            return _mapper.Map<PetsitterDTO[]>(results);
         }
 
         private bool PetsitterExists(int id)
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<PetsitterDTO>> Get(int id)
         {
             return _context.Petsitters.Any(e => e.Id == id);
+            var result = await _petSitterRepository.GetByIdAsync(id);
+            return _mapper.Map<PetsitterDTO>(result);
         }
     }
 }

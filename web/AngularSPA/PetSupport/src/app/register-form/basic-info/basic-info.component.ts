@@ -10,13 +10,12 @@ import {HttpClient} from '@angular/common/http';
 export class BasicInfoComponent implements OnInit {
 
   hide = true;
-  
   submitted = false;
 
   @ViewChild('loginForm') loginForm: NgForm;
 
   user = {
-    name:'',
+    name: '',
     surname: '',
     email: '',
     phone: '',
@@ -47,10 +46,10 @@ export class BasicInfoComponent implements OnInit {
 
     this.loginForm.reset();
   }
-  
+
 //***** HTTP METHODS (POST)****//
   onCreatePost(postData: {title: string; content: string}) {
-    this.http.post('https://ng-component-guide-78d02-default-rtdb.firebaseio.com/posts.json', 
+    this.http.post('https://ng-component-guide-78d02-default-rtdb.firebaseio.com/posts.json',
     postData
       ).subscribe(responseData => {
         console.log(responseData);

@@ -12,11 +12,11 @@ import {HttpClient} from '@angular/common/http';
 export class AddressComponent {
 
     signupForm: FormGroup;
-    
+
     ngOnInit() {
       this.signupForm = new FormGroup({
         'userData': new FormGroup({
-            'street': new FormControl(null, Validators.required),
+            'street': new FormControl(null, [Validators.required]),
             'housenr': new FormControl(null, Validators.required),
             'city': new FormControl(null, Validators.required),
             'zipcode': new FormControl(null, Validators.required, this.forbiddenZipCode),
@@ -45,7 +45,7 @@ export class AddressComponent {
     }
 
     onCreatePost(postData: {title: string; content: string}) {
-      this.http.post('https://ng-component-guide-78d02-default-rtdb.firebaseio.com/posts.json', 
+      this.http.post('https://ng-component-guide-78d02-default-rtdb.firebaseio.com/posts.json',
       postData
         ).subscribe(responseData => {
           console.log(responseData);
