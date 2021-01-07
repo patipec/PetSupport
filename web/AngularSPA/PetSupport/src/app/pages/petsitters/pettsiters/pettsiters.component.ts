@@ -53,7 +53,7 @@ export class PettsittersComponent implements OnInit, AfterViewInit, OnDestroy {
         this.colspanMap = 2;
         this.colspanList = 3;
       }
-    );
+    ); 
   }
 
 }

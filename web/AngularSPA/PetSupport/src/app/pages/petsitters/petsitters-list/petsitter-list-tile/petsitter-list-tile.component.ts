@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Petsitter} from '../../../common/models/petsitter';
+import {Petsitter} from '../../../../common/models/petsitter';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -19,7 +19,7 @@ export class PetsitterListTileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public navigateToPetsitterDetails(petsitterId) {
+  public navigateToPetsitterDetails(petsitterId): void {
     this.router.navigate([petsitterId], {relativeTo: this.route});
   }
 }

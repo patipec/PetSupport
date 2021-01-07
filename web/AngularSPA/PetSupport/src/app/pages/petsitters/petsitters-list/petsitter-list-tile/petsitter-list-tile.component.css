@@ -10,7 +10,11 @@
 .tile-container {
   width: 100%;
   background: white;
-  padding: 20px 0px
+  padding: 20px 0px;
+  cursor: pointer;
+}
+.tile-container:hover {
+  background: #f1efef;
 }
 
 
