@@ -1,15 +1,14 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {BecomePetsitterComponent} from './become-petsitter/become-petsitter.component';
-import {MainPageComponent} from './main-page/main-page.component';
-import {PettsittersComponent} from './petsitters/pettsiters/pettsiters.component';
-import {PetsitterComponent} from './petsitters/petsitter/petsitter.component';
-import {AddressComponent} from './register-form/address/address.component';
-import {BasicInfoComponent} from './register-form/basic-info/basic-info.component';
-import {PersonalInfoComponent} from './register-form/personal-info/personal-info.component';
-import {ServicesComponent} from './register-form/services/services.component';
-import { Test2Component } from './register-form/test2/test2.component';
-
+import {BecomePetsitterComponent} from './pages/become-petsitter/become-petsitter.component';
+import {MainPageComponent} from './pages/main-page/main-page.component';
+import {PettsittersComponent} from './pages/petsitters/pettsiters/pettsiters.component';
+import {PetsitterComponent} from './pages/petsitters/petsitter/petsitter.component';
+import {AddressComponent} from './forms/register-form/address/address.component';
+import {BasicInfoComponent} from './forms/register-form/basic-info/basic-info.component';
+import {PersonalInfoComponent} from './forms/register-form/personal-info/personal-info.component';
+import {ServicesComponent} from './forms/register-form/services/services.component';
+import {LoginFormComponent} from './forms/login-form/login-form.component';
 
 const routes: Routes = [
   {path: 'main-page', component: MainPageComponent},
@@ -17,11 +16,13 @@ const routes: Routes = [
   {path: 'petsitters/:id', component: PetsitterComponent},
   {path: 'petsitters', component: PettsittersComponent},
   {path: 'register-form/basic-info', component: BasicInfoComponent},
-  {path: 'register-form/test2', component: Test2Component},
   {path: 'register-form/address', component: AddressComponent},
   {path: 'register-form/services', component: ServicesComponent},
   {path: 'register-form/personal-info', component: PersonalInfoComponent},
   {path: '', redirectTo: '/main-page', pathMatch: 'full'},
+
+  {path: 'register-form/login', component: LoginFormComponent},
+  {path: 'login', component: LoginFormComponent},
 
   /*   ** is last route, add new only above ^^^  */
   {path: '**', component: MainPageComponent} // We can add 404 page here later

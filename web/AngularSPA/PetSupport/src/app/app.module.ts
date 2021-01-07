@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-// import { FormGroup} from "@angular/forms";
+
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -12,32 +12,32 @@ import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDividerModule} from '@angular/material/divider';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {MainPageComponent} from './main-page/main-page.component';
+import {MainPageComponent} from './pages/main-page/main-page.component';
 import {ShortFormComponent} from './forms/short-form/short-form.component';
 import {LongFormComponent} from './forms/long-form/long-form.component';
-import {MaterialModule} from './shared/material.module';
-import {MainNavComponent} from './main-nav/main-nav.component';
+import {MaterialModule} from './common/shared/material.module';
+import {MainNavComponent} from './common/components/main-nav/main-nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
-import {BecomePetsitterComponent} from './become-petsitter/become-petsitter.component';
+import {BecomePetsitterComponent} from './pages/become-petsitter/become-petsitter.component';
 import { YellowWavesComponent } from './common/decorations/yellow-waves/yellow-waves.component';
-import { PetsitterComponent } from './petsitters/petsitter/petsitter.component';
-import { PetsittersListComponent } from './petsitters/petsitters-list/petsitters-list.component';
-import { PetsitterListTileComponent } from './petsitters/petsitters-list/petsitter-list-tile/petsitter-list-tile.component';
-import {PettsittersComponent} from './petsitters/pettsiters/pettsiters.component';
-import { BasicInfoComponent } from './register-form/basic-info/basic-info.component';
-import { AddressComponent } from './register-form/address/address.component';
-import { ServicesComponent } from './register-form/services/services.component';
-import { PersonalInfoComponent } from './register-form/personal-info/personal-info.component';
-import { FooterComponent } from './footer/footer.component';
+import { PetsitterComponent } from './pages/petsitters/petsitter/petsitter.component';
+import { PetsittersListComponent } from './pages/petsitters/petsitters-list/petsitters-list.component';
+import { PetsitterListTileComponent } from './pages/petsitters/petsitters-list/petsitter-list-tile/petsitter-list-tile.component';
+import {PettsittersComponent} from './pages/petsitters/pettsiters/pettsiters.component';
+import { BasicInfoComponent } from './forms/register-form/basic-info/basic-info.component';
+import { AddressComponent } from './forms/register-form/address/address.component';
+import { ServicesComponent } from './forms/register-form/services/services.component';
+import { PersonalInfoComponent } from './forms/register-form/personal-info/personal-info.component';
+import { FooterComponent } from './common/components/footer/footer.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
-import { CardCaruselComponent } from './main-page/card-carusel/card-carusel.component';
-import { ServicesCardsComponent } from './main-page/services-cards/services-cards.component';
+import { CardCaruselComponent } from './pages/main-page/card-carusel/card-carusel.component';
+import { ServicesCardsComponent } from './pages/main-page/services-cards/services-cards.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { RangeSlider } from './forms/shared/slider/slider.component';
-import { Test2Component } from './register-form/test2/test2.component';
+import { MapComponent } from './common/components/map/map.component';
+import { LoginFormComponent } from './forms/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -60,12 +60,13 @@ import { Test2Component } from './register-form/test2/test2.component';
     CardCaruselComponent,
     ServicesCardsComponent,
     RangeSlider,
-    Test2Component
+    MapComponent,
+    LoginFormComponent
   ],
 
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule,  
     BrowserAnimationsModule,
     HttpClientModule,
     MatToolbarModule,
@@ -81,7 +82,6 @@ import { Test2Component } from './register-form/test2/test2.component';
     ReactiveFormsModule,
     MatCarouselModule.forRoot(),
     NgxSliderModule
-
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

@@ -4,9 +4,11 @@
 
       <span class="material-icons">local_offer</span><b>Price Range</b><br>
       <app-slider [currSign]="setSignForSlider('$')" [floor]="0" [ceil]="1000"
-                  (getInfo)="onSliderChange($event)"></app-slider>
-      <!--      <ngx-slider (valueChange)="onSliderChange($event)"></ngx-slider>-->
-    </div>
+                  [minValue]="30" [maxValue]="400"
+                  (getInfo)="onSliderPriceChange($event)">
+
+      </app-slider>
+      <!--      <ngx-slider (valueChange)="onSliderChange($event)"></ngx-slider>-->    </div>
 
     <div formGroupName="dateRange">
       <span class="material-icons">date_range</span><b>Dates<br></b>
@@ -58,7 +60,8 @@
     <div class="rateRange" formGroupName="rateRange">
       <div class="rate-label"><span class="material-icons">star_half</span><b>Rates</b><br></div>
       <app-slider [currSign]="setSignForSlider('★ ')"
-                  [floor]="0" [ceil]="5" [minValue]="2" [maxValue]="4"></app-slider>
+                  [floor]="0" [ceil]="5" [minValue]="2" [maxValue]="4"
+                  (getInfo)="onSliderRateChange($event)"></app-slider>
     </div>
 
     <div class="animalType"><span class="material-icons">person</span><b>Animal Type</b> <br>
@@ -85,8 +88,8 @@
     <button class="apply">APPLY FILTERS</button>
   </form>
 </div>
-<br>Dirty: {{ longFormSettings.dirty }}
-<br>Touched: {{ longFormSettings.touched }}
-<br>Valid: {{ longFormSettings.valid }}
-<br>Value: {{ longFormSettings.value | json }}
-<br>&nbsp;
+<!--<br>Dirty: {{ longFormSettings.dirty }}-->
+<!--<br>Touched: {{ longFormSettings.touched }}-->
+<!--<br>Valid: {{ longFormSettings.valid }}-->
+<!--<br>Value: {{ longFormSettings.value | json }}-->
+<!--<br>&nbsp;-->
