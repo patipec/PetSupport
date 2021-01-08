@@ -1,15 +1,14 @@
 
-    <mat-grid-list cols="1" rowHeight="500px">
-        <mat-grid-tile style="position:inherit;">
+    <mat-card>
+        <mat-card-content style="position:inherit;">
             <div class="example-container">
                 <div class="card-title">Address</div>
                 <hr>
                 <br><br>
 
-                <form [formGroup]="signupForm" (ngSubmit)="onCreatePost(signupForm.value)">
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm.value)">
                 <div formGroupName="userData">
-                
-                    <mat-form-field appearance="fill" class="width-100">
+                    <mat-form-field class="width-100">
                         <mat-label>Street</mat-label>
                         <input matInput
                         type="text"
@@ -18,9 +17,16 @@
                         formControlName="street">
                         <span *ngIf="!signupForm.get('userData.street').valid && signupForm.get('userData.street').touched" 
                         class="help-block">Please enter a valid Street</span>
+                        
+                        <!--
+                        <mat-error *ngFor="let validation of validation_messages.street">
+                            <mat-error class="error-message" *ngIf="signupForm.get('street').hasError(validation.type) && (signupForm.get('street').dirty || signupForm.get('fullname').touched)">{{validation.message}}</mat-error>
+                          </mat-error>
+                        -->  
                     </mat-form-field>
+                    
                     <br>
-                    <mat-form-field appearance="fill" class="width-100">
+                    <mat-form-field class="width-100">
                         <mat-label>House nr / Flat nr</mat-label>
                         <input matInput
                         type="text"
@@ -31,7 +37,8 @@
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                     <br>
-                    <mat-form-field appearance="fill" class="width-100">
+
+                    <mat-form-field class="width-100">
                         <mat-label>City</mat-label>
                         <input matInput
                         type="text"
@@ -43,7 +50,7 @@
                     </mat-form-field>
                 
                     <br>
-                    <mat-form-field appearance="fill" class="width-100">
+                    <mat-form-field class="width-100">
                         <mat-label>Zip Code</mat-label>
                         <input matInput 
                         placeholder="Ex. 12-345"
@@ -54,7 +61,8 @@
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                     <br>
-                    <mat-form-field appearance="fill" class="width-100">
+
+                    <mat-form-field class="width-100">
                         <mat-label>Country</mat-label>
                         <input matInput
                         type="text"
@@ -71,14 +79,23 @@
                     <span *ngIf="!signupForm.valid && signupForm.touched"></span>
                     <mat-card-actions>
                         <a mat-raised-button 
-                        type="submit" 
-                        color="primary"
-                        routerLink="/register-form/services"
-                        >NEXT</a>
-                 </mat-card-actions> 
+                        class="back-btn"
+                        routerLink="/register-form/basic-info"
+                        >Back</a>
+                    <a mat-raised-button 
+                    class="continue-btn"
+                    type="submit" 
+                    color="primary"
+                    routerLink="/register-form/services"
+                    >Next</a>
+             </mat-card-actions> 
+
+
+
+
                 </div>
                 </form>
             </div>
-        </mat-grid-tile>
-    </mat-grid-list>
+        </mat-card-content>
+    </mat-card>
    

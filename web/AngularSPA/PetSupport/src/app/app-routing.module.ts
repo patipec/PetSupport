@@ -9,7 +9,7 @@ import {BasicInfoComponent} from './forms/register-form/basic-info/basic-info.co
 import {PersonalInfoComponent} from './forms/register-form/personal-info/personal-info.component';
 import {ServicesComponent} from './forms/register-form/services/services.component';
 import {LoginFormComponent} from './forms/login-form/login-form.component';
-
+import { EndOfRegistrationComponent } from './forms/register-form/end-of-registration/end-of-registration.component';
 
 const routes: Routes = [
   {path: 'main-page', component: MainPageComponent},
@@ -20,6 +20,7 @@ const routes: Routes = [
   {path: 'register-form/address', component: AddressComponent},
   {path: 'register-form/services', component: ServicesComponent},
   {path: 'register-form/personal-info', component: PersonalInfoComponent},
+  {path: 'register-form/end-of-registration', component: EndOfRegistrationComponent},
   {path: '', redirectTo: '/main-page', pathMatch: 'full'},
 
   {path: 'register-form/login', component: LoginFormComponent},

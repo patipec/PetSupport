@@ -1,209 +1,114 @@
-<mat-grid-list cols="1" rowHeight="500px">
-    <mat-grid-tile style="position:inherit;">
+<mat-card>
+    <mat-card-content style="position:inherit;">
         <div class="example-container">
             <div class="card-title">Basic Info</div>
             <hr>
             <br><br>
-            <form class="my-form" #loginForm=ngForm (ngSubmit)="onCreatePost(loginForm.value)">
-                <div 
-                id="user-data" 
-                ngModelGroup="userData"
-                #userData="ngModelGroup">
-                
-                    <mat-form-field appearance="fill" class="width-100">
-                    <mat-label>First Name</mat-label>
+
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm.value)">
+                    <div formGroupName="userData">
+
+                    <mat-form-field class="width-100">
+                        <mat-label>Name</mat-label>
                         <input matInput
                         type="text"
-                        id="name"
-                        ngModel
                         name="name"
-                        required>
-                    </mat-form-field>
-                    <br>
-                    <mat-form-field appearance="fill" class="width-100">
-                        <mat-label>Surname</mat-label>
-                        <input matInput
-                        type="text"
-                        id="surname"
-                        ngModel
-                        name="surname">
-                    </mat-form-field>
-                    <br>
-                    <mat-form-field appearance="fill" class="width-100">
-                        <mat-label>Email address</mat-label>
-                        <input matInput 
-                        placeholder="Ex. pat@example.com"
-                        type="email"
-                        id="email"
-                        ngModel
-                        name="email"
-                        required
-                        email
-                        #email="ngModel">
-                        <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
+                        formControlName="name">
+                        <span *ngIf="!signupForm.get('userData.name').valid && signupForm.get('userData.name').touched" 
+                        class="help-block">Please enter a valid Name</span>
+                        <!--
+                        <mat-error *ngFor="let validation of validation_messages.street">
+                            <mat-error class="error-message" *ngIf="signupForm.get('street').hasError(validation.type) && (signupForm.get('street').dirty || signupForm.get('fullname').touched)">{{validation.message}}</mat-error>
+                          </mat-error>
+                        -->
                     </mat-form-field>
                     
                     <br>
-                    <mat-form-field appearance="fill" class="width-100">
-                        <mat-label>Phone number</mat-label>
-                        <input matInput 
-                        placeholder="Ex. 123-600-457"
-                        ngModel
-                        name="phone">
+                    <mat-form-field class="width-100">
+                        <mat-label>Surname</mat-label>
+                        <input matInput
+                        type="text"
+                        name="surname"
+                        formControlName="surname">
+                        <span *ngIf="!signupForm.get('userData.surname').valid && signupForm.get('userData.surname').touched" 
+                        class="help-block">Please enter a valid Surname</span>
                     </mat-form-field>
                     <br>
-                    <mat-form-field appearance="fill" class="width-100">
-                        <mat-label>Enter password</mat-label>
-                        <input matInput 
-                        [type]="hide ? 'password' : 'text'"
-                        ngModel
-                        name="password">
-                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        </button>
+
+                    <mat-form-field class="width-100">
+                        <mat-label>Email</mat-label>
+                        <input matInput
+                        type="text"
+                        id="email"
+                        name="email"
+                        formControlName="email">
+                        <span *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched" 
+                        class="help-block">Please enter a valid Email</span>
+                    </mat-form-field>
+                
+                    <br>
+                    <mat-form-field class="width-100">
+                        <mat-label>Phone</mat-label>
+                        <input matInput
+                        type="text"
+                        placeholder="123456789"
+                        id="phone"
+                        name="phone"
+                        formControlName="phone">
+                        <span *ngIf="!signupForm.get('userData.phone').valid && signupForm.get('userData.phone').touched" 
+                        class="help-block">Please enter a valid Phone number</span>
                     </mat-form-field>
                     <br>
-                    <mat-form-field appearance="fill" class="width-100">
-                        <mat-label>Repeat password</mat-label>
-                        <input matInput 
+
+                    <mat-form-field class="width-100">
+                        <mat-label>Password</mat-label>
+                        <input matInput
                         [type]="hide ? 'password' : 'text'"
-                        ngModel
-                        name="repeatpassword">
-                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        </button>
-                        </mat-form-field>
+                        id="password"
+                        name="password"
+                        placeholder="Password"
+                        formControlName="password">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <span *ngIf="!signupForm.get('userData.password').valid && signupForm.get('userData.password').touched" 
+                        class="help-block">Please enter a valid Password</span>
+                    </mat-form-field>
+
                     <br>
+                    <mat-form-field class="width-100">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput
+                        [type]="hide ? 'confirmPassword' : 'text'"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="confirmPassword"
+                        formControlName="confirmPassword">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <span *ngIf="!signupForm.get('userData.confirmPassword').valid && signupForm.get('userData.confirmPassword').touched" 
+                        class="help-block">Please confirm password corectly</span>
+                    </mat-form-field>
+
+                    <br> 
+                    <span *ngIf="!signupForm.valid && signupForm.touched"></span>
                     <mat-card-actions>
-                            <a mat-raised-button 
-                            type="submit" 
-                            color="primary"
-                            routerLink="/register-form/address"
-                            [disabled]="!loginForm.valid">NEXT</a>
-                    </mat-card-actions>    
+                        <a mat-raised-button 
+                        class="back-btn"
+                        routerLink="/register-form/services"
+                        >Cancel</a>
+                    <a mat-raised-button 
+                    class="continue-btn"
+                    type="submit" 
+                    color="primary"
+                    routerLink="/register-form/address"
+                    >Next</a>
+             </mat-card-actions> 
                 </div>
-            </form>
-        </div>
-    </mat-grid-tile>
-    <p *ngIf="!userData.valid && userData.touched">User data is invalid</p>
-</mat-grid-list>
-
-<br>
-<hr>
-<div *ngIf="submitted">
-    <h3>Results</h3>
-    <p>Name: {{ user.name }}</p>    
-    <p>Surname: {{ user.surname }}</p>   
-    <p>Email: {{ user.email }}</p>   
-    <p>Phone: {{ user.phone }}</p>   
-    <p>Password: {{ user.password }}</p>   
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                </form>
+            </div>
+        </mat-card-content>
+    </mat-card>
+   
+    
