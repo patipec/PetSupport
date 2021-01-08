@@ -4,14 +4,14 @@ mat-grid-tile {
 }
 
 
-mat-form-field {
+/* mat-form-field {
 
   width: 3vw;
   margin: 7px;
   display: inline-block;
   border: slategray solid 1px;
   border-radius: 40px;
-}
+} */
 
 .card-title {
     color: #0B814A;
@@ -89,4 +89,39 @@ input.ng-invalid.ng-touched {
 
 mat-card-actions {
   text-align: center;
+}
+
+mat-form-field {
+  display: block;
+  border: solid #8d8d8d 1px;
+  -moz-border-radius: 15px;
+  border-radius: 35px;
+  padding: 0px 0px 2px;
+  font-size: 12px;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  margin: 0px auto 1px;
+  width: 90%;
+  background-color: white;
+}
+mat-form-field input {
+
+  justify-content: center;
+
+}
+
+.label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+hr {
+  width: 200px;
+}
+
+.center {
+  margin: 10px auto;
+  text-align: center;
+  justify-content: center;
 }

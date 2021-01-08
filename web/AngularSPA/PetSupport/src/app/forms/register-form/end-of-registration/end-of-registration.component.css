@@ -3,7 +3,6 @@ section.main-container {
     min-height: 450px;
     background-image: url(/../../../../../../assets/Backgrounds/bg-registration.png);
     background-size: cover;
-    position: relative;
 }
 
 .container {
@@ -21,12 +20,11 @@ section.main-container {
     margin: 100px auto;
     border-radius: 30px;
     box-shadow: 3px 0 6px rgba(0,0,0,.24) !important;
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
   }
 
-  mat-card-content {
-    justify-content: center;
-    text-align: center;
-  }
   h2 {
     font-size: 26px;
     margin: 10px 0px 30px 10px;
