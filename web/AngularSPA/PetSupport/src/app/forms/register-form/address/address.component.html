@@ -1,12 +1,12 @@
 
-    <mat-grid-list cols="1" rowHeight="500px">
+    <mat-grid-list cols="1" rowHeight="700px">
         <mat-grid-tile style="position:inherit;">
             <div class="example-container">
                 <div class="card-title">Address</div>
                 <hr>
                 <br><br>
 
-                <form [formGroup]="signupForm" (ngSubmit)="onCreatePost(signupForm.value)">
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm.value)">
                 <div formGroupName="userData">
                 
                     <mat-form-field appearance="fill" class="width-100">
@@ -18,6 +18,13 @@
                         formControlName="street">
                         <span *ngIf="!signupForm.get('userData.street').valid && signupForm.get('userData.street').touched" 
                         class="help-block">Please enter a valid Street</span>
+                        
+                        <!--
+                        <mat-error *ngFor="let validation of validation_messages.street">
+                            <mat-error class="error-message" *ngIf="signupForm.get('street').hasError(validation.type) && (signupForm.get('street').dirty || signupForm.get('fullname').touched)">{{validation.message}}</mat-error>
+                          </mat-error>
+                        -->
+
                     </mat-form-field>
                     <br>
                     <mat-form-field appearance="fill" class="width-100">

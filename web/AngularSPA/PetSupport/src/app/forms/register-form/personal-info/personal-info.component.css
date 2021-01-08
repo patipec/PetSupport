@@ -44,3 +44,10 @@ input.ng-invalid.ng-touched {
   font-size: 12px;
   font-weight: normal;
 }
+
+.example-container {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  margin: 0 auto;
+}
