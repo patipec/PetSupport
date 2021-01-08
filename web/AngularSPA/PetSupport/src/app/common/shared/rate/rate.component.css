@@ -1,0 +1,14 @@
+.crop {
+  overflow: hidden;
+}
+div {
+  cursor: pointer;
+  display: inline-block;
+}
+.fa-star{
+  display: inline;
+  color: gold;
+  /*width: 25px;*/
+  font-size: 25px;
+  /*background-color: gold;*/
+}

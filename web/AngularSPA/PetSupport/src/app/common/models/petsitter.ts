@@ -16,4 +16,5 @@ export interface PetsitterUpdate {
   ZipCode?: string;
   Description: string;
   Price: number;
+  Rate: number;
 }

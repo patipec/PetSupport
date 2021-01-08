@@ -1,17 +1,17 @@
 <section>
-    <mat-card cols="1" rowHeight="800px">
-        <mat-card-content style="position:inherit;">
+    <mat-grid-list cols="1" rowHeight="800px">
+        <mat-grid-tile style="position:inherit;">
             <div class="example-container">
                 <div class="card-title">Personal Informations</div>
                 <hr>
                 <br><br>
-                <div class="width-100">
+
                 <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm.value)">
                 <div formGroupName="userData">
                     <div class="title-name">
                         Birthday
                     </div>
-                    <mat-form-field class="width-100 center">
+                    <mat-form-field appearance="fill" class="width-100">
                         <mat-label>Birthday</mat-label>
                         <input matInput
                         type="text"
@@ -22,15 +22,14 @@
                         class="help-block">Please enter a valid Street</span>
                     </mat-form-field>
                     <br>
-                    <div class="label">
                     <div class="title-name">
                         Short title about you
                         <div class="title-info">
                             Make your headline short, descriptive and genuine. This will be your first introduction to pet owners
                             when they search for service.
                         </div>
-                    </div></div>
-                    <mat-form-field class="width-100">
+                    </div>
+                    <mat-form-field appearance="fill" class="width-100">
                         <mat-label>Short title about you</mat-label>
                         <input matInput
                         type="text"
@@ -42,13 +41,13 @@
                     </mat-form-field>
                     <br>
                     <div class="title-name">
-                        Experience
+                        Short title about you
                         <div class="title-info">
                             Describe any past experiences you've had with pets, Lead with what sets you apart from other
                             sitters. Do you have any special skills?
                         </div>
                     </div>
-                    <mat-form-field class="width-100">
+                    <mat-form-field appearance="fill" class="width-100">
                         <mat-label>Experience</mat-label>
                         <input matInput
                         type="text"
@@ -60,13 +59,13 @@
                     </mat-form-field>
                     <br>
                     <div class="title-name">
-                        Availability
+                        Short title about you
                         <div class="title-info">
                             Let pet owners know about your availability for each service you want to provide. For example do
                             you work full time or part time etc.
                         </div>
                     </div>
-                    <mat-form-field class="width-100">
+                    <mat-form-field appearance="fill" class="width-100">
                         <mat-label>Availability</mat-label>
                         <input matInput 
                         id="availability"
@@ -77,13 +76,13 @@
                     </mat-form-field>
                     <br>
                     <div class="title-name">
-                        Environment
+                        Short title about you
                         <div class="title-info">
                             Describe the environment where you will provide home services as well as amentities that set you
                             apart such as large yards, daily runs, nearby dog parks etc.
                         </div>
                     </div>
-                    <mat-form-field class="width-100">
+                    <mat-form-field appearance="fill" class="width-100">
                         <mat-label>Environment</mat-label>
                         <input matInput
                         type="text"
@@ -99,22 +98,14 @@
                     <br> 
                     <span *ngIf="!signupForm.valid && signupForm.touched"></span>
                     <mat-card-actions>
-                        <a mat-raised-button 
-                        class="back-btn"
-                        routerLink="/register-form/services"
-                        >Back</a>
-                    <a mat-raised-button 
-                    class="continue-btn"
-                    type="submit" 
-                    color="primary"
-                    routerLink="/register-form/end-of-registration"
-                    >Save</a>
-             </mat-card-actions> 
- 
+                        <button mat-raised-button 
+                        type="submit" 
+                        color="primary"
+                        >NEXT</button>
+                 </mat-card-actions> 
                 </div>
                 </form>
             </div>
-            </div>
-        </mat-card-content>
-    </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
 </section>

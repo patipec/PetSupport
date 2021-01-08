@@ -38,7 +38,8 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { RangeSlider } from './forms/shared/slider/slider.component';
 import { MapComponent } from './common/components/map/map.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
-import { EndOfRegistrationComponent } from './forms/register-form/end-of-registration/end-of-registration.component';
+import { RateComponent } from './common/shared/rate/rate.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -63,12 +64,12 @@ import { EndOfRegistrationComponent } from './forms/register-form/end-of-registr
     RangeSlider,
     MapComponent,
     LoginFormComponent,
-    EndOfRegistrationComponent
+    RateComponent
   ],
 
   imports: [
     BrowserModule,
-    AppRoutingModule,  
+    AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatToolbarModule,
@@ -83,7 +84,8 @@ import { EndOfRegistrationComponent } from './forms/register-form/end-of-registr
     MaterialModule,
     ReactiveFormsModule,
     MatCarouselModule.forRoot(),
-    NgxSliderModule
+    NgxSliderModule,
+    IvyCarouselModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

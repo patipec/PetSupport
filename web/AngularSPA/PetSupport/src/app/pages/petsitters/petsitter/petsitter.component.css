@@ -1,0 +1,102 @@
+.petsittter-details-container{
+
+}
+/*UPPER CONTAINER*/
+.petsitter-upper-container{
+  display: flex;
+  margin: 0px 5vw;
+  height: 33vh;
+  padding-bottom: 3vh;
+}
+.petsitter-image{
+  width: 22.5vw;
+  justify-content: center;
+}
+.petsitter-image img{
+  width: 50%;
+  height: 70%;
+  margin:50px auto 0;
+  display: flex;
+}
+
+.petsitter-description{
+  width: 30vw;
+  justify-content: center;
+}
+/*STAR RATING THINGS*/
+.rate-container{
+  display: flex;
+  position: relative;
+  width: 25px;
+  font-size: 20px;
+  margin: 10px 0px 10px 10px;
+}
+.rating-without-stars{
+  position: relative;
+  top:3px;
+  margin-right: 20px;
+  text-align: center;
+}
+.rate-numeric{
+  font-size: .9em;
+}
+.rate-text {
+  font-size: .8em;
+}
+h2{
+  /*font-weight: bold;*/
+  color: forestgreen;
+}
+hr{
+  margin: 3vh 0;
+}
+/*CONTACT BUTTON*/
+.petsitter-contact-button{
+  width: 15vw;
+  justify-content: center;
+  display: flex;
+}
+button{
+  width: 80%;
+  background-color: darkgreen;
+  border-color: darkgreen;
+  color: white;
+  margin: auto;
+  border-radius: 35px;
+  padding: 15px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.petsitter-calendar{
+  width: 22.5vw;
+  height: 33vh;
+  justify-content: center;
+  display: flex;
+  margin: auto;
+  border: solid black 1px;
+}
+
+/*DOWN CONTAINER*/
+.petsitter-down-container{
+  height: 52vh;
+  margin: 0px 5vw;
+  display: flex;
+  margin: 0px 5vw;
+}
+
+.about-petsitter{
+  width: 22.5vw;
+  border: solid black 2px;
+}
+.galery{
+  width: 45vw;
+  margin: auto 0 auto 10%;
+  display: flex;
+}
+
+.services{
+  width: 22.5vw;
+  border: solid black 2px;
+}

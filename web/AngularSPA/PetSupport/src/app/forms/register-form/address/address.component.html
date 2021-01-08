@@ -1,6 +1,6 @@
 
-    <mat-card>
-        <mat-card-content style="position:inherit;">
+    <mat-grid-list cols="1" rowHeight="700px">
+        <mat-grid-tile style="position:inherit;">
             <div class="example-container">
                 <div class="card-title">Address</div>
                 <hr>
@@ -8,7 +8,8 @@
 
                 <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm.value)">
                 <div formGroupName="userData">
-                    <mat-form-field class="width-100">
+                
+                    <mat-form-field appearance="fill" class="width-100">
                         <mat-label>Street</mat-label>
                         <input matInput
                         type="text"
@@ -22,11 +23,11 @@
                         <mat-error *ngFor="let validation of validation_messages.street">
                             <mat-error class="error-message" *ngIf="signupForm.get('street').hasError(validation.type) && (signupForm.get('street').dirty || signupForm.get('fullname').touched)">{{validation.message}}</mat-error>
                           </mat-error>
-                        -->  
+                        -->
+
                     </mat-form-field>
-                    
                     <br>
-                    <mat-form-field class="width-100">
+                    <mat-form-field appearance="fill" class="width-100">
                         <mat-label>House nr / Flat nr</mat-label>
                         <input matInput
                         type="text"
@@ -37,8 +38,7 @@
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                     <br>
-
-                    <mat-form-field class="width-100">
+                    <mat-form-field appearance="fill" class="width-100">
                         <mat-label>City</mat-label>
                         <input matInput
                         type="text"
@@ -50,7 +50,7 @@
                     </mat-form-field>
                 
                     <br>
-                    <mat-form-field class="width-100">
+                    <mat-form-field appearance="fill" class="width-100">
                         <mat-label>Zip Code</mat-label>
                         <input matInput 
                         placeholder="Ex. 12-345"
@@ -61,8 +61,7 @@
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                     <br>
-
-                    <mat-form-field class="width-100">
+                    <mat-form-field appearance="fill" class="width-100">
                         <mat-label>Country</mat-label>
                         <input matInput
                         type="text"
@@ -79,23 +78,14 @@
                     <span *ngIf="!signupForm.valid && signupForm.touched"></span>
                     <mat-card-actions>
                         <a mat-raised-button 
-                        class="back-btn"
-                        routerLink="/register-form/basic-info"
-                        >Back</a>
-                    <a mat-raised-button 
-                    class="continue-btn"
-                    type="submit" 
-                    color="primary"
-                    routerLink="/register-form/services"
-                    >Next</a>
-             </mat-card-actions> 
-
-
-
-
+                        type="submit" 
+                        color="primary"
+                        routerLink="/register-form/services"
+                        >NEXT</a>
+                 </mat-card-actions> 
                 </div>
                 </form>
             </div>
-        </mat-card-content>
-    </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
    

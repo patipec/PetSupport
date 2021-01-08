@@ -25,5 +25,5 @@ export class MapService {
   }
 }
 // STEPS TO REPRODUCE JSON SERVER
-// OneDrive/Desktop/PetSupport/web/AngularSPA/PetSupport/src/app/map
+// OneDrive/Desktop/PetSupport/web/AngularSPA/PetSupport
 // json-server --watch data.json
