@@ -38,6 +38,7 @@ export class LongFormComponent implements OnInit {
   }
 
   onSubmit(): void{
+    console.log(this.longFormSettings.value);
     console.log('Saved: ' + JSON.stringify(this.longFormSettings.value));
   }
 

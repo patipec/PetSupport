@@ -1,12 +1,12 @@
-
-    <mat-grid-list cols="1" rowHeight="500px">
+<section>
+    <mat-grid-list cols="1" rowHeight="800px">
         <mat-grid-tile style="position:inherit;">
             <div class="example-container">
                 <div class="card-title">Personal Informations</div>
                 <hr>
                 <br><br>
 
-                <form [formGroup]="signupForm" (ngSubmit)="onCreatePost(signupForm.value)">
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm.value)">
                 <div formGroupName="userData">
                     <div class="title-name">
                         Birthday
@@ -108,4 +108,4 @@
             </div>
         </mat-grid-tile>
     </mat-grid-list>
-   
+</section>
