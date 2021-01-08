@@ -51,3 +51,42 @@ input.ng-invalid.ng-touched {
   margin-bottom: 40px;
   margin: 0 auto;
 }
+
+
+.continue-btn{
+  background-color:#FFCB3D;
+  color: black;
+  font-weight:500;
+  font-size: 13px;
+  width: 140px;
+  -moz-border-radius: 15px;
+  border-radius: 25px;
+  padding: 3px 0 ;
+  margin-left: 13px !important;
+  margin-right: 13px !important;
+}
+.continue-btn:hover{
+  background-color:#ffbb00;
+}
+
+.back-btn{
+  background-color:white;
+  color: black;
+  font-size: 13px;
+  border-color: black 1px;
+  font-weight:500;
+  width: 140px;
+  -moz-border-radius: 15px;
+  border-radius: 25px;
+  padding: 3px 0 ;
+  margin-left: 13px !important;
+  margin-right: 13px !important;
+}
+
+.back-btn:hover{
+  background-color: #ececec;
+}
+
+mat-card-actions {
+  text-align: center;
+}

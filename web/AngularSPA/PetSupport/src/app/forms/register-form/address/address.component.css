@@ -76,7 +76,7 @@ input.ng-invalid.ng-touched {
   margin-right: 13px !important;
 }
 .continue-btn:hover{
-  background-color: #41B883;
+  background-color:#ffbb00;
 }
 
 .back-btn{
@@ -91,6 +91,10 @@ input.ng-invalid.ng-touched {
   padding: 3px 0 ;
   margin-left: 13px !important;
   margin-right: 13px !important;
+}
+
+.back-btn:hover{
+  background-color: #ececec;
 }
 
 mat-card-actions {

@@ -38,6 +38,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { RangeSlider } from './forms/shared/slider/slider.component';
 import { MapComponent } from './common/components/map/map.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
+import { EndOfRegistrationComponent } from './forms/register-form/end-of-registration/end-of-registration.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { LoginFormComponent } from './forms/login-form/login-form.component';
     ServicesCardsComponent,
     RangeSlider,
     MapComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    EndOfRegistrationComponent
   ],
 
   imports: [
