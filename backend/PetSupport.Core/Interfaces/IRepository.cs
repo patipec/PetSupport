@@ -12,7 +12,7 @@ namespace PetSupport.Core.Interfaces
     {
         Task<T> GetByIdAsync(int id);
         Task<IEnumerable<T>> GetAllAsync();
-        Task<List<Petsitter>> FindByConditionAsync(Expression<Func<T, bool>> expression);
+        Task<List<T>> FindByConditionAsync(Expression<Func<T, bool>> expression);
         void Add(T entity);
         void Update(T entity);
         Task<bool> SaveChangesAsync();

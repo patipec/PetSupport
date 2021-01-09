@@ -34,7 +34,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
 
         public  async Task<Petsitter> GetByIdAsync(int id)
         {
-            return await Petsitters.FirstOrDefaultAsync(x=>x.Id = id);
+            return await Petsitters.FirstOrDefaultAsync(x=>x.Id == id);
 
         }
 
