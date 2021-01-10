@@ -1,13 +1,41 @@
-mat-grid-tile {
-    background-color: lightblue;
+section.main-container {
+    height: 55vh;
+    min-height: 450px;
+    background: linear-gradient( rgba(255, 255, 255, 0.1), rgba(180, 180, 180, 0.3) ), url(../../../assets/BecomePetsitterPage/become-photo1.jpg);
+    background-size:cover;
+    position: relative;
 }
 
-.mtg-fb {
-    width: 30%;
+.continue-btn{
+    background-color:#0B814A;
+    color: white;
+    font-weight:500;
+    font-size: 13px;
+    width: 140px;
+    -moz-border-radius: 15px;
+    border-radius: 25px;
+    padding: 3px 0 ;
+    margin-left: 13px !important;
+    margin-right: 13px !important;
+  }
+  .continue-btn:hover{
+    background-color:#0c4d42;
+  }
+
+  .main-text {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    color: white;
+    line-height: 48px;
 }
-.mtg-pl {
-    width: 40%;
-}
-.mtg-fb {
-    width: 30%;
+
+.main-container-holder {
+    display: inline;
+    text-align: center;
+    justify-content: center;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding-top: 120px;
+    padding-bottom: 20px;
 }
