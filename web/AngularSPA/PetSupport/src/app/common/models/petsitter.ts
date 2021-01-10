@@ -7,6 +7,7 @@ export interface Petsitter extends PetsitterUpdate {
       ReviewerComment: string;
       ReviewerRate: number;
       ReviewDate: Date;
+      ReviewerImage: string;
     }]; //  TODO Reviews[]
 }
 

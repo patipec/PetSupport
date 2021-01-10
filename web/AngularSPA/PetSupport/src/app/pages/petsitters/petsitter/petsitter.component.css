@@ -86,7 +86,7 @@ button{
 }
 
 .petsitter-down-container {
-  height: 52vh;
+  height: 60vh;
   display: flex;
 }
 app-petsitter-calendar{
@@ -99,6 +99,6 @@ app-petsitter-calendar{
 app-petsitter-reviews{
   /*border: solid 1px black;*/
   margin: 4vh auto;
-  height: 90%;
+  height: 100%;
   width: 60%;
 }

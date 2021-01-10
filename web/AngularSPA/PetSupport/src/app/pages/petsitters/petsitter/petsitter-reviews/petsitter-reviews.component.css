@@ -1,3 +1,6 @@
+.review-main-container{
+  height: 100%;
+}
 .reviewer-name{
   font-size: 16px;
   color:darkgreen;
@@ -9,7 +12,16 @@
   padding: 10px 0;
   width: 600px;
 }
-.reviewer-name span{
-  margin-left: 100px;
-  font-weight: normal;
+.reviewer-info{
+  height: 5vh;
+  display: flex;
+}
+.review-description{
+  margin-top: 10px;
+}
+img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
 }
