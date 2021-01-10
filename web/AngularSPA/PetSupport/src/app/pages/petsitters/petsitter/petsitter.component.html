@@ -26,17 +26,11 @@
   </div>
   <hr>
   <div class="petsitter-middle-container">
-      <div class="services">
-          <h1>Services:</h1>
-          <div class="singe-service">
-            Boarding
-          </div>
-        <div class="singe-service">
-          Boarding
-        </div>
-      </div>
+    <app-petsitter-services [petsitter]="petsitter">
+
+    </app-petsitter-services>
     <div class="galery">
-        <carousel cellWidth="100%" [height]="400" [width]="800" [images]="[
+        <carousel cellWidth="100%" [height]="400" [width]="600" [images]="[
         {'path': './../assets/PetsitterDetail/ExamplePetsitter/1.jpg'},
         {'path': './../assets/PetsitterDetail/ExamplePetsitter/2.jpg'},
         {'path': './../assets/PetsitterDetail/ExamplePetsitter/3.jpg'},
@@ -44,7 +38,7 @@
         {'path': './../assets/PetsitterDetail/ExamplePetsitter/5.jpg'}]">
         </carousel>
       <div class="galery2">
-        <carousel [height]="100" [width]="800" [images]="[
+        <carousel [height]="100" [width]="600" [images]="[
         {'path': './../assets/PetsitterDetail/ExamplePetsitter/1.jpg'},
         {'path': './../assets/PetsitterDetail/ExamplePetsitter/2.jpg'},
         {'path': './../assets/PetsitterDetail/ExamplePetsitter/3.jpg'},
@@ -57,7 +51,14 @@
 
   </div>
   <div class="petsitter-down-container">
+        <app-petsitter-calendar></app-petsitter-calendar>
 
+        <app-petsitter-reviews [petsitter]="petsitter">
+          <div class="review">
+
+            <hr>
+          </div>
+        </app-petsitter-reviews>
   </div>
 </div>
 

@@ -1,0 +1,15 @@
+.reviewer-name{
+  font-size: 16px;
+  color:darkgreen;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.single-review{
+  padding: 10px 0;
+  width: 600px;
+}
+.reviewer-name span{
+  margin-left: 100px;
+  font-weight: normal;
+}

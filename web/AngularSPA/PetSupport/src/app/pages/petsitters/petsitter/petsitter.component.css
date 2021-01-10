@@ -77,28 +77,9 @@ button{
 
 }
 
-.services{
-
-  margin-right: 2.5vw;
-  height: 100%;
-  width: 20vw;
-  /*margin: 2% auto;*/
-  background-color: #f6f3f3;
-  padding: 20px;
-  border-radius: 50px;
-}
-.services h1{
-  margin: 30px 0 0 50px;
-  font-weight: bold;
-}
-.single-service{
-  width: 90%;
-  margin:auto;
-  justify-content: center;
-}
 .galery{
   width: 45vw;
-  margin: auto 0 auto;
+  margin: auto 0 auto 2vw;
 }
 .galery2{
   margin-top: 10px;
@@ -108,5 +89,16 @@ button{
   height: 52vh;
   display: flex;
 }
+app-petsitter-calendar{
+  border: solid 1px black;
+  margin: 0 0 0 2.5vw;
+  height: 80%;
+  width: 18vw;
+}
 
-
+app-petsitter-reviews{
+  /*border: solid 1px black;*/
+  margin: 4vh auto;
+  height: 90%;
+  width: 60%;
+}

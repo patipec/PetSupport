@@ -14,28 +14,33 @@
       "Price": 15,
       "Rate": 4.3,
       "Services": {
-        "Boarding": 55,
-        "HouseSitting": 42,
-        "Walking": 15
+        "Boarding": 35,
+        "Walking": 14
       },
       "Reviews": [
         {
           "ReviewerFirstName": "John",
           "ReviewerSurName": "Snow",
           "ReviewerComment": "ABSOLUTELY recommend Sophie. She goes above and beyond to care for my dog Percy. She left me at ease and was in constant communication. She takes care of him as well as I do, and he always comes back home as happy as can be :)",
-          "ReviewerRate": 5
+          "ReviewerRate": 5,
+          "ReviewDate": "13.07.2020",
+          "ReviewerImage": "https://cdn.vox-cdn.com/thumbor/l9l4iztkKVgnxD0vMmqYwknBZu4=/99x0:1179x810/1400x1400/filters:focal(99x0:1179x810):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/46094226/Jon_snow.0.jpg"
         },
         {
           "ReviewerFirstName": "Aria",
           "ReviewerSurName": "Stark",
           "ReviewerComment": "Sophie was very responsive in communication, provided lots of information every day about the status of our cat, and followed directions perfectly!!! She was an absolute delight to work with and we will definitely book her again!!",
-          "ReviewerRate": 3.2
+          "ReviewerRate": 3.2,
+          "ReviewDate": "28.12.2021",
+          "ReviewerImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRSyY6tEGZeXk-ppZF1dr_5Y6Yn9JVvHaNBA&usqp=CAU"
         },
         {
           "ReviewerFirstName": "Cersei",
           "ReviewerSurName": "Lannister",
           "ReviewerComment": "Sophie was very consistent and timely! She left detailed reviews on my cat’s drop in. Very  reliable for longer trips away from home. Would recommend!",
-          "ReviewerRate": 1.2
+          "ReviewerRate": 1.2,
+          "ReviewDate": "12.11.2020",
+          "ReviewerImage": "https://i.pinimg.com/originals/7f/98/f4/7f98f40ec4c100f2edd288eb8016c1d5.jpg"
         }
       ]
     },
@@ -53,28 +58,35 @@
       "Price": 70000000,
       "Rate": 2.8,
       "Services": {
-        "Boarding": 55,
-        "HouseSitting": 42,
-        "Walking": 15
+        "Boarding": 11,
+        "HouseSitting": 12,
+        "Walking": 15,
+        "ReviewDate": "10.01.2021"
       },
       "Reviews": [
         {
           "ReviewerFirstName": "John",
           "ReviewerSurName": "Snow",
           "ReviewerComment": "ABSOLUTELY recommend Sophie. She goes above and beyond to care for my dog Percy. She left me at ease and was in constant communication. She takes care of him as well as I do, and he always comes back home as happy as can be :)",
-          "ReviewerRate": 5
+          "ReviewerRate": 5,
+          "ReviewDate": "02.12.2020",
+          "ReviewerImage": "https://cdn.vox-cdn.com/thumbor/l9l4iztkKVgnxD0vMmqYwknBZu4=/99x0:1179x810/1400x1400/filters:focal(99x0:1179x810):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/46094226/Jon_snow.0.jpg"
         },
         {
           "ReviewerFirstName": "Aria",
           "ReviewerSurName": "Stark",
           "ReviewerComment": "Sophie was very responsive in communication, provided lots of information every day about the status of our cat, and followed directions perfectly!!! She was an absolute delight to work with and we will definitely book her again!!",
-          "ReviewerRate": 3.2
+          "ReviewerRate": 3.2,
+          "ReviewDate": "22.11.2020",
+          "ReviewerImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRSyY6tEGZeXk-ppZF1dr_5Y6Yn9JVvHaNBA&usqp=CAU"
         },
         {
           "ReviewerFirstName": "Cersei",
           "ReviewerSurName": "Lannister",
           "ReviewerComment": "Sophie was very consistent and timely! She left detailed reviews on my cat’s drop in. Very  reliable for longer trips away from home. Would recommend!",
-          "ReviewerRate": 1.2
+          "ReviewerRate": 1.2,
+          "ReviewDate": "11.12.2020",
+          "ReviewerImage": "https://i.pinimg.com/originals/7f/98/f4/7f98f40ec4c100f2edd288eb8016c1d5.jpg"
         }
       ]
     },
@@ -92,28 +104,34 @@
       "Price": 0,
       "Rate": 3.6,
       "Services": {
-        "Boarding": 55,
-        "HouseSitting": 42,
-        "Walking": 15
+        "Boarding": 15,
+        "HouseSitting": 22,
+        "Walking": 8
       },
       "Reviews": [
         {
           "ReviewerFirstName": "John",
           "ReviewerSurName": "Snow",
           "ReviewerComment": "ABSOLUTELY recommend Sophie. She goes above and beyond to care for my dog Percy. She left me at ease and was in constant communication. She takes care of him as well as I do, and he always comes back home as happy as can be :)",
-          "ReviewerRate": 5
+          "ReviewerRate": 5,
+          "ReviewDate": "21.01.2020",
+          "ReviewerImage": "https://cdn.vox-cdn.com/thumbor/l9l4iztkKVgnxD0vMmqYwknBZu4=/99x0:1179x810/1400x1400/filters:focal(99x0:1179x810):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/46094226/Jon_snow.0.jpg"
         },
         {
           "ReviewerFirstName": "Aria",
           "ReviewerSurName": "Stark",
           "ReviewerComment": "Sophie was very responsive in communication, provided lots of information every day about the status of our cat, and followed directions perfectly!!! She was an absolute delight to work with and we will definitely book her again!!",
-          "ReviewerRate": 3.2
+          "ReviewerRate": 3.2,
+          "ReviewDate": "17.12.2020",
+          "ReviewerImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRSyY6tEGZeXk-ppZF1dr_5Y6Yn9JVvHaNBA&usqp=CAU"
         },
         {
           "ReviewerFirstName": "Cersei",
           "ReviewerSurName": "Lannister",
           "ReviewerComment": "Sophie was very consistent and timely! She left detailed reviews on my cat’s drop in. Very  reliable for longer trips away from home. Would recommend!",
-          "ReviewerRate": 1.2
+          "ReviewerRate": 1.2,
+          "ReviewDate": "14.11.2020",
+          "ReviewerImage": "https://i.pinimg.com/originals/7f/98/f4/7f98f40ec4c100f2edd288eb8016c1d5.jpg"
         }
       ]
     },
@@ -131,28 +149,34 @@
       "Price": 30,
       "Rate": 1.9,
       "Services": {
-        "Boarding": 55,
-        "HouseSitting": 42,
-        "Walking": 15
+        "Boarding": 7,
+        "HouseSitting": 20,
+        "Walking": 10
       },
       "Reviews": [
         {
           "ReviewerFirstName": "John",
           "ReviewerSurName": "Snow",
           "ReviewerComment": "ABSOLUTELY recommend Sophie. She goes above and beyond to care for my dog Percy. She left me at ease and was in constant communication. She takes care of him as well as I do, and he always comes back home as happy as can be :)",
-          "ReviewerRate": 5
+          "ReviewerRate": 5,
+          "ReviewDate": "11.12.2020",
+          "ReviewerImage": "https://cdn.vox-cdn.com/thumbor/l9l4iztkKVgnxD0vMmqYwknBZu4=/99x0:1179x810/1400x1400/filters:focal(99x0:1179x810):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/46094226/Jon_snow.0.jpg"
         },
         {
           "ReviewerFirstName": "Aria",
           "ReviewerSurName": "Stark",
-            "ReviewerComment": "Sophie was very responsive in communication, provided lots of information every day about the status of our cat, and followed directions perfectly!!! She was an absolute delight to work with and we will definitely book her again!!",
-          "ReviewerRate": 3.2
+          "ReviewerComment": "Sophie was very responsive in communication, provided lots of information every day about the status of our cat, and followed directions perfectly!!! She was an absolute delight to work with and we will definitely book her again!!",
+          "ReviewerRate": 3.2,
+          "ReviewDate": "20.01.2021",
+          "ReviewerImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRSyY6tEGZeXk-ppZF1dr_5Y6Yn9JVvHaNBA&usqp=CAU"
         },
         {
           "ReviewerFirstName": "Cersei",
           "ReviewerSurName": "Lannister",
           "ReviewerComment": "Sophie was very consistent and timely! She left detailed reviews on my cat’s drop in. Very  reliable for longer trips away from home. Would recommend!",
-          "ReviewerRate": 1.2
+          "ReviewerRate": 1.2,
+          "ReviewDate": "31.01.2021",
+          "ReviewerImage": "https://i.pinimg.com/originals/7f/98/f4/7f98f40ec4c100f2edd288eb8016c1d5.jpg"
         }
       ]
     }

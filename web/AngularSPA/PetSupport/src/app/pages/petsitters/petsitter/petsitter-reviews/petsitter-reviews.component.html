@@ -1,0 +1,12 @@
+<div class="review-main-container">
+  <h1><b>Reviews:</b></h1>
+  <div class="single-review" *ngFor="let review of petsitter.Reviews">
+    <div class="reviewer-name">
+      {{review.ReviewerFirstName}} {{review.ReviewerSurName[0]}}.
+      <span>{{review.ReviewDate}}</span>
+    </div>
+    {{review.ReviewerComment}}
+    <hr>
+  </div>
+
+</div>

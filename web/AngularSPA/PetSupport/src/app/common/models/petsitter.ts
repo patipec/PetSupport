@@ -1,5 +1,13 @@
 export interface Petsitter extends PetsitterUpdate {
-  Services?: string[]; //  TODO Services[]
+  Services?: {}; //  TODO Services[]
+  Reviews?: [
+    {
+      ReviewerFirstName: string;
+      ReviewerSurName: string;
+      ReviewerComment: string;
+      ReviewerRate: number;
+      ReviewDate: Date;
+    }]; //  TODO Reviews[]
 }
 
 export interface PetsitterCreate extends Petsitter {

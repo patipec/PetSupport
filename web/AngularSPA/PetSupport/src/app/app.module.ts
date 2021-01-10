@@ -40,6 +40,9 @@ import { MapComponent } from './common/components/map/map.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { RateComponent } from './common/shared/rate/rate.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { PetsitterServicesComponent } from './pages/petsitters/petsitter/petsitter-services/petsitter-services.component';
+import { PetsitterCalendarComponent } from './pages/petsitters/petsitter/petsitter-calendar/petsitter-calendar.component';
+import { PetsitterReviewsComponent } from './pages/petsitters/petsitter/petsitter-reviews/petsitter-reviews.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +67,10 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     RangeSlider,
     MapComponent,
     LoginFormComponent,
-    RateComponent
+    RateComponent,
+    PetsitterServicesComponent,
+    PetsitterCalendarComponent,
+    PetsitterReviewsComponent
   ],
 
   imports: [
