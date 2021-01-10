@@ -12,7 +12,32 @@
       "City": "Warszawa",
       "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et cursus dui, ac fermentum metus. Aliquam ultrices orci sapien, et mattis risus facilisis at. Duis ut augue mi. Mauris tristique ligula id erat faucibus blandit. Duis sed congue mauris, quis tempor ipsum. Donec nec odio eu ligula blandit posuere id a enim. In faucibus dui aliquam lorem placerat semper.",
       "Price": 15,
-      "Rate": 4.3
+      "Rate": 4.3,
+      "Services": {
+        "Boarding": 55,
+        "HouseSitting": 42,
+        "Walking": 15
+      },
+      "Reviews": [
+        {
+          "ReviewerFirstName": "John",
+          "ReviewerSurName": "Snow",
+          "ReviewerComment": "ABSOLUTELY recommend Sophie. She goes above and beyond to care for my dog Percy. She left me at ease and was in constant communication. She takes care of him as well as I do, and he always comes back home as happy as can be :)",
+          "ReviewerRate": 5
+        },
+        {
+          "ReviewerFirstName": "Aria",
+          "ReviewerSurName": "Stark",
+          "ReviewerComment": "Sophie was very responsive in communication, provided lots of information every day about the status of our cat, and followed directions perfectly!!! She was an absolute delight to work with and we will definitely book her again!!",
+          "ReviewerRate": 3.2
+        },
+        {
+          "ReviewerFirstName": "Cersei",
+          "ReviewerSurName": "Lannister",
+          "ReviewerComment": "Sophie was very consistent and timely! She left detailed reviews on my cat’s drop in. Very  reliable for longer trips away from home. Would recommend!",
+          "ReviewerRate": 1.2
+        }
+      ]
     },
     {
       "Id": 2,
@@ -26,7 +51,32 @@
       "City": "Kraków",
       "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et cursus dui, ac fermentum metus. Aliquam ultrices orci sapien, et mattis risus facilisis at. Duis ut augue mi. Mauris tristique ligula id erat faucibus blandit. Duis sed congue mauris, quis tempor ipsum. Donec nec odio eu ligula blandit posuere id a enim. In faucibus dui aliquam lorem placerat semper.",
       "Price": 70000000,
-      "Rate": 2.8
+      "Rate": 2.8,
+      "Services": {
+        "Boarding": 55,
+        "HouseSitting": 42,
+        "Walking": 15
+      },
+      "Reviews": [
+        {
+          "ReviewerFirstName": "John",
+          "ReviewerSurName": "Snow",
+          "ReviewerComment": "ABSOLUTELY recommend Sophie. She goes above and beyond to care for my dog Percy. She left me at ease and was in constant communication. She takes care of him as well as I do, and he always comes back home as happy as can be :)",
+          "ReviewerRate": 5
+        },
+        {
+          "ReviewerFirstName": "Aria",
+          "ReviewerSurName": "Stark",
+          "ReviewerComment": "Sophie was very responsive in communication, provided lots of information every day about the status of our cat, and followed directions perfectly!!! She was an absolute delight to work with and we will definitely book her again!!",
+          "ReviewerRate": 3.2
+        },
+        {
+          "ReviewerFirstName": "Cersei",
+          "ReviewerSurName": "Lannister",
+          "ReviewerComment": "Sophie was very consistent and timely! She left detailed reviews on my cat’s drop in. Very  reliable for longer trips away from home. Would recommend!",
+          "ReviewerRate": 1.2
+        }
+      ]
     },
     {
       "Id": 3,
@@ -40,7 +90,32 @@
       "ImageId": "https://dziendobry.tvn.pl/media/cache/content_cover/en-01347491-1626-jpg.jpg",
       "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et cursus dui, ac fermentum metus. Aliquam ultrices orci sapien, et mattis risus facilisis at. Duis ut augue mi. Mauris tristique ligula id erat faucibus blandit. Duis sed congue mauris, quis tempor ipsum. Donec nec odio eu ligula blandit posuere id a enim. In faucibus dui aliquam lorem placerat semper.",
       "Price": 0,
-      "Rate": 3.6
+      "Rate": 3.6,
+      "Services": {
+        "Boarding": 55,
+        "HouseSitting": 42,
+        "Walking": 15
+      },
+      "Reviews": [
+        {
+          "ReviewerFirstName": "John",
+          "ReviewerSurName": "Snow",
+          "ReviewerComment": "ABSOLUTELY recommend Sophie. She goes above and beyond to care for my dog Percy. She left me at ease and was in constant communication. She takes care of him as well as I do, and he always comes back home as happy as can be :)",
+          "ReviewerRate": 5
+        },
+        {
+          "ReviewerFirstName": "Aria",
+          "ReviewerSurName": "Stark",
+          "ReviewerComment": "Sophie was very responsive in communication, provided lots of information every day about the status of our cat, and followed directions perfectly!!! She was an absolute delight to work with and we will definitely book her again!!",
+          "ReviewerRate": 3.2
+        },
+        {
+          "ReviewerFirstName": "Cersei",
+          "ReviewerSurName": "Lannister",
+          "ReviewerComment": "Sophie was very consistent and timely! She left detailed reviews on my cat’s drop in. Very  reliable for longer trips away from home. Would recommend!",
+          "ReviewerRate": 1.2
+        }
+      ]
     },
     {
       "Id": 4,
@@ -54,8 +129,32 @@
       "ImageId": "https://mambiznes.pl/wp-content/uploads/2019/08/forum-0428574145.jpg",
       "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et cursus dui, ac fermentum metus. Aliquam ultrices orci sapien, et mattis risus facilisis at. Duis ut augue mi. Mauris tristique ligula id erat faucibus blandit. Duis sed congue mauris, quis tempor ipsum. Donec nec odio eu ligula blandit posuere id a enim. In faucibus dui aliquam lorem placerat semper.",
       "Price": 30,
-      "Rate": 1.9
+      "Rate": 1.9,
+      "Services": {
+        "Boarding": 55,
+        "HouseSitting": 42,
+        "Walking": 15
+      },
+      "Reviews": [
+        {
+          "ReviewerFirstName": "John",
+          "ReviewerSurName": "Snow",
+          "ReviewerComment": "ABSOLUTELY recommend Sophie. She goes above and beyond to care for my dog Percy. She left me at ease and was in constant communication. She takes care of him as well as I do, and he always comes back home as happy as can be :)",
+          "ReviewerRate": 5
+        },
+        {
+          "ReviewerFirstName": "Aria",
+          "ReviewerSurName": "Stark",
+            "ReviewerComment": "Sophie was very responsive in communication, provided lots of information every day about the status of our cat, and followed directions perfectly!!! She was an absolute delight to work with and we will definitely book her again!!",
+          "ReviewerRate": 3.2
+        },
+        {
+          "ReviewerFirstName": "Cersei",
+          "ReviewerSurName": "Lannister",
+          "ReviewerComment": "Sophie was very consistent and timely! She left detailed reviews on my cat’s drop in. Very  reliable for longer trips away from home. Would recommend!",
+          "ReviewerRate": 1.2
+        }
+      ]
     }
   ]
 }
-

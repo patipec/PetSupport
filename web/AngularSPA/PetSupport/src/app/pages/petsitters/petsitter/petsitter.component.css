@@ -1,15 +1,15 @@
 .petsittter-details-container{
-
+  margin: 0px 15vw;
 }
 /*UPPER CONTAINER*/
 .petsitter-upper-container{
   display: flex;
-  margin: 0px 5vw;
+  /*margin: 0px 25vw;*/
   height: 33vh;
   padding-bottom: 3vh;
 }
 .petsitter-image{
-  width: 22.5vw;
+  width: 25vw;
   justify-content: center;
 }
 .petsitter-image img{
@@ -17,6 +17,7 @@
   height: 70%;
   margin:50px auto 0;
   display: flex;
+  border-radius: 50%;
 }
 
 .petsitter-description{
@@ -69,34 +70,43 @@ button{
   justify-content: center;
 }
 
-.petsitter-calendar{
-  width: 22.5vw;
-  height: 33vh;
-  justify-content: center;
-  display: flex;
-  margin: auto;
-  border: solid black 1px;
-}
-
-/*DOWN CONTAINER*/
-.petsitter-down-container{
+/*Middle CONTAINER*/
+.petsitter-middle-container{
   height: 52vh;
-  margin: 0px 5vw;
   display: flex;
-  margin: 0px 5vw;
-}
 
-.about-petsitter{
-  width: 22.5vw;
-  border: solid black 2px;
-}
-.galery{
-  width: 45vw;
-  margin: auto 0 auto 10%;
-  display: flex;
 }
 
 .services{
-  width: 22.5vw;
-  border: solid black 2px;
+
+  margin-right: 2.5vw;
+  height: 100%;
+  width: 20vw;
+  /*margin: 2% auto;*/
+  background-color: #f6f3f3;
+  padding: 20px;
+  border-radius: 50px;
 }
+.services h1{
+  margin: 30px 0 0 50px;
+  font-weight: bold;
+}
+.single-service{
+  width: 90%;
+  margin:auto;
+  justify-content: center;
+}
+.galery{
+  width: 45vw;
+  margin: auto 0 auto;
+}
+.galery2{
+  margin-top: 10px;
+}
+
+.petsitter-down-container {
+  height: 52vh;
+  display: flex;
+}
+
+

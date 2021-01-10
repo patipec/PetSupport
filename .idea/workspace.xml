@@ -106,38 +106,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c25cba1-58ce-47d8-84b8-03d890a90b42" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_12_2020_16_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_12_2020_16_49__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/common/components/map/map.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/common/components/map/map.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/common/components/map/map.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/common/components/map/map.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/common/components/map/map.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/common/components/map/map.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/common/models/petsitter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/common/models/petsitter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/common/shared/material.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/common/shared/material.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/login-form/login-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/login-form/login-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/login-form/login-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/login-form/login-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/long-form/long-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/long-form/long-form.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/long-form/long-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/long-form/long-form.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/address/address.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/address/address.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/address/address.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/address/address.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/basic-info/basic-info.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/basic-info/basic-info.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/basic-info/basic-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/basic-info/basic-info.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/end-of-registration/end-of-registration.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/end-of-registration/end-of-registration.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/end-of-registration/end-of-registration.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/end-of-registration/end-of-registration.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/personal-info/personal-info.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/personal-info/personal-info.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/personal-info/personal-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/personal-info/personal-info.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/util-form-components/datepicker/datepicker.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/util-form-components/datepicker/datepicker.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/util-form-components/datepicker/datepicker.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/util-form-components/datepicker/datepicker.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/main-page/card-carusel/card-carusel.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/main-page/card-carusel/card-carusel.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/main-page/main-page.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitters-list/petsitter-list-tile/petsitter-list-tile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitters-list/petsitter-list-tile/petsitter-list-tile.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +147,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/LoginIcons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -214,6 +189,9 @@
       <workItem from="1609922745858" duration="2779000" />
       <workItem from="1610121029177" duration="11000" />
       <workItem from="1610121084788" duration="642000" />
+      <workItem from="1610192715058" duration="2180000" />
+      <workItem from="1610206261758" duration="7164000" />
+      <workItem from="1610271800801" duration="2800000" />
     </task>
     <servers />
   </component>
