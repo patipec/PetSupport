@@ -44,6 +44,7 @@ namespace PetSupport.API2
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
                     .EnableSensitiveDataLogging()
                     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+            
             services.AddTransient<IRepository<Petsitter>, PetSitterRepository>();
             services.AddTransient<IRepository<Service>, ServiceRepository>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());

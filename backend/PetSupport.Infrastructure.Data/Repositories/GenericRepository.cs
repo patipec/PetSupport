@@ -25,14 +25,16 @@ namespace PetSupport.Infrastructure.Data.Repository
 
         public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
-            return await _context.Set<T>().ToListAsync();
+            return await _context.Set<T>()
+                .ToListAsync();
         }
 
         public virtual async Task<IEnumerable<T>> FindByConditionAsync(Expression<Func<T, bool>> expression)
         {
             return await _context.Set<T>()
                 .AsQueryable()
-                .Where(expression).ToListAsync();
+                .Where(expression)
+                .ToListAsync();
         }
 
         public virtual void Add(T entity)
@@ -48,8 +50,8 @@ namespace PetSupport.Infrastructure.Data.Repository
 
         public async Task<bool> SaveChangesAsync()
         {
+            //return true if one ore more entities were changed
             return (await _context.SaveChangesAsync()) > 0;
-
         }
 
     }

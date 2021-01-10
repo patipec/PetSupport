@@ -4,7 +4,7 @@ using PetSupport.Core.Entities;
 
 namespace Petsupport.API2.Dtos.InDtos
 {
-    public class CreatePetsitterDTO: BaseEntity
+    public class CreatePetsitterDTO
     {
         public string Name { get; set; }
         public string Surname { get; set; }
