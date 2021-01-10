@@ -89,7 +89,6 @@ select{
 /*Input styling*/
 input{
   width: 100px;
-
   border: solid 1px lightblue;
   font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto Slab', serif;
