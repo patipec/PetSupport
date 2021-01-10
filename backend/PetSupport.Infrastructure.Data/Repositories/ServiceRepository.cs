@@ -9,7 +9,7 @@ using PetSupport.Core.Interfaces;
 
 namespace PetSupport.Infrastructure.Data.Repositories
 {
-    class ServiceRepository: IServiceRepository
+    public class ServiceRepository: IServiceRepository
     {
         public Task<Service> GetByIdAsync(int id)
         {

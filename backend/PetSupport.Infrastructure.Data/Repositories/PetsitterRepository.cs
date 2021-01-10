@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
@@ -47,22 +48,40 @@ namespace PetSupport.Infrastructure.Data.Repositories
             return await Petsitters.ToListAsync();
         }
 
-        //TODO: zapytać się jak to przerzutować
+        //Filters: string City, enum ServiceType Name, enum Unit Unit, dobule Price 
+        //(string city, int serviceId, Unit unit, double minPrice, double maxPrice)
+
+
         public async Task<List<Petsitter>> FindByConditionAsync(
             Expression<Func<Petsitter, bool>> expression)
         {
+            expression = new Expression<Func<Petsitter, bool>>();
+            ParameterExpression cityParam = Expression.Parameter(typeof(string), "city");
+            ParameterExpression price = expression.Parameters(List<int>(typeof(int)"minPrice", typeof(int) "maxPrice"))
+            var ps = PetsitterServices;
+
+            expression = p => p.City.Equals("city") && ps.;
 
 
-            expression = GetExpression();
 
-            return await new Task<List<Petsitter>>().ConfigureAwait(false);
+
+            return Petsitters.Where(expression);
+
+
+
+
 
         }
-
+        
         public Expression<Func<Petsitter, bool>> GetExpression(
             double minPrice, double maxPrice, string city,
             int serviceId)
         {
+            ParameterExpression cityp = Expression.Parameter(typeof(string), "city");
+            ParameterExpression price1 = Expression.Parameter(typeof(int), "minPrice");
+            ParameterExpression price2 = Expression.Parameter(typeof(int), "maxPrice");
+            ParameterExpression service = Expression.Parameter(typeof(int), "serviceId");
+
             var expression = from p in Petsitters.Where(p => p.City == city)
                 from ps in PetsitterServices
                     .Where(ps => ps.ServiceId == serviceId
@@ -73,8 +92,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
         }
 
         
-        //Filters: string City, enum ServiceType Name, enum Unit Unit, dobule Price 
-        //(string city, List<ServiceType> service, Unit unit, double Price)
+        
 
 
         public void Add(Petsitter entity)
