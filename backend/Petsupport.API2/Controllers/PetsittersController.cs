@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -13,28 +13,58 @@ namespace PetSupport.API2.Controllers
     public class PetsittersController : ControllerBase
     {
         private readonly IRepository<Petsitter> _petSitterRepository;
+        private readonly IRepository<Service> _serviceRepository;
         private readonly IMapper _mapper;
 
 
-        public PetsittersController(IRepository<Petsitter> petSitterRepository, IMapper mapper)
+        public PetsittersController(IRepository<Petsitter> petSitterRepository, IRepository<Service> serviceRepository, IMapper mapper)
         {
             this._petSitterRepository = petSitterRepository;
+            this._serviceRepository = serviceRepository;
             this._mapper = mapper;
         }
 
 
         [HttpGet]
-        public async Task<ActionResult<PetsitterDTO[]>> Get()
+        public async Task<ActionResult<PetsitterDTO[]>> GetAllPetsitters()
         {
-            var results = await _petSitterRepository.GetAllAsync();
-            return _mapper.Map<PetsitterDTO[]>(results);
+            try
+            {
+                var petsitters = await _petSitterRepository.GetAllAsync();
+                var petsittersResult = _mapper.Map<PetsitterDTO[]>(petsitters);
+                return Ok(petsittersResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error");
+            }
         }
+        
+        // [HttpGet()]
+        // public async Task<ActionResult<PetsitterDTO[]>> GetAllPetsittersByQuery( [FromQuery]string city)
+        // {
+        //     try
+        //     {
+        //         var petsittersFilltered = await _petSitterRepository
+        //             .FindByConditionAsync(p=>p.City==city);
+        //         
+        //         var petsittersResult = _mapper.Map<PetsitterDTO[]>(petsittersFilltered);
+        //         
+        //         return Ok(petsittersResult);
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         return StatusCode(500, "Internal server error");
+        //     }
+        // }
+        
+        
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<PetsitterDTO>> Get(int id)
+        public async Task<ActionResult<PetsitterDTO>> GetPetsitterById(int id)
         {
-            var result = await _petSitterRepository.GetByIdAsync(id);
-            return _mapper.Map<PetsitterDTO>(result);
+            var petsitter = await _petSitterRepository.GetByIdAsync(id);
+            return Ok(_mapper.Map<PetsitterDTO>(petsitter));
         }
     }
 }
