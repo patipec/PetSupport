@@ -188,14 +188,13 @@ img {
 }
 
 .img-walk {
-    width: 351px;
-    height: 527px; 
+    width: auto;
+    height: auto; 
     text-align: center;
     border-radius: 20px;
     padding: 5px;
     opacity: 0.7;
 }
-
 .images-walk {
     text-align: center;
     padding-bottom: 30px;
@@ -210,3 +209,15 @@ img {
     padding-bottom: 36px;
     padding-top: 60px;
 }
+
+
+@media screen and ( max-width: 1024px ) {
+img.img-walk { width: 200px; }
+}
+@media screen and ( min-width:1025px ) and ( max-width: 1280px ) {
+img.img-walk { width: 300px; }
+}
+@media screen and ( min-width: 1081px ) {
+img.img-walk { width: 400px; }
+}
+img.img-walk { height: auto; }
