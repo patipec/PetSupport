@@ -19,7 +19,7 @@ export class MapComponent implements AfterViewInit {
   }
 
   private initMap(): void {
-    this.map = L.map('map').setView([52.22290599330946, 21.00204899832415], 14);
+    this.map = L.map('map').setView([51.990290599330946, 21.11806915283203], 13);
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 20,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -1,0 +1,51 @@
+.services{
+  margin-right: 2.5vw;
+  height: 100%;
+  width: 20vw;
+  border-radius: 50px;
+}
+.services h1{
+  margin: 30px 0 0 50px;
+  font-size: 35px;
+  font-weight: bold;
+}
+.singe-service {
+  width: 90%;
+  justify-content: center;
+  margin: 20px;
+
+}
+.service-component{
+  padding: 0 0 30px 0;
+}
+.services-top-row{
+  display: flex;
+  padding: 0 0 0 20px;
+  margin: 0 0 0 20px;
+}
+.service-name{
+  width: 60%;
+  font-size: 20px
+}
+.service-price{
+  width: 40%;
+  text-align: right;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.services-bottom-row{
+  display: flex;
+  padding: 5px 0 0 20px;
+  margin: 0 0 0 20px;
+}
+
+.service-description{
+  width: 60%;
+  /*font-size: 20px*/
+}
+.service-price-description{
+  width: 40%;
+  text-align: right;
+  font-size: 14px;
+}

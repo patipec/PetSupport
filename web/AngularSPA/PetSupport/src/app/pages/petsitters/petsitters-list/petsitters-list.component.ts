@@ -17,7 +17,6 @@ export class PetsittersListComponent implements OnInit {
   ngOnInit(): void {
     this.http.get<Petsitter[]>('http://localhost:3000/data')
       .subscribe((data) => {
-        console.log('Dziala');
         this.petsitterList = data;
       });
   }
