@@ -71,6 +71,7 @@ section.main-container {
     padding: 50px;
     text-align: left;
     word-wrap: break-word;
+    width: 40%;
 }
 
 .container {
