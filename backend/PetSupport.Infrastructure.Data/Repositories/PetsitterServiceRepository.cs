@@ -4,9 +4,9 @@ using PetSupport.Infrastructure.Data.Data;
 
 namespace PetSupport.Infrastructure.Data.Repository
 {
-    public class ServiceRepository : RepositoryBase<Service>, IServiceRepository
+    public class PetsitterServiceRepository : RepositoryBase<PetsitterService>, IPetsitterServiceRepository
     {
-        public ServiceRepository(DataContext context) : base(context)
+        public PetsitterServiceRepository(DataContext context) : base(context)
         {
         }
     }

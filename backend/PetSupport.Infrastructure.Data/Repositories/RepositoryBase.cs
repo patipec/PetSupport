@@ -9,11 +9,11 @@ using PetSupport.Infrastructure.Data.Data;
 
 namespace PetSupport.Infrastructure.Data.Repository
 {
-    public abstract class GenericRepository<T> : IRepository<T> where T : class
+    public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
         protected DataContext _context;
         
-        public GenericRepository(DataContext context)
+        public RepositoryBase(DataContext context)
         {
             this._context = context ?? throw new ArgumentNullException(nameof(context));
         }

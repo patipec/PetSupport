@@ -15,6 +15,6 @@ namespace Petsupport.API2.Dtos.InDtos
         public string ZipCode { get; set; }
         public string Description { get; set; }
         
-        public ICollection<ServiceDTO> Services { get; set; }
+        public ICollection<PetSitterServiceDTO> Services { get; set; }
     }
 }

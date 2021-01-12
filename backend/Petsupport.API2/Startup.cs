@@ -41,12 +41,15 @@ namespace PetSupport.API2
             });
 
             services.AddDbContext<DataContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                        options=>options.MigrationsAssembly("PetSupport.Infrastructure.Data"))
                     .EnableSensitiveDataLogging()
                     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
             
-            services.AddTransient<IRepository<Petsitter>, PetSitterRepository>();
-            services.AddTransient<IRepository<Service>, ServiceRepository>();
+            services.AddTransient<IPetsitterRepository, PetsitterRepository>();
+            services.AddTransient<IPetsitterServiceRepository, PetsitterServiceRepository>();
+            services.AddTransient<IServiceRepository, ServiceRepository>();
+
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
         }
 
