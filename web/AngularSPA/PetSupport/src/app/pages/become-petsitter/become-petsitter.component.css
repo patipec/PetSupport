@@ -215,9 +215,9 @@ img {
 img.img-walk { width: 200px; }
 }
 @media screen and ( min-width:1025px ) and ( max-width: 1280px ) {
-img.img-walk { width: 300px; }
+img.img-walk { width: 250px; }
 }
 @media screen and ( min-width: 1081px ) {
-img.img-walk { width: 400px; }
+img.img-walk { width: 350px; }
 }
 img.img-walk { height: auto; }

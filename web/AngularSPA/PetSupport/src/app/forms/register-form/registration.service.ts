@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { RegistrationForm } from './IRegistration-data';
+import { IRegistrationForm } from './IRegistration-data';
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +8,13 @@ import { RegistrationForm } from './IRegistration-data';
 
 export class RegistrationService {
 
-  registerData: RegistrationForm;
+  registerData: IRegistrationForm;
   constructor() { }
 
   //setProperty(key: string, value: string) {
   //  this.registerData[key] = value;
   //}
 
-  //basic-info
   setName(name: string): void {
     this.registerData.name = name;
   }
@@ -36,7 +35,6 @@ export class RegistrationService {
   }
 
 
-  //address
   setStreet(street: string): void {
     this.registerData.street = street;
   }
@@ -53,10 +51,8 @@ export class RegistrationService {
     this.registerData.country = country;
   }
 
-
   //services
 
-  //personal-info
   setBirthday(birthday: string): void {
     this.registerData.birthday = birthday;
   }
