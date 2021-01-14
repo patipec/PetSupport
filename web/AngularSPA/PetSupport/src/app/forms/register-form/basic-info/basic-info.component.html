@@ -5,16 +5,14 @@
             <hr>
             <br><br>
 
-                <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm.value)">
-                    <div formGroupName="userData">
-
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
                     <mat-form-field class="width-100">
                         <mat-label>Name</mat-label>
                         <input matInput
                         type="text"
                         name="name"
                         formControlName="name">
-                        <span *ngIf="!signupForm.get('userData.name').valid && signupForm.get('userData.name').touched" 
+                        <span *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched" 
                         class="help-block">Please enter a valid Name</span>
                         <!--
                         <mat-error *ngFor="let validation of validation_messages.street">
@@ -30,7 +28,7 @@
                         type="text"
                         name="surname"
                         formControlName="surname">
-                        <span *ngIf="!signupForm.get('userData.surname').valid && signupForm.get('userData.surname').touched" 
+                        <span *ngIf="!signupForm.get('surname').valid && signupForm.get('surname').touched" 
                         class="help-block">Please enter a valid Surname</span>
                     </mat-form-field>
                     <br>
@@ -42,7 +40,7 @@
                         id="email"
                         name="email"
                         formControlName="email">
-                        <span *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched" 
+                        <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched" 
                         class="help-block">Please enter a valid Email</span>
                     </mat-form-field>
                 
@@ -55,7 +53,7 @@
                         id="phone"
                         name="phone"
                         formControlName="phone">
-                        <span *ngIf="!signupForm.get('userData.phone').valid && signupForm.get('userData.phone').touched" 
+                        <span *ngIf="!signupForm.get('phone').valid && signupForm.get('phone').touched" 
                         class="help-block">Please enter a valid Phone number</span>
                     </mat-form-field>
                     <br>
@@ -71,7 +69,7 @@
                             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                             </button>
-                            <span *ngIf="!signupForm.get('userData.password').valid && signupForm.get('userData.password').touched" 
+                            <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched" 
                         class="help-block">Please enter a valid Password</span>
                     </mat-form-field>
 
@@ -87,7 +85,7 @@
                             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                             </button>
-                            <span *ngIf="!signupForm.get('userData.confirmPassword').valid && signupForm.get('userData.confirmPassword').touched" 
+                            <span *ngIf="!signupForm.get('confirmPassword').valid && signupForm.get('confirmPassword').touched" 
                         class="help-block">Please confirm password corectly</span>
                     </mat-form-field>
 
@@ -96,16 +94,16 @@
                     <mat-card-actions>
                         <a mat-raised-button 
                         class="back-btn"
-                        routerLink="/register-form/services"
+                        routerLink="/main-page"
                         >Cancel</a>
-                    <a mat-raised-button 
-                    class="continue-btn"
-                    type="submit" 
-                    color="primary"
-                    routerLink="/register-form/address"
-                    >Next</a>
-             </mat-card-actions> 
-                </div>
+                        <button mat-raised-button
+                        class="continue-btn"
+                        type="submit" 
+                        color="primary"
+                        routerLink="/register-form/address"
+                        (click)="onSubmit()"
+                        >Next</button>
+                     </mat-card-actions> 
                 </form>
             </div>
         </mat-card-content>

@@ -44,6 +44,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { PetsitterServicesComponent } from './pages/petsitters/petsitter/petsitter-services/petsitter-services.component';
 import { PetsitterCalendarComponent } from './pages/petsitters/petsitter/petsitter-calendar/petsitter-calendar.component';
 import { PetsitterReviewsComponent } from './pages/petsitters/petsitter/petsitter-reviews/petsitter-reviews.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { PetsitterReviewsComponent } from './pages/petsitters/petsitter/petsitte
     PetsitterServicesComponent,
     PetsitterCalendarComponent,
     PetsitterReviewsComponent,
-    EndOfRegistrationComponent
+    EndOfRegistrationComponent,
+    EditProfileComponent
   ],
 
   imports: [

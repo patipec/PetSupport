@@ -10,6 +10,7 @@ import {PersonalInfoComponent} from './forms/register-form/personal-info/persona
 import {ServicesComponent} from './forms/register-form/services/services.component';
 import {LoginFormComponent} from './forms/login-form/login-form.component';
 import { EndOfRegistrationComponent } from './forms/register-form/end-of-registration/end-of-registration.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 
 const routes: Routes = [
   {path: 'main-page', component: MainPageComponent},
@@ -25,6 +26,8 @@ const routes: Routes = [
 
   {path: 'register-form/login', component: LoginFormComponent},
   {path: 'login', component: LoginFormComponent},
+
+  {path: 'edit-profile', component: EditProfileComponent},
 
   /*   ** is last route, add new only above ^^^  */
   {path: '**', component: MainPageComponent} // We can add 404 page here later
