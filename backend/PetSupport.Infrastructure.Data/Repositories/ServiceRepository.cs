@@ -1,6 +1,7 @@
 using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
+using Petsupport.SharedKernel.Interfaces;
 
 namespace PetSupport.Infrastructure.Data.Repository
 {

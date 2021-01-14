@@ -14,10 +14,11 @@ using System.Reflection;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
+using PetSupport.Infrastructure.Data.Repositories;
 using PetSupport.Infrastructure.Data.Repository;
+using Petsupport.SharedKernel.Interfaces;
 
 
 namespace PetSupport.API2

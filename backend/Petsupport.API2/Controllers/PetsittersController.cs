@@ -7,6 +7,8 @@ using Petsupport.API2.Dtos.OutDtos;
 using PetSupport.API2.Dtos.OutDtos;
 using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
+using PetSupport.Core.ResourceParameters;
+using Petsupport.SharedKernel.Interfaces;
 
 namespace PetSupport.API2.Controllers
 {
@@ -23,16 +25,20 @@ namespace PetSupport.API2.Controllers
             this._petsitterRepository = petsitterRepository;
             this._mapper = mapper;
         }
-
-
-        /*[HttpGet]
-        public async Task<ActionResult<PetsitterDTO[]>> GetAllPetsitters()
+        
+        
+        /*
+        [HttpGet]
+        public async Task<ActionResult<PetsitterDTO[]>> GetAllPetsittersByQuery
+            ([FromQuery] PetsittersSearchParameters petsittersSearchParameters)
         {
             try
             {
-                var petsitters = await _petSitterRepository.GetAllAsync();
-                var petsittersToReturn = _mapper.Map<PetsitterDTO[]>(petsitters);
-                return Ok(petsittersToReturn);
+                var petsitersFillteredByQuery = await _petsitterRepository
+                    .GetAllPetsitersBySearchPatametersAsync(petsittersSearchParameters);
+
+
+                return Ok(_mapper.Map<PetsitterDTO[]>(petsitersFillteredByQuery));
             }
             catch (Exception ex)
             {
@@ -40,16 +46,17 @@ namespace PetSupport.API2.Controllers
             }
         }*/
         
+        
+        
         [HttpGet]
-        public async Task<ActionResult<PetsitterDTO[]>> GetAllPetsittersByQuery([FromQuery] 
-            string city, int serviceId )
+        public async Task<ActionResult<PetsitterDTO[]>> GetAllPetsittersByQuery
+            ([FromQuery] PetsittersSearchParameters petsittersSearchParameters)
         {
             try
             {
-                var petsitersFillteredByQuery =
-                    await _petsitterRepository
-                        .GetAllPetsitersByCityAndService(city, serviceId);
-
+                var petsitersFillteredByQuery = await _petsitterRepository
+                    .GetAllPetsitersBySearchPatametersAsync(petsittersSearchParameters);
+                
                 return Ok(_mapper.Map<PetsitterDTO[]>(petsitersFillteredByQuery));
             }
             catch (Exception ex)

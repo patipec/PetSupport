@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using PetSupport.Core.Entities;
-using PetSupport.Core.Enums;
-using PetSupport.Core.Interfaces;
+using PetSupport.Core.ResourceParameters;
 using PetSupport.Infrastructure.Data.Data;
+using PetSupport.Infrastructure.Data.Repository;
+using Petsupport.SharedKernel.Interfaces;
 
-namespace PetSupport.Infrastructure.Data.Repository
+namespace PetSupport.Infrastructure.Data.Repositories
 {
     public class PetsitterRepository : RepositoryBase<Petsitter>, IPetsitterRepository
     {
@@ -41,7 +41,32 @@ namespace PetSupport.Infrastructure.Data.Repository
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Petsitter>> GetAllPetsitersByCityAndService(string city, int serviceId)
+        public async Task<IEnumerable<Petsitter>> GetAllPetsitersBySearchPatametersAsync(PetsittersSearchParameters petsittersSearchParameters)
+        {
+            if (petsittersSearchParameters == null)
+            {
+                throw new ArgumentNullException(nameof(petsittersSearchParameters));
+            }
+            
+            if ((petsittersSearchParameters.MaxPrice == null)
+                && (petsittersSearchParameters.MinPrice == null)
+                && (string.IsNullOrEmpty(petsittersSearchParameters.Address)))
+            {
+                var query = _context.Petsitters
+                    .AsQueryable()
+                    .Include(p => p.Services)
+                    .ThenInclude(s => s.Service)
+                    .Where(p => p.City.Contains(petsittersSearchParameters.City))
+                    .Where(p => p.Services
+                        .Any(s => (int) s.Service.Name == petsittersSearchParameters.ServiceId))
+                    .ToListAsync();
+                return await query;
+            }
+            
+            return null;
+        }
+
+        /*public async Task<IEnumerable<Petsitter>> GetAllPetsitersByCityAndService(string city)
         {
             var query = _context.Petsitters
                 .AsQueryable()
@@ -49,20 +74,11 @@ namespace PetSupport.Infrastructure.Data.Repository
                 .ThenInclude(s => s.Service)
                 .Where(p => p.City.Contains(city))
                 .Where(p=>p.Services
-                    .Any(s=>(int)s.Service.Name == serviceId))
+                      .Any(s=>(int)s.Service.Name == 0))
                 .ToListAsync();
             return await query;
-
-
-
-
-
-            //
-            // var expression = from petsitter in petsitters.Where(p => p.City == city)
-            //     from ps in petsitterServices.Where(ps => ps.ServiceId == serviceId)
-            //     select new {petsitters};
-            // expression.ToList();
-            // return await expression.ToListAsync();
-        }
+        }*/
     }
+
+
 }

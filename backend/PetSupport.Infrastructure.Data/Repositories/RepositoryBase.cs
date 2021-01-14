@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
+using Petsupport.SharedKernel.Interfaces;
 
 namespace PetSupport.Infrastructure.Data.Repository
 {
