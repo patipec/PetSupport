@@ -26,9 +26,13 @@
   </div>
   <hr>
   <div class="petsitter-middle-container">
-    <app-petsitter-services [petsitter]="petsitter">
+    <div class="left-middle-container">
 
-    </app-petsitter-services>
+      <app-petsitter-services [petsitter]="petsitter">
+      </app-petsitter-services>
+      <app-petsitter-can-host [petsitter]="petsitter"></app-petsitter-can-host>
+    </div>
+
     <div class="galery">
         <carousel cellWidth="100%" [height]="400" [width]="600" [images]="[
         {'path': './../assets/PetsitterDetail/ExamplePetsitter/1.jpg'},
