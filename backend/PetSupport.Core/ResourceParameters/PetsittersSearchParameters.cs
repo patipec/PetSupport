@@ -1,3 +1,5 @@
+using System;
+
 namespace PetSupport.Core.ResourceParameters
 {
     public class PetsittersSearchParameters
@@ -8,7 +10,7 @@ namespace PetSupport.Core.ResourceParameters
         
         //FindPetSitterLongFormDTO
         public string Address { get; set; }
-        public int? MinPrice { get; set; }
-        public int? MaxPrice { get; set; }
+        public int? MinPrice { get; set; } = 0;
+        public int? MaxPrice { get; set; } = Int32.MaxValue;
     }
 }
