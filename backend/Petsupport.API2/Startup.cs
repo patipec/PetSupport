@@ -35,7 +35,7 @@ namespace PetSupport.API2
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly("PetSupport.Infrastructure.Data")));
 
-            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
+            // services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
             services.AddTransient<IPetsitterRepository, PetsitterRepository>();
             services.AddTransient<IServiceRepository, ServiceRepository>();
         }

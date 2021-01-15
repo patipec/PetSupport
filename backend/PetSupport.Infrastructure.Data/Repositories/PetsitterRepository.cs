@@ -55,41 +55,46 @@ namespace PetSupport.Infrastructure.Data.Repositories
         public async Task<List<Petsitter>> FindByConditionAsync(
             Expression<Func<Petsitter, bool>> expression)
         {
-            expression = new Expression<Func<Petsitter, bool>>();
-            ParameterExpression cityParam = Expression.Parameter(typeof(string), "city");
-            ParameterExpression price = expression.Parameters(List<int>(typeof(int)"minPrice", typeof(int) "maxPrice"))
-            var ps = PetsitterServices;
+            if (expression == null) throw new ArgumentNullException(nameof(expression));
+            var result = await Petsitters.Where(expression).ToListAsync();
+            return result;
 
-            expression = p => p.City.Equals("city") && ps.;
-
-
-
-
-            return Petsitters.Where(expression);
-
-
-
-
+            
 
         }
         
-        public Expression<Func<Petsitter, bool>> GetExpression(
-            double minPrice, double maxPrice, string city,
-            int serviceId)
-        {
-            ParameterExpression cityp = Expression.Parameter(typeof(string), "city");
-            ParameterExpression price1 = Expression.Parameter(typeof(int), "minPrice");
-            ParameterExpression price2 = Expression.Parameter(typeof(int), "maxPrice");
-            ParameterExpression service = Expression.Parameter(typeof(int), "serviceId");
-
-            var expression = from p in Petsitters.Where(p => p.City == city)
-                from ps in PetsitterServices
-                    .Where(ps => ps.ServiceId == serviceId
-                                 && ps.Price > minPrice && ps.Price < maxPrice)
-                select new { Petsitters};
-                
-            return expression;
-        }
+        // public Expression<Func<Petsitter, bool>> GetExpression(
+        //     double minPrice, double maxPrice, string city,
+        //     int serviceId)
+        // {
+        //     // ParameterExpression cityp = Expression.Parameter(typeof(string), "city");
+        //     // ParameterExpression price1 = Expression.Parameter(typeof(int), "minPrice");
+        //     // ParameterExpression price2 = Expression.Parameter(typeof(int), "maxPrice");
+        //     // ParameterExpression service = Expression.Parameter(typeof(int), "serviceId");
+        //
+        //
+        //     // var cityParam = new Func<Petsitter, bool>(Petsitters => Petsitters.City.Equals(city));
+        //     // var serviceParam = new Func<PetsitterService, bool>(
+        //     // PetsitterServices => this.PetsitterServices
+        //     // var priceParam = new Func<Petsitter, bool>(Petsitter=> Petsitter.Services
+        //     // .Contains(PetsitterServices));
+        //
+        //     var sameCity = Petsitters
+        //         .Where(p => p.City == city);
+        //     var sameId = PetsitterServices
+        //         .Where(ps => ps.Id == serviceId);
+        //     var priceRange = PetsitterServices
+        //         .Where(ps => ps.Price > minPrice && ps.Price < maxPrice);
+        //
+        //
+        //     // var expression = from p in Petsitters.Where(p => p.City = cityp)
+        //     //     from ps in PetsitterServices
+        //     //         .Where(ps => ps.ServiceId == serviceId
+        //     //                      && ps.Price > minPrice && ps.Price < maxPrice)
+        //     //     select new { Petsitters};
+        //
+        //
+        // }
 
         
         
@@ -117,12 +122,12 @@ namespace PetSupport.Infrastructure.Data.Repositories
             return Task.FromResult(true);
         }
 
-        public IQueryable<Petsitter> IsPetsitterWithSameCity(string city)
+        public List<Petsitter> IsPetsitterWithSameCity(string city)
         {
             if (city == null) throw new ArgumentException("You have to put city");
             
             var sameCity = Petsitters.Where(p => p.City == city);
-            return sameCity;
+            return sameCity.ToList();
         }
 
         public IQueryable<PetsitterService> IsPetsitterInPriceRange(
