@@ -9,7 +9,7 @@ using PetSupport.Core.Interfaces;
 
 namespace PetSupport.Infrastructure.Data.Repositories
 {
-    class ServiceRepository: IServiceRepository
+    public class ServiceRepository: IServiceRepository
     {
         public Task<Service> GetByIdAsync(int id)
         {
@@ -21,7 +21,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Service>> FindByConditionAsync(Expression<Func<Service, bool>> expression)
+        public Task<List<Service>> FindByConditionAsync(Expression<Func<Service, bool>> expression)
         {
             throw new NotImplementedException();
         }

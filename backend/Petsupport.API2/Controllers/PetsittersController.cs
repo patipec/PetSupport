@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -36,5 +38,7 @@ namespace PetSupport.API2.Controllers
             var result = await _petSitterRepository.GetByIdAsync(id);
             return _mapper.Map<PetsitterDTO>(result);
         }
+
+
     }
 }
