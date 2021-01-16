@@ -8,7 +8,6 @@ using PetSupport.API2.Dtos.OutDtos;
 using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
 using PetSupport.Core.ResourceParameters;
-using Petsupport.SharedKernel.Interfaces;
 
 namespace PetSupport.API2.Controllers
 {
@@ -27,29 +26,9 @@ namespace PetSupport.API2.Controllers
         }
         
         
-        /*
-        [HttpGet]
-        public async Task<ActionResult<PetsitterDTO[]>> GetAllPetsittersByQuery
-            ([FromQuery] PetsittersSearchParameters petsittersSearchParameters)
-        {
-            try
-            {
-                var petsitersFillteredByQuery = await _petsitterRepository
-                    .GetAllPetsitersBySearchPatametersAsync(petsittersSearchParameters);
-
-
-                return Ok(_mapper.Map<PetsitterDTO[]>(petsitersFillteredByQuery));
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Internal server error");
-            }
-        }*/
-        
-        
         
         [HttpGet]
-        public async Task<ActionResult<PetsitterDTO[]>> GetAllPetsittersByQuery
+        public async Task<ActionResult<PetsitterDTO[]>> GetAllPetsittersBySearchPatameters
             ([FromQuery] PetsittersSearchParameters petsittersSearchParameters)
         {
             try

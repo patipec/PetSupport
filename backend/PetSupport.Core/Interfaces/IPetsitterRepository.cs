@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using PetSupport.Core.Entities;
-using PetSupport.Core.Interfaces;
 using PetSupport.Core.ResourceParameters;
 
-namespace Petsupport.SharedKernel.Interfaces
+namespace PetSupport.Core.Interfaces
 {
-    public interface IPetsitterRepository : IRepositoryBase<Petsitter>
+    public interface IPetsitterRepository : IBaseRepository<Petsitter>
     {
         Task<IEnumerable<Petsitter>> GetAllPetsitersBySearchPatametersAsync
             (PetsittersSearchParameters petsittersSearchParameters);

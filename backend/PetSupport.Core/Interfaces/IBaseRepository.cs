@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PetSupport.Core.Interfaces
 {
-    public interface IRepositoryBase<T>
+    public interface IBaseRepository<T>
     {
         Task<T> GetByIdAsync(int id);
         Task<IEnumerable<T>> GetAllAsync();

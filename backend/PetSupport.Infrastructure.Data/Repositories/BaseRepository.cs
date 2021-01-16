@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
-using Petsupport.SharedKernel.Interfaces;
 
-namespace PetSupport.Infrastructure.Data.Repository
+namespace PetSupport.Infrastructure.Data.Repositories
 {
-    public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
+    public abstract class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         protected DataContext _context;
         
-        public RepositoryBase(DataContext context)
+        public BaseRepository(DataContext context)
         {
             this._context = context ?? throw new ArgumentNullException(nameof(context));
         }

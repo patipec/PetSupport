@@ -5,16 +5,15 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using PetSupport.Core.Entities;
+using PetSupport.Core.Interfaces;
 using PetSupport.Core.ResourceParameters;
 using PetSupport.Infrastructure.Data.Data;
-using PetSupport.Infrastructure.Data.Repository;
-using Petsupport.SharedKernel.Interfaces;
 
 namespace PetSupport.Infrastructure.Data.Repositories
 {
-    public class PetsitterRepository : RepositoryBase<Petsitter>, IPetsitterRepository
+    public class PetsitterRepository : BaseRepository<Petsitter>, IPetsitterRepository
     {
-        public PetsitterRepository(DataContext context) : base(context)
+        public PetsitterRepository(DataContext _context) : base(_context)
         {
         }
         
@@ -34,8 +33,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 throw new ArgumentNullException(nameof(petsittersSearchParameters));
             }
 
-            if ((petsittersSearchParameters.MaxPrice == null)
-                && (string.IsNullOrEmpty(petsittersSearchParameters.Address)))
+            if (string.IsNullOrEmpty(petsittersSearchParameters.Address))
             {
                 var query = _context.Petsitters
                     .AsQueryable()
@@ -55,6 +53,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
                     .Include(p => p.Services)
                     .ThenInclude(s => s.Service)
                     .Where(p => p.City.Contains(petsittersSearchParameters.City))
+                    .Where(p=>p.Address.Contains(petsittersSearchParameters.Address))
                     .Where(p => p.Services
                         .Any(s => (int) s.Service.Name == petsittersSearchParameters.ServiceId))
                     .Where(p => p.Services
