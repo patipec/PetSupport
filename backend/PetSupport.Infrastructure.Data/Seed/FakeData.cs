@@ -65,7 +65,7 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(p => p.Id, f => petsitterserviceId++)
                 .RuleFor(p => p.PetsitterId, f => f.PickRandom(FakePetsitters).Id)
                 .RuleFor(p => p.ServiceId, f => f.PickRandom(FakeServices).Id)
-                .RuleFor(p => p.Price, f => double.Parse(f.Commerce.Price()));
+                .RuleFor(p => p.Price, f => double.Parse(f.Commerce.Price(min:30, max:150,0)));
             FakePetsitterServices = petsitterserviceFaker.Generate(NumberOfFakeDataToGenerate * 3);
             
             

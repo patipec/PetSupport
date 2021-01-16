@@ -42,7 +42,7 @@ namespace PetSupport.API2
 
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-                        options=>options.MigrationsAssembly("PetSupport.Infrastructure.Data"))
+                        options=>options.MigrationsAssembly("Petsupport.API2"))
                     .EnableSensitiveDataLogging()
                     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
             
