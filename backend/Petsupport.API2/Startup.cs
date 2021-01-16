@@ -8,8 +8,6 @@ using Microsoft.OpenApi.Models;
 using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
 using PetSupport.Infrastructure.Data.Repositories;
-using PetSupport.Infrastructure.Data.Repository;
-
 
 namespace PetSupport.API2
 {
@@ -28,7 +26,7 @@ namespace PetSupport.API2
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Petsupport.API2", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Petsupport.API2", Version = "v1"});
             });
 
             services.AddDbContext<DataContext>(options =>
@@ -56,10 +54,7 @@ namespace PetSupport.API2
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }

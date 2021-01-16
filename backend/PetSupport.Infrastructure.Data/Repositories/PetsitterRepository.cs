@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using DynamicExpressions.Linq;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using PetSupport.Core.Entities;
-using PetSupport.Core.Enums;
 using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
-
 
 namespace PetSupport.Infrastructure.Data.Repositories
 {
@@ -21,26 +15,21 @@ namespace PetSupport.Infrastructure.Data.Repositories
     {
         internal readonly DataContext Context;
         internal DbSet<Petsitter> Petsitters;
-        internal DbSet<Service> Services;
         internal DbSet<PetsitterService> PetsitterServices;
+        internal DbSet<Service> Services;
 
-        
-        public PetsitterRepository(DataContext context) 
+
+        public PetsitterRepository(DataContext context)
 
         {
-            if (context == null)
-            {
-                throw new ArgumentNullException("context");
-            }
+            if (context == null) throw new ArgumentNullException("context");
             context = Context;
-            
         }
-        
 
-        public  async Task<Petsitter> GetByIdAsync(int id)
+
+        public async Task<Petsitter> GetByIdAsync(int id)
         {
-            return await Petsitters.FirstOrDefaultAsync(x=>x.Id == id);
-
+            return await Petsitters.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<IEnumerable<Petsitter>> GetAllAsync()
@@ -58,11 +47,8 @@ namespace PetSupport.Infrastructure.Data.Repositories
             if (expression == null) throw new ArgumentNullException(nameof(expression));
             var result = await Petsitters.Where(expression).ToListAsync();
             return result;
-
-            
-
         }
-        
+
         // public Expression<Func<Petsitter, bool>> GetExpression(
         //     double minPrice, double maxPrice, string city,
         //     int serviceId)
@@ -96,9 +82,6 @@ namespace PetSupport.Infrastructure.Data.Repositories
         //
         // }
 
-        
-        
-
 
         public void Add(Petsitter entity)
         {
@@ -114,7 +97,6 @@ namespace PetSupport.Infrastructure.Data.Repositories
 
             Petsitters.Update(entity);
             SaveChangesAsync();
-
         }
 
         public Task<bool> SaveChangesAsync()
@@ -125,7 +107,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
         public List<Petsitter> IsPetsitterWithSameCity(string city)
         {
             if (city == null) throw new ArgumentException("You have to put city");
-            
+
             var sameCity = Petsitters.Where(p => p.City == city);
             return sameCity.ToList();
         }
@@ -134,14 +116,13 @@ namespace PetSupport.Infrastructure.Data.Repositories
             double minPrice, double maxPrice, int serviceId)
         {
             if (maxPrice == 0) throw new ArgumentException("Maximum price is set as 0");
-            
+
             var sameService = PetsitterServices
-                .Where(ps=> ps.Service.Id == serviceId);
+                .Where(ps => ps.Service.Id == serviceId);
             var inPriceRange = sameService
                 .Where(ps => ps.Price > minPrice && ps.Price < maxPrice);
 
             return inPriceRange;
         }
-
     }
 }

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-
-
-namespace PetSupport.Core.Entities
+﻿namespace PetSupport.Core.Entities
 {
-    public class User: BaseEntity
+    public class User : BaseEntity
     {
         public string Name { get; set; }
 

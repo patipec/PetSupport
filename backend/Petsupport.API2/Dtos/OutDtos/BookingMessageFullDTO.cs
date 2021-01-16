@@ -7,5 +7,6 @@ namespace PetSupport.API2.Dtos.OutDtos
     {
         public DateTime SendDate { get; set; }
         public string Message { get; set; }
-        public ClientDTO Client { get; set; } }
+        public ClientDTO Client { get; set; }
+    }
 }

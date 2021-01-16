@@ -12,10 +12,10 @@ namespace PetSupport.Infrastructure.Data.Repository
     public abstract class GenericRepository<T> : IRepository<T> where T : class
     {
         protected DataContext _context;
-        
+
         public GenericRepository(DataContext context)
         {
-            this._context = context ?? throw new ArgumentNullException(nameof(context));
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         public virtual async Task<T> GetByIdAsync(int id)
@@ -44,13 +44,11 @@ namespace PetSupport.Infrastructure.Data.Repository
         {
             _context.Update(entity);
         }
-        
+
 
         public async Task<bool> SaveChangesAsync()
         {
-            return (await _context.SaveChangesAsync()) > 0;
-
+            return await _context.SaveChangesAsync() > 0;
         }
-
     }
 }

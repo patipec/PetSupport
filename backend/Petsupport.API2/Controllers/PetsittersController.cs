@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Petsupport.API2.Dtos.OutDtos;
@@ -14,14 +11,14 @@ namespace PetSupport.API2.Controllers
     [ApiController]
     public class PetsittersController : ControllerBase
     {
-        private readonly IRepository<Petsitter> _petSitterRepository;
         private readonly IMapper _mapper;
+        private readonly IRepository<Petsitter> _petSitterRepository;
 
 
         public PetsittersController(IRepository<Petsitter> petSitterRepository, IMapper mapper)
         {
-            this._petSitterRepository = petSitterRepository;
-            this._mapper = mapper;
+            _petSitterRepository = petSitterRepository;
+            _mapper = mapper;
         }
 
 
@@ -38,7 +35,5 @@ namespace PetSupport.API2.Controllers
             var result = await _petSitterRepository.GetByIdAsync(id);
             return _mapper.Map<PetsitterDTO>(result);
         }
-
-
     }
 }

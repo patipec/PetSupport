@@ -4,4 +4,4 @@ namespace PetSupport.API2.Dtos.OutDtos
     {
         public decimal Price { get; set; }
     }
-}  
+}

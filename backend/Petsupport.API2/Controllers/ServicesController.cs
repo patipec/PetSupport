@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PetSupport.Core.Entities;
@@ -34,23 +32,17 @@ namespace PetSupport.API2.Controllers
         {
             var service = await _context.Services.FindAsync(id);
 
-            if (service == null)
-            {
-                return NotFound();
-            }
+            if (service == null) return NotFound();
 
             return service;
         }
 
         // PUT: api/Services/5
-        
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutService(int id, Service service)
         {
-            if (id != service.Id)
-            {
-                return BadRequest();
-            }
+            if (id != service.Id) return BadRequest();
 
             _context.Entry(service).State = EntityState.Modified;
 
@@ -61,13 +53,8 @@ namespace PetSupport.API2.Controllers
             catch (DbUpdateConcurrencyException)
             {
                 if (!ServiceExists(id))
-                {
                     return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                throw;
             }
 
             return NoContent();
@@ -81,7 +68,7 @@ namespace PetSupport.API2.Controllers
             _context.Services.Add(service);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetService", new { id = service.Id }, service);
+            return CreatedAtAction("GetService", new {id = service.Id}, service);
         }
 
         // DELETE: api/Services/5
@@ -89,10 +76,7 @@ namespace PetSupport.API2.Controllers
         public async Task<IActionResult> DeleteService(int id)
         {
             var service = await _context.Services.FindAsync(id);
-            if (service == null)
-            {
-                return NotFound();
-            }
+            if (service == null) return NotFound();
 
             _context.Services.Remove(service);
             await _context.SaveChangesAsync();

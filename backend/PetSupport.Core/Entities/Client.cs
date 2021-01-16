@@ -1,9 +1,6 @@
 ﻿namespace PetSupport.Core.Entities
 {
-    public class Client: User
+    public class Client : User
     {
-        
-        
-
     }
 }
