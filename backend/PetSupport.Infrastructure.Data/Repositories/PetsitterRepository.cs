@@ -16,7 +16,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
         public PetsitterRepository(DataContext _context) : base(_context)
         {
         }
-        
+
 
         public override async Task<IEnumerable<Petsitter>> GetAllAsync()
         {
@@ -32,37 +32,45 @@ namespace PetSupport.Infrastructure.Data.Repositories
             {
                 throw new ArgumentNullException(nameof(petsittersSearchParameters));
             }
+            
+
+            if (string.IsNullOrEmpty(petsittersSearchParameters.Address)
+                && string.IsNullOrEmpty(petsittersSearchParameters.City) 
+                && petsittersSearchParameters.ServiceId.Equals(null))
+            {
+                return await GetAllAsync();
+            }
 
             if (string.IsNullOrEmpty(petsittersSearchParameters.Address))
             {
-                var query = _context.Petsitters
-                    .AsQueryable()
-                    .Include(p => p.Services)
-                    .ThenInclude(s => s.Service)
-                    .Where(p => p.City.Contains(petsittersSearchParameters.City))
-                    .Where(p => p.Services
-                        .Any(s => (int) s.Service.Name == petsittersSearchParameters.ServiceId))
-                    .ToListAsync();
-                return await query;
+                    var query = _context.Petsitters
+                        .AsQueryable()
+                        .Include(p => p.Services)
+                        .ThenInclude(s => s.Service)
+                        .Where(p => p.City.Contains(petsittersSearchParameters.City))
+                        .Where(p => p.Services
+                            .Any(s => (int) s.Service.Name == petsittersSearchParameters.ServiceId))
+                        .ToListAsync();
+                    return await query;
             }
 
             else
-            {
-                var query = _context.Petsitters
-                    .AsQueryable()
-                    .Include(p => p.Services)
-                    .ThenInclude(s => s.Service)
-                    .Where(p => p.City.Contains(petsittersSearchParameters.City))
-                    .Where(p=>p.Address.Contains(petsittersSearchParameters.Address))
-                    .Where(p => p.Services
-                        .Any(s => (int) s.Service.Name == petsittersSearchParameters.ServiceId))
-                    .Where(p => p.Services
-                        .Any(s => s.Price >= petsittersSearchParameters.MinPrice))
-                    .Where(p => p.Services
-                        .Any(s => s.Price <= petsittersSearchParameters.MaxPrice))
-                    .ToListAsync();
-                return await query;
-            }
+                {
+                    var query = _context.Petsitters
+                        .AsQueryable()
+                        .Include(p => p.Services)
+                        .ThenInclude(s => s.Service)
+                        .Where(p => p.City.Contains(petsittersSearchParameters.City))
+                        .Where(p => p.Address.Contains(petsittersSearchParameters.Address))
+                        .Where(p => p.Services
+                            .Any(s => (int) s.Service.Name == petsittersSearchParameters.ServiceId))
+                        .Where(p => p.Services
+                            .Any(s => s.Price >= petsittersSearchParameters.MinPrice))
+                        .Where(p => p.Services
+                            .Any(s => s.Price <= petsittersSearchParameters.MaxPrice))
+                        .ToListAsync();
+                    return await query;
+                }
         }
     }
 }
