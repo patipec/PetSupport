@@ -38,6 +38,8 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { RangeSlider } from './forms/shared/slider/slider.component';
 import { MapComponent } from './common/components/map/map.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
+import { ContactFormComponent } from './pages/contact-form/contact-form.component';
+import { ContactFormSuccessComponent } from './pages/contact-form/contact-form-success/contact-form-success.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { LoginFormComponent } from './forms/login-form/login-form.component';
     ServicesCardsComponent,
     RangeSlider,
     MapComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    ContactFormComponent,
+    ContactFormSuccessComponent
   ],
 
   imports: [
