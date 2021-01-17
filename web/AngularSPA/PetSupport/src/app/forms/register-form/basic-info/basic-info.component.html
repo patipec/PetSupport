@@ -1,14 +1,14 @@
-<mat-grid-list cols="1" rowHeight="700px">
-        <mat-grid-tile style="position:inherit;">
-            <div class="example-container">
-                <div class="card-title">Basic Info</div>
-                <hr>
-                <br><br>
+<mat-card>
+    <mat-card-content style="position:inherit;">
+        <div class="example-container">
+            <div class="card-title">Basic Info</div>
+            <hr>
+            <br><br>
 
                 <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm.value)">
                     <div formGroupName="userData">
 
-                    <mat-form-field appearance="fill" class="width-100">
+                    <mat-form-field class="width-100">
                         <mat-label>Name</mat-label>
                         <input matInput
                         type="text"
@@ -24,7 +24,7 @@
                     </mat-form-field>
                     
                     <br>
-                    <mat-form-field appearance="fill" class="width-100">
+                    <mat-form-field class="width-100">
                         <mat-label>Surname</mat-label>
                         <input matInput
                         type="text"
@@ -35,7 +35,7 @@
                     </mat-form-field>
                     <br>
 
-                    <mat-form-field appearance="fill" class="width-100">
+                    <mat-form-field class="width-100">
                         <mat-label>Email</mat-label>
                         <input matInput
                         type="text"
@@ -47,7 +47,7 @@
                     </mat-form-field>
                 
                     <br>
-                    <mat-form-field appearance="fill" class="width-100">
+                    <mat-form-field class="width-100">
                         <mat-label>Phone</mat-label>
                         <input matInput
                         type="text"
@@ -60,7 +60,7 @@
                     </mat-form-field>
                     <br>
 
-                    <mat-form-field appearance="fill" class="width-100">
+                    <mat-form-field class="width-100">
                         <mat-label>Password</mat-label>
                         <input matInput
                         [type]="hide ? 'password' : 'text'"
@@ -76,7 +76,7 @@
                     </mat-form-field>
 
                     <br>
-                    <mat-form-field appearance="fill" class="width-100">
+                    <mat-form-field class="width-100">
                         <mat-label>Confirm Password</mat-label>
                         <input matInput
                         [type]="hide ? 'confirmPassword' : 'text'"
@@ -95,14 +95,20 @@
                     <span *ngIf="!signupForm.valid && signupForm.touched"></span>
                     <mat-card-actions>
                         <a mat-raised-button 
-                        type="submit" 
-                        color="primary"
+                        class="back-btn"
                         routerLink="/register-form/services"
-                        >NEXT</a>
-                    </mat-card-actions> 
+                        >Cancel</a>
+                    <a mat-raised-button 
+                    class="continue-btn"
+                    type="submit" 
+                    color="primary"
+                    routerLink="/register-form/address"
+                    >Next</a>
+             </mat-card-actions> 
                 </div>
                 </form>
             </div>
-        </mat-grid-tile>
-    </mat-grid-list>
+        </mat-card-content>
+    </mat-card>
+   
     

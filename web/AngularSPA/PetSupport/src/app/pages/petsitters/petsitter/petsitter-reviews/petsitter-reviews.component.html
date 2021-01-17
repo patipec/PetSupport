@@ -1,0 +1,23 @@
+<div class="review-main-container">
+  <h1><b>Reviews:</b></h1>
+  <div class="single-review" *ngFor="let review of petsitter.Reviews">
+    <div class="reviewer-info">
+
+      <div class="reviewer-img">
+        <img [src]="review.ReviewerImage != null? review.ReviewerImage : 'assets/PetsitterDetail/default-petsitter-image.png'"
+             alt="Petsitter main picture">
+      </div>
+
+      <div class="reviewer-text-info">
+        <div class="reviewer-name">{{review.ReviewerFirstName}} {{review.ReviewerSurName[0]}}.</div>
+        <div class="review-date">{{review.ReviewDate}}</div>
+      </div>
+
+    </div>
+    <div class="review-description">
+      {{review.ReviewerComment}}
+    </div>
+    <hr>
+  </div>
+
+</div>

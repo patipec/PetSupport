@@ -38,8 +38,16 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { RangeSlider } from './forms/shared/slider/slider.component';
 import { MapComponent } from './common/components/map/map.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
+
+import { RateComponent } from './common/shared/rate/rate.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { PetsitterServicesComponent } from './pages/petsitters/petsitter/petsitter-services/petsitter-services.component';
+import { PetsitterCalendarComponent } from './pages/petsitters/petsitter/petsitter-calendar/petsitter-calendar.component';
+import { PetsitterReviewsComponent } from './pages/petsitters/petsitter/petsitter-reviews/petsitter-reviews.component';
+import { PetsitterCanHostComponent } from './pages/petsitters/petsitter/petsitter-can-host/petsitter-can-host.component';
 import { ContactFormComponent } from './pages/contact-form/contact-form.component';
 import { ContactFormSuccessComponent } from './pages/contact-form/contact-form-success/contact-form-success.component';
+
 
 @NgModule({
   declarations: [
@@ -64,13 +72,18 @@ import { ContactFormSuccessComponent } from './pages/contact-form/contact-form-s
     RangeSlider,
     MapComponent,
     LoginFormComponent,
+    RateComponent,
+    PetsitterServicesComponent,
+    PetsitterCalendarComponent,
+    PetsitterReviewsComponent,
+    PetsitterCanHostComponent,
     ContactFormComponent,
     ContactFormSuccessComponent
   ],
 
   imports: [
     BrowserModule,
-    AppRoutingModule,  
+    AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatToolbarModule,
@@ -85,7 +98,8 @@ import { ContactFormSuccessComponent } from './pages/contact-form/contact-form-s
     MaterialModule,
     ReactiveFormsModule,
     MatCarouselModule.forRoot(),
-    NgxSliderModule
+    NgxSliderModule,
+    IvyCarouselModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

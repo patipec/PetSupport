@@ -1,0 +1,106 @@
+.petsittter-details-container{
+  margin: 0px 15vw;
+}
+/*UPPER CONTAINER*/
+.petsitter-upper-container{
+  display: flex;
+  /*margin: 0px 25vw;*/
+  height: 33vh;
+  padding-bottom: 3vh;
+}
+.petsitter-image{
+  width: 25vw;
+  justify-content: center;
+}
+.petsitter-image img{
+  width: 50%;
+  height: 70%;
+  margin:50px auto 0;
+  display: flex;
+  border-radius: 50%;
+}
+
+.petsitter-description{
+  width: 30vw;
+  justify-content: center;
+}
+/*STAR RATING THINGS*/
+.rate-container{
+  display: flex;
+  position: relative;
+  width: 25px;
+  font-size: 20px;
+  margin: 10px 0px 10px 10px;
+}
+.rating-without-stars{
+  position: relative;
+  top:3px;
+  margin-right: 20px;
+  text-align: center;
+}
+.rate-numeric{
+  font-size: .9em;
+}
+.rate-text {
+  font-size: .8em;
+}
+h2{
+  /*font-weight: bold;*/
+  color: forestgreen;
+}
+hr{
+  margin: 3vh 0;
+}
+/*CONTACT BUTTON*/
+.petsitter-contact-button{
+  width: 15vw;
+  justify-content: center;
+  display: flex;
+}
+button{
+  width: 80%;
+  background-color: darkgreen;
+  border-color: darkgreen;
+  color: white;
+  margin: auto;
+  border-radius: 35px;
+  padding: 15px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  justify-content: center;
+}
+
+/*Middle CONTAINER*/
+.petsitter-middle-container{
+  height: 52vh;
+  display: flex;
+
+}
+.left-middle-container{
+  /*width: 100%;*/
+}
+.galery{
+  width: 45vw;
+  margin: auto 0 auto 2vw;
+}
+.galery2{
+  margin-top: 10px;
+}
+
+.petsitter-down-container {
+  height: 60vh;
+  display: flex;
+}
+app-petsitter-calendar{
+  border: solid 1px black;
+  margin: 0 0 0 2.5vw;
+  height: 80%;
+  width: 18vw;
+}
+
+app-petsitter-reviews{
+  /*border: solid 1px black;*/
+  margin: 4vh auto;
+  height: 100%;
+  width: 60%;
+}
