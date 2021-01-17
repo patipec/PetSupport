@@ -104,6 +104,11 @@ namespace PetSupport.Infrastructure.Data.Repositories
             return Task.FromResult(true);
         }
 
+        public string GetPetsiterServices(int petsitterId)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Petsitter> IsPetsitterWithSameCity(string city)
         {
             if (city == null) throw new ArgumentException("You have to put city");
