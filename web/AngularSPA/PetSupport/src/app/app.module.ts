@@ -30,6 +30,7 @@ import { BasicInfoComponent } from './forms/register-form/basic-info/basic-info.
 import { AddressComponent } from './forms/register-form/address/address.component';
 import { ServicesComponent } from './forms/register-form/services/services.component';
 import { PersonalInfoComponent } from './forms/register-form/personal-info/personal-info.component';
+import { EndOfRegistrationComponent } from './forms/register-form/end-of-registration/end-of-registration.component';
 import { FooterComponent } from './common/components/footer/footer.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { CardCaruselComponent } from './pages/main-page/card-carusel/card-carusel.component';
@@ -47,6 +48,7 @@ import { PetsitterReviewsComponent } from './pages/petsitters/petsitter/petsitte
 import { PetsitterCanHostComponent } from './pages/petsitters/petsitter/petsitter-can-host/petsitter-can-host.component';
 import { ContactFormComponent } from './pages/contact-form/contact-form.component';
 import { ContactFormSuccessComponent } from './pages/contact-form/contact-form-success/contact-form-success.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 
 
 @NgModule({
@@ -78,7 +80,9 @@ import { ContactFormSuccessComponent } from './pages/contact-form/contact-form-s
     PetsitterReviewsComponent,
     PetsitterCanHostComponent,
     ContactFormComponent,
-    ContactFormSuccessComponent
+    ContactFormSuccessComponent,
+    EndOfRegistrationComponent,
+    EditProfileComponent
   ],
 
   imports: [

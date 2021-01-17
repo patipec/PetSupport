@@ -1,33 +1,61 @@
 section.main-container {
-    height: 55vh;
+    height: 70vh;
     min-height: 450px;
-    background: linear-gradient( rgba(255, 255, 255, 0.1), rgba(180, 180, 180, 0.3) ), url(../../../assets/BecomePetsitterPage/become-photo1.jpg);
+    background: linear-gradient( rgba(255, 255, 255, 0.1), rgba(180, 180, 180, 0.3) ), url(../../../assets/BecomePetsitterPage/become-photo3.jpg);
     background-size:cover;
     position: relative;
 }
 
-.continue-btn{
+.continue-btn {
     background-color:#0B814A;
     color: white;
     font-weight:500;
-    font-size: 13px;
-    width: 140px;
+    font-size: 15px;
+    width: 190px;
     -moz-border-radius: 15px;
     border-radius: 25px;
     padding: 3px 0 ;
     margin-left: 13px !important;
     margin-right: 13px !important;
-  }
-  .continue-btn:hover{
-    background-color:#0c4d42;
-  }
+}
 
-  .main-text {
+.continue-btn:hover {
+    background-color:#0c4d42;
+}
+
+.journey-btn {
+    background-color:#FFCB3D;
+    color: black;
+    font-weight:500;
+    font-size: 15px;
+    width: 190px;
+    -moz-border-radius: 15px;
+    border-radius: 25px;
+    padding: 3px 0 ;
+    margin-left: 13px !important;
+    margin-right: 13px !important;
+}
+.journey-btn:hover {
+    background-color:#ffbb00;
+}
+
+.main-text {
     font-size: 40px;
     font-weight: bold;
     text-align: left;
-    color: white;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 2px #8b8b8b;
     line-height: 48px;
+    padding-bottom: 26px;
+}
+
+.tips-text {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    color: #FFCB3D;
+    line-height: 48px;
+    padding-bottom: 26px;
 }
 
 .main-container-holder {
@@ -36,6 +64,160 @@ section.main-container {
     justify-content: center;
     max-width: 1450px;
     margin: 0 auto;
-    padding-top: 120px;
     padding-bottom: 20px;
 }
+
+.main-class {
+    padding: 50px;
+    text-align: left;
+    word-wrap: break-word;
+    width: 40%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+}
+
+.row {
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.row-step {
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 20px;
+}
+   
+.divided-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+
+.divided-row .left {
+    padding: 40px;
+}
+
+.divided-row .right {
+    width: 50%;
+    padding: 20px;   
+    text-align: center;
+}
+
+.border-right {
+    border-right: 1px solid rgb(209, 209, 209);
+}
+
+p {
+    padding-bottom: 25px;
+    text-align:justify;
+}
+
+h4 {
+    padding-bottom: 25px;
+    text-align: left;
+    width: 500px;
+}
+
+.step {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0B814A;
+    bottom: 10px;
+    line-height: 1.8em;
+    padding-left: 20px;
+}
+
+.step-container {
+    display: inline-flex;
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+
+.wd-100 {
+    width: 100px;
+}
+.wd-300 {
+    width: 300px;
+}
+.wd-500 {
+    width: 500px;
+}
+
+.or-container{
+    display: inline-flex;
+    font-size: 40px;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    color: rgb(48, 48, 48);
+}
+
+.or-container span {
+    bottom: 10px;
+    line-height: 2.5em;
+    font-weight: bold;
+}
+
+.green-or-space{
+    width: 80px;
+    height: 3px;
+    margin: 42px 42px;
+    background-color: rgb(48, 48, 48);
+    border-radius: 10px;
+}
+
+.check {
+    max-height: 45px;
+    max-width: 60px;
+    width: 30px;
+    height: 30px;
+}
+
+img {
+    width: 300px;
+    height: 300px; 
+    text-align: left;
+}
+
+.img-walk {
+    width: auto;
+    height: auto; 
+    text-align: center;
+    border-radius: 20px;
+    padding: 5px;
+    opacity: 0.7;
+}
+.images-walk {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.dream-job {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: Center;
+    color: black;
+    line-height: 48px;
+    padding-bottom: 36px;
+    padding-top: 60px;
+}
+
+
+@media screen and ( max-width: 1024px ) {
+img.img-walk { width: 200px; }
+}
+@media screen and ( min-width:1025px ) and ( max-width: 1280px ) {
+img.img-walk { width: 250px; }
+}
+@media screen and ( min-width: 1081px ) {
+img.img-walk { width: 350px; }
+}
+img.img-walk { height: auto; }

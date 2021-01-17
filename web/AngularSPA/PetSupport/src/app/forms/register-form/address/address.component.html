@@ -6,8 +6,7 @@
                 <hr>
                 <br><br>
 
-                <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm.value)">
-                <div formGroupName="userData">
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
                     <mat-form-field class="width-100">
                         <mat-label>Street</mat-label>
                         <input matInput
@@ -15,7 +14,7 @@
                         id="street"
                         name="street"
                         formControlName="street">
-                        <span *ngIf="!signupForm.get('userData.street').valid && signupForm.get('userData.street').touched" 
+                        <span *ngIf="!signupForm.get('street').valid && signupForm.get('street').touched" 
                         class="help-block">Please enter a valid Street</span>
                         
                         <!--
@@ -33,7 +32,7 @@
                         id="housenr"
                         name="housenr"
                         formControlName="housenr">
-                        <span *ngIf="!signupForm.get('userData.housenr').valid && signupForm.get('userData.housenr').touched" 
+                        <span *ngIf="!signupForm.get('housenr').valid && signupForm.get('housenr').touched" 
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                     <br>
@@ -45,7 +44,7 @@
                         id="city"
                         name="city"
                         formControlName="city">
-                        <span *ngIf="!signupForm.get('userData.city').valid && signupForm.get('userData.city').touched" 
+                        <span *ngIf="!signupForm.get('city').valid && signupForm.get('city').touched" 
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                 
@@ -57,7 +56,7 @@
                         id="zipcode"
                         name="zipcode"
                         formControlName="zipcode">
-                        <span *ngIf="!signupForm.get('userData.zipcode').valid && signupForm.get('userData.zipcode').touched" 
+                        <span *ngIf="!signupForm.get('zipcode').valid && signupForm.get('zipcode').touched" 
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                     <br>
@@ -69,7 +68,7 @@
                         id="country"
                         name="country"
                         formControlName="country">
-                        <span *ngIf="!signupForm.get('userData.country').valid && signupForm.get('userData.country').touched" 
+                        <span *ngIf="!signupForm.get('country').valid && signupForm.get('country').touched" 
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                         <div>
@@ -82,20 +81,17 @@
                         class="back-btn"
                         routerLink="/register-form/basic-info"
                         >Back</a>
-                    <a mat-raised-button 
-                    class="continue-btn"
-                    type="submit" 
-                    color="primary"
-                    routerLink="/register-form/services"
-                    >Next</a>
-             </mat-card-actions> 
-
-
-
-
-                </div>
-                </form>
-            </div>
-        </mat-card-content>
-    </mat-card>
+                        <button mat-raised-button 
+                        class="continue-btn"
+                        type="submit" 
+                        color="primary"
+                        routerLink="/register-form/services"
+                        (click)="onSubmit()"
+                        >Next
+                        </button>
+                    </mat-card-actions> 
+            </form>
+        </div>
+    </mat-card-content>
+</mat-card>
    

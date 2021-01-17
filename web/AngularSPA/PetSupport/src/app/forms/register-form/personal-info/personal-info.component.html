@@ -5,9 +5,8 @@
                 <div class="card-title">Personal Informations</div>
                 <hr>
                 <br><br>
-                <div class="width-100">
-                <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm.value)">
-                <div formGroupName="userData">
+                <div class="width-100 center">
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
                     <div class="title-name">
                         Birthday
                     </div>
@@ -18,7 +17,7 @@
                         id="birthday"
                         name="birthday"
                         formControlName="birthday">
-                        <span *ngIf="!signupForm.get('userData.birthday').valid && signupForm.get('userData.birthday').touched" 
+                        <span *ngIf="!signupForm.get('birthday').valid && signupForm.get('birthday').touched" 
                         class="help-block">Please enter a valid Street</span>
                     </mat-form-field>
                     <br>
@@ -37,7 +36,7 @@
                         id="title"
                         name="title"
                         formControlName="title">
-                        <span *ngIf="!signupForm.get('userData.title').valid && signupForm.get('userData.title').touched" 
+                        <span *ngIf="!signupForm.get('title').valid && signupForm.get('title').touched" 
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                     <br>
@@ -55,7 +54,7 @@
                         id="experience"
                         name="experience"
                         formControlName="experience">
-                        <span *ngIf="!signupForm.get('userData.experience').valid && signupForm.get('userData.experience').touched" 
+                        <span *ngIf="!signupForm.get('experience').valid && signupForm.get('experience').touched" 
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                     <br>
@@ -72,7 +71,7 @@
                         id="availability"
                         name="availability"
                         formControlName="availability">
-                        <span *ngIf="!signupForm.get('userData.availability').valid && signupForm.get('userData.availability').touched" 
+                        <span *ngIf="!signupForm.get('availability').valid && signupForm.get('availability').touched" 
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                     <br>
@@ -90,7 +89,7 @@
                         id="environment"
                         name="environment"
                         formControlName="environment">
-                        <span *ngIf="!signupForm.get('userData.environment').valid && signupForm.get('userData.environment').touched" 
+                        <span *ngIf="!signupForm.get('environment').valid && signupForm.get('environment').touched" 
                         class="help-block">Please enter a valid value</span>
                     </mat-form-field>
                         <div>
@@ -103,17 +102,16 @@
                         class="back-btn"
                         routerLink="/register-form/services"
                         >Back</a>
-                    <a mat-raised-button 
-                    class="continue-btn"
-                    type="submit" 
-                    color="primary"
-                    routerLink="/register-form/end-of-registration"
-                    >Save</a>
-             </mat-card-actions> 
- 
-                </div>
+                        <button mat-raised-button 
+                        class="continue-btn"
+                        type="submit" 
+                        color="primary"
+                        routerLink="/register-form/end-of-registration"
+                        (click)="onSubmit()"
+                        >Save</button>
+                     </mat-card-actions> 
                 </form>
-            </div>
+              </div>
             </div>
         </mat-card-content>
     </mat-card>

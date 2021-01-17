@@ -11,6 +11,9 @@ import {ServicesComponent} from './forms/register-form/services/services.compone
 import {LoginFormComponent} from './forms/login-form/login-form.component';
 import {ContactFormComponent} from './pages/contact-form/contact-form.component';
 import {ContactFormSuccessComponent} from './pages/contact-form/contact-form-success/contact-form-success.component';
+import { EndOfRegistrationComponent } from './forms/register-form/end-of-registration/end-of-registration.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+
 
 const routes: Routes = [
   {path: 'main-page', component: MainPageComponent},
@@ -25,7 +28,10 @@ const routes: Routes = [
   {path: 'contact-form/success', component: ContactFormSuccessComponent},
   {path: 'register-form/login', component: LoginFormComponent},
   {path: 'login', component: LoginFormComponent},
-
+  {path: 'edit-profile', component: EditProfileComponent},
+  {path: 'register-form/login', component: LoginFormComponent},
+  {path: 'login', component: LoginFormComponent},
+  {path: 'register-form/end-of-registration', component: EndOfRegistrationComponent},
   {path: '', redirectTo: '/main-page', pathMatch: 'full'},
   /*   ** is last route, add new only above ^^^  */
   {path: '**', component: MainPageComponent} // We can add 404 page here later
