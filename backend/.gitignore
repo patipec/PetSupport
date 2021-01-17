@@ -7,14 +7,18 @@ riderModule.iml
 .idea
 
 # VS files
-vs/
+vs
 v16/
 .vs
 .v16
+vs/
 
 # Binary files
-.obj/
-.bin/
+obj
+bin
+obj/
+bin/
+
 
 # Database project files
 *.dbmdl

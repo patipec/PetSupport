@@ -29,7 +29,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 .ToListAsync();
         }
 
-        public virtual async Task<IEnumerable<T>> FindByConditionAsync(Expression<Func<T, bool>> expression)
+        public virtual async Task<List<T>> FindByConditionAsync(Expression<Func<T, bool>> expression)
         {
             return await _context.Set<T>()
                 .AsQueryable()
