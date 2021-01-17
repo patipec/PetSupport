@@ -105,13 +105,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c25cba1-58ce-47d8-84b8-03d890a90b42" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/common/models/petsitter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/common/models/petsitter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-reviews/petsitter-reviews.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-reviews/petsitter-reviews.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-reviews/petsitter-reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-reviews/petsitter-reviews.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter.component.css" afterDir="false" />
-    </list>
+    <list default="true" id="9c25cba1-58ce-47d8-84b8-03d890a90b42" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +127,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1m3QNlArg17X2guZAJ4e3DNxIV0" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
