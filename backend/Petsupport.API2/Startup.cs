@@ -1,13 +1,24 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
 using PetSupport.Infrastructure.Data.Repositories;
+
 
 namespace PetSupport.API2
 {
@@ -26,16 +37,17 @@ namespace PetSupport.API2
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Petsupport.API2", Version = "v1"});
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Petsupport.API2", Version = "v1" });
             });
 
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-                    b => b.MigrationsAssembly("PetSupport.Infrastructure.Data")));
-
-            // services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
+                        options=>options.MigrationsAssembly("Petsupport.API2"))
+                    .EnableSensitiveDataLogging()
+                    .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+            
             services.AddTransient<IPetsitterRepository, PetsitterRepository>();
-            services.AddTransient<IServiceRepository, ServiceRepository>();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +66,10 @@ namespace PetSupport.API2
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }

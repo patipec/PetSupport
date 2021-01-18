@@ -2,7 +2,7 @@ using PetSupport.Core.Entities;
 
 namespace Petsupport.API2.Dtos.OutDtos
 {
-    public class PetsitterDTO : BaseEntity
+    public class PetsitterDTO
     {
         public string Name { get; set; }
         public string Surname { get; set; }

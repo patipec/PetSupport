@@ -1,29 +1,30 @@
 import {FormControl, FormGroup} from '@angular/forms';
-
-export class RegistrationForm {
-    //basic-info
+export interface IBasicInfo {
     name: string;
     surname: string;
     email: string;
     phone: string;
     password: string;
-    repeatpassword: string;
-    //address
+    repeatPassword: string;
+}
+export interface IAddress {
     street: string;
     housenr: string;
     city: string;
     zipcode: string;
     country: string;
-  
-    //services
-  
-    //personal-info
+}
+export interface IPersonalInfo {
     birthday: string;
     title: string;
     experience: string;
     availability: string;
     environment: string;
-  
+}
+export interface IRegistrationForm {
+  basicInfo: IBasicInfo;
+  address: IAddress;
+  personalInfo: IPersonalInfo;
 }
 
 // range: new FormGroup({

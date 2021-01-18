@@ -3,7 +3,7 @@ using PetSupport.Core.Enums;
 
 namespace PetSupport.API2.Dtos.OutDtos
 {
-    public class ServiceDTO : BaseEntity
+    public class ServiceDTO
     {
         public string ImageId { get; set; }
         public string Name { get; set; }

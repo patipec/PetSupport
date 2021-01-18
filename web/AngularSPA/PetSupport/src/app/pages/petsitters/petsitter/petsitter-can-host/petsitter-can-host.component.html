@@ -1,0 +1,19 @@
+<div class="img-description-container">
+  <div class="petsitter-name">
+    <h1>{{petsitter.Name}} can host:</h1>
+  </div>
+  <div class="canHost">
+    <div *ngFor="let canHost of petsitter.PetsitterCanHost | keyvalue ">
+      <div class="`${canHost}">
+
+        <img src="assets/PetsitterDetail/PetsitterCanHost/{{canHost.key}}.png"
+                                alt="Petsitter main picture">
+
+        <div class="description">
+            {{canHost.value}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

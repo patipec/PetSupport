@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import { RegistrationService } from '../registration.service';
 
@@ -8,30 +8,25 @@ import { RegistrationService } from '../registration.service';
   templateUrl: './basic-info.component.html',
   styleUrls: ['./basic-info.component.css']
 })
-export class BasicInfoComponent implements OnInit {
+export class BasicInfoComponent {
 
   hide = true;
   submitted = false;
+  signupForm = this.fb.group({
+    'name': ['asd', [Validators.required, Validators.pattern('[a-z A-Z]'), Validators.maxLength(15), Validators.minLength(2), this.nameCheck]],
+    'surname': ['asd', [Validators.required, Validators.maxLength(25), Validators.minLength(2), this.surnameCheck]],
+    'email': ['asd@asd.asd', [Validators.required, Validators.email, this.emailCheck]],
+    'phone': ['123123123', [Validators.required, Validators.maxLength(9), this.phoneCheck]],
+    'password': ['asd', [Validators.required, Validators.minLength(5), this.passwordCheck]],
+    'confirmPassword': ['asd', [Validators.required, Validators.minLength(5), this.passwordCheck]]
+  });
 
-  constructor( private http: HttpClient, private registrationService: RegistrationService) { }
+  constructor(private http: HttpClient,
+              private registrationService: RegistrationService,
+              private fb: FormBuilder) {
+  this.signupForm.get('password').valueChanges.subscribe(x => this.signupForm.get('confirmPassword').updateValueAndValidity());
 
-  ngOnInit(): void {
-    this.signupForm = new FormGroup({
-      'userData': new FormGroup({
-      "name" : new FormControl(null, [Validators.required,Validators.maxLength(15),Validators.minLength(2), this.nameCheck]),
-      "surname" : new FormControl(null, [Validators.required,Validators.maxLength(25),Validators.minLength(2), this.surnameCheck]),
-      "email" : new FormControl(null, [Validators.required, Validators.email, this.emailCheck]),
-      "phone" : new FormControl(null, [Validators.required,Validators.maxLength(9), this.phoneCheck]),
-      "password" : new FormControl(null, [Validators.required,Validators.minLength(5), this.passwordCheck]),
-      "confirmPassword" : new FormControl(null, [Validators.required,Validators.minLength(5), this.passwordCheck])
-        })
-      });
-      this.signupForm.controls.password.valueChanges.subscribe(
-        x => this.signupForm.controls.confirmPassword.updateValueAndValidity()
-      )
-  }
-
-  signupForm: FormGroup;
+}
 
 
   nameCheck(control){
@@ -98,14 +93,11 @@ export class BasicInfoComponent implements OnInit {
     }
   }
 
-  onSubmit(control) {
-    console.log(this.signupForm);
-    if(this.signupForm.status == "VALID"){
-      this.registrationService.setStreet(this.signupForm.controls['userData.street'].value);
-      this.registrationService.setHouseNr(this.signupForm.controls['userData.housenr'].value);
-      this.registrationService.setCity(this.signupForm.controls['userData.city'].value);
-      this.registrationService.setZipcode(this.signupForm.controls['userData.zipcode'].value);
-      this.registrationService.setCountry(this.signupForm.controls['userData.country'].value);
+  onSubmit(): void {
+    //this.registrationService.setBasicInfo(this.signupForm.value);
+    //this.registrationService.saveUser();
+    if (this.signupForm.status === 'VALID'){
+      this.registrationService.setBasicInfo(this.signupForm.value);
     }
     else {
       this.signupForm.get('name').markAsTouched();
@@ -115,19 +107,5 @@ export class BasicInfoComponent implements OnInit {
       this.signupForm.get('password').markAsTouched();
       this.signupForm.get('confirmPassword').markAsTouched();
     }
-    this.signupForm.reset();
   }
-
-  
-//***** HTTP METHODS (POST)****//
-  // onCreatePost(postData: {title: string; content: string}) {
-  //   this.http.post('https://ng-component-guide-78d02-default-rtdb.firebaseio.com/posts.json', 
-  //   postData
-  //     ).subscribe(responseData => {
-  //       console.log(responseData);
-  //     });
-  //     this.signupForm.reset();
-  //   }
-//***** HTTP METHODS (POST)****//
-
 }

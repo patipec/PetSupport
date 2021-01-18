@@ -7,15 +7,15 @@ using Microsoft.EntityFrameworkCore;
 using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
 
-namespace PetSupport.Infrastructure.Data.Repository
+namespace PetSupport.Infrastructure.Data.Repositories
 {
-    public abstract class GenericRepository<T> : IRepository<T> where T : class
+    public abstract class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         protected DataContext _context;
-
-        public GenericRepository(DataContext context)
+        
+        public BaseRepository(DataContext context)
         {
-            _context = context ?? throw new ArgumentNullException(nameof(context));
+            this._context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         public virtual async Task<T> GetByIdAsync(int id)
@@ -25,14 +25,16 @@ namespace PetSupport.Infrastructure.Data.Repository
 
         public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
-            return await _context.Set<T>().ToListAsync();
+            return await _context.Set<T>()
+                .ToListAsync();
         }
 
-        public virtual async Task<List<T>> FindByConditionAsync(Expression<Func<T, bool>> expression)
+        public virtual async Task<IEnumerable<T>> FindByConditionAsync(Expression<Func<T, bool>> expression)
         {
             return await _context.Set<T>()
                 .AsQueryable()
-                .Where(expression).ToListAsync();
+                .Where(expression)
+                .ToListAsync();
         }
 
         public virtual void Add(T entity)
@@ -44,11 +46,13 @@ namespace PetSupport.Infrastructure.Data.Repository
         {
             _context.Update(entity);
         }
-
+        
 
         public async Task<bool> SaveChangesAsync()
         {
-            return await _context.SaveChangesAsync() > 0;
+            //return true if one ore more entities were changed
+            return (await _context.SaveChangesAsync()) > 0;
         }
+
     }
 }

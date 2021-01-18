@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatCarousel, MatCarouselComponent } from '@ngmodule/material-carousel';
+import {Component, Input, OnInit} from '@angular/core';
+import { MatCarousel } from '@ngmodule/material-carousel';
 
 @Component({
   selector: 'app-card-carusel',
@@ -8,15 +8,7 @@ import { MatCarousel, MatCarouselComponent } from '@ngmodule/material-carousel';
 })
 export class CardCaruselComponent implements OnInit {
 
-  slides = [
-    {'image': './../assets/MainPage/carusel3.jpg'}, 
-    {'image': './../assets/MainPage/carusel1.jpg'},
-    {'image': './../assets/MainPage/carusel3.jpg'}, 
-    {'image': './../assets/MainPage/carusel1.jpg'},
-    {'image': './../assets/MainPage/carusel3.jpg'}
-  ];
-
-
+  @Input() slides = [];
   constructor() { }
 
   ngOnInit(): void {

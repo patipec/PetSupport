@@ -27,10 +27,11 @@
     "@ngmodule/material-carousel": "^0.6.0",
     "@rxweb/reactive-form-validators": "^2.1.2",
     "@syncfusion/ej2-angular-inputs": "^18.3.53",
+    "angular-responsive-carousel": "^2.0.2",
+    "leaflet": "1.6.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.3",
-    "leaflet": "1.6.0"
+    "zone.js": "~0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1100.2",

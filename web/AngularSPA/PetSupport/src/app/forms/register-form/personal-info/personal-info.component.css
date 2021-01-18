@@ -4,14 +4,14 @@ mat-grid-tile {
 }
 
 
-mat-form-field {
+/* mat-form-field {
 
   width: 3vw;
   margin: 7px;
   display: inline-block;
   border: slategray solid 1px;
   border-radius: 40px;
-}
+} */
 
 .card-title {
     color: #0B814A;
@@ -50,4 +50,77 @@ input.ng-invalid.ng-touched {
   margin-top: 20px;
   margin-bottom: 40px;
   margin: 0 auto;
+}
+
+
+.continue-btn{
+  background-color:#FFCB3D;
+  color: black;
+  font-weight:500;
+  font-size: 13px;
+  width: 140px;
+  -moz-border-radius: 15px;
+  border-radius: 25px;
+  padding: 3px 0 ;
+  margin-left: 13px !important;
+  margin-right: 13px !important;
+}
+.continue-btn:hover{
+  background-color:#ffbb00;
+}
+
+.back-btn{
+  background-color:white;
+  color: black;
+  font-size: 13px;
+  border-color: black 1px;
+  font-weight:500;
+  width: 140px;
+  -moz-border-radius: 15px;
+  border-radius: 25px;
+  padding: 3px 0 ;
+  margin-left: 13px !important;
+  margin-right: 13px !important;
+}
+
+.back-btn:hover{
+  background-color: #ececec;
+}
+
+mat-card-actions {
+  text-align: center;
+}
+
+mat-form-field {
+  display: block;
+  border: solid #8d8d8d 1px;
+  -moz-border-radius: 15px;
+  border-radius: 35px;
+  padding: 0px 0px 2px;
+  font-size: 12px;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  margin: 0px auto 1px;
+  width: 90%;
+  background-color: white;
+}
+mat-form-field input {
+
+  justify-content: center;
+
+}
+
+.label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+hr {
+  width: 200px;
+}
+
+.center {
+  margin: 10px auto;
+  justify-content: center;
 }
