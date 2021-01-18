@@ -8,10 +8,8 @@ namespace PetSupport.Core.Entities
     public class Petsitter : User
     {
         
-
         public string Description { get; set; }
-
-
+        
         public string Password { get; set; }
         
         public string PhotoId { get; set; }
@@ -23,7 +21,7 @@ namespace PetSupport.Core.Entities
         public string ParcelAndHouseNumbers { get; set; }
 
         public string ZipCode { get; set; }
-
+        
         public double Rate { get; set; }
 
 
