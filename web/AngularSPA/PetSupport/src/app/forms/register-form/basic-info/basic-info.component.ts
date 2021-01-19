@@ -13,12 +13,12 @@ export class BasicInfoComponent {
   hide = true;
   submitted = false;
   signupForm = this.fb.group({
-    'name': ['asd', [Validators.required, Validators.pattern('[a-z A-Z]'), Validators.maxLength(15), Validators.minLength(2), this.nameCheck]],
-    'surname': ['asd', [Validators.required, Validators.maxLength(25), Validators.minLength(2), this.surnameCheck]],
-    'email': ['asd@asd.asd', [Validators.required, Validators.email, this.emailCheck]],
-    'phone': ['123123123', [Validators.required, Validators.maxLength(9), this.phoneCheck]],
-    'password': ['asd', [Validators.required, Validators.minLength(5), this.passwordCheck]],
-    'confirmPassword': ['asd', [Validators.required, Validators.minLength(5), this.passwordCheck]]
+    'name': ['', [Validators.required, Validators.pattern('[a-z A-Z]'), Validators.maxLength(15), Validators.minLength(2), this.nameCheck]],
+    'surname': ['', [Validators.required, Validators.maxLength(25), Validators.minLength(2), this.surnameCheck]],
+    'email': ['', [Validators.required, Validators.email, this.emailCheck]],
+    'phone': ['', [Validators.required, Validators.maxLength(9), this.phoneCheck]],
+    'password': ['', [Validators.required, Validators.minLength(5), this.passwordCheck]],
+    'confirmPassword': ['', [Validators.required, Validators.minLength(5), this.passwordCheck]]
   });
 
   constructor(private http: HttpClient,

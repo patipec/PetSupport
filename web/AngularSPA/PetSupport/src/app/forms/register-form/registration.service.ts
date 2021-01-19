@@ -11,7 +11,7 @@ export class RegistrationService {
   registerData: IRegistrationForm = {
     basicInfo: {},
     address: {},
-    personalInfo: {}
+    personalInfo: {},
   };
   constructor(private http: HttpClient) {
   }
