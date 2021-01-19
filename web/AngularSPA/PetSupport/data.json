@@ -17,6 +17,10 @@
         "Boarding": 35,
         "Walking": 14
       },
+      "PetsitterCanHost":{
+        "small": "0 - 10 kg",
+        "medium": "10 - 25 kg"
+      },
       "Reviews": [
         {
           "ReviewerFirstName": "John",
@@ -63,6 +67,9 @@
         "Walking": 15,
         "ReviewDate": "10.01.2021"
       },
+      "PetsitterCanHost":{
+        "cat": "Cats"
+      },
       "Reviews": [
         {
           "ReviewerFirstName": "John",
@@ -107,6 +114,11 @@
         "Boarding": 15,
         "HouseSitting": 22,
         "Walking": 8
+      },
+      "PetsitterCanHost":{
+        "small": "0 - 10 kg",
+        "medium": "10 - 25 kg" ,
+        "cat": "Cats"
       },
       "Reviews": [
         {
@@ -153,6 +165,12 @@
         "HouseSitting": 20,
         "Walking": 10
       },
+      "PetsitterCanHost":{
+        "small": "0 - 10 kg",
+        "medium": "10 - 25 kg" ,
+        "large":  "+ 25 kg",
+        "cat": "Cats"
+      },
       "Reviews": [
         {
           "ReviewerFirstName": "John",
@@ -179,6 +197,8 @@
           "ReviewerImage": "https://i.pinimg.com/originals/7f/98/f4/7f98f40ec4c100f2edd288eb8016c1d5.jpg"
         }
       ]
+
+
     }
   ]
 }

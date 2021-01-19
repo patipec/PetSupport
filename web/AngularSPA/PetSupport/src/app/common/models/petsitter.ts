@@ -9,6 +9,12 @@ export interface Petsitter extends PetsitterUpdate {
       ReviewDate: Date;
       ReviewerImage: string;
     }]; //  TODO Reviews[]
+  PetsitterCanHost: {
+    small: string;
+    medium: string;
+    large: string;
+    cat: string;
+  };
 }
 
 export interface PetsitterCreate extends Petsitter {

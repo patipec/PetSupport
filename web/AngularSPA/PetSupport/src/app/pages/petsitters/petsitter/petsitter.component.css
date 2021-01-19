@@ -76,7 +76,9 @@ button{
   display: flex;
 
 }
-
+.left-middle-container{
+  /*width: 100%;*/
+}
 .galery{
   width: 45vw;
   margin: auto 0 auto 2vw;

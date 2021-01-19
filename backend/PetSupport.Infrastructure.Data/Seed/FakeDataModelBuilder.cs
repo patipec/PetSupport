@@ -5,7 +5,7 @@ namespace PetSupport.Infrastructure.Data.Seed
 {
     public static class FakeDataModelBuilder
     {
-        public static void Seed(this ModelBuilder modelBuilder)
+        public static void SeedFakeData(this ModelBuilder modelBuilder)
         {
             var fakeData = new FakeData();
 

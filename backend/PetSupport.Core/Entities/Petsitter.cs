@@ -9,6 +9,8 @@ namespace PetSupport.Core.Entities
         public string Password { get; set; }
         public string PhotoId { get; set; }
         public string City { get; set; }
+        
+        public string Address { get; set; }
         public List<PetsitterService> Services { get; set; }
     }
 }

@@ -9,10 +9,11 @@ import { IAddress, IBasicInfo, IPersonalInfo, IRegistrationForm } from './IRegis
 export class RegistrationService {
 
   registerData: IRegistrationForm = {
-    basicInfo: {},
-    address: {},
-    personalInfo: {},
+    basicInfo: {} as IBasicInfo,
+    address: {} as IAddress,
+    personalInfo: {} as IPersonalInfo
   };
+
   constructor(private http: HttpClient) {
   }
 
@@ -31,10 +32,10 @@ export class RegistrationService {
     this.registerData.personalInfo = personalInfo;
   }
 
-  saveUser(): void{
-      this.http.post('https://ng-component-guide-78d02-default-rtdb.firebaseio.com/posts.json', this.registerData)
-        .subscribe(responseData => {
-          console.log(responseData);
-        });
+  saveUser(): void {
+    this.http.post('https://ng-component-guide-78d02-default-rtdb.firebaseio.com/posts.json', this.registerData)
+      .subscribe(responseData => {
+        console.log(responseData);
+      });
   }
 }

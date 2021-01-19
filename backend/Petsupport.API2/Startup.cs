@@ -10,9 +10,14 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using PetSupport.Core.Entities;
+using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
+using PetSupport.Infrastructure.Data.Repositories;
 
 
 namespace PetSupport.API2
@@ -36,7 +41,13 @@ namespace PetSupport.API2
             });
 
             services.AddDbContext<DataContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                        options=>options.MigrationsAssembly("Petsupport.API2"))
+                    .EnableSensitiveDataLogging()
+                    .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+            
+            services.AddTransient<IPetsitterRepository, PetsitterRepository>();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
