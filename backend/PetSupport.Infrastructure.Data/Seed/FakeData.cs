@@ -53,10 +53,9 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(p => p.Description, f => f.Lorem.Sentence(30))
 
                 //TODO: Verify field Password in PetSupport.Core/Entities/Petsitter.cs entity. It is correct ? 
-                .RuleFor(p => p.Password, f => Guid.NewGuid().ToString())
                 .RuleFor(p => p.PhotoId, f => f.Image.PicsumUrl())
                 .RuleFor(p => p.City, f => f.Address.City())
-                .RuleFor(p => p.Address, f => f.Address.StreetName());
+                .RuleFor(p => p.Street, f => f.Address.StreetName());
             FakePetsitters = petsitterFaker.Generate(NumberOfFakeDataToGenerate);
 
             

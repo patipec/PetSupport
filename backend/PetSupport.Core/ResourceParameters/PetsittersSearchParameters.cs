@@ -9,7 +9,7 @@ namespace PetSupport.Core.ResourceParameters
         public int? ServiceId { get; set; } = null;
         
         //FindPetSitterLongFormDTO
-        public string Address { get; set; }
+        public string Street { get; set; }
         public int? MinPrice { get; set; } = 0;
         public int? MaxPrice { get; set; } = Int32.MaxValue;
     }
