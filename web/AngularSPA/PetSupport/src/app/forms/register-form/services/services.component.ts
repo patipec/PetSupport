@@ -27,7 +27,12 @@ export class ServicesComponent implements OnInit {
     onExtraServiceClick(service: string): void{
       const extra = this.services.get(`extraServices.${service}`);
       extra.setValue(!extra.value);
-      console.log(extra.value);
+      const elem = document.getElementById(`_${service}`);
+      if (extra.value){
+        elem.style.backgroundColor = 'rgb(254, 203, 64)';
+      }else{
+        elem.style.backgroundColor = 'white';
+      }
     }
 
   onSubmit(): void {
