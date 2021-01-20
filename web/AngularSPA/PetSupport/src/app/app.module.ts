@@ -49,6 +49,7 @@ import { PetsitterCanHostComponent } from './pages/petsitters/petsitter/petsitte
 import { ContactFormComponent } from './pages/contact-form/contact-form.component';
 import { ContactFormSuccessComponent } from './pages/contact-form/contact-form-success/contact-form-success.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { ServicesPartComponent } from './forms/services-part/services-part.component';
 
 
 @NgModule({
@@ -82,7 +83,8 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
     ContactFormComponent,
     ContactFormSuccessComponent,
     EndOfRegistrationComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    ServicesPartComponent
   ],
 
   imports: [
