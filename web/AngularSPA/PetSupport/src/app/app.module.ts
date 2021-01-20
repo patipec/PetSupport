@@ -51,6 +51,15 @@ import { ContactFormSuccessComponent } from './pages/contact-form/contact-form-s
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { ServicesPartComponent } from './forms/services-part/services-part.component';
 
+import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin
+
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 @NgModule({
   declarations: [
@@ -105,7 +114,8 @@ import { ServicesPartComponent } from './forms/services-part/services-part.compo
     ReactiveFormsModule,
     MatCarouselModule.forRoot(),
     NgxSliderModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    FullCalendarModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

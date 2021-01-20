@@ -106,6 +106,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c25cba1-58ce-47d8-84b8-03d890a90b42" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/services-part/services-part.component.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/services-part/services-part.component.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/services-part/services-part.component.ts" afterDir="false" />
@@ -113,6 +114,20 @@
       <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/services/services.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/services/services.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/services/services.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/services/services.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/services/services.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/services/services.component.ts" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_12_2020_16_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_12_2020_16_49__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/PetSupport.Core/PetSupport.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/PetSupport.Core/PetSupport.Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/PetSupport.Infrastructure.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/PetSupport.Infrastructure.Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/PetSupport.Tests/PetSupport.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/PetSupport.Tests/PetSupport.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Petsupport.API2/PetSupport.API2.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Petsupport.API2/PetSupport.API2.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-calendar/petsitter-calendar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-calendar/petsitter-calendar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-calendar/petsitter-calendar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-calendar/petsitter-calendar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-services/petsitter-services.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-services/petsitter-services.component.html" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +209,7 @@
       <workItem from="1610192715058" duration="2180000" />
       <workItem from="1610206261758" duration="7164000" />
       <workItem from="1610271800801" duration="11911000" />
+      <workItem from="1611171874665" duration="2244000" />
     </task>
     <servers />
   </component>
