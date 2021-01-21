@@ -13,7 +13,7 @@ export class BasicInfoComponent {
   hide = true;
   submitted = false;
   signupForm = this.fb.group({
-    'name': ['', [Validators.required, Validators.pattern('[a-z A-Z]'), Validators.maxLength(15), Validators.minLength(2), this.nameCheck]],
+    'name': ['', [Validators.required, Validators.maxLength(15), Validators.minLength(3), this.nameCheck]],
     'surname': ['', [Validators.required, Validators.maxLength(25), Validators.minLength(2), this.surnameCheck]],
     'email': ['', [Validators.required, Validators.email, this.emailCheck]],
     'phone': ['', [Validators.required, Validators.maxLength(9), this.phoneCheck]],

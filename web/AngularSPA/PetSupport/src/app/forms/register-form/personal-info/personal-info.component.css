@@ -3,6 +3,10 @@ mat-grid-tile {
   background:#fafafa;
 }
 
+mat-card {
+  box-shadow: none !important;
+}
+
 
 /* mat-form-field {
 

@@ -88,7 +88,7 @@
                             <span *ngIf="!signupForm.get('confirmPassword').valid && signupForm.get('confirmPassword').touched" 
                         class="help-block">Please confirm password corectly</span>
                     </mat-form-field>
-
+                </form>
                     <br> 
                     <span *ngIf="!signupForm.valid && signupForm.touched"></span>
                     <mat-card-actions>
@@ -104,7 +104,7 @@
                         (click)="onSubmit()"
                         >Next</button>
                      </mat-card-actions> 
-                </form>
+                
             </div>
         </mat-card-content>
     </mat-card>

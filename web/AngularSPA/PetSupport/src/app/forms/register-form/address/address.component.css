@@ -27,6 +27,10 @@ mat-form-field input {
   width: 80%;
 }
 
+mat-card {
+  box-shadow: none !important;
+}
+
 /*
 mat-form-field {
 

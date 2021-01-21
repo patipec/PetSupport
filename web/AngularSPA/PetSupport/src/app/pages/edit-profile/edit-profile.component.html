@@ -8,40 +8,57 @@
         <div class="border-right">
             <div class="col2-1">
                 <div class="edit">
-                    <a  mat-raised-button 
+                    <button  mat-raised-button 
                     class="journey-btn"
-                    routerLink="/basic-info" routerLinkActive="activebutton"
-                    >Basic info</a>
+                    (click)="onPressBasicInfo()"
+                    >Basic info</button>
                 </div>
                 <div class="edit">
-                    <a mat-raised-button 
+                    <button mat-raised-button 
                     class="journey-btn"
-                    routerLink="/register-form/basic-info"
-                    >Address</a>
+                    (click)="onPressAddress()"
+                    >Address</button>
                 </div>
                 <div class="edit">
-                    <a mat-raised-button 
+                    <button mat-raised-button 
                     class="journey-btn"
-                    routerLink="/register-form/basic-info"
-                    >Services</a>
+                    (click)="onPressServices()"
+                    >Services</button>
                 </div>
                 <div class="edit">
-                    <a mat-raised-button 
+                    <button mat-raised-button 
                     class="journey-btn"
-                    routerLink="/register-form/basic-info"
-                    >Personal info</a>
+                    (click)="onPressPersonalInfo()"
+                    >Personal info</button>
                 </div>
             </div>
         </div>
-        <div>
+   
+
+        <div *ngIf="display1">
             <app-basic-info></app-basic-info>
         </div>
+        <div *ngIf="display2">
+            <app-address></app-address>
+        </div>
+        <div *ngIf="display3">
+            <app-services></app-services>
+        </div>
+        <div *ngIf="display4">
+            <app-personal-info></app-personal-info>
+        </div>
+ 
     </div>
+  
 </div>
 
-<nav>
-    <a class="button" routerLink="/basic-info" routerLinkActive="activebutton">Crisis Center</a> |
-    <a class="button" routerLink="/basic-info" routerLinkActive="activebutton">Heroes</a>
-  </nav> 
-  <router-outlet></router-outlet>
 
+<!--
+    <div class="edit">
+        <button mat-raised-button 
+        class="journey-btn"
+        routerLink="/register-form/basic-info"
+        routerLinkActive="activebutton"
+        >Personal info</button>
+    </div>
+-->

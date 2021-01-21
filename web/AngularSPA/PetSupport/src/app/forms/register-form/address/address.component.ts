@@ -14,10 +14,10 @@ export class AddressComponent {
 
 
     signupForm = this.fb.group({
-          'street': ['waww', [Validators.required,Validators.maxLength(25),Validators.minLength(3)]],
-          'housenr': ['1/2 a', [Validators.required,Validators.maxLength(10),Validators.pattern('^[a-zA-Z0-9_.+-]+/[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
-          'city': ['asasasaa', [Validators.required,Validators.maxLength(30),Validators.minLength(3)]],
-          'zipcode': ['12345', Validators.required, this.forbiddenZipCode],
+          'street': ['', [Validators.required,Validators.maxLength(25),Validators.minLength(3)]],
+          'housenr': ['', [Validators.required,Validators.maxLength(10),Validators.pattern('^[a-zA-Z0-9_.+-]+/[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
+          'city': ['', [Validators.required,Validators.maxLength(30),Validators.minLength(3)]],
+          'zipcode': ['', Validators.required, this.forbiddenZipCode],
           'country': ['Poland', [Validators.required,Validators.maxLength(30),Validators.minLength(3)]]
 
     });
