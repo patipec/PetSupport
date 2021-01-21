@@ -22,14 +22,14 @@ export interface PetsitterCreate extends Petsitter {
 }
 
 export interface PetsitterUpdate {
-  Id: number;
-  Name: string;
-  Surname: string;
-  ImageId: string;
-  Address?: string;
-  City: string;
-  ZipCode?: string;
-  Description: string;
-  Price: number;
-  Rate: number;
+  id: number;
+  name: string;
+  surname: string;
+  imageId: string;
+  address?: string;
+  city: string;
+  zipCode?: string;
+  description: string;
+  price: number;
+  rate: number;
 }

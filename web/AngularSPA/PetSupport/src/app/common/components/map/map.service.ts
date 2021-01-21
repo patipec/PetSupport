@@ -17,7 +17,7 @@ export class MapService {
         const lat = c.coordinates[0];
         const lon = c.coordinates[1];
         const marker = L.marker([lat, lon]).addTo(map);
-        marker.bindPopup(`<strong>${c.Name}</strong><br> <img src="${c.ImageId != null ? c.ImageId : 'assets/PetsitterDetail/default-petsitter-image.png'}" style="width: 40px; height:40px">
+        marker.bindPopup(`<strong>${c.Name}</strong><br> <img src="${c.imageId != null ? c.imageId : 'assets/PetsitterDetail/default-petsitter-image.png'}" style="width: 40px; height:40px">
                         <p style="display: flex">${c.Price} $/h</p>`);
       }
     });

@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable, of, throwError} from 'rxjs';
 import {catchError, map, tap} from 'rxjs/operators';
 import {Petsitter, PetsitterCreate, PetsitterUpdate} from '../../common/models/petsitter';
 import {FindPetsitterForm, FindPetsitterLongForm, FindPetsitterShortForm} from '../../common/models/forms';
 
-const PETSITTER_URL = 'http://localhost:3000/data';
+const PETSITTER_URL = 'http://localhost:5001/api/Petsitters'
 
 
 @Injectable({
@@ -17,34 +17,42 @@ export class PetsittersService {
   }
 
 
-  getPetsitters(): Observable<Petsitter[]> {
-    return this.http.get<Petsitter[]>(PETSITTER_URL)
+  public getPetsitters(formData: FindPetsitterShortForm): Observable<Petsitter[]> {
+    console.log(formData);
+    let params = new HttpParams();
+    Object.entries(formData).map(([k, v ]) => {
+      console.log(k, v);
+      params = params.append(k, v);
+    });
+    console.log(params);
+
+    return this.http.get<Petsitter[]>(PETSITTER_URL, {params})
       .pipe(
-        tap(data => console.log(JSON.stringify(data))),
+        tap(data => console.log(data)),
         catchError(this.handleError)
       );
   }
 
-  getFilteredPetsittersByShortForm(formData: FindPetsitterShortForm): Observable<Petsitter[]> {
+  public getFilteredPetsittersByShortForm(formData: FindPetsitterShortForm): Observable<Petsitter[]> {
     return this.http.post<Petsitter[]>(PETSITTER_URL, formData); // :TODO should be get, but het cant take body
   }
 
-  getFilteredPetsittersByLongForm(formData: FindPetsitterLongForm): Observable<Petsitter[]> {
+  public getFilteredPetsittersByLongForm(formData: FindPetsitterLongForm): Observable<Petsitter[]> {
     return this.http.post<Petsitter[]>(PETSITTER_URL, formData); // :TODO should be get, but het cant take body
   }
 
-  getPetsitter(petsitterId: number): Observable<Petsitter> {
-    return this.getPetsitters()
-      .pipe(
-        map(data => data.find(pet => pet.Id === petsitterId))
-      );
+  // public getPetsitter(petsitterId: number): Observable<Petsitter> {
+  //   return this.getPetsitters()
+  //     .pipe(
+  //       map(data => data.find(pet => pet.Id === petsitterId))
+  //     );
     // return this.http.get<Petsitter>(`${PETSITTER_URL}/${petsitterId}`);
-  }
+  //}
 
-  createPetsitter(petsitter: PetsitterCreate): Observable<Petsitter> {
+  public createPetsitter(petsitter: PetsitterCreate): Observable<Petsitter> {
     return this.http.post<Petsitter>(PETSITTER_URL, petsitter);
   }
-  updatePetsitter(petsitter: PetsitterUpdate): Observable<Petsitter> {
+  public updatePetsitter(petsitter: PetsitterUpdate): Observable<Petsitter> {
     return this.http.put<Petsitter>(PETSITTER_URL, petsitter);
   }
 
