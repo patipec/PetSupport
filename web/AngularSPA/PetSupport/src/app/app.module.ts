@@ -49,7 +49,18 @@ import { PetsitterCanHostComponent } from './pages/petsitters/petsitter/petsitte
 import { ContactFormComponent } from './pages/contact-form/contact-form.component';
 import { ContactFormSuccessComponent } from './pages/contact-form/contact-form-success/contact-form-success.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { ServicesPartComponent } from './forms/services-part/services-part.component';
 
+import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+import interactionPlugin from '@fullcalendar/interaction';
+import { CustomSliderComponent } from './pages/petsitters/petsitter/custom-slider/custom-slider.component'; // a plugin
+
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 @NgModule({
   declarations: [
@@ -82,7 +93,9 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
     ContactFormComponent,
     ContactFormSuccessComponent,
     EndOfRegistrationComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    ServicesPartComponent,
+    CustomSliderComponent
   ],
 
   imports: [
@@ -103,7 +116,8 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
     ReactiveFormsModule,
     MatCarouselModule.forRoot(),
     NgxSliderModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    FullCalendarModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

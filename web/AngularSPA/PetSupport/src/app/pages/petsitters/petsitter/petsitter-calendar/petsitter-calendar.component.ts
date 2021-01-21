@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalendarOptions } from '@fullcalendar/angular'; // useful for typechecking
 
 @Component({
   selector: 'app-petsitter-calendar',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PetsitterCalendarComponent implements OnInit {
 
+  calendarOptions: CalendarOptions = {
+    initialView: 'dayGridMonth'
+  };
   constructor() { }
 
   ngOnInit(): void {
