@@ -34,14 +34,14 @@ namespace PetSupport.Infrastructure.Data.Repositories
             }
             
 
-            if (string.IsNullOrEmpty(petsittersSearchParameters.Address)
+            if (string.IsNullOrEmpty(petsittersSearchParameters.Street)
                 && string.IsNullOrEmpty(petsittersSearchParameters.City) 
                 && petsittersSearchParameters.ServiceId.Equals(null))
             {
                 return await GetAllAsync();
             }
 
-            if (string.IsNullOrEmpty(petsittersSearchParameters.Address))
+            if (string.IsNullOrEmpty(petsittersSearchParameters.Street))
             {
                     var query = _context.Petsitters
                         .AsQueryable()
@@ -61,7 +61,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
                         .Include(p => p.Services)
                         .ThenInclude(s => s.Service)
                         .Where(p => p.City.Contains(petsittersSearchParameters.City))
-                        .Where(p => p.Address.Contains(petsittersSearchParameters.Address))
+                        .Where(p => p.Street.Contains(petsittersSearchParameters.Street))
                         .Where(p => p.Services
                             .Any(s => (int) s.Service.Name == petsittersSearchParameters.ServiceId))
                         .Where(p => p.Services

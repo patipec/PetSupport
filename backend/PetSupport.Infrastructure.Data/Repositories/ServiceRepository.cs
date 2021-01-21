@@ -19,10 +19,11 @@ namespace PetSupport.Infrastructure.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<List<Service>> FindByConditionAsync(Expression<Func<Service, bool>> expression)
+        public Task<IEnumerable<Service>> FindByConditionAsync(Expression<Func<Service, bool>> expression)
         {
             throw new NotImplementedException();
         }
+
 
         public void Add(Service entity)
         {

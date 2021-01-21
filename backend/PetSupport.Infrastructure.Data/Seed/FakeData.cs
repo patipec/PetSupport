@@ -35,9 +35,9 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(s => s.Id, f => serviceId++)
 
                 //TODO: Add/verify icons for services.
-                .RuleFor(s => s.ImageId, f => f.Image.LoremFlickrUrl())
+                
                 .RuleFor(s => s.Name, f => f.PickRandom<ServiceType>())
-                .RuleFor(s => s.Description, f => f.Lorem.Sentence(5))
+                
                 .RuleFor(s => s.Unit, f => f.PickRandom<Unit>());
             FakeServices = serviceFaker.Generate(NumberOfFakeDataToGenerate);
             
@@ -53,10 +53,10 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(p => p.Description, f => f.Lorem.Sentence(30))
 
                 //TODO: Verify field Password in PetSupport.Core/Entities/Petsitter.cs entity. It is correct ? 
-                .RuleFor(p => p.Password, f => Guid.NewGuid().ToString())
+                
                 .RuleFor(p => p.PhotoId, f => f.Image.PicsumUrl())
                 .RuleFor(p => p.City, f => f.Address.City())
-                .RuleFor(p => p.Address, f => f.Address.StreetName());
+                .RuleFor(p => p.City, f => f.Address.StreetName());
             FakePetsitters = petsitterFaker.Generate(NumberOfFakeDataToGenerate);
 
             

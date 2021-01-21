@@ -2,7 +2,7 @@
 
 namespace PetSupport.Core.Interfaces
 {
-    public interface IServiceRepository : IRepository<Service>
+    public interface IServiceRepository : IBaseRepository<Service>
     {
     }
 }
