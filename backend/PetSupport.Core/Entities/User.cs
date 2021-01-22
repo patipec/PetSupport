@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-
-
-namespace PetSupport.Core.Entities
+﻿namespace PetSupport.Core.Entities
 {
     public class User: BaseEntity
     {
+        public string AzureId { get; set; }
+        
         public string Name { get; set; }
 
         public string Surname { get; set; }

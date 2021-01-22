@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using PetSupport.Core.Entities;
-
-namespace PetSupport.Core.Entities
+﻿namespace PetSupport.Core.Entities
 {
     public class PetsitterService: BaseEntity
     {
