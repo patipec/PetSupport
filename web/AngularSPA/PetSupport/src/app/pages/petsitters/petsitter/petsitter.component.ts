@@ -17,31 +17,31 @@ export class PetsitterComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.petsitterId = this.route.snapshot.paramMap.get('id') as string;
-    console.log(this.petsitterId);
     this.petsittersService.getPetsitter(+this.petsitterId).subscribe( data => this.petsitter = data);
     }
   ngAfterViewInit(): void {
     const arrowPrev = document.getElementsByClassName('carousel-arrow-prev');
-    console.log(arrowPrev);
-    arrowPrev[0].addEventListener('click', () => {
+    const arrowNext = document.getElementsByClassName('carousel-arrow-next');
+    this.onArrowClick(arrowPrev);
+    this.onArrowClick(arrowNext);
+  }
+  onArrowClick(arrow): void{
+    arrow[0].addEventListener('click', () => {
       if (this.blockSlider === false){
         this.blockSlider = !this.blockSlider;
-        new ElementRef(arrowPrev[1] as any).nativeElement.click();
+        new ElementRef(arrow[1] as any).nativeElement.click();
       } else{
         this.blockSlider = !this.blockSlider;
       }
-      console.log(this.blockSlider);
     });
 
-    arrowPrev[1].addEventListener('click', () => {
+    arrow[1].addEventListener('click', () => {
       if (this.blockSlider === false){
         this.blockSlider = !this.blockSlider;
-        new ElementRef(arrowPrev[0] as any).nativeElement.click();
+        new ElementRef(arrow[0] as any).nativeElement.click();
       }else{
         this.blockSlider = !this.blockSlider;
       }
-
-      console.log(this.blockSlider);
     });
   }
 }
