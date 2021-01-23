@@ -8,7 +8,7 @@ namespace PetSupport.Infrastructure.Data.Seed
 {
     public class FakeData
     {
-        private const int NumberOfFakeDataToGenerate = 30;
+        private const int NumberOfFakeDataToGenerate = 100;
         public List<Client> FakeClients { get; }
         public List<Petsitter> FakePetsitters { get; }
         public List<Service> FakeServices { get; }
@@ -26,18 +26,15 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(c => c.Name, f => f.Person.FirstName)
                 .RuleFor(c => c.Surname, f => f.Person.LastName)
                 .RuleFor(c => c.Email, (f, u) => f.Internet.Email(u.Name, u.Surname))
-                .RuleFor(c => c.PhoneNumber, f => f.Person.Phone);
+                .RuleFor(c => c.PhoneNumber, f => f.Person.Phone)
+                .RuleFor(c => c.AzureId, f => Guid.NewGuid().ToString());
             FakeClients = clientFaker.Generate(NumberOfFakeDataToGenerate);
 
 
             var serviceId = 1;
             var serviceFaker = new Faker<Service>()
                 .RuleFor(s => s.Id, f => serviceId++)
-
-                //TODO: Add/verify icons for services.
-                
                 .RuleFor(s => s.Name, f => f.PickRandom<ServiceType>())
-                
                 .RuleFor(s => s.Unit, f => f.PickRandom<Unit>());
             FakeServices = serviceFaker.Generate(NumberOfFakeDataToGenerate);
             
@@ -46,17 +43,23 @@ namespace PetSupport.Infrastructure.Data.Seed
             var petsitterId = clientId;
             var petsitterFaker = new Faker<Petsitter>()
                 .RuleFor(p => p.Id, f => petsitterId++)
+                .RuleFor(p => p.AzureId, f => Guid.NewGuid().ToString())
                 .RuleFor(p => p.Name, f => f.Person.FirstName)
                 .RuleFor(p => p.Surname, f => f.Person.LastName)
                 .RuleFor(p => p.Email, (f, u) => f.Internet.Email(u.Name, u.Surname))
                 .RuleFor(p => p.PhoneNumber, f => f.Person.Phone)
                 .RuleFor(p => p.Description, f => f.Lorem.Sentence(30))
-
-                //TODO: Verify field Password in PetSupport.Core/Entities/Petsitter.cs entity. It is correct ? 
-                
                 .RuleFor(p => p.PhotoId, f => f.Image.PicsumUrl())
                 .RuleFor(p => p.City, f => f.Address.City())
-                .RuleFor(p => p.City, f => f.Address.StreetName());
+                .RuleFor(p => p.Street, f => f.Address.StreetName())
+                .RuleFor(p => p.ParcelAndHouseNumbers, f => f.Address.BuildingNumber())
+                .RuleFor(p => p.ZipCode, f => f.Address.ZipCode())
+                .RuleFor(p => p.Country, f => f.Address.Country())
+                .RuleFor(p => p.Rate, f => f.Random.Double(1, 5))
+                .RuleFor(p => p.AvailabilityFrom, f => f.Date.Recent())
+                .RuleFor(p => p.AvailabilityTo, f => f.Date.Future())
+                .RuleFor(p => p.Title, f => f.Lorem.Sentence(2))
+                .RuleFor(p => p.Environment, f => f.Lorem.Sentence(5));
             FakePetsitters = petsitterFaker.Generate(NumberOfFakeDataToGenerate);
 
             
@@ -65,8 +68,8 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(p => p.Id, f => petsitterserviceId++)
                 .RuleFor(p => p.PetsitterId, f => f.PickRandom(FakePetsitters).Id)
                 .RuleFor(p => p.ServiceId, f => f.PickRandom(FakeServices).Id)
-                .RuleFor(p => p.Price, f => double.Parse(f.Commerce.Price(min:30, max:150,0)));
-            FakePetsitterServices = petsitterserviceFaker.Generate(NumberOfFakeDataToGenerate * 3);
+                .RuleFor(p => p.Price, f => double.Parse(f.Commerce.Price(min:10, max:50,0)));
+            FakePetsitterServices = petsitterserviceFaker.Generate(NumberOfFakeDataToGenerate*3);
             
             
             var bookingMessageId = 1;

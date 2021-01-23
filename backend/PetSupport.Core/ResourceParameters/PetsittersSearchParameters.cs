@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace PetSupport.Core.ResourceParameters
 {
@@ -7,7 +8,6 @@ namespace PetSupport.Core.ResourceParameters
         //FindPetSitterShortFormDTO
         public string City { get; set; }
         public int? ServiceId { get; set; } = null;
-        
         //FindPetSitterLongFormDTO
         public string Street { get; set; }
         public int? MinPrice { get; set; } = 0;
