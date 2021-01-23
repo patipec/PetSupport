@@ -6,7 +6,9 @@ namespace PetSupport.Core.ResourceParameters
     public class PetsittersSearchParameters
     {
         //FindPetSitterShortFormDTO
+        [Required]
         public string City { get; set; }
+        [Required]
         public int? ServiceId { get; set; } = null;
         //FindPetSitterLongFormDTO
         public string Street { get; set; }
