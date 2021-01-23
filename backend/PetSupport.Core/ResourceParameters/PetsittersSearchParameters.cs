@@ -13,8 +13,9 @@ namespace PetSupport.Core.ResourceParameters
         public int? MinPrice { get; set; } = 0;
         public int? MaxPrice { get; set; } = Int32.MaxValue;
 
-        private const int maxPageSize = 25;
-        public int pageNumber { get; set; } = 1;
+        //Pagination
+        private const int MaxPageSize = 25;
+        public int PageNumber { get; set; } = 1;
         private int _pageSize;
 
         public int PageSize
@@ -25,7 +26,7 @@ namespace PetSupport.Core.ResourceParameters
             }
             set
             {
-                _pageSize = (value > maxPageSize)? maxPageSize: value;
+                _pageSize = (value > MaxPageSize)? MaxPageSize: value;
             }
         }
 

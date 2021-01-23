@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using PetSupport.Core.Entities;
 using PetSupport.Infrastructure.Data.Data;
 
-namespace PetSupport.API2.Controllers
+namespace Petsupport.API2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

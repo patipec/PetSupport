@@ -1,20 +1,17 @@
+using System.Reflection;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using System.Reflection;
-using AutoMapper;
-using Microsoft.EntityFrameworkCore;
 using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
 using PetSupport.Infrastructure.Data.Repositories;
-using AutoMapper;
-using System.Collections;
 
-
-namespace PetSupport.API2
+namespace Petsupport.API2
 {
     public class Startup
     {
@@ -52,7 +49,7 @@ namespace PetSupport.API2
                     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
             services.AddTransient<IPetsitterRepository, PetsitterRepository>();
-            
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
