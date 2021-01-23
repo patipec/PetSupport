@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-contact-form',
@@ -15,11 +16,12 @@ export class ContactFormComponent implements OnInit {
     message: ['']
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
   public sendForm(): void {
     console.log('xd', this.contactForm.value);
+    void this.router.navigate(['success'], {relativeTo: this.route});
   }
 }

@@ -20,6 +20,7 @@ export class PetsitterListTileComponent implements OnInit {
   }
 
   public navigateToPetsitterDetails(petsitterId): void {
+    console.log(petsitterId);
     this.router.navigate([petsitterId], {relativeTo: this.route});
   }
 }
