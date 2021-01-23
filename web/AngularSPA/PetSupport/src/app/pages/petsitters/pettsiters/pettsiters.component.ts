@@ -7,7 +7,8 @@ import ResizeObserver from 'resize-observer-polyfill';
   templateUrl: './pettsiters.component.html',
   styleUrls: ['./pettsiters.component.css']
 })
-export class PettsittersComponent implements OnInit, AfterViewInit, OnDestroy {
+export class PettsittersComponent {
+/*
   cols = 6;
   colspanFilter = 1;
   colspanMap = 2;
@@ -16,8 +17,9 @@ export class PettsittersComponent implements OnInit, AfterViewInit, OnDestroy {
   observer;
   @ViewChild('host')
   public host: ElementRef;
+*/
 
-  constructor(
+/*  constructor(
     private zone: NgZone
   ) {
   }
@@ -52,6 +54,6 @@ export class PettsittersComponent implements OnInit, AfterViewInit, OnDestroy {
         this.colspanList = 3;
       }
     );
-  }
+  }*/
 
 }

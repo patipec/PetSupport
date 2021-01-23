@@ -1,22 +1,44 @@
-mat-grid-tile {
-  background-color: white;
-  width: 100%;
-}
-.petsitter-list {
-  padding: 10px;
-  width: 100%;
-  height: 100%;
+.page-container {
+  display: flex;
+  margin: auto;
 }
 
-.mtg-fb {
-  width: 30%;
+.petsitter-list-container {
+  height: 100%;
+  overflow: scroll;
+  width: 50vw;
+  padding: 10px;
 }
-.mtg-pl {
-  width: 40%;
+
+.map-container {
+  position: relative;
+  width: 30vw;
 }
-/*.mtg-fb {*/
-/*  width: 30%;*/
-/*}*/
-.div {
-  height: 100vh;
+.long-form-container {
+  width: 20vw;
+}
+@media(max-width: 959px) {
+  .page-container {
+    flex-direction: column;
+  }
+ .map-container, .petsitter-list-container {
+   width: calc(100vw - 40px);
+   padding: 40px;
+   margin: auto;
+   order: 2;
+  }
+  .map-container {
+    min-height: 400px;
+    order: 1;
+  }
+  .long-form-container {
+    width: 100vw;
+
+    padding-bottom: 20px;
+    background-image: url("../../../../assets/Backgrounds/bg-confirmation.jpg")
+  }
+    app-long-form {
+    max-width: 320px;
+    margin: auto;
+  }
 }
