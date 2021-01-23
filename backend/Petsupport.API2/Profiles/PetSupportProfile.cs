@@ -1,7 +1,6 @@
 using AutoMapper;
 using Petsupport.API2.Dtos.InDtos;
 using Petsupport.API2.Dtos.OutDtos;
-using PetSupport.API2.Dtos.OutDtos;
 using PetSupport.Core.Entities;
 
 namespace Petsupport.API2.Profiles

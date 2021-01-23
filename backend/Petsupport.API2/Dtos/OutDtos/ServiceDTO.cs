@@ -1,6 +1,6 @@
 using PetSupport.Core.Enums;
 
-namespace PetSupport.API2.Dtos.OutDtos
+namespace Petsupport.API2.Dtos.OutDtos
 {
     public class ServiceDTO
     {

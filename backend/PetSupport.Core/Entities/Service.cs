@@ -2,10 +2,9 @@
 
 namespace PetSupport.Core.Entities
 {
-    public class Service: BaseEntity
+    public class Service : BaseEntity
     {
         public ServiceType Name { get; set; }
         public Unit Unit { get; set; }
     }
-    
 }

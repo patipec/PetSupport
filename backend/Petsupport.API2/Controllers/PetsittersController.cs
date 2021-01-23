@@ -8,7 +8,7 @@ using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
 using PetSupport.Core.ResourceParameters;
 
-namespace PetSupport.API2.Controllers
+namespace Petsupport.API2.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

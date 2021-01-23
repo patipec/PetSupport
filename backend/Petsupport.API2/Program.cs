@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using PetSupport.Infrastructure.Data.Data;
 
-namespace PetSupport.API2
+namespace Petsupport.API2
 {
     public class Program
     {
