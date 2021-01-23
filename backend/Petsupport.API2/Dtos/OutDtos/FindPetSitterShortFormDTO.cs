@@ -1,4 +1,4 @@
-namespace PetSupport.API2.Dtos.OutDtos
+namespace Petsupport.API2.Dtos.OutDtos
 {
     public class FindPetSitterShortFormDTO
     {
