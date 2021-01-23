@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Petsitter } from '../../../common/models/petsitter';
-import { HttpClient } from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
+import {Petsitter} from '../../../common/models/petsitter';
 import {PetsittersService} from '../petsitters.service';
-import {ShortFormComponent} from '../../../forms/short-form/short-form.component';
 import {FindPetsitterShortForm} from '../../../common/models/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 
 
 @Component({
@@ -14,17 +13,24 @@ import {FindPetsitterShortForm} from '../../../common/models/forms';
 export class PetsittersListComponent implements OnInit {
 
   public petsitterList: Petsitter[];
+  public petSitterFilterData: FindPetsitterShortForm | null;
 
-  constructor(private http: HttpClient, private petsitterService: PetsittersService) { }
+  constructor(private petsitterService: PetsittersService, private route: ActivatedRoute, private router: Router) {
+    this.petSitterFilterData = this.router.getCurrentNavigation().extras.state as FindPetsitterShortForm;
+  }
 
   ngOnInit(): void {
-    const formData: FindPetsitterShortForm = {city: 'Lebsackbury', serviceId: '2'};
+    // What should we do if user access /petsitter without mainPage?
+    const mockData: FindPetsitterShortForm = {city: 'Lebsackbury', serviceId: '2'};
+    const formData = this.petSitterFilterData ?? mockData;
+
     this.petsitterService.getPetsitters(formData).subscribe((data) => {
       this.petsitterList = data;
     });
   }
 
 }
+
 // {
 //   Id: 1,
 //     Name: 'Jan',

@@ -16,7 +16,6 @@ export class PetsitterComponent implements OnInit {
 
   ngOnInit(): void {
     this.petsitterId = this.route.snapshot.paramMap.get('id') as string;
-    console.log(this.petsitterId);
     this.petsittersService.getPetsitter(+this.petsitterId).subscribe( data => this.petsitter = data);
   }
 

@@ -23,9 +23,7 @@ export class PettsittersComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    console.log(this.host.nativeElement);
     this.observer = new ResizeObserver(entries => {
-      console.log(entries);
       this.zone.run(() => {
         this.width$.next(entries[0].contentRect.width);
       });
@@ -53,7 +51,7 @@ export class PettsittersComponent implements OnInit, AfterViewInit, OnDestroy {
         this.colspanMap = 2;
         this.colspanList = 3;
       }
-    ); 
+    );
   }
 
 }
