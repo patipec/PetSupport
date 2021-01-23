@@ -1,0 +1,50 @@
+<div class="form-group" [formGroup]="services">
+  <!--      PET SELECTION  -->
+  <label for="boarding">
+    <div class="form-check-label" [ngStyle]="services.get('service').value == 'boarding' &&
+             {
+               'background-color': 'rgb(254, 203, 64)'
+              }">
+      <input type="button"
+             name="boarding"
+             value=""
+             formControlName="service"
+             id="boarding"
+             (click)="onServiceClick('boarding')">
+      <img src="assets/shortFormImages/cocker-spaniel.png">
+      Boarding
+    </div>
+  </label>
+  <label for="houseSitting">
+    <div class="form-check-label" [ngStyle]="services.get('service').value == 'houseSitting' &&
+             {
+              'background-color': 'rgb(254, 203, 64)'
+             }">
+      <input type="button"
+             name="houseSitting"
+             value=""
+             formControlName="service"
+             id="houseSitting"
+             (click)="onServiceClick('houseSitting')">
+
+      <img src="assets/shortFormImages/dog-heart.png">
+      House Sitting
+    </div>
+  </label>
+  <label for="walking">
+    <div class="form-check-label" [ngStyle]="services.get('service').value == 'walking' &&
+             {
+              'background-color': 'rgb(254, 203, 64)'
+             }">
+
+      <input type="button" class="form-check-label"
+             value=""
+             formControlName="service"
+             id="walking"
+             (click)="onServiceClick('walking')">
+
+      <img src="assets/shortFormImages/dog-smiley.png">
+      Walking
+    </div>
+  </label>
+</div>

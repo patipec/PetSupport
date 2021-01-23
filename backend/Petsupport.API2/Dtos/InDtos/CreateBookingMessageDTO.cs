@@ -1,5 +1,3 @@
-using PetSupport.Core.Entities;
-
 namespace Petsupport.API2.Dtos.InDtos
 {
     public class CreateBookingMessageDTO

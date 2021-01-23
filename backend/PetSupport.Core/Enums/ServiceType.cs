@@ -1,4 +1,6 @@
-﻿namespace PetSupport.Core.Enums
+﻿using System;
+
+namespace PetSupport.Core.Enums
 {
     public enum ServiceType
     {
@@ -8,4 +10,7 @@
         DropInVisit,
         DoggyDayCare
     }
+
+    
+
 }
