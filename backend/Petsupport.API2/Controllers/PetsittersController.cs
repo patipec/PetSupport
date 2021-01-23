@@ -55,29 +55,29 @@ namespace PetSupport.API2.Controllers
         }
 
         
-        [HttpPost]
-        public async Task<ActionResult> CreatePetsitter ([FromBody]CreatePetsitterDTO createPetsitterDto)
-        {
-            try
-            {
-                if (createPetsitterDto == null)
-                {
-                    return BadRequest("Petsitter object is null");
-                }
-                
-                var petsitterEntity = _mapper.Map<Petsitter>(createPetsitterDto);
-                _petsitterRepository.Add(petsitterEntity);
-                await _petsitterRepository.SaveChangesAsync();
-                
-                var petsitterToReturn = _mapper.Map<FullPetsitterDTO>(petsitterEntity);
-
-                return CreatedAtRoute("PetsitterById", new {id = petsitterEntity.Id}, petsitterToReturn);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Internal server error");
-            }
-        }
+        // [HttpPost]
+        // public async Task<ActionResult> CreatePetsitter ([FromBody]CreatePetsitterDTO createPetsitterDto)
+        // {
+        //     try
+        //     {
+        //         if (createPetsitterDto == null)
+        //         {
+        //             return BadRequest("Petsitter object is null");
+        //         }
+        //         
+        //         var petsitterEntity = _mapper.Map<Petsitter>(createPetsitterDto);
+        //         _petsitterRepository.Add(petsitterEntity);
+        //         await _petsitterRepository.SaveChangesAsync();
+        //         
+        //         var petsitterToReturn = _mapper.Map<FullPetsitterDTO>(petsitterEntity);
+        //
+        //         return CreatedAtRoute("PetsitterById", new {id = petsitterEntity.Id}, petsitterToReturn);
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         return StatusCode(500, "Internal server error");
+        //     }
+        // }
 
         // [HttpPut("{id:int}")]
         // public async Task<ActionResult> UpdatePetsitter(int id, UpdatePetsitterDTO updatePetsitterDto)

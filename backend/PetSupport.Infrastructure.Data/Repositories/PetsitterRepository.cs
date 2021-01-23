@@ -86,7 +86,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 return await query;
             }
 
-            //filtering by City and ServiceType (serviceId)
+            //filtering by City and ServiceId
             if (string.IsNullOrWhiteSpace(petsittersSearchParameters.Street)
                 && !string.IsNullOrWhiteSpace(petsittersSearchParameters.City)
                 && !petsittersSearchParameters.ServiceId.Equals(null)
@@ -121,13 +121,11 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 (p => p.City == conditionCity
                       && p.Street == conditionStreet);
             }
-
-            //filtering by City, Street and SerrviceId
+            
+            //filtering by City, Street and prices
             if (!string.IsNullOrWhiteSpace(petsittersSearchParameters.Street)
                 && !string.IsNullOrWhiteSpace(petsittersSearchParameters.City)
-                && !petsittersSearchParameters.ServiceId.Equals(null)
-                && petsittersSearchParameters.MaxPrice.Equals(Int32.MaxValue)
-                && petsittersSearchParameters.MinPrice.Equals(0))
+                && petsittersSearchParameters.ServiceId.Equals(null))
             {
                 var conditionCity = petsittersSearchParameters.City.Trim();
                 var conditionStreet = petsittersSearchParameters.Street.Trim();
@@ -140,6 +138,10 @@ namespace PetSupport.Infrastructure.Data.Repositories
                     .Where(p => p.Street == conditionStreet)
                     .Where(p => p.Services
                         .Any(s => (int) s.Service.Name == petsittersSearchParameters.ServiceId))
+                    .Where(p => p.Services
+                        .Any(s => s.Price >= petsittersSearchParameters.MinPrice))
+                    .Where(p => p.Services
+                        .Any(s => s.Price <= petsittersSearchParameters.MaxPrice))
                     .ToListAsync();
 
                 return await query;
@@ -161,9 +163,52 @@ namespace PetSupport.Infrastructure.Data.Repositories
                     .ToListAsync();
                 return await query;
             }
+            
+            
+            //filtering by min, max Price and City
+            if (string.IsNullOrWhiteSpace(petsittersSearchParameters.Street)
+                && !string.IsNullOrWhiteSpace(petsittersSearchParameters.City)
+                && petsittersSearchParameters.ServiceId.Equals(null))
+            {
+                var conditionCity = petsittersSearchParameters.City.Trim();
+                
+                var query = _context.Petsitters
+                    .AsQueryable()
+                    .Where(p => p.City == conditionCity)
+                    .Include(p => p.Services)
+                    .ThenInclude(s => s.Service)
+                    .Where(p => p.Services
+                        .Any(s => s.Price >= petsittersSearchParameters.MinPrice))
+                    .Where(p => p.Services
+                        .Any(s => s.Price <= petsittersSearchParameters.MaxPrice))
+                    
+                    .ToListAsync();
+                return await query;
+            }
+            
+            //filtering by min, max Price and Street
+            if (!string.IsNullOrWhiteSpace(petsittersSearchParameters.Street)
+                && string.IsNullOrWhiteSpace(petsittersSearchParameters.City)
+                && petsittersSearchParameters.ServiceId.Equals(null))
+            {
+                var conditionStreet = petsittersSearchParameters.Street.Trim();
+                
+                var query = _context.Petsitters
+                    .AsQueryable()
+                    .Where(p => p.Street == conditionStreet)
+                    .Include(p => p.Services)
+                    .ThenInclude(s => s.Service)
+                    .Where(p => p.Services
+                        .Any(s => s.Price >= petsittersSearchParameters.MinPrice))
+                    .Where(p => p.Services
+                        .Any(s => s.Price <= petsittersSearchParameters.MaxPrice))
+                    
+                    .ToListAsync();
+                return await query;
+            }
 
 
-            //filtering by all conditions
+            //filtering by City, Street and SerrviceId and prices
 
             if (!string.IsNullOrWhiteSpace(petsittersSearchParameters.Street)
                 && !string.IsNullOrWhiteSpace(petsittersSearchParameters.City)

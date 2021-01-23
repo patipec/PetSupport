@@ -1,8 +1,10 @@
-﻿namespace PetSupport.Core.Entities
+﻿using System;
+
+namespace PetSupport.Core.Entities
 {
     public class User: BaseEntity
     {
-        public string AzureId { get; set; }
+        public Guid AzureId { get; set; }
         
         public string Name { get; set; }
 

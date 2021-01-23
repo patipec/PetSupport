@@ -27,7 +27,7 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(c => c.Surname, f => f.Person.LastName)
                 .RuleFor(c => c.Email, (f, u) => f.Internet.Email(u.Name, u.Surname))
                 .RuleFor(c => c.PhoneNumber, f => f.Person.Phone)
-                .RuleFor(c => c.AzureId, f => Guid.NewGuid().ToString());
+                .RuleFor(c => c.AzureId, f => Guid.NewGuid());
             FakeClients = clientFaker.Generate(NumberOfFakeDataToGenerate);
 
 
@@ -43,7 +43,7 @@ namespace PetSupport.Infrastructure.Data.Seed
             var petsitterId = clientId;
             var petsitterFaker = new Faker<Petsitter>()
                 .RuleFor(p => p.Id, f => petsitterId++)
-                .RuleFor(p => p.AzureId, f => Guid.NewGuid().ToString())
+                .RuleFor(p => p.AzureId, f => Guid.NewGuid())
                 .RuleFor(p => p.Name, f => f.Person.FirstName)
                 .RuleFor(p => p.Surname, f => f.Person.LastName)
                 .RuleFor(p => p.Email, (f, u) => f.Internet.Email(u.Name, u.Surname))
