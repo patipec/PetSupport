@@ -50,7 +50,7 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(p => p.PhoneNumber, f => f.Person.Phone)
                 .RuleFor(p => p.Description, f => f.Lorem.Sentence(30))
                 .RuleFor(p => p.PhotoId, f => f.Image.PicsumUrl())
-                .RuleFor(p => p.City, f => f.Address.City())
+                .RuleFor(p => p.City, f => f.PickRandomParam("Radom", "Warsaw", "Gdynia"))
                 .RuleFor(p => p.Street, f => f.Address.StreetName())
                 .RuleFor(p => p.ParcelAndHouseNumbers, f => f.Address.BuildingNumber())
                 .RuleFor(p => p.ZipCode, f => f.Address.ZipCode())
