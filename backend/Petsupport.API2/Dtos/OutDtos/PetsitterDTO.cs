@@ -2,6 +2,7 @@ namespace Petsupport.API2.Dtos.OutDtos
 {
     public class PetsitterDTO
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string ImageId { get; set; }
