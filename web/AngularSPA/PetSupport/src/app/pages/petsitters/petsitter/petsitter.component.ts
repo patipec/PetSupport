@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {PetsittersService} from '../petsitters.service';
 import {Petsitter} from '../../../common/models/petsitter';
 
@@ -11,7 +11,7 @@ import {Petsitter} from '../../../common/models/petsitter';
 export class PetsitterComponent implements OnInit {
   private petsitterId: string;
   public petsitter: Petsitter;
-  constructor(private route: ActivatedRoute, private petsittersService: PetsittersService) {
+  constructor(private route: ActivatedRoute, private petsittersService: PetsittersService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -19,4 +19,7 @@ export class PetsitterComponent implements OnInit {
     this.petsittersService.getPetsitter(+this.petsitterId).subscribe( data => this.petsitter = data);
   }
 
+  public navigateToContactPage(): void {
+    void this.router.navigateByUrl('contact-form');
+  }
 }
