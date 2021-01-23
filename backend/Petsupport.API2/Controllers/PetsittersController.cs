@@ -4,12 +4,11 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Petsupport.API2.Dtos.InDtos;
 using Petsupport.API2.Dtos.OutDtos;
-using PetSupport.API2.Dtos.OutDtos;
 using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
 using PetSupport.Core.ResourceParameters;
 
-namespace PetSupport.API2.Controllers
+namespace Petsupport.API2.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -18,7 +17,7 @@ namespace PetSupport.API2.Controllers
         private readonly IPetsitterRepository _petsitterRepository;
         private readonly IMapper _mapper;
         
-        
+
         public PetsittersController(IPetsitterRepository petsitterRepository, IMapper mapper)
         {
             this._petsitterRepository = petsitterRepository;
@@ -26,9 +25,8 @@ namespace PetSupport.API2.Controllers
         }
         
         
-        
         [HttpGet]
-        public async Task<ActionResult<PetsitterDTO[]>> GetAllPetsittersBySearchPatameters
+        public async Task<ActionResult<PetsitterDTO[]>> GetPetsittersBySearchPatameters
             ([FromQuery] PetsittersSearchParameters petsittersSearchParameters)
         {
             try
@@ -80,5 +78,23 @@ namespace PetSupport.API2.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
+        // [HttpPut("{id:int}")]
+        // public async Task<ActionResult> UpdatePetsitter(int id, UpdatePetsitterDTO updatePetsitterDto)
+        // {
+        //     if (updatePetsitterDto == null)
+        //     {
+        //         return BadRequest("Petsitter object is null");
+        //     }
+        //
+        //     if (!ModelState.IsValid)
+        //     {
+        //         return BadRequest("Invalid model objetct");
+        //     }
+        //
+        //     var petsitterFromRepo = await _petsitterRepository.GetByIdAsync(id);
+        //     
+        // }
+        
     }
 }

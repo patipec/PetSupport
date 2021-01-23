@@ -11,7 +11,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
 {
     public abstract class BaseRepository<T> : IBaseRepository<T> where T : class
     {
-        protected DataContext _context;
+        protected readonly DataContext _context;
         
         public BaseRepository(DataContext context)
         {
