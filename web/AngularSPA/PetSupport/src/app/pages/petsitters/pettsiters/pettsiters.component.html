@@ -1,14 +1,12 @@
-<div #host>
-  <mat-grid-list  [cols]="cols" rowHeight ="1:3"  gutterSize="3px" >
-    <mat-grid-tile [colspan]="colspanFilter">
+<div class="page-container" #host>
+    <div class="long-form-container">
       <app-long-form></app-long-form>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="colspanList">
+    </div>
+    <div class="petsitter-list-container">
       <app-petsitters-list class="petsitter-list"></app-petsitters-list>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="colspanMap">
+    </div>
+    <div class="map-container">
       <app-map></app-map>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </div>
 </div>
 

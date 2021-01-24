@@ -1,15 +1,15 @@
 export interface FindPetsitterShortForm {
-  City: string;
-  ServiceId: string;
+  city: string;
+  serviceId: string;
 }
 
 
 export interface FindPetsitterLongForm {
-  Address: string;
-  City: string;
-  ServiceId: number;
-  MinPrice: number;
-  MaxPrice: number;
+  address: string;
+  city: string;
+  serviceId: number;
+  minPrice: number;
+  maxPrice: number;
 }
 
 export type FindPetsitterForm = FindPetsitterLongForm | FindPetsitterShortForm;

@@ -51,7 +51,19 @@ import { ContactFormSuccessComponent } from './pages/contact-form/contact-form-s
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { BiFormComponent } from './forms/register-form/basic-info/bi-form/bi-form.component';
 import { UploadPhotosComponent } from './forms/register-form/personal-info/upload-photos/upload-photos.component';
+import { ServicesPartComponent } from './forms/services-part/services-part.component';
 
+
+import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+import interactionPlugin from '@fullcalendar/interaction';
+import { CustomSliderComponent } from './pages/petsitters/petsitter/custom-slider/custom-slider.component'; // a plugin
+
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 @NgModule({
   declarations: [
@@ -86,7 +98,10 @@ import { UploadPhotosComponent } from './forms/register-form/personal-info/uploa
     EndOfRegistrationComponent,
     EditProfileComponent,
     BiFormComponent,
-    UploadPhotosComponent
+    UploadPhotosComponent,
+    ServicesPartComponent,
+    CustomSliderComponent
+
   ],
 
   imports: [
@@ -107,7 +122,8 @@ import { UploadPhotosComponent } from './forms/register-form/personal-info/uploa
     ReactiveFormsModule,
     MatCarouselModule.forRoot(),
     NgxSliderModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    FullCalendarModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

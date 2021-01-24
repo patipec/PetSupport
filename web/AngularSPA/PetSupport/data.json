@@ -8,7 +8,7 @@
         52.219702388954154,
         21.01306915283203
       ],
-      "ImageId": "https://cdn.pixabay.com/photo/2015/05/18/23/53/norway-772991_960_720.jpg",
+      "imageId": "https://cdn.pixabay.com/photo/2015/05/18/23/53/norway-772991_960_720.jpg",
       "City": "Warszawa",
       "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et cursus dui, ac fermentum metus. Aliquam ultrices orci sapien, et mattis risus facilisis at. Duis ut augue mi. Mauris tristique ligula id erat faucibus blandit. Duis sed congue mauris, quis tempor ipsum. Donec nec odio eu ligula blandit posuere id a enim. In faucibus dui aliquam lorem placerat semper.",
       "Price": 15,
@@ -56,7 +56,7 @@
         52.2363154802894,
         21.01306915283203
       ],
-      "ImageId": null,
+      "imageId": null,
       "City": "Kraków",
       "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et cursus dui, ac fermentum metus. Aliquam ultrices orci sapien, et mattis risus facilisis at. Duis ut augue mi. Mauris tristique ligula id erat faucibus blandit. Duis sed congue mauris, quis tempor ipsum. Donec nec odio eu ligula blandit posuere id a enim. In faucibus dui aliquam lorem placerat semper.",
       "Price": 70000000,
@@ -106,7 +106,7 @@
         21.025428771972656
       ],
       "City": "Kraków",
-      "ImageId": "https://dziendobry.tvn.pl/media/cache/content_cover/en-01347491-1626-jpg.jpg",
+      "imageId": "https://dziendobry.tvn.pl/media/cache/content_cover/en-01347491-1626-jpg.jpg",
       "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et cursus dui, ac fermentum metus. Aliquam ultrices orci sapien, et mattis risus facilisis at. Duis ut augue mi. Mauris tristique ligula id erat faucibus blandit. Duis sed congue mauris, quis tempor ipsum. Donec nec odio eu ligula blandit posuere id a enim. In faucibus dui aliquam lorem placerat semper.",
       "Price": 0,
       "Rate": 3.6,
@@ -156,7 +156,7 @@
         20.992813110351562
       ],
       "City": "Arizona",
-      "ImageId": "https://mambiznes.pl/wp-content/uploads/2019/08/forum-0428574145.jpg",
+      "imageId": "https://mambiznes.pl/wp-content/uploads/2019/08/forum-0428574145.jpg",
       "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et cursus dui, ac fermentum metus. Aliquam ultrices orci sapien, et mattis risus facilisis at. Duis ut augue mi. Mauris tristique ligula id erat faucibus blandit. Duis sed congue mauris, quis tempor ipsum. Donec nec odio eu ligula blandit posuere id a enim. In faucibus dui aliquam lorem placerat semper.",
       "Price": 30,
       "Rate": 1.9,

@@ -5,7 +5,92 @@
             <hr>
             <br><br>
 
-            <app-bi-form></app-bi-form>
+            <!-- <app-bi-form></app-bi-form> -->
+
+            <form [formGroup]="signupForm">
+                <mat-form-field class="width-100">
+                    <mat-label>Name</mat-label>
+                    <input matInput
+                    type="text"
+                    name="name"
+                    formControlName="name">
+                    <span *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched" 
+                    class="help-block">Please enter a valid Name</span>
+                    <!--
+                    <mat-error *ngFor="let validation of validation_messages.street">
+                        <mat-error class="error-message" *ngIf="signupForm.get('street').hasError(validation.type) && (signupForm.get('street').dirty || signupForm.get('fullname').touched)">{{validation.message}}</mat-error>
+                      </mat-error>
+                    -->
+                </mat-form-field>
+                
+                <br>
+                <mat-form-field class="width-100">
+                    <mat-label>Surname</mat-label>
+                    <input matInput
+                    type="text"
+                    name="surname"
+                    formControlName="surname">
+                    <span *ngIf="!signupForm.get('surname').valid && signupForm.get('surname').touched" 
+                    class="help-block">Please enter a valid Surname</span>
+                </mat-form-field>
+                <br>
+            
+                <mat-form-field class="width-100">
+                    <mat-label>Email</mat-label>
+                    <input matInput
+                    type="text"
+                    id="email"
+                    name="email"
+                    formControlName="email">
+                    <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched" 
+                    class="help-block">Please enter a valid Email</span>
+                </mat-form-field>
+            
+                <br>
+                <mat-form-field class="width-100">
+                    <mat-label>Phone</mat-label>
+                    <input matInput
+                    type="text"
+                    placeholder="123456789"
+                    id="phone"
+                    name="phone"
+                    formControlName="phone">
+                    <span *ngIf="!signupForm.get('phone').valid && signupForm.get('phone').touched" 
+                    class="help-block">Please enter a valid Phone number</span>
+                </mat-form-field>
+                <br>
+            
+                <mat-form-field class="width-100">
+                    <mat-label>Password</mat-label>
+                    <input matInput
+                    [type]="hide ? 'password' : 'text'"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    formControlName="password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched" 
+                    class="help-block">Please enter a valid Password</span>
+                </mat-form-field>
+            
+                <br>
+                <mat-form-field class="width-100">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput
+                    [type]="hide ? 'confirmPassword' : 'text'"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="confirmPassword"
+                    formControlName="confirmPassword">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <span *ngIf="!signupForm.get('confirmPassword').valid && signupForm.get('confirmPassword').touched" 
+                    class="help-block">Please confirm password corectly</span>
+                </mat-form-field>
+            </form>
            
 
             <br> 

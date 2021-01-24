@@ -1,20 +1,62 @@
+<div class="top-container">
+  <h3>Services</h3>
+  <hr><br><br>
+  <h5>Tell us what kind of services you want provide</h5>
+</div>
 
-<mat-grid-list cols="1" rowHeight="500px">
-  <mat-grid-tile style="position:inherit;">
-      
-              <br> 
-              <mat-card-actions>
-                  <a mat-raised-button 
-                  type="submit" 
-                  color="primary"
-                  routerLink="/register-form/personal-info"
-                  >NEXT</a>
-           </mat-card-actions> 
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="container">
+  <app-services-part [services]="services"></app-services-part>
+    <h3>Pet preferences</h3>
+  <h5>What kind of animal you are able to take?</h5>
 
 
-<!-- 
+  <div class="services">
+
+    <label for="dog" [style.backGroundColor]="             {
+               'background-color': 'rgb(254, 203, 64)'
+              }">
+      <div id="_dog" class="form-check-label">
+        Dog
+        <input type="checkbox" id="dog" name="dog" (click)="onExtraServiceClick('dog')">
+      </div>
+    </label>
+
+    <label for="cat">
+      <div id="_cat" class="form-check-label">
+        Cat
+        <input type="checkbox" id="cat" name="cat" (click)="onExtraServiceClick('cat')">
+      </div>
+    </label>
+
+    <label for="other">
+      <div id="_other" class="form-check-label">
+        Other
+        <input type="checkbox" id="other" name="other" (click)="onExtraServiceClick('other')">
+      </div>
+    </label>
+  </div>
+
+<div class="buttons">
+
+  <mat-card-actions>
+    <a mat-raised-button
+       class="back-btn"
+       routerLink="/register-form/services"
+    >Back</a>
+    <button mat-raised-button
+            class="continue-btn"
+            type="submit"
+            color="primary"
+            routerLink="/register-form/personal-info"
+            (click)="onSubmit()"
+    >Save</button>
+  </mat-card-actions>
+</div>
+
+
+
+
+<!--
         <label id="example-radio-group-label">Gender: </label>
           <br><br>
           <mat-radio-group aria-label="Select an option">
@@ -35,7 +77,7 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
-      
+
           <mat-form-field appearance="fill" class="width-25 ml-1">
             <mat-label>Month</mat-label>
             <mat-select>
@@ -44,7 +86,7 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
-      
+
           <mat-form-field appearance="fill" class="width-25 ml-1">
             <mat-label>Year</mat-label>
             <mat-select>

@@ -1,4 +1,3 @@
-using System;
 using Xunit;
 
 namespace PetSupport.Tests
@@ -8,7 +7,6 @@ namespace PetSupport.Tests
         [Fact]
         public void Test1()
         {
-
         }
     }
 }
