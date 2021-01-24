@@ -18,37 +18,36 @@ export class PetsitterComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.petsitterId = this.route.snapshot.paramMap.get('id') as string;
+
+    /*    this.route.params.subscribe(params =>  {
+          this.petsitterId = params.id;
+        });*/
     this.petsittersService.getPetsitter(+this.petsitterId).subscribe(data => this.petsitter = data);
   }
 
   ngAfterViewInit(): void {
-    const arrowPrev = document.getElementsByClassName('carousel-arrow-prev');
-    const arrowNext = document.getElementsByClassName('carousel-arrow-next');
-    this.onArrowClick(arrowPrev);
-    this.onArrowClick(arrowNext);
+    const arrowsPrev = document.getElementsByClassName('carousel-arrow-prev');
+    const arrowsNext = document.getElementsByClassName('carousel-arrow-next');
+    this.onArrowClick(arrowsPrev);
+    this.onArrowClick(arrowsNext);
   }
 
-  onArrowClick(arrow): void {
-    arrow[0].addEventListener('click', () => {
-      if (this.blockSlider === false) {
-        this.blockSlider = !this.blockSlider;
-        new ElementRef(arrow[1] as any).nativeElement.click();
-      } else {
-        this.blockSlider = !this.blockSlider;
-      }
-    });
-
-    arrow[1].addEventListener('click', () => {
-      if (this.blockSlider === false) {
-        this.blockSlider = !this.blockSlider;
-        new ElementRef(arrow[0] as any).nativeElement.click();
-      } else {
-        this.blockSlider = !this.blockSlider;
-      }
-    });
+  onArrowClick(arrows): void {
+    this.bindSliderArrows(arrows[0], arrows[1]);
+    this.bindSliderArrows(arrows[1], arrows[0]);
   }
 
   public navigateToContactPage(): void {
     void this.router.navigateByUrl('contact-form');
+  }
+  private bindSliderArrows(trigger, target): void {
+    trigger.addEventListener('click', () => {
+      if (this.blockSlider === false) {
+        this.blockSlider = !this.blockSlider;
+        new ElementRef(target as any).nativeElement.click();
+      } else {
+        this.blockSlider = !this.blockSlider;
+      }
+    });
   }
 }
