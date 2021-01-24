@@ -46,6 +46,7 @@ export class AddressComponent {
     }
     
     onSubmit(): void {
+      console.log(this.signupForm);
       //this.registrationService.setAddress(this.signupForm.value);
       //this.registrationService.saveUser();
       if (this.signupForm.status === 'VALID'){

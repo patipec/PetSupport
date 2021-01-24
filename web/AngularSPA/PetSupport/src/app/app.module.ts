@@ -50,6 +50,7 @@ import { ContactFormComponent } from './pages/contact-form/contact-form.componen
 import { ContactFormSuccessComponent } from './pages/contact-form/contact-form-success/contact-form-success.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { BiFormComponent } from './forms/register-form/basic-info/bi-form/bi-form.component';
+import { UploadPhotosComponent } from './forms/register-form/personal-info/upload-photos/upload-photos.component';
 
 
 @NgModule({
@@ -84,7 +85,8 @@ import { BiFormComponent } from './forms/register-form/basic-info/bi-form/bi-for
     ContactFormSuccessComponent,
     EndOfRegistrationComponent,
     EditProfileComponent,
-    BiFormComponent
+    BiFormComponent,
+    UploadPhotosComponent
   ],
 
   imports: [

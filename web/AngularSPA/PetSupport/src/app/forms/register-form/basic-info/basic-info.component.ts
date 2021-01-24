@@ -94,6 +94,7 @@ export class BasicInfoComponent {
   }
 
   onSubmit(): void {
+    console.log(this.signupForm);
     //this.registrationService.setBasicInfo(this.signupForm.value);
     //this.registrationService.saveUser();
     if (this.signupForm.status === 'VALID'){

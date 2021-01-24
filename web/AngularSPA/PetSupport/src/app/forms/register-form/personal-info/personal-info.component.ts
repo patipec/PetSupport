@@ -18,7 +18,9 @@ export class PersonalInfoComponent {
       'title': ['',[Validators.required, Validators.maxLength(90), Validators.minLength(5)]],
       'experience': ['', [Validators.required, Validators.maxLength(300), Validators.minLength(4)]],
       'availability': ['', [Validators.required, Validators.maxLength(180), Validators.minLength(8)]],
-      'environment': ['', [Validators.required, Validators.maxLength(180), Validators.minLength(8)]]
+      'environment': ['', [Validators.required, Validators.maxLength(180), Validators.minLength(8)]],
+      'image': [null, [Validators.required, //requiredFileType('png')
+    ]]
   });
 
     constructor( private http: HttpClient,
