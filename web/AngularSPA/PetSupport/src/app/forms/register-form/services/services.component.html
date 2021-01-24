@@ -41,7 +41,7 @@
   <mat-card-actions>
     <a mat-raised-button
        class="back-btn"
-       routerLink="/register-form/services"
+       routerLink="/register-form/address"
     >Back</a>
     <button mat-raised-button
             class="continue-btn"
@@ -49,11 +49,13 @@
             color="primary"
             routerLink="/register-form/personal-info"
             (click)="onSubmit()"
-    >Save</button>
+    >Next</button>
   </mat-card-actions>
 </div>
 
-
+<!--  <p>-->
+<!--    Value: {{ services.value | json }}-->
+<!--  </p>-->
 
 
 <!--

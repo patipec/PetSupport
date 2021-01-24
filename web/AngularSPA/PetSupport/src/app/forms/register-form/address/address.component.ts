@@ -14,37 +14,40 @@ export class AddressComponent {
 
 
     signupForm = this.fb.group({
-          'street': ['', [Validators.required,Validators.maxLength(25),Validators.minLength(3)]],
-          'housenr': ['', [Validators.required,Validators.maxLength(10),Validators.pattern('^[a-zA-Z0-9_.+-]+/[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
-          'city': ['', [Validators.required,Validators.maxLength(30),Validators.minLength(3)]],
-          'zipcode': ['', Validators.required, this.forbiddenZipCode],
-          'country': ['Poland', [Validators.required,Validators.maxLength(30),Validators.minLength(3)]]
+
+          street: ['waww', [Validators.required, Validators.maxLength(25), Validators.minLength(3)]],
+          housenr: ['1/2 a', [Validators.required, Validators.maxLength(10),
+                    Validators.pattern('^[a-zA-Z0-9_.+-]+/[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
+          city: ['asasasaa', [Validators.required, Validators.maxLength(30), Validators.minLength(3)]],
+          zipcode: ['12345', Validators.required, this.forbiddenZipCode],
+          country: ['Poland', [Validators.required, Validators.maxLength(30), Validators.minLength(3)]]
+
 
     });
-  
+
     constructor(private http: HttpClient,
-      private registrationService: RegistrationService,
-      private fb: FormBuilder) {}
+                private registrationService: RegistrationService,
+                private fb: FormBuilder) {}
 
 
     forbiddenZipCode(control: FormControl): Promise<any> | Observable<any> {
       const promise = new Promise<any>((resolve, reject) => {
         setTimeout(() => {
           if (control.value === '00-000') {
-            resolve({'ZipCodeIsForbidden': true});
-          } 
+            resolve({ZipCodeIsForbidden: true});
+          }
           if (control.value === '00000') {
-            resolve({'ZipCodeIsForbidden': true});
-          } 
+            resolve({ZipCodeIsForbidden: true});
+          }
           else {
             resolve(null);
           }
-          
+
         }, 1000);
       });
       return promise;
     }
-    
+
     onSubmit(): void {
       console.log(this.signupForm);
       //this.registrationService.setAddress(this.signupForm.value);

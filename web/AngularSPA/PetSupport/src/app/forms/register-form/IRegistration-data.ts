@@ -22,10 +22,27 @@ export interface IPersonalInfo {
     environment: string;
 }
 export interface IRegistrationForm {
-  basicInfo: IBasicInfo;
-  address: IAddress;
-  personalInfo: IPersonalInfo;
+    basicInfo: IBasicInfo;
+    address: IAddress;
+    personalInfo: IPersonalInfo;
+    services: IPetsitterServices;
 }
+
+export interface IPetsitterServices {
+  service: string;
+  extraServices: {
+    dog: string | null;
+    cat: string | null;
+    other: string | null;
+  };
+}
+// this.services = this.fb.group({
+//   service: 'boarding',
+//   extraServices: this.fb.group( {
+//     dog: false,
+//     cat: false,
+//     other: false
+//   })
 
 // range: new FormGroup({
 //   start: new FormControl(),
