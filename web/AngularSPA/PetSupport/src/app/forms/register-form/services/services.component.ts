@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import {RegistrationService} from '../registration.service';
 
 @Component({
   selector: 'app-services',
@@ -9,15 +10,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ServicesComponent implements OnInit {
 
-  public services: FormGroup;
+  public signupForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private http: HttpClient) {
+              private http: HttpClient,
+              private registrationService: RegistrationService) {
   }
   ngOnInit(): void {
-    this.services = this.fb.group({
+    this.signupForm = this.fb.group({
       service: 'boarding',
-      extraServices: this.fb.group( {
+      petPreferences: this.fb.group( {
         dog: false,
         cat: false,
         other: false
@@ -25,7 +27,7 @@ export class ServicesComponent implements OnInit {
       });
     }
     onExtraServiceClick(service: string): void{
-      const extra = this.services.get(`extraServices.${service}`);
+      const extra = this.signupForm.get(`petPreferences.${service}`);
       extra.setValue(!extra.value);
       const elem = document.getElementById(`_${service}`);
       if (extra.value){
@@ -36,6 +38,8 @@ export class ServicesComponent implements OnInit {
     }
 
   onSubmit(): void {
+
+    this.registrationService.setServices(this.signupForm.value);
 
   }
 }

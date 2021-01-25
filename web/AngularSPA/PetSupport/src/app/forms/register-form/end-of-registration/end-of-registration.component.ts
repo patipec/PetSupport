@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RegistrationService} from '../registration.service';
 
 @Component({
   selector: 'app-end-of-registration',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EndOfRegistrationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private registrationService: RegistrationService) { }
 
   ngOnInit(): void {
+    console.log(this.registrationService);
   }
 
 }

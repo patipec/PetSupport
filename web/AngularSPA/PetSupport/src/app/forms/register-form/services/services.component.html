@@ -5,7 +5,7 @@
 </div>
 
 <div class="container">
-  <app-services-part [services]="services"></app-services-part>
+  <app-services-part [services]="signupForm"></app-services-part>
     <h3>Pet preferences</h3>
   <h5>What kind of animal you are able to take?</h5>
 
@@ -52,7 +52,7 @@
     >Next</button>
   </mat-card-actions>
 </div>
-
+   {{signupForm.valid}}
 <!--  <p>-->
 <!--    Value: {{ services.value | json }}-->
 <!--  </p>-->

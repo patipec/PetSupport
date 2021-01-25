@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { RegistrationService } from '../registration.service';
 
 
@@ -20,8 +20,8 @@ export class AddressComponent {
                     Validators.pattern('^[a-zA-Z0-9_.+-]+/[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
           city: ['asasasaa', [Validators.required, Validators.maxLength(30), Validators.minLength(3)]],
           zipcode: ['12345', Validators.required, this.forbiddenZipCode],
-          country: ['Poland', [Validators.required, Validators.maxLength(30), Validators.minLength(3)]]
-
+          country: ['Poland', [Validators.required, Validators.maxLength(30), Validators.minLength(3)]],
+          coordinates: [[52.18263433278265, 20.98678341428663]]
 
     });
 

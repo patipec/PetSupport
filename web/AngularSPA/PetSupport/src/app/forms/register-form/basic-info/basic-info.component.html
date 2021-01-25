@@ -14,7 +14,7 @@
                     type="text"
                     name="name"
                     formControlName="name">
-                    <span *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched" 
+                    <span *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched"
                     class="help-block">Please enter a valid Name</span>
                     <!--
                     <mat-error *ngFor="let validation of validation_messages.street">
@@ -22,7 +22,7 @@
                       </mat-error>
                     -->
                 </mat-form-field>
-                
+
                 <br>
                 <mat-form-field class="width-100">
                     <mat-label>Surname</mat-label>
@@ -30,11 +30,11 @@
                     type="text"
                     name="surname"
                     formControlName="surname">
-                    <span *ngIf="!signupForm.get('surname').valid && signupForm.get('surname').touched" 
+                    <span *ngIf="!signupForm.get('surname').valid && signupForm.get('surname').touched"
                     class="help-block">Please enter a valid Surname</span>
                 </mat-form-field>
                 <br>
-            
+
                 <mat-form-field class="width-100">
                     <mat-label>Email</mat-label>
                     <input matInput
@@ -42,10 +42,10 @@
                     id="email"
                     name="email"
                     formControlName="email">
-                    <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched" 
+                    <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
                     class="help-block">Please enter a valid Email</span>
                 </mat-form-field>
-            
+
                 <br>
                 <mat-form-field class="width-100">
                     <mat-label>Phone</mat-label>
@@ -55,11 +55,11 @@
                     id="phone"
                     name="phone"
                     formControlName="phone">
-                    <span *ngIf="!signupForm.get('phone').valid && signupForm.get('phone').touched" 
+                    <span *ngIf="!signupForm.get('phone').valid && signupForm.get('phone').touched"
                     class="help-block">Please enter a valid Phone number</span>
                 </mat-form-field>
                 <br>
-            
+
                 <mat-form-field class="width-100">
                     <mat-label>Password</mat-label>
                     <input matInput
@@ -71,10 +71,10 @@
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
-                        <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched" 
+                        <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched"
                     class="help-block">Please enter a valid Password</span>
                 </mat-form-field>
-            
+
                 <br>
                 <mat-form-field class="width-100">
                     <mat-label>Confirm Password</mat-label>
@@ -87,30 +87,30 @@
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
-                        <span *ngIf="!signupForm.get('confirmPassword').valid && signupForm.get('confirmPassword').touched" 
+                        <span *ngIf="!signupForm.get('confirmPassword').valid && signupForm.get('confirmPassword').touched"
                     class="help-block">Please confirm password corectly</span>
                 </mat-form-field>
             </form>
-           
 
-            <br> 
+
+            <br>
             <span *ngIf="!signupForm.valid && signupForm.touched"></span>
             <mat-card-actions>
-                <a mat-raised-button 
+                <a mat-raised-button
                 class="back-btn"
                 routerLink="/main-page"
                 >Cancel</a>
                 <button mat-raised-button
                 class="continue-btn"
-                type="submit" 
+                type="submit"
                 color="primary"
                 routerLink="/register-form/address"
                 (click)="onSubmit()"
                 >Next</button>
-                </mat-card-actions> 
-                
+                </mat-card-actions>
+
             </div>
         </mat-card-content>
     </mat-card>
-   
-    
+{{signupForm.valid}}
+
