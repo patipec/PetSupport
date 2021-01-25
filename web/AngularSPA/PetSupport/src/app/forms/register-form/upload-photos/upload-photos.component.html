@@ -1,22 +1,79 @@
-<div class="container">
+
+ <!-- od gostka
+<input 
+    style="display: none;" 
+    type="file" 
+    (change)="onFileSelected($event)"
+    #fileInput>
+<button type="button" (click)="fileInput.click()"></button>
+<button type="button" (click)="onUpload()">upload</button>
+-->
+ 
+
+<!-- dzialajace z obrazkiem 
+ <div class="c-mat container">
     <div style="position:inherit;">
         <div class="example-container">
-            <div class="card-title">Address</div>
+            <div class="card-title">Upload Files</div>
             <hr>
             <br><br>
-            <label class="image-upload-container btn btn-bwm">
-                <span>Select image</span>
-                    <input 
-                        style="display: none" 
-                        type="file" 
-                        accept="image/*"
-                        (change)="onFileSelected($event)"
-                        #fileInput>
-
-                    <button type="button" (click)="fileInput.click()">Pick file</button>
-                    <button type="button" (click)="onUpload()">Upload</button>
-            </label>
+            <div>
+                <label class="hoverable" for="fileInput">
+                    <img [src]="url ? url : '/../assets/PetsitterDetail/default-petsitter-image.png'">
+                    <div class="hover-text">
+                    Choose file
+                    </div>
+                    <div class="background"></div>
+                </label>
+            </div>
+            <br/>
+            <input id="fileInput" type='file' (change)="onSelectFile($event)">
+            <button *ngIf="url" (click)="delete()">delete</button>
+        </div>
+        <button type="button" (click)="onUpload()">Upload</button>
     </div>
 </div>
-</div>
+-->
 
+<!--działająaca calosc z wysylka-->
+<div class="c-mat container">
+    <div style="position:inherit;">
+        <div class="example-container">
+            <div class="card-title">Upload Files</div>
+            <hr>
+            <br><br>
+            <div>
+                <div class="title-name">
+                    Profile photo
+                    <div class="title-info">
+                        Build trust! 
+                        This is the first photo pet owners will see.<br>
+                        Click on area and choose an image
+                    </div>
+                </div>
+                <label class="hoverable" for="fileInput">
+                    <img [src]="url ? url : '/../assets/PetsitterDetail/default-petsitter-image.png'">
+                    <div class="hover-text">
+                        <div style="color: black; font-weight: bold;">Choose Photo</div>
+                    </div>
+                    <div class="background"></div>
+                </label>
+            </div>
+            <br/>
+            <input 
+                id="fileInput"
+                style="display: none;" 
+                type="file" 
+                (change)="onSelectFile($event)"
+                #fileInput>
+        </div>
+        <button type="button" (click)="onUpload()">upload</button> 
+        <div class="title-name">
+            Photo Gallery
+            <div class="title-info">
+                Show your care and attention with photos of yourself walking or playing with pets. <br>
+                The more photos you have, the better.
+            </div>
+    </div>
+
+</div>

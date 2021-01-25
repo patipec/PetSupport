@@ -1,100 +1,86 @@
-input {
-    display: none;
+p {
+    font-family: Lato;
   }
   
-  .image-upload-container {
-    cursor: pointer;
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
   }
-  
-  .img-preview-container {
-    background-color: #f7f7f7;
+  .hoverable{
     position: relative;
+    display: block;
+    cursor: pointer;
+    height: 200px;
+    width: 200px;
+    /*border: 3px solid black*/
+    border-radius: 50%;
   }
-    .img-preview {
-      background: center center no-repeat;
-      background-size: contain;
-      height: 116px;
-      width: 116px;
-   }
-      
-    label{
-        justify-content: center;
-    }
- 
-  
-  .img-loading-overlay {
-      background-color: black;
-      bottom: 0;
-      left: 0;
-      opacity: .2;
-      position: absolute;
-      right: 0;
-      top: 0;
-  }
-  
-  .img-spinning-circle {
-    display: inline-block;
-    width: 64px;
-    height: 64px;
-    margin: auto;
+  .hoverable .hover-text{
     position: absolute;
+    display: none;
+    top: 50%;
+    left:  50%;
+    transform: translate(-50%,-50%);   
+    z-index: 2;
+  }
+  .hoverable .background{
+    position: absolute;
+    display: none;
     top: 0;
-    left: 0;
+    left:  0;
     bottom: 0;
     right: 0;
+    background-color:rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    border-radius: 30%;
+    z-index: 1;
   }
-  .img-spinning-circle:after {
-    content: " ";
+  .hoverable:hover .hover-text{
     display: block;
-    width: 46px;
-    height: 46px;
-    margin: 1px;
-    border-radius: 50%;
-    border: 5px solid #fff;
-    border-color: #fff transparent #fff transparent;
-    animation: lds-dual-ring 1.2s linear infinite;
   }
-  @keyframes lds-dual-ring {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  .hoverable:hover .background{
+    display: block;
   }
   
-  .btn-bwm {
-    background-color: blue;
-    border-color: blue;
-    color: white;
-    padding: 15px 30px;
-    font-size: 20px;
+  #fileInput{
+    display: none;
   }
-    /* :hover, :focus, :active {
-      border-color: blue !important;
-      background-color: blue !important;
-    
-  } */
 
- div {
+  .c-mat {
     box-shadow: none !important;
-    
   }
 
-  
   .card-title {
-      color: #0B814A;
-      font-weight: bold;
-      font-size: 16px;
-      text-align: center;
+    color: #0B814A;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+  
+hr {
+    width: 200px;
   }
 
   .container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     margin: auto;
     text-align: center;
     background-color: white;
     padding-bottom: 50px;
+  }
+
+  .title-name {
+    color: #0B814A;
+    font-size: 13px;
+    font-weight:600;
+    margin-left: 1em;
+    margin-top: 1em;
+  }
+  
+  .title-info {
+    color: darkgray;
+    font-size: 12px;
+    font-weight: normal;
   }

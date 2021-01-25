@@ -57,6 +57,7 @@ import { FullCalendarModule } from '@fullcalendar/angular'; // the main connecto
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
 import { CustomSliderComponent } from './pages/petsitters/petsitter/custom-slider/custom-slider.component';
+import { PhotoGalleryComponent } from './forms/register-form/upload-photos/photo-gallery/photo-gallery.component';
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -100,6 +101,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     UploadPhotosComponent,
     ServicesPartComponent,
     CustomSliderComponent,
+    PhotoGalleryComponent,
   ],
 
   imports: [
