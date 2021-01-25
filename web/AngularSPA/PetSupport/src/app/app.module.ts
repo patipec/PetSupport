@@ -53,11 +53,10 @@ import { BiFormComponent } from './forms/register-form/basic-info/bi-form/bi-for
 import { UploadPhotosComponent } from './forms/register-form/personal-info/upload-photos/upload-photos.component';
 import { ServicesPartComponent } from './forms/services-part/services-part.component';
 
-
 import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
-import { CustomSliderComponent } from './pages/petsitters/petsitter/custom-slider/custom-slider.component'; // a plugin
+import { CustomSliderComponent } from './pages/petsitters/petsitter/custom-slider/custom-slider.component';
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -100,8 +99,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     BiFormComponent,
     UploadPhotosComponent,
     ServicesPartComponent,
-    CustomSliderComponent
-
+    CustomSliderComponent,
   ],
 
   imports: [
@@ -123,7 +121,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatCarouselModule.forRoot(),
     NgxSliderModule,
     IvyCarouselModule,
-    FullCalendarModule
+    FullCalendarModule,
+    BrowserModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

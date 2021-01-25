@@ -1,1 +1,22 @@
-<p>upload-photos works!</p>
+<div class="container">
+    <div style="position:inherit;">
+        <div class="example-container">
+            <div class="card-title">Address</div>
+            <hr>
+            <br><br>
+            <label class="image-upload-container btn btn-bwm">
+                <span>Select image</span>
+                    <input 
+                        style="display: none" 
+                        type="file" 
+                        accept="image/*"
+                        (change)="onFileSelected($event)"
+                        #fileInput>
+
+                    <button type="button" (click)="fileInput.click()">Pick file</button>
+                    <button type="button" (click)="onUpload()">Upload</button>
+            </label>
+    </div>
+</div>
+</div>
+

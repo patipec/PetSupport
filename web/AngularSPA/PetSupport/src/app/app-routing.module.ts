@@ -14,6 +14,7 @@ import {ContactFormSuccessComponent} from './pages/contact-form/contact-form-suc
 import { EndOfRegistrationComponent } from './forms/register-form/end-of-registration/end-of-registration.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { BiFormComponent } from './forms/register-form/basic-info/bi-form/bi-form.component';
+import { UploadPhotosComponent } from './forms/register-form/upload-photos/upload-photos.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,9 @@ const routes: Routes = [
   {path: 'register-form/address', component: AddressComponent},
   {path: 'register-form/services', component: ServicesComponent},
   {path: 'register-form/personal-info', component: PersonalInfoComponent},
+
+  {path: 'register-form/upload-photos', component: UploadPhotosComponent},
+
   {path: 'contact-form', component: ContactFormComponent},
   {path: 'contact-form/success', component: ContactFormSuccessComponent},
   {path: 'register-form/login', component: LoginFormComponent},
