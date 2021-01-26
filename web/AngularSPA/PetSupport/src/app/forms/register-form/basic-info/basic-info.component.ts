@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import { RegistrationService } from '../registration.service';
+import {IBasicInfo} from '../IRegistration-data';
 
 @Component({
   selector: 'app-basic-info',
@@ -9,104 +10,28 @@ import { RegistrationService } from '../registration.service';
   styleUrls: ['./basic-info.component.css']
 })
 export class BasicInfoComponent {
-
   hide = true;
   submitted = false;
-  signupForm = this.fb.group({
-    'name': ['', [Validators.required, Validators.maxLength(15), Validators.minLength(3), this.nameCheck]],
-    'surname': ['', [Validators.required, Validators.maxLength(25), Validators.minLength(2), this.surnameCheck]],
-    'email': ['', [Validators.required, Validators.email, this.emailCheck]],
-    'phone': ['', [Validators.required, Validators.maxLength(9), this.phoneCheck]],
-    'password': ['', [Validators.required, Validators.minLength(5), this.passwordCheck]],
-    'confirmPassword': ['', [Validators.required, Validators.minLength(5), this.passwordCheck]]
-  });
+  basicInfo: IBasicInfo;
+  isFormValid: boolean;
 
   constructor(private http: HttpClient,
-              private registrationService: RegistrationService,
-              private fb: FormBuilder) {
-  this.signupForm.get('password').valueChanges.subscribe(x => this.signupForm.get('confirmPassword').updateValueAndValidity());
-
-}
-
-
-  nameCheck(control){
-    if(control.value != null) {
-      var regex = new RegExp('[a-z A-Z]');
-      if(regex.test(control.value) !== true){
-        return {
-          nameValidity: true
-        }
-      }
-    }
+              private registrationService: RegistrationService) {
   }
 
-  surnameCheck(control){
-    if(control.value != null) {
-      var regex = new RegExp('[a-z A-Z]');
-      if(regex.test(control.value) !== true){
-        return {
-          surnameValidity: true
-        }
-      }
-    }
-  }
-
-  emailCheck(control){
-    if(control.value != null) {
-      var regex = new RegExp('[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}');
-      if(regex.test(control.value) !== true){
-        return {
-          emailValidity: true
-        }
-      }
-    }
-  }
-
-  phoneCheck(control){
-    if(control.value != null) {
-      var regex = new RegExp('[0-9]{9}');
-      if(regex.test(control.value) !== true){
-        return {
-          phoneValidity: true
-        }
-      }
-    }
-  }
-
-  passwordCheck(control){
-    if(control.value != null){
-      var conPass = control.value;
-      var pass = control.root.get('password');
-      if(pass){
-        var password = pass.value
-        if(conPass !== "" && password !== ""){
-          if(conPass !== password){
-            return{
-              passwordValidity: true
-            }
-          }
-          else{
-            return null
-          }
-        }
-      }
-    }
+  onFormChange(basicInfo: IBasicInfo) {
+    this.basicInfo = basicInfo;
   }
 
   onSubmit(): void {
-    console.log(this.signupForm);
-    //this.registrationService.setBasicInfo(this.signupForm.value);
-    //this.registrationService.saveUser();
-    if (this.signupForm.status === 'VALID'){
-      this.registrationService.setBasicInfo(this.signupForm.value);
+    console.log(this.basicInfo);
+    console.log(this.isFormValid);
+    if (this.isFormValid) {
+      this.registrationService.setBasicInfo(this.basicInfo);
     }
-    else {
-      this.signupForm.get('name').markAsTouched();
-      this.signupForm.get('surname').markAsTouched();
-      this.signupForm.get('phone').markAsTouched();
-      this.signupForm.get('email').markAsTouched();
-      this.signupForm.get('password').markAsTouched();
-      this.signupForm.get('confirmPassword').markAsTouched();
-    }
+  }
+
+  onStatusChange(status: boolean) {
+    this.isFormValid = status;
   }
 }

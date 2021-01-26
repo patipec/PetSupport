@@ -1,14 +1,20 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RegistrationService } from '../../registration.service';
+import {IBasicInfo} from "../../IRegistration-data";
 
 @Component({
   selector: 'app-bi-form',
   templateUrl: './bi-form.component.html',
   styleUrls: ['./bi-form.component.css']
 })
-export class BiFormComponent {
+export class BiFormComponent implements OnInit {
+  @Output()
+  onFormChanged = new EventEmitter<IBasicInfo>();
+
+  @Output()
+  formValid = new EventEmitter<boolean>();
 
   hide = true;
   submitted = false;
@@ -28,6 +34,13 @@ export class BiFormComponent {
 
 }
 
+
+  ngOnInit(): void {
+    this.signupForm.valueChanges.subscribe(value => {
+      this.onFormChanged.emit(value);
+    });
+    this.signupForm.statusChanges.subscribe(status => this.formValid.emit(status === 'VALID'));
+  }
 
   nameCheck(control){
     if(control.value != null) {
@@ -92,21 +105,4 @@ export class BiFormComponent {
       }
     }
   }
-
-  onSubmit(): void {
-    //this.registrationService.setBasicInfo(this.signupForm.value);
-    //this.registrationService.saveUser();
-    if (this.signupForm.status === 'VALID'){
-      this.registrationService.setBasicInfo(this.signupForm.value);
-    }
-    else {
-      this.signupForm.get('name').markAsTouched();
-      this.signupForm.get('surname').markAsTouched();
-      this.signupForm.get('phone').markAsTouched();
-      this.signupForm.get('email').markAsTouched();
-      this.signupForm.get('password').markAsTouched();
-      this.signupForm.get('confirmPassword').markAsTouched();
-    }
-  }
-
 }

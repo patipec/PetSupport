@@ -4,28 +4,26 @@
             <div class="card-title">Basic Info</div>
             <hr>
             <br><br>
+            <app-bi-form (onFormChanged)="onFormChange($event)" (formValid)="onStatusChange($event)"></app-bi-form>
 
-            <app-bi-form></app-bi-form>
-           
-
-            <br> 
-            <span *ngIf="!signupForm.valid && signupForm.touched"></span>
+            <br>
             <mat-card-actions>
-                <a mat-raised-button 
+                <a mat-raised-button
                 class="back-btn"
                 routerLink="/main-page"
                 >Cancel</a>
                 <button mat-raised-button
-                class="continue-btn"
-                type="submit" 
-                color="primary"
-                routerLink="/register-form/address"
-                (click)="onSubmit()"
+                        [disabled]="!isFormValid"
+                        class="continue-btn"
+                        type="submit"
+                        color="primary"
+                        routerLink="/register-form/address"
+                        (click)="onSubmit()"
                 >Next</button>
-                </mat-card-actions> 
-                
+                </mat-card-actions>
+
             </div>
         </mat-card-content>
     </mat-card>
-   
-    
+
+
