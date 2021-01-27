@@ -1,0 +1,74 @@
+.contact-form-success-page, mat-card, mat-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact-form-success-page {
+  background-color: #ffe194;
+}
+.contact-form-success-card {
+  margin: 150px auto 150px auto;
+  padding: 70px 40px 70px 40px;
+  width: 30vw;
+  min-width: 180px;
+  border-radius: 10px;
+  position: relative;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.information {
+  color: #0B814A;
+  font-size: 20px;
+  margin-top: 0;
+}
+span {
+  margin: 10px 0 10px 0;
+}
+
+@media(max-width: 700px) {
+  .information {
+    font-size: 16px;
+  }
+  .contact-form-success-card {
+    padding: 40px;
+    margin: 70px auto 70px auto;
+  }
+}
+
+/* Paws on the corners, strange selectors, because i have to had 4 elements*/
+mat-card-content ::before, mat-card-content ::after,
+mat-card-title ::before, mat-card-title ::after {
+  content: '';
+  position: absolute;
+  background-image: url("../../../../assets/MainPage/paw.png");
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+}
+mat-card-content ::before {
+  left: -42px;
+  top: -42px;
+  transform: rotate(-45deg);
+}
+mat-card-content ::after {
+  right: -42px;
+  top: -42px;
+  transform: rotate(45deg);
+}
+.mat-card-title ::after {
+  right: -42px;
+  bottom: -42px;
+  transform: rotate(-225deg);
+}
+.mat-card-title ::before {
+  left: -42px;
+  bottom: -42px;
+  transform: rotate(225deg);
+}

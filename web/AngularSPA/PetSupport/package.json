@@ -24,8 +24,15 @@
     "@angular/platform-browser": "~11.0.2",
     "@angular/platform-browser-dynamic": "~11.0.2",
     "@angular/router": "~11.0.2",
+    "@fullcalendar/angular": "^5.5.0",
+    "@fullcalendar/core": "^5.5.1",
+    "@fullcalendar/daygrid": "^5.5.0",
+    "@fullcalendar/interaction": "^5.5.0",
     "@ngmodule/material-carousel": "^0.6.0",
+    "@rxweb/reactive-form-validators": "^2.1.2",
     "@syncfusion/ej2-angular-inputs": "^18.3.53",
+    "angular-responsive-carousel": "^2.0.2",
+    "leaflet": "1.6.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
@@ -46,9 +53,9 @@
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
+    "resize-observer-polyfill": "^1.5.1",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.5",
-    "resize-observer-polyfill": "^1.5.1"
+    "typescript": "~4.0.5"
   }
 }

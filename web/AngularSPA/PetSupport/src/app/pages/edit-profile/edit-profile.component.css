@@ -1,0 +1,356 @@
+
+  
+  .main-content {
+      height: 300px;
+      background-color: bisque;
+  }
+
+.logo {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    padding-block: 0;
+    max-height: 9rem;
+}
+  
+
+  .tlo {
+      width: 100%; 
+      height: auto;
+      position: relative;
+  }
+  
+  h1 {
+      font-family: Lao Muang Khong;
+      font-weight: normal;
+      font-size: 2rem;
+      line-height: 0.8rem;
+      color: #000000;
+    }
+  
+  h3 {
+      font-family: Krub;
+      font-weight: normal;
+      font-size: 1rem;
+      color: #000000;
+      display: inline-block;
+    
+    }
+  
+  h4 {
+    font-family: Lao Muang Khong;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 0.8rem;
+    color: #ffffff;
+  }
+  
+  .smallphoto {
+      width: 25%;
+  }
+  
+  hr.solid {
+      border-top: 1.5px solid rgb(100, 100, 100);
+  }
+  
+  ul {
+      padding: 0px;
+      list-style-type: none;
+      margin: 0;
+      overflow: hidden;
+      background-color: rgb(255, 255, 255);
+    }
+    
+  li {
+      float: left;
+      border-right: 0.5px solid rgb(237, 162, 247);
+    }
+  li a {
+      display: block;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+  li a:hover {
+      background-color: rgb(223, 223, 223);
+    }
+  
+  .column {
+    float: left;
+    padding: 10px;
+    height: 700px; /* Should be removed. Only for demonstration */
+  }
+  
+  .left {
+    flex: 2;
+  }
+  
+  .right h2 {
+    color: #8D55C6;
+    font-weight: bold;
+    font-family: Lao Muang Khong;
+    font-size: 1rem;
+    line-height: 0.8rem;
+  
+  }
+  .right p {
+    font-size: 12px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+  }
+  
+  .middle {
+    flex: 5;
+    padding: 45px;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .upper {
+  
+  }
+  
+  .bottom {
+      display: flex;
+      flex-direction: row;
+  }
+  
+  .left-inner {
+    flex: 4;
+  }
+  
+  .right-inner{
+    flex: 1;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .button--tag {
+    background-color: #e0e0e0;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 5px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 10px 7px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 4px 6px 0 rgba(0,0,0,0.19);
+  }
+  
+  .rest-info {
+    width: 80%;
+  }
+  
+  .form--box {
+    text-align: center;
+    background-color: rgb(243, 243, 243);
+    width: 100%;
+    height: 500px;
+    padding: 25px;
+    border: 10px solid rgb(243, 243, 243);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+    text-align: left;
+    
+  }
+  
+  input[type=text], select {
+    width: 45%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+input[type=submit], select {
+    margin: 8px 0;
+    color: white;
+    background-color: #8d55c6;
+}
+  
+  .date-time {
+    display: inline;
+  }
+  
+  input[type=find-table] {
+    background-color: #8D55C6;  
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  input[type=special-reservation] {
+    background-color: #4E207B;;  
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+    font-weight: bold;
+  }
+
+  i {
+      margin: inherit;
+  }
+
+.card-header {
+    background-color: #8d55c6;
+}
+
+.btn-link {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-link:focus {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.list-group-item.active {
+    background-color: #eadbf8;
+    border-color: #eadbf8;
+    color: #000000;
+}
+
+#filter-restaurants {
+    margin-block: 1rem;
+}
+
+﻿body {
+    background: #ECDFF9;
+}
+
+.logo_img {
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search_box {
+    position: relative;
+    z-index: 1;
+    margin: auto;
+    margin-top: -100px;
+    padding: 20px 25px;
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Lao Muang Khong;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #000000;
+    width: 90%;
+}
+
+.search_box h1 {
+    color: #000000;
+    font-family: Lao Muang Khong;
+}
+
+input[type=button] {
+    background-color: #CCACEB;
+    border: none;
+    color: white;
+    font-family: Krub;
+    font-style: normal;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+input[type=submit] {
+    background-color: #8D55C6;
+    border: none;
+    color: white;
+    font-family: Krub;
+    font-style: normal;
+    font-size: 18px;
+    padding: 5px 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+input[type=number], input[type=date], input[type=search], input[type=text], input[type=password] {
+    background: #EDEDED;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    padding: 5px 10px;
+    font-family: Krub;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 23px;
+    color: #5A5A5A;
+}
+
+
+.btn-floating {
+    color: #8D55C6;
+}
+
+.btn-carousel {
+    background-color: #CCACEB;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card-title {
+    color: #8D55C6;
+}
+
+.card-body a:link, .card-body a:visited {
+    color: white;
+}
+
+.card-body a:hover, .card-body a:active {
+    color: #8D55C6;
+}
+
+.login_box {
+    position: relative;
+    z-index: 1;
+    margin: auto;
+    margin-top: -460px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 12px;
+    text-align: center;
+    color: #8D55C6;
+    font-family: Krub;
+    padding: 20px 25px;
+    width: 40%;
+}
+
+h2 {
+    margin: 0 0 20px 0;
+    font-weight: 300;
+    font-size: 28px;
+}

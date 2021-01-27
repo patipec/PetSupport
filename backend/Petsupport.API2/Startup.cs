@@ -1,5 +1,8 @@
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Identity.Web;
+using System.Reflection;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -12,8 +15,7 @@ using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
 using PetSupport.Infrastructure.Data.Repositories;
 
-
-namespace PetSupport.API2
+namespace Petsupport.API2
 {
     public class Startup
     {
@@ -25,18 +27,23 @@ namespace PetSupport.API2
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Petsupport.API2", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Petsupport.API2", Version = "v1"});
             });
 
             services.AddDbContext<DataContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            // services.AddScoped<Petsitter, PetsittersDTO>();
-
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                        options=>options.MigrationsAssembly("Petsupport.API2"))
+                    .EnableSensitiveDataLogging()
+                    .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+          
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApi(
                     options =>
@@ -65,8 +72,8 @@ namespace PetSupport.API2
                         builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
                 });
 
-            services.AddScoped<IPetsitterRepository, PetsitterRepository>();
-            
+            services.AddTransient<IPetsitterRepository, PetsitterRepository>();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -80,6 +87,7 @@ namespace PetSupport.API2
             }
 
             app.UseHttpsRedirection();
+
             app.UseCors(env.IsDevelopment() ? "CorsDevelopmentPolicy" : "CorsReleasePolicy");
             app.UseRouting();
 

@@ -1,109 +1,100 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Petsupport.API2.Dtos.InDtos;
+using Petsupport.API2.Dtos.OutDtos;
 using PetSupport.Core.Entities;
-using PetSupport.Infrastructure.Data.Data;
+using PetSupport.Core.Interfaces;
+using PetSupport.Core.ResourceParameters;
 
-namespace PetSupport.API2.Controllers
+namespace Petsupport.API2.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class PetsittersController : ControllerBase
     {
-        private readonly DataContext _context;
-
-        public PetsittersController(DataContext context)
-        {
-            _context = context;
-        }
-
-        // GET: api/Petsitters
-        [HttpGet]
+        private readonly IPetsitterRepository _petsitterRepository;
+        private readonly IMapper _mapper;
         
-        public async Task<ActionResult<IEnumerable<Petsitter>>> GetPetsitter()
+
+        public PetsittersController(IPetsitterRepository petsitterRepository, IMapper mapper)
         {
-            return await _context.Petsitters.ToListAsync();
+            this._petsitterRepository = petsitterRepository;
+            this._mapper = mapper;
         }
-
-        // GET: api/Petsitters/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Petsitter>> GetPetsitter(int id)
+        
+        
+        [HttpGet]
+        public async Task<ActionResult<PetsitterDTO[]>> GetPetsittersBySearchPatameters
+            ([FromQuery] PetsittersSearchParameters petsittersSearchParameters)
         {
-            var petsitter = await _context.Petsitters.FindAsync(id);
-
-            if (petsitter == null)
-            {
-                return NotFound();
-            }
-
-            return petsitter;
-        }
-
-        // PUT: api/Petsitters/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutPetsitter(int id, Petsitter petsitter)
-        {
-            if (id != petsitter.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(petsitter).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
+                var petsitersFillteredByQuery = await _petsitterRepository
+                    .GetAllPetsitersBySearchPatametersAsync(petsittersSearchParameters);
+                
+                return Ok(_mapper.Map<PetsitterDTO[]>(petsitersFillteredByQuery));
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
-                if (!PetsitterExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return StatusCode(500, "Internal server error");
             }
-
-            return NoContent();
         }
-
-        // POST: api/Petsitters
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Petsitter>> PostPetsitter(Petsitter petsitter)
+        
+        
+        [HttpGet("{id:int}", Name = "PetsitterById")]
+        public async Task<ActionResult<PetsitterDTO>> GetPetsitterById(int id)
         {
-            _context.Petsitters.Add(petsitter);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetPetsitter", new { id = petsitter.Id }, petsitter);
-        }
-
-        // DELETE: api/Petsitters/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePetsitter(int id)
-        {
-            var petsitter = await _context.Petsitters.FindAsync(id);
+            var petsitter = await _petsitterRepository.GetByIdAsync(id);
             if (petsitter == null)
-            {
+            { 
                 return NotFound();
             }
-
-            _context.Petsitters.Remove(petsitter);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            return Ok(_mapper.Map<PetsitterDTO>(petsitter));
         }
 
-        private bool PetsitterExists(int id)
-        {
-            return _context.Petsitters.Any(e => e.Id == id);
-        }
+        
+        // [HttpPost]
+        // public async Task<ActionResult> CreatePetsitter ([FromBody]CreatePetsitterDTO createPetsitterDto)
+        // {
+        //     try
+        //     {
+        //         if (createPetsitterDto == null)
+        //         {
+        //             return BadRequest("Petsitter object is null");
+        //         }
+        //         
+        //         var petsitterEntity = _mapper.Map<Petsitter>(createPetsitterDto);
+        //         _petsitterRepository.Add(petsitterEntity);
+        //         await _petsitterRepository.SaveChangesAsync();
+        //         
+        //         var petsitterToReturn = _mapper.Map<FullPetsitterDTO>(petsitterEntity);
+        //
+        //         return CreatedAtRoute("PetsitterById", new {id = petsitterEntity.Id}, petsitterToReturn);
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         return StatusCode(500, "Internal server error");
+        //     }
+        // }
+
+        // [HttpPut("{id:int}")]
+        // public async Task<ActionResult> UpdatePetsitter(int id, UpdatePetsitterDTO updatePetsitterDto)
+        // {
+        //     if (updatePetsitterDto == null)
+        //     {
+        //         return BadRequest("Petsitter object is null");
+        //     }
+        //
+        //     if (!ModelState.IsValid)
+        //     {
+        //         return BadRequest("Invalid model objetct");
+        //     }
+        //
+        //     var petsitterFromRepo = await _petsitterRepository.GetByIdAsync(id);
+        //     
+        // }
+        
     }
 }

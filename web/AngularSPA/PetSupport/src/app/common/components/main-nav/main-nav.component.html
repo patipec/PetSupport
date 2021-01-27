@@ -1,0 +1,72 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer
+  class="sidenav"
+  fixedInViewport="false"
+  [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+  [mode]="(isHandset$ | async) ? 'over' : 'side'"
+  [opened]="(isHandset$ | async)!.matches">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="\become-petsitter">Become Petsitter</a>
+      <a mat-list-item href="#"> Log In</a>
+      <a mat-list-item href="#">Register</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+
+      <div >
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      </div>
+
+      <a *ngIf="!(isHandset$ | async)" href="\become-petsitter">Become Petsitter</a>
+
+      <button mat-button [matMenuTriggerFor]="menu">Dev routes</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/petsitters" routerLinkActive="active">Petsitters</button>
+        <button mat-menu-item routerLink="/main-page" routerLinkActive="active">Main Page</button>
+        <button mat-menu-item routerLink="/become-petsitter" routerLinkActive="active">Become Petsitter</button>
+        <button mat-menu-item routerLink="/register-form/basic-info" routerLinkActive="active">Form 1 - Basic info</button>
+        <button mat-menu-item routerLink="/register-form/address" routerLinkActive="active">Form 2 - Address</button>
+        <button mat-menu-item routerLink="/register-form/personal-info" routerLinkActive="active">Form 4 - Personal info</button>
+        <button mat-menu-item routerLink="/register-form/services" routerLinkActive="active">Form 3 - Services</button>
+        <button mat-menu-item routerLink="/register-form/test2" routerLinkActive="active">Form 1 - Test 2</button>
+        <button mat-menu-item routerLink="/contact-form" routerLinkActive="active">Contact-form</button>
+        <button mat-menu-item routerLink="/contact-form/success" routerLinkActive="active">Contact-form</button>
+        <button mat-menu-item routerLink="/edit-profile" routerLinkActive="active">Edit prof</button>
+      </mat-menu>
+
+      <div class="nav-item logo">
+      <img
+      width="40"
+      alt="Angular Logo"
+      src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEyIDUxMiIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im01MTIgOTIuNzc2YzAgNTEuNTA4LTUuNzcgMTQ4LjI5NC00NiAxODAuNDktMjYuMTEgMjAuODgtNDYuNTkgMjkuNDc5LTU5LjM4IDMzLjAzLTQuMjQgMzMuMzctMTcuNDQgNTkuOTItMjcuMzEgNjkuNzktNi4yMiA2LjIyLTIwLjk0IDI4LjE2LTI4LjEzIDQ5Ljc0LTguNTkgMjUuNzgtMjAuNTUgNTAuOTUtNjMuMTggNTAuOTUtMTQuMDIgMC0yNC40OC00LjU2LTMyLTExLjI2LTcuNTIgNi43LTE3Ljk4IDExLjI2LTMyIDExLjI2LTQyLjYzIDAtNTQuNTktMjUuMTctNjMuMTgtNTAuOTUtNi41NS0xOS42NDUtMjAuODU4LTQyLjQ2Ni0yOC4xMy00OS43NC05Ljg3LTkuODctMjMuMDctMzYuNDItMjcuMzEtNjkuNzktMTIuNzktMy41NS0zMy4yNy0xMi4xNS01OS4zOC0zMy4wMy00MC4yMzEtMzIuMTk2LTQ2LTEyOC45ODItNDYtMTgwLjQ5IDAtMjEuMTYgMTAuMzktNDEuMDIgMjAuNjktNTEuMzIgMzkuMTg2LTM5LjE4NyAxMzAuNTA2IDg2Ljk4IDE3MC4zMSAxMTQuNTIgMjguMjYtOS40NDIgMTAwLjc2Ny05LjY2OSAxMzAgMCAzOS43MjgtMjcuNDg4IDEzMS4xMzYtMTUzLjY5NCAxNzAuMzEtMTE0LjUyIDEwLjMgMTAuMyAyMC42OSAzMC4xNiAyMC42OSA1MS4zMnoiIGZpbGw9IiNjNzlhODMiLz48cGF0aCBkPSJtMTU0LjQ1IDI3Ny4yMzFjNy4zODktNi43NTQgNDIuMjM0LTIzLjgxMSA1My41NSAyLjA0NSAxNC43NzkgMzMuNzctNTMuNTUgNTguNzQyLTYwLjkzOSAzOC40OC03LjM5LTIwLjI2MiAwLTMzLjc3MSA3LjM4OS00MC41MjV6IiBmaWxsPSIjZmZkZmJhIi8+PHBhdGggZD0ibTI1NiAxNDguNzk2di0uMDJjLjE1MyAwIC4xMDgtLjAwOCAwIC4wMnoiIGZpbGw9IiNiOWRjZmYiLz48ZyBmaWxsPSIjZmZkZmJhIj48cGF0aCBkPSJtMzIgNjMuMjc2YzYuNjQ0LTE2LjYwOSAxMjAgOTYgMTA0IDEyMHMtMS4zNTIgODAtNDggODBjLTQ4IDAtODgtMTIwLTU2LTIwMHoiLz48cGF0aCBkPSJtMzU3LjU1IDI3OC40ODFjLTcuMzg5LTYuNzU0LTQyLjIzNC0yMy44MTEtNTMuNTUgMi4wNDUtMTQuNzc5IDMzLjc3IDUzLjU1IDU4Ljc0MiA2MC45MzkgMzguNDggNy4zOS0yMC4yNjIgMC0zMy43NzEtNy4zODktNDAuNTI1eiIvPjxwYXRoIGQ9Im0yODAgMzI4LjUyNmMtOC00MCAxNi00MCAzMi0xMDQgMTAuMjA5LTQwLjgxLTE2LjY3Ny02Ni4wNjUtNTYtNzQuNDh2LTEuMjVjLTkuNDQgMi4wMi00Mi41MiAxMC42Ny01NC4xNCAzNy4yMy0uMTAxIDAtNy42IDE0LjMwNi0xLjg2IDM3LjI1IDE2IDY0IDQwIDY0IDMyIDEwNC03LjYzMyAzOC4xNTItNzMuNDY3IDMyLjY0MS03Mi42MSA5NC41IDkuMTggMjQuNzg4IDE3LjQyNSA1NSA2NC42MSA1NSAxNC4wMiAwIDI0LjQ4LTQuNTYgMzItMTEuMjZ2MS4yNWM3LjUyIDYuNyAxNy45OCAxMS4yNiAzMiAxMS4yNiA0Mi42MyAwIDU0LjU5LTI1LjE3IDYzLjE4LTUwLjk1LjQ1LTEuMzUuOTMtMi43IDEuNDMtNC4wNS44NTctNjEuODY0LTY0Ljk3Ni01Ni4zNDUtNzIuNjEtOTQuNXoiLz48L2c+PHBhdGggZD0ibTMwNCAzOTYuNzc2YzAgMTYuNDMtMjAuMjcgNDgtNDggNDhzLTQ4LTMxLjU3LTQ4LTQ4YzAtMTguMTQzIDIxLjgxOC00MCA0OC00MCAyNi4xODEgMCA0OCAyMS44NDcgNDggNDB6IiBmaWxsPSIjODE4MTgyIi8+PHBhdGggZD0ibTQ4MCA2NC41MjZjLTYuNjQ0LTE2LjYwOS0xMjAgOTYtMTA0IDEyMHMxLjM1MiA4MCA0OCA4MGM0OCAwIDg4LTEyMCA1Ni0yMDB6IiBmaWxsPSIjZmZkZmJhIi8+PGNpcmNsZSBjeD0iMTc2IiBjeT0iMzE2Ljc3MSIgcj0iMjQiLz48cGF0aCBkPSJtNDkxLjMxIDQxLjQ1NmMtMzkuMTg2LTM5LjE4Ny0xMzAuNTA2IDg2Ljk4LTE3MC4zMSAxMTQuNTItMjguNzUtOS41MDktMTAxLjE2NC05LjYzNS0xMzAgMC0zOS43MjgtMjcuNDg4LTEzMS4xMzYtMTUzLjY5NC0xNzAuMzEtMTE0LjUyLTEwLjMgMTAuMy0yMC42OSAzMC4xNi0yMC42OSA1MS4zMiAwIDUxLjUwOCA1Ljc3IDE0OC4yOTQgNDYgMTgwLjQ5IDI2LjExIDIwLjg4IDQ2LjU5IDI5LjQ3OSA1OS4zOCAzMy4wMyA0LjI0IDMzLjM3IDE3LjQ0IDU5LjkyIDI3LjMxIDY5Ljc5IDYuNzgzIDYuNzg0IDE3LjUzOCAyNC43NzIgMjIuMDEgMzQuNjYgMTIuNjg0IDI2Ljg0NSAxNS4yMjggNjYuMDMgNjkuMyA2Ni4wMyAxNC4wMiAwIDI0LjQ4LTQuNTYgMzItMTEuMjYgNy41MiA2LjcgMTcuOTggMTEuMjYgMzIgMTEuMjYgNDIuNjMgMCA1NC41OS0yNS4xNyA2My4xOC01MC45NSA3LjE5LTIxLjU4IDIxLjkxLTQzLjUyIDI4LjEzLTQ5Ljc0IDkuODctOS44NyAyMy4wNy0zNi40MiAyNy4zMS02OS43OSAxMi43OS0zLjU1IDMzLjI3LTEyLjE1IDU5LjM4LTMzLjAzIDQwLjIzMS0zMi4xOTYgNDYtMTI4Ljk4MyA0Ni0xODAuNDkgMC0yMS4xNi0xMC4zOS00MS4wMi0yMC42OS01MS4zMnptLTIzNS4zMSAzNzEuMzJjLTUuNjQgMC0xMy42Ni05Ljk2LTE1LjY3LTE1LjQ3IDEuOTktMy4xNCA4LjI5LTguNTMgMTUuNjctOC41M3MxMy42OCA1LjM5IDE1LjY3IDguNTNjLTIuMDEgNS41MS0xMC4wMyAxNS40Ny0xNS42NyAxNS40N3ptMTkwLTE2NC41Yy0xNi4zNiAxMy4wOS0yOS41NCAyMC4xNy0zOC44MyAyNC4wMS01LjIyLTQwLjI2LTMzLjM2LTc1Ljg3LTM0LjY4LTc3LjUxLTUuNTItNi45LTE1LjU5LTguMDItMjIuNDktMi41cy04LjAxIDE1LjU5LTIuNDkgMjIuNDljNy45MiA5LjkxIDI4LjQ5IDQxLjggMjguNDkgNzAuMDEgMCAzNy4wMi0xNS4yMiA2NC41OS0xOS4zMSA2OC42OC05LjE1IDkuMTQtMjYuODcgMzUuMjUtMzUuODcgNjIuMjYtNy4zMiAyMS45Ni0xMS40OCAyOS4wNi0zMi44MiAyOS4wNi03LjQ5IDAtMTAuNzItMi41Mi0xMi42MS01LjMxIDE3LjI5LTkuNjkgMjguNjEtMzAuNDIgMjguNjEtNDIuNjkgMC0xOC4xNDMtMjEuODE4LTQwLTQ4LTQwLTI2LjE4MSAwLTQ4IDIxLjg0OC00OCA0MCAwIDEyLjI3IDExLjMyIDMzIDI4LjYxIDQyLjY5LTEuODkgMi43OS01LjEyIDUuMzEtMTIuNjEgNS4zMS0zNC4zNjMgMC0yMi43NDktMTkuNjE0LTQ5LjQ4LTY0Ljg2LTcuMS0xMi0xNC4zNi0yMS42MS0xOS4yMS0yNi40Ni00LjA5LTQuMDktMTkuMzEtMzEuNjYtMTkuMzEtNjguNjggMC0zMy41NyAyNy45MS02OS4yNiAyOC41LTcwLjAyIDUuNTEtNi45IDQuMzktMTYuOTYtMi41LTIyLjQ4LTYuOTEtNS41Mi0xNi45Ny00LjQtMjIuNDkgMi41LTEuMzIgMS42NC0yOS40NiAzNy4yNS0zNC42OCA3Ny41MS05LjI5LTMuODQtMjIuNDctMTAuOTItMzguODMtMjQuMDEtMjAuNjYtMTYuNTItMzQtNzcuNTYtMzQtMTU1LjUgMC05LjY5IDQuNTYtMjAuNDYgOS40OC0yNi42MyAyNS4xNjkgNy43MDkgODkuNTc5IDgwLjA5OCAxMTkuMzUgMTA2LjQ0IDEyLjMxIDEwLjg3IDI1LjQxIDIwLjk2IDM4LjMzIDE0LjUgMTYuMjI2LTguMjI2IDk3LjExMi04LjI5NSAxMTMuNjggMCAxMi45MiA2LjQ2IDI2LjAyLTMuNjMgMzguMzMtMTQuNSAzMC4wMDgtMjYuNTUxIDk0LjE4Ni05OC43MzIgMTE5LjM1LTEwNi40NCA0LjkyIDYuMTcgOS40OCAxNi45NCA5LjQ4IDI2LjYzIDAgNzcuOTQtMTMuMzQgMTM4Ljk4LTM0IDE1NS41eiIvPjxjaXJjbGUgY3g9IjMzNiIgY3k9IjMxNi43NzEiIHI9IjI0Ii8+PC9zdmc+" />
+      </div>
+
+      <span class="spacer"></span>
+
+      <div>{{isHandset$ | async}}</div>
+      <div>{{window.screen.orientation.type}}</div>
+
+
+      <div *ngIf="!(isHandset$ | async)" >
+        <ul  class="navigation-items">
+          <a href="./login" routerLinkActive="active">Log In</a>
+          <a href="./register-form/basic-info">Register</a>
+        </ul>
+      </div>
+
+    </mat-toolbar>
+
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

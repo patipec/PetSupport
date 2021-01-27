@@ -1,8 +1,6 @@
-using PetSupport.Core.Entities;
-
 namespace Petsupport.API2.Dtos.InDtos
 {
-    public class CreateBookingMessageDTO : BaseEntity
+    public class CreateBookingMessageDTO
     {
         public int ClientId { get; set; }
         public int PetsitterId { get; set; }

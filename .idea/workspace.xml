@@ -106,71 +106,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c25cba1-58ce-47d8-84b8-03d890a90b42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Entities/BaseEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Entities/BookingMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Entities/Client.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Entities/Petsitter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Entities/PetsitterService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Entities/Service.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Entities/User.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Enums/ServiceType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/Enums/Unit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/PetSupport - Backup.Core.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Core/PetSupport.Core.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/Data/DataContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/Migrations/20201211090655_INIT2.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/Migrations/20201211090655_INIT2.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/PetSupport.Infrastructure.Data.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/Seed/FakeData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/Seed/FakeDataModelBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Tests/PetSupport.Tests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.Tests/UnitTest1.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/PetSupport.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Controllers/WeatherForecastController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/InDtos/CreateBookingMessageDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/InDtos/CreatePetsitterDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/InDtos/FullPetsitterDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/InDtos/RequestPetSitterServiceDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/InDtos/UpdatePetsitterDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/BookingMessageBriefDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/BookingMessageFullDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/ClientDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/FindPetSitterLongFormDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/FindPetSitterShortFormDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/PetSitterServiceDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/PetsittersDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Dtos/OutDtos/ServiceDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Petsupport.API2.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/Startup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/WeatherForecast.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Petsupport.API2/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/Backgrounds/bg-confirmation.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/Backgrounds/bg-contact-form.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/Backgrounds/bg-registration.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/MainPage/heart-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/MainPage/main-photo2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/MainPage/main-photo4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/MainPage/main-photo5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/assets/MainPage/sun.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app.component.html" afterDir="false" />
+<<<<<<< Updated upstream
+      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/services-part/services-part.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/services-part/services-part.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/services-part/services-part.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/main-page/main-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/main-page/main-page.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/main-page/main-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/services/services.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/services/services.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/services/services.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/services/services.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/services/services.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/services/services.component.ts" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_12_2020_16_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_12_2020_16_49__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/PetSupport.Core/PetSupport.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/PetSupport.Core/PetSupport.Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/PetSupport.Infrastructure.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/PetSupport.Infrastructure.Data/PetSupport.Infrastructure.Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/PetSupport.Tests/PetSupport.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/PetSupport.Tests/PetSupport.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Petsupport.API2/PetSupport.API2.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Petsupport.API2/PetSupport.API2.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-calendar/petsitter-calendar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-calendar/petsitter-calendar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-calendar/petsitter-calendar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-calendar/petsitter-calendar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-services/petsitter-services.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/pages/petsitters/petsitter/petsitter-services/petsitter-services.component.html" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -181,15 +150,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1m3QNlArg17X2guZAJ4e3DNxIV0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/register-form/services" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -197,8 +170,17 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Users\jablo\OneDrive\Desktop\PetSupport\web\AngularSPA\PetSupport\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jablo\OneDrive\Desktop\PetSupport\web\AngularSPA\PetSupport\src\app\forms\register-form\services" />
+      <recent name="C:\Users\jablo\OneDrive\Desktop\PetSupport\web\AngularSPA\PetSupport\src\app\forms\services-part" />
+      <recent name="C:\Users\jablo\OneDrive\Desktop\PetSupport\web\AngularSPA\PetSupport\src\assets\LoginIcons" />
+      <recent name="C:\Users\jablo\OneDrive\Desktop\PetSupport\web\AngularSPA\PetSupport\src\assets\LoginIcon" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -211,6 +193,23 @@
       <workItem from="1608719757946" duration="17611000" />
       <workItem from="1608740532422" duration="1017000" />
       <workItem from="1608741561661" duration="9132000" />
+      <workItem from="1609071189400" duration="7925000" />
+      <workItem from="1609083566201" duration="1360000" />
+      <workItem from="1609187874865" duration="1189000" />
+      <workItem from="1609228565793" duration="14827000" />
+      <workItem from="1609317143534" duration="1197000" />
+      <workItem from="1609505391353" duration="2192000" />
+      <workItem from="1609751504051" duration="1785000" />
+      <workItem from="1609758251796" duration="599000" />
+      <workItem from="1609796063533" duration="651000" />
+      <workItem from="1609835959290" duration="532000" />
+      <workItem from="1609922745858" duration="2779000" />
+      <workItem from="1610121029177" duration="11000" />
+      <workItem from="1610121084788" duration="642000" />
+      <workItem from="1610192715058" duration="2180000" />
+      <workItem from="1610206261758" duration="7164000" />
+      <workItem from="1610271800801" duration="11911000" />
+      <workItem from="1611171874665" duration="2244000" />
     </task>
     <servers />
   </component>
@@ -229,18 +228,17 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="395" y="90" key="#Inspections" timestamp="1608732605787">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="395" y="90" key="#Inspections/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1608732605787" />
-    <state x="147" y="64" key="MergeDialog" timestamp="1608738590365">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="147" y="64" key="MergeDialog/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1608738590365" />
-    <state x="438" y="125" key="git4idea.branch.GitSmartOperationDialog" timestamp="1608738572394">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="438" y="125" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824/-1920.6.1920.1040@0.0.1536.824" timestamp="1608738572394" />
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/web/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.ts</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
