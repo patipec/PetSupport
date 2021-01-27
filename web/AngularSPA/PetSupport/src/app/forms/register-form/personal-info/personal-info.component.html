@@ -5,119 +5,26 @@
                 <div class="card-title">Personal Informations</div>
                 <hr>
                 <br><br>
-                <div class="width-100 center">
-                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-                    <div class="title-name">
-                        Birthday
-                    </div>
-                    <mat-form-field class="width-100 center">
-                        <mat-label>Birthday</mat-label>
-                        <input matInput
-                        type="text"
-                        id="birthday"
-                        name="birthday"
-                        formControlName="birthday">
-                        <span *ngIf="!signupForm.get('birthday').valid && signupForm.get('birthday').touched"
-                        class="help-block">Please enter a valid Street</span>
-                    </mat-form-field>
+                <app-pi-form (onFormChanged)="onFormChange($event)" (formValid)="onStatusChange($event)"></app-pi-form>
                     <br>
-                    <div class="label">
-                    <div class="title-name">
-                        Short title about you
-                        <div class="title-info">
-                            Make your headline short, descriptive and genuine. This will be your first introduction to pet owners
-                            when they search for service.
-                        </div>
-                    </div></div>
-                    <mat-form-field class="width-100">
-                        <mat-label>Short title about you</mat-label>
-                        <input matInput
-                        type="text"
-                        id="title"
-                        name="title"
-                        formControlName="title">
-                        <span *ngIf="!signupForm.get('title').valid && signupForm.get('title').touched"
-                        class="help-block">Please enter a valid value</span>
-                    </mat-form-field>
-                    <br>
-                    <div class="title-name">
-                        Experience
-                        <div class="title-info">
-                            Describe any past experiences you've had with pets, Lead with what sets you apart from other
-                            sitters. Do you have any special skills?
-                        </div>
-                    </div>
-                    <mat-form-field class="width-100">
-                        <mat-label>Experience</mat-label>
-                        <input matInput
-                        type="text"
-                        id="experience"
-                        name="experience"
-                        formControlName="experience">
-                        <span *ngIf="!signupForm.get('experience').valid && signupForm.get('experience').touched"
-                        class="help-block">Please enter a valid value</span>
-                    </mat-form-field>
-                    <br>
-                    <div class="title-name">
-                        Availability
-                        <div class="title-info">
-                            Let pet owners know about your availability for each service you want to provide. For example do
-                            you work full time or part time etc.
-                        </div>
-                    </div>
-                    <mat-form-field class="width-100">
-                        <mat-label>Availability</mat-label>
-                        <input matInput
-                        id="availability"
-                        name="availability"
-                        formControlName="availability">
-                        <span *ngIf="!signupForm.get('availability').valid && signupForm.get('availability').touched"
-                        class="help-block">Please enter a valid value</span>
-                    </mat-form-field>
-                    <br>
-                    <div class="title-name">
-                        Environment
-                        <div class="title-info">
-                            Describe the environment where you will provide home services as well as amentities that set you
-                            apart such as large yards, daily runs, nearby dog parks etc.
-                        </div>
-                    </div>
-                    <mat-form-field class="width-100">
-                        <mat-label>Environment</mat-label>
-                        <input matInput
-                        type="text"
-                        id="environment"
-                        name="environment"
-                        formControlName="environment">
-                        <span *ngIf="!signupForm.get('environment').valid && signupForm.get('environment').touched"
-                        class="help-block">Please enter a valid value</span>
-                    </mat-form-field>
-
-
-                    <!-- <mat-form-field>
-                        <app-upload-photos formControlName="image" [progress]="progress"></app-upload-photos>
-                    </mat-form-field> -->
-
-
-                    <br>
-                    <span *ngIf="!signupForm.valid && signupForm.touched"></span>
                     <mat-card-actions>
                         <a mat-raised-button
                         class="back-btn"
                         routerLink="/register-form/services"
                         >Back</a>
+
                         <button mat-raised-button
-                        class="continue-btn"
-                        type="submit"
-                        color="primary"
-                        routerLink="/register-form/end-of-registration"
-                        (click)="onSubmit()"
+                            [disabled]="!isFormValid"
+                            class="continue-btn"
+                            type="submit"
+                            color="primary"
+                            routerLink="/register-form/end-of-registration"
+                            (click)="onSubmit()"
                         >Save</button>
                      </mat-card-actions>
-                </form>
-              </div>
+
             </div>
         </mat-card-content>
     </mat-card>
 </section>
-{{signupForm.valid}}
+

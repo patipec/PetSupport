@@ -8,39 +8,16 @@ import {RegistrationService} from '../registration.service';
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
-export class ServicesComponent implements OnInit {
+export class ServicesComponent {
 
   public signupForm: FormGroup;
 
-  constructor(private fb: FormBuilder,
-              private http: HttpClient,
+  constructor(private http: HttpClient,
               private registrationService: RegistrationService) {
   }
-  ngOnInit(): void {
-    this.signupForm = this.fb.group({
-      service: 'boarding',
-      petPreferences: this.fb.group( {
-        dog: false,
-        cat: false,
-        other: false
-      })
-      });
-    }
-    onExtraServiceClick(service: string): void{
-      const extra = this.signupForm.get(`petPreferences.${service}`);
-      extra.setValue(!extra.value);
-      const elem = document.getElementById(`_${service}`);
-      if (extra.value){
-        elem.style.backgroundColor = 'rgb(254, 203, 64)';
-      }else{
-        elem.style.backgroundColor = 'white';
-      }
-    }
 
   onSubmit(): void {
-
     this.registrationService.setServices(this.signupForm.value);
-
   }
 }
 
