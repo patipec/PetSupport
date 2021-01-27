@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -33,8 +35,19 @@ namespace Petsupport.API2.Controllers
             {
                 var petsitersFillteredByQuery = await _petsitterRepository
                     .GetAllPetsitersBySearchPatametersAsync(petsittersSearchParameters);
+
+                var listPetsitterDto = _mapper.Map<PetsitterDTO[]>(petsitersFillteredByQuery);
+
+                foreach (var petsitter in listPetsitterDto)
+                {
+                    petsitter.Price = petsitersFillteredByQuery
+                        .FirstOrDefault(p => p.Id == petsitter.Id)
+                        .Services
+                        .FirstOrDefault(s => (int) s.Service.Name == petsittersSearchParameters.ServiceId)
+                        .Price;
+                }
                 
-                return Ok(_mapper.Map<PetsitterDTO[]>(petsitersFillteredByQuery));
+                return Ok(listPetsitterDto);
             }
             catch (Exception ex)
             {
