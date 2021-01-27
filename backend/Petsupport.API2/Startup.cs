@@ -1,3 +1,6 @@
+
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Identity.Web;
 using System.Reflection;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
@@ -7,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using PetSupport.API2.AuthorizationPolicies;
 using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
 using PetSupport.Infrastructure.Data.Repositories;
@@ -27,14 +31,6 @@ namespace Petsupport.API2
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
-                    builder =>
-                    {
-                        builder.WithOrigins("http://localhost:4200");
-                    });
-            });
             services.AddControllers();
 
             services.AddSwaggerGen(c =>
@@ -47,6 +43,34 @@ namespace Petsupport.API2
                         options=>options.MigrationsAssembly("Petsupport.API2"))
                     .EnableSensitiveDataLogging()
                     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+          
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddMicrosoftIdentityWebApi(
+                    options =>
+                    {
+                        Configuration.Bind("AzureAdB2C", options);
+
+                        options.TokenValidationParameters.NameClaimType = "name";
+                    },
+                    options => { Configuration.Bind("AzureAdB2C", options); });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(
+                    "CustomerScope",
+                    policy => policy.Requirements.Add(new ScopesRequirement("Customer")));
+                options.AddPolicy(
+                    "SitterScope",
+                    policy => policy.Requirements.Add(new ScopesRequirement("Sitter")));
+            });
+
+            services.AddCors(
+                options =>
+                {
+                    options.AddPolicy(
+                        "CorsDevelopmentPolicy",
+                        builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                });
 
             services.AddTransient<IPetsitterRepository, PetsitterRepository>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
@@ -63,11 +87,13 @@ namespace Petsupport.API2
             }
 
             app.UseHttpsRedirection();
-            app.UseCors(MyAllowSpecificOrigins);
+
+            app.UseCors(env.IsDevelopment() ? "CorsDevelopmentPolicy" : "CorsReleasePolicy");
             app.UseRouting();
+
             app.UseAuthentication();
             app.UseAuthorization();
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
