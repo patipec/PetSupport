@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -10,27 +10,37 @@ import { RegistrationService } from '../registration.service';
   templateUrl: './address.component.html',
   styleUrls: ['./address.component.css']
 })
-export class AddressComponent {
+export class AddressComponent implements OnInit{
 
+  GOOGLE_API = 'https://maps.googleapis.com/maps/api/geocode/json?';
+  WOJTEK_GOOGLE_KEY = '';
 
-    signupForm = this.fb.group({
+  lat: number;
+  lng: number;
+
+  signupForm = this.fb.group({
 
           street: ['waww', [Validators.required, Validators.maxLength(25), Validators.minLength(3)]],
-          housenr: ['1/2 a', [Validators.required, Validators.maxLength(10),
-                    Validators.pattern('^[a-zA-Z0-9_.+-]+/[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
+          housenr: ['1/2 a', [Validators.required, Validators.maxLength(10)]],
           city: ['asasasaa', [Validators.required, Validators.maxLength(30), Validators.minLength(3)]],
           zipcode: ['12345', Validators.required, this.forbiddenZipCode],
           country: ['Poland', [Validators.required, Validators.maxLength(30), Validators.minLength(3)]],
-          coordinates: [[52.18263433278265, 20.98678341428663]]
+          coordinates: [[0, 0]]
 
     });
 
     constructor(private http: HttpClient,
                 private registrationService: RegistrationService,
-                private fb: FormBuilder) {}
+                private fb: FormBuilder) {
+    }
+
+     ngOnInit(): void {
+       this.getUserCurrentPostion();
+    }
 
 
-    forbiddenZipCode(control: FormControl): Promise<any> | Observable<any> {
+
+  forbiddenZipCode(control: FormControl): Promise<any> | Observable<any> {
       const promise = new Promise<any>((resolve, reject) => {
         setTimeout(() => {
           if (control.value === '00-000') {
@@ -48,8 +58,38 @@ export class AddressComponent {
       return promise;
     }
 
+    getUserCurrentPostion(): void{
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+      });
+    }
+
+    convertAddressToQuery(): string {
+      const zip = this.signupForm.get('zipcode').value;
+      const street = this.signupForm.get('street').value;
+      const housenr = this.signupForm.get('housenr').value;
+      const city = this.signupForm.get('city').value;
+      // console.log(zip);
+      // console.log(street);
+      // console.log(housenr);
+      // console.log(city);
+      // console.log(`address=${zip}+${street}+${housenr},+${city}`);
+      return `address=${zip}+${street}+${housenr},+${city}`;
+    // zip + street + city + state
+    }
+
+    convertAddressToCords(): void {
+      this.http.get(`${this.GOOGLE_API}${this.convertAddressToQuery()}${this.WOJTEK_GOOGLE_KEY}`).subscribe((res: any) => {
+        console.log(res);
+      });
+    }
+    // patchCoordsOnSubmit(): void{
+    //
+    // }
     onSubmit(): void {
-      console.log(this.signupForm);
+      // this.convertAddressToQuery();
+      console.log('to tutaj', this.convertAddressToCords());
       //this.registrationService.setAddress(this.signupForm.value);
       //this.registrationService.saveUser();
       if (this.signupForm.status === 'VALID'){

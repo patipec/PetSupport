@@ -21,7 +21,7 @@ export class PetsittersListComponent implements OnInit {
 
   ngOnInit(): void {
     // What should we do if user access /petsitter without mainPage?
-    const mockData: FindPetsitterShortForm = {city: 'Warsaw', serviceId: '4'};
+    const mockData: FindPetsitterShortForm = {city: 'Warsaw', serviceId: '1'};
     const formData = this.petSitterFilterData ?? mockData;
 
     this.petsitterService.getPetsitters(formData).subscribe((data) => {
