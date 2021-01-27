@@ -15,7 +15,9 @@ export class PetsittersListComponent implements OnInit {
   public petsitterList: Petsitter[];
   public petSitterFilterData: FindPetsitterShortForm | null;
 
-  constructor(private petsitterService: PetsittersService, private route: ActivatedRoute, private router: Router) {
+  constructor(private petsitterService: PetsittersService,
+              private route: ActivatedRoute,
+              private router: Router) {
     this.petSitterFilterData = this.router.getCurrentNavigation().extras.state as FindPetsitterShortForm;
   }
 
@@ -25,6 +27,7 @@ export class PetsittersListComponent implements OnInit {
     const formData = this.petSitterFilterData ?? mockData;
 
     this.petsitterService.getPetsitters(formData).subscribe((data) => {
+      console.log(data);
       this.petsitterList = data;
     });
   }
