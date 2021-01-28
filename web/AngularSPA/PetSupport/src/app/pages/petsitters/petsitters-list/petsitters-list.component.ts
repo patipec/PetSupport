@@ -15,16 +15,19 @@ export class PetsittersListComponent implements OnInit {
   public petsitterList: Petsitter[];
   public petSitterFilterData: FindPetsitterShortForm | null;
 
-  constructor(private petsitterService: PetsittersService, private route: ActivatedRoute, private router: Router) {
+  constructor(private petsitterService: PetsittersService,
+              private route: ActivatedRoute,
+              private router: Router) {
     this.petSitterFilterData = this.router.getCurrentNavigation().extras.state as FindPetsitterShortForm;
   }
 
   ngOnInit(): void {
     // What should we do if user access /petsitter without mainPage?
-    const mockData: FindPetsitterShortForm = {city: 'Warsaw', serviceId: '4'};
+    const mockData: FindPetsitterShortForm = {city: 'Warsaw', serviceId: '1'};
     const formData = this.petSitterFilterData ?? mockData;
 
     this.petsitterService.getPetsitters(formData).subscribe((data) => {
+      console.log(data);
       this.petsitterList = data;
     });
   }

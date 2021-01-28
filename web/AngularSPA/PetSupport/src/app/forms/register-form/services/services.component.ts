@@ -1,42 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { RegistrationService } from '../registration.service';
+import { IPetsitterServices } from '../IRegistration-data';
 
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
-export class ServicesComponent implements OnInit {
-
-  public services: FormGroup;
-
-  constructor(private fb: FormBuilder,
-              private http: HttpClient) {
+export class ServicesComponent {
+  petsitterServices: IPetsitterServices;
+  isFormValid: boolean;
+  constructor(private http: HttpClient,
+              private registrationService: RegistrationService) {
   }
-  ngOnInit(): void {
-    this.services = this.fb.group({
-      service: 'boarding',
-      extraServices: this.fb.group( {
-        dog: false,
-        cat: false,
-        other: false
-      })
-      });
-    }
-    onExtraServiceClick(service: string): void{
-      const extra = this.services.get(`extraServices.${service}`);
-      extra.setValue(!extra.value);
-      const elem = document.getElementById(`_${service}`);
-      if (extra.value){
-        elem.style.backgroundColor = 'rgb(254, 203, 64)';
-      }else{
-        elem.style.backgroundColor = 'white';
-      }
-    }
+
+  onFormChange(personalServiceInfo: IPetsitterServices): void {
+    this.petsitterServices = personalServiceInfo;
+  }
+
+  onStatusChange(status: boolean): void {
+    this.isFormValid = status;
+  }
 
   onSubmit(): void {
-
+    console.log(this.petsitterServices);
+    console.log(this.isFormValid);
+    if (this.isFormValid) {
+      this.registrationService.setServices(this.petsitterServices);
+    }
   }
 }
 

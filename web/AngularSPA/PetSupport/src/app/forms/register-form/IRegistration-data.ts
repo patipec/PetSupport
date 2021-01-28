@@ -5,7 +5,7 @@ export interface IBasicInfo {
     email: string;
     phone: string;
     password: string;
-    repeatPassword: string;
+    confirmPassword: string;
 }
 export interface IAddress {
     street: string;
@@ -13,6 +13,7 @@ export interface IAddress {
     city: string;
     zipcode: string;
     country: string;
+    coordinates: [];
 }
 export interface IPersonalInfo {
     birthday: string;
@@ -30,7 +31,7 @@ export interface IRegistrationForm {
 
 export interface IPetsitterServices {
   service: string;
-  extraServices: {
+  petPreferences: {
     dog: string | null;
     cat: string | null;
     other: string | null;
