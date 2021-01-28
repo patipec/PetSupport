@@ -1,15 +1,7 @@
-<div class="top-container">
-  <h3>Services</h3>
-  <hr><br><br>
-  <h5>Tell us what kind of services you want provide</h5>
-</div>
 
-<div class="container">
-  <app-services-part [services]="signupForm"></app-services-part>
-  <h3>Pet preferences</h3>
-  <h5>What kind of animal you are able to take?</h5>
 
-  <app-s-form></app-s-form>
+  <app-s-form (onFormChanged)="onFormChange($event)"
+              (formValid)="onStatusChange($event)"></app-s-form>
 
   <div class="buttons">
 

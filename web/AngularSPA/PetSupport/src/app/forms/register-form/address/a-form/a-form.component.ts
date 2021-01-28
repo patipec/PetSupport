@@ -30,9 +30,8 @@ export class AFormComponent implements OnInit {
       Validators.pattern('^[a-zA-Z0-9_.+-]+/[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
     city: ['asasasaa', [Validators.required, Validators.maxLength(30), Validators.minLength(3)]],
     zipcode: ['12345', Validators.required, this.forbiddenZipCode],
-    country: ['Poland', [Validators.required, Validators.maxLength(30), Validators.minLength(3)]]
-
-
+    country: ['Poland', [Validators.required, Validators.maxLength(30), Validators.minLength(3)]],
+    coordinates: []
   });
 
   constructor(private http: HttpClient,

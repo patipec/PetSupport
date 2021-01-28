@@ -31,6 +31,11 @@ export class SFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.signupForm.valueChanges.subscribe(value => {
+      this.onFormChanged.emit(value);
+    });
+    this.signupForm.statusChanges.subscribe(
+      status => this.formValid.emit(status === 'VALID'));
   }
   onExtraServiceClick(service: string): void{
     const extra = this.signupForm.get(`petPreferences.${service}`);
