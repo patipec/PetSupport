@@ -1,3 +1,4 @@
+using System.Linq;
 using AutoMapper;
 using Petsupport.API2.Dtos.InDtos;
 using Petsupport.API2.Dtos.OutDtos;
@@ -21,8 +22,6 @@ namespace Petsupport.API2.Profiles
             this.CreateMap<Service, ServiceDTO>()
                 .ReverseMap();
             
-            this.CreateMap<PetsitterService, PetSitterServiceDTO>()
-                .ReverseMap();
             
             this.CreateMap<Petsitter, FullPetsitterDTO>()
                 .ReverseMap();

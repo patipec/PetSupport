@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Bogus;
+using Bogus.Extensions;
 using PetSupport.Core.Entities;
 using PetSupport.Core.Enums;
 
@@ -10,9 +11,8 @@ namespace PetSupport.Infrastructure.Data.Seed
     {
         private const int NumberOfFakeDataToGenerate = 100;
         public List<Client> FakeClients { get; }
-        public List<Petsitter> FakePetsitters { get; }
-        public List<Service> FakeServices { get; }
-        public List<PetsitterService> FakePetsitterServices { get; }
+        public List<Service> FakeServices { get; protected set; } = new List<Service>();
+        public List<Petsitter> FakePetsitters { get; protected set; } = new List<Petsitter>();
         public List<BookingMessage> FakeBookingMessages { get; }
 
         public FakeData()
@@ -29,15 +29,15 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(c => c.PhoneNumber, f => f.Person.Phone)
                 .RuleFor(c => c.AzureId, f => Guid.NewGuid());
             FakeClients = clientFaker.Generate(NumberOfFakeDataToGenerate);
-
-
+            
+            
             var serviceId = 1;
             var serviceFaker = new Faker<Service>()
                 .RuleFor(s => s.Id, f => serviceId++)
                 .RuleFor(s => s.Name, f => f.PickRandom<ServiceType>())
-                .RuleFor(s => s.Unit, f => f.PickRandom<Unit>());
-            FakeServices = serviceFaker.Generate(NumberOfFakeDataToGenerate);
-            
+                .RuleFor(s => s.Unit, f => f.PickRandom<Unit>())
+                .RuleFor(p => p.Price, f => double.Parse(f.Commerce.Price(min: 10, max: 50, 0)));
+
             
             // Petsitter and Client entity inherit for user class so they have the same column with Id on the data table.
             var petsitterId = clientId;
@@ -59,18 +59,18 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(p => p.AvailabilityFrom, f => f.Date.Recent())
                 .RuleFor(p => p.AvailabilityTo, f => f.Date.Future())
                 .RuleFor(p => p.Title, f => f.Lorem.Sentence(2))
-                .RuleFor(p => p.Environment, f => f.Lorem.Sentence(5));
-            FakePetsitters = petsitterFaker.Generate(NumberOfFakeDataToGenerate);
+                .RuleFor(p => p.Environment, f => f.Lorem.Sentence(5))
+                .RuleFor(p => p.Services, (f, p) =>
+                {
+                    serviceFaker.RuleFor(s => s.PetsitterId, _ => p.Id);
+                    var fakeServices = serviceFaker.GenerateBetween(1, 4);
+                    FakeServices.AddRange(fakeServices);
+                    
+                    return null; // Petsitter.Services is a getter only. The return value has no impact.
+                });
+            var fakePetsitters = petsitterFaker.Generate(NumberOfFakeDataToGenerate);
+            FakePetsitters.AddRange(fakePetsitters);
 
-            
-            var petsitterserviceId = 1;
-            var petsitterserviceFaker = new Faker<PetsitterService>()
-                .RuleFor(p => p.Id, f => petsitterserviceId++)
-                .RuleFor(p => p.PetsitterId, f => f.PickRandom(FakePetsitters).Id)
-                .RuleFor(p => p.ServiceId, f => f.PickRandom(FakeServices).Id)
-                .RuleFor(p => p.Price, f => double.Parse(f.Commerce.Price(min:10, max:50,0)));
-            FakePetsitterServices = petsitterserviceFaker.Generate(NumberOfFakeDataToGenerate*3);
-            
             
             var bookingMessageId = 1;
             var bookingMessageFaker = new Faker<BookingMessage>()

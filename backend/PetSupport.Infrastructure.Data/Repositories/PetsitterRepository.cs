@@ -41,10 +41,9 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 var query = _context.Petsitters
                     .AsQueryable()
                     .Include(p => p.Services)
-                    .ThenInclude(s => s.Service)
                     .Where(p => p.City == conditionCity)
                     .Where(p => p.Services
-                        .Any(s => (int) s.Service.Name == petsittersSearchParameters.ServiceId))
+                        .Any(s => (int) s.Name == petsittersSearchParameters.ServiceId))
                     .ToListAsync();
 
                 return await query;
@@ -58,10 +57,9 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 var query = _context.Petsitters
                     .AsQueryable()
                     .Include(p => p.Services)
-                    .ThenInclude(s => s.Service)
                     .Where(p => p.City.Contains(conditionCity))
                     .Where(p => p.Services
-                        .Any(s => (int) s.Service.Name == petsittersSearchParameters.ServiceId))
+                        .Any(s => (int) s.Name == petsittersSearchParameters.ServiceId))
                     .Where(p => p.Services
                         .Any(s => s.Price >= petsittersSearchParameters.MinPrice))
                     .Where(p => p.Services
@@ -81,11 +79,10 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 var query = _context.Petsitters
                     .AsQueryable()
                     .Include(p => p.Services)
-                    .ThenInclude(s => s.Service)
                     .Where(p => p.City == conditionCity)
                     .Where(p => p.Street.Contains(conditionStreet))
                     .Where(p => p.Services
-                        .Any(s => (int) s.Service.Name == petsittersSearchParameters.ServiceId))
+                        .Any(s => (int) s.Name == petsittersSearchParameters.ServiceId))
                     .ToListAsync();
 
                 return await query;
@@ -102,11 +99,11 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 var query = _context.Petsitters
                     .AsQueryable()
                     .Include(p => p.Services)
-                    .ThenInclude(s => s.Service)
+
                     .Where(p => p.City.Contains(conditionCity))
                     .Where(p => p.Street.Contains(conditionStreet))
                     .Where(p => p.Services
-                        .Any(s => (int) s.Service.Name == petsittersSearchParameters.ServiceId))
+                        .Any(s => (int) s.Name == petsittersSearchParameters.ServiceId))
                     .Where(p => p.Services
                         .Any(s => s.Price >= petsittersSearchParameters.MinPrice))
                     .Where(p => p.Services
