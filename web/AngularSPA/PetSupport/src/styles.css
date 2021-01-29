@@ -3,7 +3,13 @@
 html, body {
   height: 100%;
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.petsitter-list-container[_ngcontent-ajd-c164] {
+  overflow: hidden !important;
+}
 
 .svg-icon.search-icon {
   display: inline-block;
@@ -30,4 +36,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: #0B814A;
 }
 
+.ngx-slider .ngx-slider-pointer {
+  cursor: pointer;
+  width: 20px !important;
+  height: 20px !important;
+  top: -7px !important;
+  background-color: rgb(66, 66, 66) !important;
+}
+
+.ngx-slider .ngx-slider-pointer:after {
+  position: absolute;
+  top: 6px !important;
+  left: 6px !important;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.ngx-slider .ngx-slider-selection {
+  background: #0B814A !important;
+}
+
+.ngx-slider .ngx-slider-bubble {
+  color: #000000 !important;
+  font-size: 13px !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  
+}
+
+.mat-form-field-infix {
+  width: 500px !important;
+}
 
