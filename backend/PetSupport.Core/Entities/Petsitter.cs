@@ -32,6 +32,6 @@ namespace PetSupport.Core.Entities
 
         public string Environment { get; set; }
         
-        public List<PetsitterService> Services { get; set; }
+        public List<Service> Services { get; set; }
     }
 }
