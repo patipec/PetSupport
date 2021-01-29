@@ -3,12 +3,15 @@
 .container{
   max-width: 100%;
   height: 100vh;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Roboto Slab', serif;
+  font-weight: 500;
   display: flex;
   justify-content: center;
   padding: 20px;
-  background-color: rgb(254, 203, 64);
+  padding-top: 0px !important;
+  padding-bottom: 15px;
+  background-color: #ffd04e;
+  color: rgb(59, 59, 59);
+  margin: 0px;
 }
 .form-check-label input{
   all:unset;
@@ -61,7 +64,7 @@ mat-form-field {
 
 #location{
   margin-top:10px;
-  width: 90px;
+  width: 115px;
   padding: 5px;
 }
 .numberOfPets{
@@ -73,25 +76,28 @@ mat-form-field {
 }
 select{
   margin-top:10px;
-  width: 100px;
+  width: 120px;
   padding: 5px;
-  border: solid 1px lightblue;
+  border: solid 1px rgb(255, 255, 255);
   font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto Slab', serif;
+  border-radius: 50px;
 }
 .rateRange{
   max-width:250px;
 }
 .rate-label{
-  text-align: center;
+  text-align: left;
 }
 
 /*Input styling*/
 input{
-  width: 100px;
-  border: solid 1px lightblue;
+  width: 120px;
+  border: solid 1px rgb(255, 255, 255);
   font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto Slab', serif;
+  
+  border-radius: 50px;
 }
 label{
   margin-top:10px;
@@ -113,15 +119,42 @@ button{
 .reset{
   background-color: rgb(254, 203, 64);
   border: solid 2px white;
-  margin-right: 10px;
+  color: black;
+  font-weight:500;
+  font-size: 13px;
+  width: 140px;
+  -moz-border-radius: 15px;
+  border-radius: 25px;
+  padding: 3px 0 ;
+  margin-left: 13px !important;
+  margin-right: 13px !important;
 }
 .apply{
-  background-color: darkgreen;
+  background-color:#0B814A;
   color: white;
+  font-weight:500;
+  font-size: 13px;
+  width: 140px;
+  -moz-border-radius: 15px;
+  border-radius: 25px;
+  padding: 3px 0 ;
+  margin-left: 13px !important;
+  margin-right: 13px !important;
 }
 button:hover{
-  background-color: green;
+  background-color: #0c4d42;
 }
 
+.ngx-slider .ngx-slider-pointer {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  top: -14px;
+  background-color: black !important;
+  z-index: 3;
+  border-radius: 16px;
+}
 
-
+.buttons {
+  padding-top: 15px;
+}

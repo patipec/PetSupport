@@ -2,7 +2,7 @@
   <form [formGroup]="longFormSettings" (ngSubmit)="onSubmit()">
     <div class="priceRange" formGroupName="priceRange">
 
-      <span class="material-icons">local_offer</span><b>Price Range</b><br>
+      <span class="material-icons ">local_offer</span><b>Price Range</b><br>
       <app-slider [currSign]="setSignForSlider('$')" [floor]="0" [ceil]="1000"
                   [minValue]="30" [maxValue]="400"
                   (getInfo)="onSliderPriceChange($event)">
@@ -84,8 +84,10 @@
       </select>
     </div>
 
-    <button class="reset">RESET FILTERS</button>
-    <button class="apply">APPLY FILTERS</button>
+    <div class="buttons">
+    <button mat-raised-button class="apply">APPLY FILTERS</button>
+    <button mat-raised-button class="reset">RESET FILTERS</button>
+    </div>
   </form>
 </div>
 <!--<br>Dirty: {{ longFormSettings.dirty }}-->

@@ -13,21 +13,13 @@ section.main-container {
     justify-content: center;
     max-width: 1450px;
     margin: 0 auto;
-    padding-top: 120px;
+    padding-top: 100px;
     padding-bottom: 20px;
 }
-
-.main-container-holder-about {
-    max-width: 450px;
-    margin: 0 auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: white;
-}
-
 
 section.main-container .main-text {
     font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-align: center;
     color: white;
@@ -39,7 +31,8 @@ section.main-container .main-description {
     margin-top: 20px;
     margin-bottom: 40px;
     font-size: 20px;
-    color: #ccc;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
 }
 /* Main container ^ */
 

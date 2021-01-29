@@ -63,7 +63,7 @@ mat-form-field {
 }
 
 input.ng-invalid.ng-touched {
-    border: 1px solid red;
+    border: none;
 }
 
 .width-50{width: 49%;}
@@ -128,9 +128,7 @@ hr {
     text-align: center;
 }
 
-input.ng-invalid.ng-touched {
-    border: 1px solid red;
-}
+
 
 .width-50{width: 49%;}
 .ml-1{margin-left: 1%;}

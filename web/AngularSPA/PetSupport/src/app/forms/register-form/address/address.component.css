@@ -1,5 +1,5 @@
 .example-radio-button{margin-left: 7px;}
-mat-grid-tile {
+mat-card {
   background:#fafafa;
 }
 
@@ -27,9 +27,6 @@ mat-form-field input {
   width: 80%;
 }
 
-mat-card {
-  box-shadow: none !important;
-}
 
 /*
 mat-form-field {

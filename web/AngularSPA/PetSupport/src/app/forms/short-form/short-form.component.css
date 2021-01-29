@@ -10,14 +10,14 @@ mat-form-field{
 }
 
 mat-label{
-  color:darkgreen;
+  color:#0B814A;
   font-weight: bold;
   font-size: 12px;
 }
 
 .container{
   padding: 0px;
-  margin: 120px auto 0px;
+  margin: 20px auto 0px;
   display: flex;
   max-width: 890px;
   justify-content: center;
@@ -44,8 +44,8 @@ mat-label{
 /*}*/
 
 button img{
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   justify-content: center;
 }
 
@@ -54,9 +54,9 @@ button {
   left: 40px;
   width:  60px;
   height: 60px;
-  border: solid 1px slategray;
+  border: solid 1px  #facb49;
   border-radius: 50%;
-  background-color: rgb(254, 203, 64);
+  background-color: #facb49;
   margin: auto 20px auto 20px;
   /*left: 120px;*/
 }
@@ -86,10 +86,11 @@ button {
   margin:auto;
   background-color: white;
   height: 70px;
+  opacity: 95%;
 }
 
 label{
-  color:darkgreen;
+  color:#0B814A;
   font-weight: bold;
 }
 
@@ -104,7 +105,7 @@ row:last-child{
   padding-left: 10px;
 }
 button:hover{
-  background-color: orange;
+  background-color:#facb49;
 }
 
 label div.form-check-label input{

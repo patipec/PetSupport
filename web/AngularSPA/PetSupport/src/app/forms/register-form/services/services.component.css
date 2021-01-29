@@ -94,3 +94,7 @@ label div.form-check-label input{
 .buttons{
   margin-bottom: 100px;
 }
+
+mat-card {
+  box-shadow: none !important;
+}

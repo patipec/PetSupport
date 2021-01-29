@@ -6,7 +6,7 @@
 .petsitter-list-container {
   height: 100%;
   overflow: scroll;
-  width: 50vw;
+  width: 48vw;
   padding: 10px;
 }
 
@@ -15,7 +15,7 @@
   width: 30vw;
 }
 .long-form-container {
-  width: 20vw;
+  width: 22vw;
 }
 @media(max-width: 959px) {
   .page-container {

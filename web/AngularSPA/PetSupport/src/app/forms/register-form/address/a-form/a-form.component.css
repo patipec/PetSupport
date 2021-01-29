@@ -27,10 +27,6 @@ mat-form-field input {
   width: 80%;
 }
 
-mat-card {
-  box-shadow: none !important;
-}
-
 /*
 mat-form-field {
 
@@ -50,7 +46,7 @@ mat-form-field {
 }
 
 input.ng-invalid.ng-touched {
-    border: 1px solid red;
+    border: none;
 }
 
 .width-50{width: 49%;}
@@ -108,3 +104,4 @@ mat-card-actions {
 hr {
   width: 200px;
 }
+

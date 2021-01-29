@@ -17,10 +17,11 @@
   max-width: 80px;
   margin: 20px;
   display: inline-block;
-  border: slategray solid 1px;
   border-radius: 100px;
   background-color: white;
   justify-content: center;
+  border: 1px solid rgb(204, 204, 204);
+  opacity: 94%;
 }
 img{
   max-width: 60px;
@@ -34,7 +35,7 @@ button img{
   justify-content: center;
 }
 label{
-  color:darkgreen;
+  color:#0B814A;
   font-weight: bold;
 }
 
