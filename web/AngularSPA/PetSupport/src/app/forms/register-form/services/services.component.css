@@ -92,7 +92,9 @@ label div.form-check-label input{
   display: none;
 }
 .buttons{
-  margin-bottom: 100px;
+  margin: 0 auto 100px;
+  justify-content: center;
+  display: flex;
 }
 
 mat-card {

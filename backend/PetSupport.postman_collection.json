@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "caa322a7-3665-45fa-a190-294811639a1f",
+		"name": "PetSupport",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get authorization token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petssupport.b2clogin.com/petssupport.onmicrosoft.com/B2C_1_signupsignin/oauth2/v2.0/authorize?client_id=cf295c6a-7742-49be-9a02-e73c409168be&nonce=123&redirect_uri=https://jwt.ms&scope=https://petssupport.onmicrosoft.com/api/Customer openid offline_access&response_type=code",
+					"protocol": "https",
+					"host": [
+						"petssupport",
+						"b2clogin",
+						"com"
+					],
+					"path": [
+						"petssupport.onmicrosoft.com",
+						"B2C_1_signupsignin",
+						"oauth2",
+						"v2.0",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "cf295c6a-7742-49be-9a02-e73c409168be"
+						},
+						{
+							"key": "nonce",
+							"value": "123"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://jwt.ms"
+						},
+						{
+							"key": "scope",
+							"value": "https://petssupport.onmicrosoft.com/api/Customer openid offline_access"
+						},
+						{
+							"key": "response_type",
+							"value": "code"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get access token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Host",
+						"value": "petssupport.b2clogin.com",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "cf295c6a-7742-49be-9a02-e73c409168be",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "https://petssupport.onmicrosoft.com/api/Customer openid offline_access",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "eyJraWQiOiJjcGltY29yZV8wOTI1MjAxNSIsInZlciI6IjEuMCIsInppcCI6IkRlZmxhdGUiLCJzZXIiOiIxLjAifQ..P6vyPyBVbOK5SraJ.DPGzBLoZSDOx_d8_k7J9ij78HlS0k4awUj__XVztCk0cnvfuAYv1R2c00MK0p5LEX0GxXKZp7CnASglLlk8lZ9g3eY-aahj2l7aANOpPNQeG9DeAiiSxgoZhSgfW_kmb7ge92gru5Ubfsh4DXEixCrB9KI8YhYxLXI1TIiCrnNluKGUfgrteHxCBflindF5p4jAJP-40CExz-DKPHA1S9UeUSA-oQ1YqLfge1qxJI_sP3d4Ose-5jsmaFdU8RebXeN3wned-GkMSNVB5Un7ZIbM3ktneLw3LWIjM0KP9bvW9Ya4xY45kZUuu79w4K5Su98i17BiAvQ8QXcSgz8395uDNBCDgzaj2OmnWZzWv3mqmbiRHIY-mLKGP5f0dl0TsX3LaAnMK7o1k5lxSn1UXR9sw5jir10EY_iTON2wMI9RQq7wc3-Su7513_AxTZHegJkpzGasvtlyzkRMSp_FXaTb6zwNf4aY5MRKN6Bci4WVj1q_B72O4NESy0S4RPTaqvc1nmyDj13wRWY0ckGZ2hPZfcaFgggxZTJu4zc8JNOlBDxCRJK8-kOT1IdIk4DJWrMYLLateTlnTLEgJePBBNm-XWtJFo-5Mnpd44e04b71FQCSYG3EPAaaVQJWidhV1-pC4Nj5RTUZ6gXOCNfYypJDLGTdFzrCTf8hv7iCZadsvL-6u4CFZ6DfyWUSw5SBLhi_oeVqDfsW2caTShWx9xWtXSyLWv2nv2LDxyJ-TFDFy6ENbp5Y5pudtyf6Yd3INktJrkBno3mkzZSoGBcV7.wK5lYENWsPL9APIG87Gm9w",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://jwt.ms",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "-xU5bboO.R5D7lzO3r8K~Q2s6zIMzi-bJG",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://petssupport.b2clogin.com/petssupport.onmicrosoft.com/B2C_1_signupsignin/oauth2/v2.0/token",
+					"protocol": "https",
+					"host": [
+						"petssupport",
+						"b2clogin",
+						"com"
+					],
+					"path": [
+						"petssupport.onmicrosoft.com",
+						"B2C_1_signupsignin",
+						"oauth2",
+						"v2.0",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh access token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Host",
+						"value": "petssupport.b2clogin.com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "cf295c6a-7742-49be-9a02-e73c409168be",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "https://petssupport.onmicrosoft.com/api/Customer openid offline_access",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "eyJraWQiOiJjcGltY29yZV8wOTI1MjAxNSIsInZlciI6IjEuMCIsInppcCI6IkRlZmxhdGUiLCJzZXIiOiIxLjAifQ..8zmwsloWpQ0pBZBs.4Lp3OQQ3A-QCaa4ZJmUsGtaZiOP8omiHt7MfxAtmwLAeYWntjcA9g6PbyACQ_58EMCgPEewOFmizqEbTR1CuSYLag4d3EZ4TfbMHSXtjLFpnPQ3gERRMn6TXr2LWpNKm6ChMxaOHRNLSYwrDrUMKT0H7bDdD1qwsJFHeDKLhnCU-7mmeIXGKvTWgfsCb61cxw0YHIew8wQY83kRkWjlDRbDluF4M_1Ii91roRlEk_PxcyOvF8pSST7v0ioWQmfR_2c5m1kMokcgJQOxOpIAy3ICCQ-YB9eIzQWH2Al-_Dgseeown5dX2pSzR7IgUFdnu1ido6w07gnk_n3KAqHkG6xAmQQ73uw4i7PWV6SNmv-ZI9rnXYUXov-xPFxbrQjzHWJUur7vlWxxskajyVvUvx-nqZ74j-u6o1Ev81hCHwlIUD5CLKa4m6sHnX7ZELD99nYTAmxbXxtSjTVeMDGXs2zMG8wrxKesxSRjx5SE7QFIPb6XW8TbihaOdoPW4lmWPfoag01mMw2pyeBQj3odhv2SGJwCh6CSqbwsK8eeTqQ4cDz-eFT_-ZoavUES9tduIp7daiZ91bVRkQtLSx5kpLmOhntA4Wq9dvjbZzKr7y_EA6BqiucmxetP3XfDYjdV5ZbTygn830osSgMpRSGdcP2Bjhgv5XEyaoR7vkrdLTGloVNF2ahok3famgRkCiCjOe8OPCrSKkpOd1PISuHVVWezl7a_1RSobDKxDmGrtemV_K4WyJ9DjYZmIw5fp3mEq7Fz7MtYcCsncEh0C_IT0p1LZe70KnMe2Tg.f_z8CVa3ktXTqowgBvePZg",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "-xU5bboO.R5D7lzO3r8K~Q2s6zIMzi-bJG",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://petssupport.b2clogin.com/petssupport.onmicrosoft.com/B2C_1_signupsignin/oauth2/v2.0/token",
+					"protocol": "https",
+					"host": [
+						"petssupport",
+						"b2clogin",
+						"com"
+					],
+					"path": [
+						"petssupport.onmicrosoft.com",
+						"B2C_1_signupsignin",
+						"oauth2",
+						"v2.0",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petssupport.b2clogin.com/petssupport.onmicrosoft.com/B2C_1_signupsignin/oauth2/v2.0/logout?post_logout_redirect_uri=https://docs.microsoft.com/",
+					"protocol": "https",
+					"host": [
+						"petssupport",
+						"b2clogin",
+						"com"
+					],
+					"path": [
+						"petssupport.onmicrosoft.com",
+						"B2C_1_signupsignin",
+						"oauth2",
+						"v2.0",
+						"logout"
+					],
+					"query": [
+						{
+							"key": "post_logout_redirect_uri",
+							"value": "https://docs.microsoft.com/"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsifQ.eyJpc3MiOiJodHRwczovL3BldHNzdXBwb3J0LmIyY2xvZ2luLmNvbS9lNTc4MzYzZS05ZDYwLTQzYTctODlmNi0yYjJmYTlmZTY3NDYvdjIuMC8iLCJleHAiOjE2MTE0MTM1MjcsIm5iZiI6MTYxMTQwOTkyNywiYXVkIjoiYjdhMjkxZTUtMmIzNC00NTUyLWJmY2MtNTdhNGJjZjIwNjIxIiwib2lkIjoiNzViYTU0ZDMtNDkyOC00ZTM5LThiMzgtODYxY2NjZmNmNTI3Iiwic3ViIjoiNzViYTU0ZDMtNDkyOC00ZTM5LThiMzgtODYxY2NjZmNmNTI3IiwiY2l0eSI6IldhcnN6YXdhIiwiY291bnRyeSI6IlBvbGFuZCIsIm5hbWUiOiJEYW1pYW4iLCJnaXZlbl9uYW1lIjoiRGFtaWFuIiwicG9zdGFsQ29kZSI6IjAyLTM2NiIsImZhbWlseV9uYW1lIjoiWmR1bHNraSIsImVtYWlscyI6WyJkcHpkdWxza2lAZ21haWwuY29tIl0sInRmcCI6IkIyQ18xX3NpZ251cHNpZ25pbiIsIm5vbmNlIjoiMTIzIiwic2NwIjoiQ3VzdG9tZXIiLCJhenAiOiJjZjI5NWM2YS03NzQyLTQ5YmUtOWEwMi1lNzNjNDA5MTY4YmUiLCJ2ZXIiOiIxLjAiLCJpYXQiOjE2MTE0MDk5Mjd9.cNs166csimxc8yy7RO-tSkce8Y-JvUb4oJ2F6PAbcjFBrPSiru7_DUdAz_L6-f-xyGljqV3ovTZ__KQ1pDiObjragaAMmcqAR6UqvgshgM7_eiLwPnNzBBAeVKw7ANdmSFEk5W_E-BqdicEntVpwQ2GcOnOXsomgK9-RTdNc264kObgHba0JguszeHrkrGK07oOawpa6UGbvS6JSgSM4xtSOY0bvKe1nfAB2_a1KeNUgsVEKBVSUiutxWI5fzVGLUWulIcr40Gl4TICJKwfuDdWvvOY4smy9V5Wz9-OGDg7omK8ngZZ3jD8zIt5_UcxdveB1JyhlF7fAItKQyBMn6g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44356/api/Test/WelcomeCustomer",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44356",
+					"path": [
+						"api",
+						"Test",
+						"WelcomeCustomer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

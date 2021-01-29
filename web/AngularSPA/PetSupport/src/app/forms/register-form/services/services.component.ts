@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import {RegistrationService} from '../registration.service';
+import { RegistrationService } from '../registration.service';
+import { IPetsitterServices } from '../IRegistration-data';
 
 @Component({
   selector: 'app-services',
@@ -9,15 +10,26 @@ import {RegistrationService} from '../registration.service';
   styleUrls: ['./services.component.css']
 })
 export class ServicesComponent {
-
-  public signupForm: FormGroup;
-
+  petsitterServices: IPetsitterServices;
+  isFormValid: boolean;
   constructor(private http: HttpClient,
               private registrationService: RegistrationService) {
   }
 
+  onFormChange(personalServiceInfo: IPetsitterServices): void {
+    this.petsitterServices = personalServiceInfo;
+  }
+
+  onStatusChange(status: boolean): void {
+    this.isFormValid = status;
+  }
+
   onSubmit(): void {
-    this.registrationService.setServices(this.signupForm.value);
+    console.log(this.petsitterServices);
+    console.log(this.isFormValid);
+    if (this.isFormValid) {
+      this.registrationService.setServices(this.petsitterServices);
+    }
   }
 }
 

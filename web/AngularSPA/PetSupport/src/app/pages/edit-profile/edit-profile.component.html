@@ -8,45 +8,46 @@
         <div class="border-right">
             <div class="col2-1">
                 <div class="edit">
-                    <button  
-                        mat-raised-button 
+                    <button
+                        mat-raised-button
                         class="journey-btn"
                         (click)="onPressBasicInfo()"
                     >Basic info</button>
                 </div>
                 <div class="edit">
-                    <button 
-                        mat-raised-button 
+                    <button
+                        mat-raised-button
                         class="journey-btn"
                         (click)="onPressAddress()"
                     >Address</button>
                 </div>
                 <div class="edit">
-                    <button 
-                        mat-raised-button 
+                    <button
+                        mat-raised-button
                         class="journey-btn"
                         (click)="onPressServices()"
                     >Services</button>
                 </div>
                 <div class="edit">
-                    <button 
-                        mat-raised-button 
+                    <button
+                        mat-raised-button
                         class="journey-btn"
                         (click)="onPressPersonalInfo()"
                     >Personal info</button>
                 </div>
             </div>
         </div>
+
         <div class="forms">
             <div *ngIf="display1">
-               
-                <app-bi-form 
-                    (onFormChanged)="onFormChange1($event)" 
+
+                <app-bi-form
+                    (onFormChanged)="onFormChange1($event)"
                     (formValid)="onStatusChange1($event)">
                 </app-bi-form>
                 <div>
-                    <button 
-                        mat-raised-button 
+                    <button
+                        mat-raised-button
                         [disabled]="!isFormValid1"
                         class="save-btn"
                         routerLinkActive="activebutton"
@@ -56,13 +57,13 @@
                 </div>
             </div>
             <div *ngIf="display2">
-                <app-a-form 
-                    (onFormChanged)="onFormChange2($event)" 
+                <app-a-form
+                    (onFormChanged)="onFormChange2($event)"
                     (formValid)="onStatusChange2($event)">
                 </app-a-form>
                 <div>
-                    <button 
-                        mat-raised-button 
+                    <button
+                        mat-raised-button
                         [disabled]="!isFormValid2"
                         class="save-btn"
                         routerLinkActive="activebutton"
@@ -72,16 +73,29 @@
                 </div>
             </div>
 
-            <div *ngIf="display3"></div>
+            <div *ngIf="display3">
+                <app-s-form (onFormChanged)="onFormChange3($event)"
+                            (formValid)="onStatusChange3($event)"></app-s-form>
+                <div>
+                  <button
+                    mat-raised-button
+                    [disabled]="!isFormValid4"
+                    class="save-btn"
+                    routerLinkActive="activebutton"
+                    (click)="onSubmit3()"
+                  >Save changes
+                  </button>
+                </div>
+            </div>
 
             <div *ngIf="display4">
-                <app-pi-form 
-                    (onFormChanged)="onFormChange4($event)" 
+                <app-pi-form
+                    (onFormChanged)="onFormChange4($event)"
                     (formValid)="onStatusChange4($event)">
                 </app-pi-form>
                 <div>
-                    <button 
-                        mat-raised-button 
+                    <button
+                        mat-raised-button
                         [disabled]="!isFormValid4"
                         class="save-btn"
                         routerLinkActive="activebutton"

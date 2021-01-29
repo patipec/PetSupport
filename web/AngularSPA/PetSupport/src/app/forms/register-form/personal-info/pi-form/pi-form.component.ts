@@ -33,6 +33,7 @@ export class PiFormComponent implements OnInit {
     this.signupForm.valueChanges.subscribe(value => {
       this.onFormChanged.emit(value);
     });
-    this.signupForm.statusChanges.subscribe(status => this.formValid.emit(status === 'VALID'));
+    this.signupForm.statusChanges.subscribe(
+      status => this.formValid.emit(status === 'VALID'));
   }
 }
