@@ -2,6 +2,7 @@
   height: 100%;
 }
 
+
 .sidenav {
   width: 200px;
   box-shadow: 3px 0 6px rgba(0,0,0,.24);
@@ -56,4 +57,9 @@ a:hover, a:active {
   position: absolute;
   padding: 0;
   max-height: 9rem;
+}
+
+.navigation-items{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 500;
 }

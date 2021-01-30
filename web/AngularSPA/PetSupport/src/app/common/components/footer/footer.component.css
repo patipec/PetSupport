@@ -26,7 +26,7 @@ section {
 
 
 .footer .sm {
-  color: #FFCB3D;
+  color: #ffe746;
   display: block;
   text-decoration: none;
   margin-top: 10px;
@@ -37,7 +37,7 @@ section {
 }
 
 .footer a {
-  color: #FFCB3D;
+  color: #ffe746;
   text-decoration: none;
   margin-top: 10px;
   -webkit-transition: color .1s ease-out;
