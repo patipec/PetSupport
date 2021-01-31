@@ -19,11 +19,14 @@ export class SFormComponent implements OnInit {
 
   signupForm = this.fb.group({
     service: 'boarding',
-    petPreferences: this.fb.group( {
-      dog: false,
-      cat: false,
-      other: false
-    })
+    petPreferences: 'dog'
+    // DO NOT REMOVE THIS IS FOR FEATURE
+      // this.fb.group( {
+      //   dog: false,
+      //   cat: false,
+      //   other: false
+      // })
+    // DO NOT REMOVE THIS IS FOR FEATURE
   });
   constructor(private fb: FormBuilder,
               private http: HttpClient,
@@ -38,8 +41,12 @@ export class SFormComponent implements OnInit {
       status => this.formValid.emit(status === 'VALID'));
   }
   onExtraServiceClick(service: string): void{
-    const extra = this.signupForm.get(`petPreferences.${service}`);
-    extra.setValue(!extra.value);
+    const extra = this.signupForm.get(`petPreferences`);
+    // DO NOT REMOVE THIS IS FOR FEATURE
+    // const extra = this.signupForm.get(`petPreferences.${service}`);
+    // extra.setValue(!extra.value);
+    // DO NOT REMOVE THIS IS FOR FEATURE
+    extra.setValue('dog');
     const elem = document.getElementById(`_${service}`);
     if (extra.value){
       elem.style.backgroundColor = 'rgb(254, 203, 64)';

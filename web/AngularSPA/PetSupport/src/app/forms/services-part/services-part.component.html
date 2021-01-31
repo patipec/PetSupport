@@ -1,7 +1,7 @@
 <div class="form-group" [formGroup]="services">
   <!--      PET SELECTION  -->
   <label for="boarding">
-    <div class="form-check-label" [ngStyle]="services.get('service').value == 'boarding' &&
+    <div class="form-check-label" [ngStyle]="services.get('service').value == 0 &&
              {
                'background-color': '#ffe746', 'color':'black'
               }">
@@ -10,29 +10,29 @@
              value=""
              formControlName="service"
              id="boarding"
-             (click)="onServiceClick('boarding')">
+             (click)="onServiceClick(0)">
       <img src="assets/shortFormImages/cocker-spaniel.png">
       Boarding
     </div>
   </label>
-  <label for="houseSitting">
-    <div class="form-check-label" [ngStyle]="services.get('service').value == 'houseSitting' &&
+  <label for="HouseSitting">
+    <div class="form-check-label" [ngStyle]="services.get('service').value == 1 &&
              {
               'background-color': '#ffe746', 'color':'black'
              }">
       <input type="button"
-             name="houseSitting"
+             name="HouseSitting"
              value=""
              formControlName="service"
-             id="houseSitting"
-             (click)="onServiceClick('houseSitting')">
+             id="HouseSitting"
+             (click)="onServiceClick(1)">
 
       <img src="assets/shortFormImages/dog-heart.png">
       House Sitting
     </div>
   </label>
   <label for="walking">
-    <div class="form-check-label" [ngStyle]="services.get('service').value == 'walking' &&
+    <div class="form-check-label" [ngStyle]="services.get('service').value == 2 &&
              {
               'background-color': '#ffe746', 'color':'black'
              }">
@@ -41,7 +41,7 @@
              value=""
              formControlName="service"
              id="walking"
-             (click)="onServiceClick('walking')">
+             (click)="onServiceClick(2)">
 
       <img src="assets/shortFormImages/dog-smiley.png">
       Walking

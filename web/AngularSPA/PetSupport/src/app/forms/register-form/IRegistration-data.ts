@@ -30,12 +30,15 @@ export interface IRegistrationForm {
 }
 
 export interface IPetsitterServices {
-  service: string;
-  petPreferences: {
-    dog: string | null;
-    cat: string | null;
-    other: string | null;
-  };
+  service: number;
+  petPreferences: string;
+  // DO NOT REMOVE THIS IS FOR FEAUTURE DEVELOPMENT
+  //   {
+  //   dog: string | null;
+  //   cat: string | null;
+  //   other: string | null;
+  // };
+  // DO NOT REMOVE THIS IS FOR FEAUTURE DEVELOPMENT
 }
 // this.services = this.fb.group({
 //   service: 'boarding',
