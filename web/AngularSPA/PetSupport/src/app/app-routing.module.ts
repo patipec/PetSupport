@@ -13,6 +13,8 @@ import {ContactFormComponent} from './pages/contact-form/contact-form.component'
 import {ContactFormSuccessComponent} from './pages/contact-form/contact-form-success/contact-form-success.component';
 import { EndOfRegistrationComponent } from './forms/register-form/end-of-registration/end-of-registration.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { BiFormComponent } from './forms/register-form/basic-info/bi-form/bi-form.component';
+import { UploadPhotosComponent } from './forms/register-form/upload-photos/upload-photos.component';
 
 
 const routes: Routes = [
@@ -21,9 +23,13 @@ const routes: Routes = [
   {path: 'petsitters/:id', component: PetsitterComponent},
   {path: 'petsitters', component: PettsittersComponent},
   {path: 'register-form/basic-info', component: BasicInfoComponent},
+  {path: 'register-form/basic-info/bi-form', component: BiFormComponent},
   {path: 'register-form/address', component: AddressComponent},
   {path: 'register-form/services', component: ServicesComponent},
   {path: 'register-form/personal-info', component: PersonalInfoComponent},
+
+  {path: 'register-form/upload-photos', component: UploadPhotosComponent},
+
   {path: 'contact-form', component: ContactFormComponent},
   {path: 'contact-form/success', component: ContactFormSuccessComponent},
   {path: 'register-form/login', component: LoginFormComponent},

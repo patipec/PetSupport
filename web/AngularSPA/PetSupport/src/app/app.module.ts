@@ -49,18 +49,26 @@ import { PetsitterCanHostComponent } from './pages/petsitters/petsitter/petsitte
 import { ContactFormComponent } from './pages/contact-form/contact-form.component';
 import { ContactFormSuccessComponent } from './pages/contact-form/contact-form-success/contact-form-success.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { BiFormComponent } from './forms/register-form/basic-info/bi-form/bi-form.component';
+import { UploadPhotosComponent } from './forms/register-form/upload-photos/upload-photos.component';
 import { ServicesPartComponent } from './forms/services-part/services-part.component';
 
 import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
-import { CustomSliderComponent } from './pages/petsitters/petsitter/custom-slider/custom-slider.component'; // a plugin
+import { CustomSliderComponent } from './pages/petsitters/petsitter/custom-slider/custom-slider.component';
+import { PhotoGalleryComponent } from './forms/register-form/upload-photos/photo-gallery/photo-gallery.component';
+import { AFormComponent } from './forms/register-form/address/a-form/a-form.component';
+import { PiFormComponent } from './forms/register-form/personal-info/pi-form/pi-form.component';
+import { SFormComponent } from './forms/register-form/services/s-form/s-form.component';
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin
 ]);
+
+import { AngularFileUploaderModule } from "angular-file-uploader";
 
 @NgModule({
   declarations: [
@@ -94,8 +102,14 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ContactFormSuccessComponent,
     EndOfRegistrationComponent,
     EditProfileComponent,
+    BiFormComponent,
+    UploadPhotosComponent,
     ServicesPartComponent,
-    CustomSliderComponent
+    CustomSliderComponent,
+    PhotoGalleryComponent,
+    AFormComponent,
+    PiFormComponent,
+    SFormComponent,
   ],
 
   imports: [
@@ -117,7 +131,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatCarouselModule.forRoot(),
     NgxSliderModule,
     IvyCarouselModule,
-    FullCalendarModule
+    FullCalendarModule,
+    BrowserModule,
+    AngularFileUploaderModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

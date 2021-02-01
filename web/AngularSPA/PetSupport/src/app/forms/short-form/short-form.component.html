@@ -47,7 +47,7 @@
             </span>
           </mat-form-field>
         </div>
-        <button>
+        <button (click)="sendForm()">
           <img src="assets/shortFormImages/search.png">
         </button>
       </div>
@@ -55,7 +55,4 @@
 
   </form>
 </div>
-<br>Valid: {{ shortFormSettings.valid }}
-<br>Value: {{ shortFormSettings.value | json }}
-<br>&nbsp;
 

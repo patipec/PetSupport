@@ -1,0 +1,86 @@
+p {
+    font-family: Lato;
+  }
+  
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+  }
+  .hoverable{
+    position: relative;
+    display: block;
+    cursor: pointer;
+    height: 200px;
+    width: 200px;
+    /*border: 3px solid black*/
+    border-radius: 50%;
+  }
+  .hoverable .hover-text{
+    position: absolute;
+    display: none;
+    top: 50%;
+    left:  50%;
+    transform: translate(-50%,-50%);   
+    z-index: 2;
+  }
+  .hoverable .background{
+    position: absolute;
+    display: none;
+    top: 0;
+    left:  0;
+    bottom: 0;
+    right: 0;
+    background-color:rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    border-radius: 30%;
+    z-index: 1;
+  }
+  .hoverable:hover .hover-text{
+    display: block;
+  }
+  .hoverable:hover .background{
+    display: block;
+  }
+  
+  #fileInput{
+    display: none;
+  }
+
+  .c-mat {
+    box-shadow: none !important;
+  }
+
+  .card-title {
+    color: #0B814A;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+  
+hr {
+    width: 200px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    padding-bottom: 50px;
+  }
+
+  .title-name {
+    color: #0B814A;
+    font-size: 13px;
+    font-weight:600;
+    margin-left: 1em;
+    margin-top: 1em;
+  }
+  
+  .title-info {
+    color: darkgray;
+    font-size: 12px;
+    font-weight: normal;
+  }

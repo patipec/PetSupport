@@ -1,25 +1,25 @@
 <div class="petsittter-details-container">
   <div class="petsitter-upper-container">
     <div class="petsitter-image">
-      <img [src]="petsitter.ImageId != null? petsitter.ImageId : 'assets/PetsitterDetail/default-petsitter-image.png'"
+      <img [src]="petsitter.imageId != null? petsitter.imageId : 'assets/PetsitterDetail/default-petsitter-image.png'"
            alt="Petsitter main picture">
     </div>
     <div class="petsitter-description">
       <!--STAR RATING-->
       <div class="rate-container">
         <div class="rating-without-stars">
-          <div class="rate-numeric"><b>{{petsitter.Rate}}</b></div>
+          <div class="rate-numeric"><b>{{petsitter.rate}}</b></div>
           <div class="rate-text">rate</div>
         </div>
-        <app-rate class="stars" [rating]='petsitter.Rate'></app-rate>
+        <app-rate class="stars" [rating]='petsitter.rate'></app-rate>
       </div>
-      <h1><b>{{petsitter.Name}} {{petsitter.Surname}}</b></h1>
-      <h2>{{petsitter.City}}</h2>
-      <h3>{{petsitter.Description}}</h3>
+      <h1><b>{{petsitter.name}} {{petsitter.surname}}</b></h1>
+      <h2>{{petsitter.city}}</h2>
+      <h3>{{petsitter.description}}</h3>
     </div>
 
     <div class="petsitter-contact-button">
-      <button> Contact Me </button>
+      <button (click)="navigateToContactPage()"> Contact Me </button>
     </div>
 
 
@@ -41,6 +41,7 @@
         {'path': './../assets/PetsitterDetail/ExamplePetsitter/4.jpg'},
         {'path': './../assets/PetsitterDetail/ExamplePetsitter/5.jpg'}]">
         </carousel>
+
       <div class="galery2">
         <carousel [height]="100" [width]="600" [images]="[
         {'path': './../assets/PetsitterDetail/ExamplePetsitter/1.jpg'},

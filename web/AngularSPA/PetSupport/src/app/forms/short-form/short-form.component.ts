@@ -7,6 +7,8 @@ import { DateAdapter } from '@angular/material/core';
 
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {FindPetsitterShortForm} from '../../common/models/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-short-form',
@@ -21,13 +23,15 @@ export class ShortFormComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private datePipe: DatePipe,
               private dateAdapter: DateAdapter<Date>,
-              private http: HttpClient) {
+              private http: HttpClient,
+              private router: Router,
+              private route: ActivatedRoute) {
     this.dateAdapter.setLocale('en-GB');
   }
 
   ngOnInit(): void {
     this.shortFormSettings = this.fb.group({
-      service: ['houseSitting', [Validators.required]],
+      service: [1, [Validators.required]],
       location: ['Warsaw', [Validators.required, Validators.pattern(/^[a-zA-Z-,]+(\s{0, 1}[a-zA-Z-, ])*$/)]],
       dateRange: this.fb.group({
         startDate: [this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [Validators.required]],
@@ -51,6 +55,14 @@ export class ShortFormComponent implements OnInit {
       console.log(startFrom);
     }
     return invalid ? { invalidRange: true} : null;
+}
+
+public sendForm(): void {
+    const formData = {
+      city: this.shortFormSettings.get('location').value,
+      serviceId: '1'
+    };
+    void this.router.navigateByUrl('/petsitters', {state: formData});
 }
 
 onSubmit(): void {}

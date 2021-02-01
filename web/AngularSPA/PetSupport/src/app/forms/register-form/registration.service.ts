@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IAddress, IBasicInfo, IPersonalInfo, IRegistrationForm } from './IRegistration-data';
+import { IAddress, IBasicInfo, IPersonalInfo,
+         IRegistrationForm, IPetsitterServices } from './IRegistration-data';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ export class RegistrationService {
   registerData: IRegistrationForm = {
     basicInfo: {} as IBasicInfo,
     address: {} as IAddress,
-    personalInfo: {} as IPersonalInfo
+    personalInfo: {} as IPersonalInfo,
+    services: {} as IPetsitterServices
   };
 
   constructor(private http: HttpClient) {
@@ -30,6 +32,10 @@ export class RegistrationService {
   setPersonalInfo(personalInfo: IPersonalInfo): void {
     console.log(personalInfo);
     this.registerData.personalInfo = personalInfo;
+  }
+  setServices(services: IPetsitterServices): void{
+    console.log(services);
+    this.registerData.services = services;
   }
 
   saveUser(): void {

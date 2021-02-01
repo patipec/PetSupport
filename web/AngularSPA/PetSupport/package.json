@@ -31,6 +31,7 @@
     "@ngmodule/material-carousel": "^0.6.0",
     "@rxweb/reactive-form-validators": "^2.1.2",
     "@syncfusion/ej2-angular-inputs": "^18.3.53",
+    "angular-file-uploader": "^7.0.3",
     "angular-responsive-carousel": "^2.0.2",
     "leaflet": "1.6.0",
     "rxjs": "~6.5.5",

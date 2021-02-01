@@ -28,6 +28,24 @@
 
       <a *ngIf="!(isHandset$ | async)" href="\become-petsitter">Become Petsitter</a>
 
+      <button mat-button [matMenuTriggerFor]="menu">Dev routes</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/petsitters" routerLinkActive="active">Petsitters</button>
+        <button mat-menu-item routerLink="/main-page" routerLinkActive="active">Main Page</button>
+        <button mat-menu-item routerLink="/become-petsitter" routerLinkActive="active">Become Petsitter</button>
+        <button mat-menu-item routerLink="/register-form/basic-info" routerLinkActive="active">Form 1 - Basic info</button>
+        <button mat-menu-item routerLink="/register-form/address" routerLinkActive="active">Form 2 - Address</button>
+        <button mat-menu-item routerLink="/register-form/personal-info" routerLinkActive="active">Form 4 - Personal info</button>
+        
+        <button mat-menu-item routerLink="/register-form/upload-photos" routerLinkActive="active">Form 5 - upload photos</button>
+        
+        <button mat-menu-item routerLink="/register-form/services" routerLinkActive="active">Form 3 - Services</button>
+        <button mat-menu-item routerLink="/register-form/test2" routerLinkActive="active">Form 1 - Test 2</button>
+        <button mat-menu-item routerLink="/contact-form" routerLinkActive="active">Contact-form</button>
+        <button mat-menu-item routerLink="/contact-form/success" routerLinkActive="active">Contact-form</button>
+        <button mat-menu-item routerLink="/edit-profile" routerLinkActive="active">Edit prof</button>
+      </mat-menu>
+
       <div class="nav-item logo">
       <img
       width="40"
@@ -39,6 +57,7 @@
 
       <div>{{isHandset$ | async}}</div>
       <div>{{window.screen.orientation.type}}</div>
+
 
       <div *ngIf="!(isHandset$ | async)" >
         <ul  class="navigation-items">
