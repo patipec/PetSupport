@@ -26,13 +26,14 @@ namespace Petsupport.API2.Controllers
         
         
         [HttpGet]
-        public async Task<ActionResult<PetsitterDTO[]>> GetPetsittersBySearchPatameters
+        public async Task<ActionResult<PetsitterDTO[]>> GetPetsittersBySearchParameters
             ([FromQuery] PetsittersSearchParameters petsittersSearchParameters)
         {
+
             try
             {
                 var petsitersFillteredByQuery = await _petsitterRepository
-                    .GetAllPetsitersBySearchPatametersAsync(petsittersSearchParameters);
+                    .GetAllPetsitersBySearchParametersAsync(petsittersSearchParameters);
                 
                 return Ok(_mapper.Map<PetsitterDTO[]>(petsitersFillteredByQuery));
             }
@@ -54,7 +55,7 @@ namespace Petsupport.API2.Controllers
             return Ok(_mapper.Map<PetsitterDTO>(petsitter));
         }
 
-        
+
         // [HttpPost]
         // public async Task<ActionResult> CreatePetsitter ([FromBody]CreatePetsitterDTO createPetsitterDto)
         // {
@@ -95,6 +96,8 @@ namespace Petsupport.API2.Controllers
         //     var petsitterFromRepo = await _petsitterRepository.GetByIdAsync(id);
         //     
         // }
-        
+
+       
+
     }
 }

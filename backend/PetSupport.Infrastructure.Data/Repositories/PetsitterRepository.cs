@@ -23,7 +23,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Petsitter>> GetAllPetsitersBySearchPatametersAsync(
+        public async Task<IEnumerable<Petsitter>> GetAllPetsitersBySearchParametersAsync(
             PetsittersSearchParameters petsittersSearchParameters)
         {
             if (petsittersSearchParameters == null)
@@ -119,6 +119,20 @@ namespace PetSupport.Infrastructure.Data.Repositories
             {
                 return await GetAllAsync();
             }
+        }
+
+
+        public Task<PagedList<Petsitter>> GetAllPetsitersBySearchParametersWithPagination(
+            PetsittersSearchParameters petsittersSearchParameters)
+        {
+            throw new NotImplementedException();
+        }
+
+      
+        public Task<IEnumerable<Petsitter>> GetFilteredPetsittersWithPagingAsync(
+            PetsittersSearchParameters petsittersSearchParameters)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -7,7 +7,12 @@ namespace PetSupport.Core.Interfaces
 {
     public interface IPetsitterRepository : IBaseRepository<Petsitter>
     {
-        Task<IEnumerable<Petsitter>> GetAllPetsitersBySearchPatametersAsync
+        Task<PagedList<Petsitter>> GetAllPetsitersBySearchParametersWithPagination
+            (PetsittersSearchParameters petsittersSearchParameters);
+        Task<IEnumerable<Petsitter>> GetAllPetsitersBySearchParametersAsync
+            (PetsittersSearchParameters petsittersSearchParameters);
+
+        Task<IEnumerable<Petsitter>> GetFilteredPetsittersWithPagingAsync
             (PetsittersSearchParameters petsittersSearchParameters);
     }
 }
