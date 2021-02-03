@@ -9,7 +9,7 @@ namespace PetSupport.Core.ResourceParameters
         [Required]
         public string City { get; set; }
         [Required]
-        public int? ServiceId { get; set; } = null;
+        public int ServiceId { get; set; }
         //FindPetSitterLongFormDTO
         public string Street { get; set; }
         public int? MinPrice { get; set; } = 0;

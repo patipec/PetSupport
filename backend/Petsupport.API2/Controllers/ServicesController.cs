@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿/*using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -89,4 +89,4 @@ namespace Petsupport.API2.Controllers
             return _context.Services.Any(e => e.Id == id);
         }
     }
-}
+}*/
