@@ -31,7 +31,7 @@ export class ShortFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.shortFormSettings = this.fb.group({
-      service: ['houseSitting', [Validators.required]],
+      service: [1, [Validators.required]],
       location: ['Warsaw', [Validators.required, Validators.pattern(/^[a-zA-Z-,]+(\s{0, 1}[a-zA-Z-, ])*$/)]],
       dateRange: this.fb.group({
         startDate: [this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [Validators.required]],

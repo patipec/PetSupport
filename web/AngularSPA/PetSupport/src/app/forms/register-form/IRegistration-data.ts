@@ -5,7 +5,7 @@ export interface IBasicInfo {
     email: string;
     phone: string;
     password: string;
-    repeatPassword: string;
+    confirmPassword: string;
 }
 export interface IAddress {
     street: string;
@@ -13,6 +13,7 @@ export interface IAddress {
     city: string;
     zipcode: string;
     country: string;
+    coordinates: [];
 }
 export interface IPersonalInfo {
     birthday: string;
@@ -29,12 +30,15 @@ export interface IRegistrationForm {
 }
 
 export interface IPetsitterServices {
-  service: string;
-  extraServices: {
-    dog: string | null;
-    cat: string | null;
-    other: string | null;
-  };
+  service: number;
+  petPreferences: string;
+  // DO NOT REMOVE THIS IS FOR FEAUTURE DEVELOPMENT
+  //   {
+  //   dog: string | null;
+  //   cat: string | null;
+  //   other: string | null;
+  // };
+  // DO NOT REMOVE THIS IS FOR FEAUTURE DEVELOPMENT
 }
 // this.services = this.fb.group({
 //   service: 'boarding',
