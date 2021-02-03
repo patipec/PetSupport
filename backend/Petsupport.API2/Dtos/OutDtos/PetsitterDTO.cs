@@ -10,6 +10,7 @@ namespace Petsupport.API2.Dtos.OutDtos
         public string ImageId { get; set; }
         public string City { get; set; }
         public string Street { get; set; }
+        public ICollection<CoordinateDTO> Coordinates { get; set; }
         public string Description { get; set; }
         public string AvailabilityTo { get; set; }
         //TODO: check this
