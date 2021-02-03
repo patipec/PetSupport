@@ -11,13 +11,18 @@ namespace Petsupport.API2.Profiles
         public PetSupportProfile()
         {
             this.CreateMap<Petsitter, PetsitterDTO>()
-                .ForMember(p => p.ImageId, o => o.MapFrom(p => p.PhotoId))
+                .ForMember(dto => dto.ImageId, opt =>
+                    opt.MapFrom(p => p.PhotoId))
                 .ReverseMap();
+            
+            this.CreateMap<Coordinate, CoordinateDTO>()
+                .ReverseMap();;
             
             
             this.CreateMap<Petsitter, CreatePetsitterDTO>()
                 .ForMember(p => p.ImageId, o => o.MapFrom(m => m.PhotoId))
                 .ReverseMap();
+            
             
             this.CreateMap<Service, ServiceDTO>()
                 .ReverseMap();
