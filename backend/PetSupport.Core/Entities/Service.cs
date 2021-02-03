@@ -6,5 +6,8 @@ namespace PetSupport.Core.Entities
     {
         public ServiceType Name { get; set; }
         public Unit Unit { get; set; }
+
+        public PetPreferences PetPreferences { get; set; }
     }
+
 }

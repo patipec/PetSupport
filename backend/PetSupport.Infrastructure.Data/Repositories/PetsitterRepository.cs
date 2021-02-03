@@ -122,17 +122,6 @@ namespace PetSupport.Infrastructure.Data.Repositories
         }
 
 
-        public Task<PagedList<Petsitter>> GetAllPetsitersBySearchParametersWithPagination(
-            PetsittersSearchParameters petsittersSearchParameters)
-        {
-            throw new NotImplementedException();
-        }
-
       
-        public Task<IEnumerable<Petsitter>> GetFilteredPetsittersWithPagingAsync(
-            PetsittersSearchParameters petsittersSearchParameters)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

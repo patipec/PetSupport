@@ -28,10 +28,14 @@ namespace PetSupport.Core.Entities
 
         public DateTime AvailabilityTo { get; set; }
 
+        public DateTime DateOfBirth { get; set; }
+
         public string Title { get; set; }
 
         public string Environment { get; set; }
-        
-        public List<PetsitterService> Services { get; set; }
+
+        public string Experience { get; set; }
+
+        public List<Service> Services { get; set; }
     }
 }

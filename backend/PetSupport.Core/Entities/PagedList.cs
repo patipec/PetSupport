@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PetSupport.Core.Entities
 {
+    /// <summary>
+    /// first solution of pagination that returns pagedList
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class PagedList<T> : List<T>
     {
         public int CurrentPage { get; private set; }
@@ -17,24 +22,25 @@ namespace PetSupport.Core.Entities
         public bool HasPrevious => CurrentPage > 1;
         public bool HasNext => CurrentPage < TotalPages;
 
-        public  PagedList(IEnumerable<T> petsittersList, int count, int pageNumber, int pageSize)
+        public  PagedList(List<T> sourceList, int count, int pageNumber, int pageSize)
         {
             TotalCount = count;
             PageSize = pageSize;
             CurrentPage = pageNumber;
             TotalPages = (int) Math.Ceiling(count / (double) pageSize);
 
-            AddRange(petsittersList);
+            AddRange(sourceList);
         }
 
-        public PagedList<T> ToPagedList(IEnumerable<T> source, int pageNumber, int pageSize)
+        public PagedList<T> ToPagedList(List<T> source, int pageNumber, int pageSize)
         {
             var count = source.Count();
             var petsittersList = source.Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();
 
-            return new PagedList<T>(petsittersList, count, pageNumber, pageSize);
+            return new PagedList<T>(source, count, pageNumber, pageSize);
         }
+
     }
 }

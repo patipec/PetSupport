@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Web.Http;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Petsupport.API2.Dtos.InDtos;
@@ -25,6 +27,8 @@ namespace Petsupport.API2.Controllers
         }
         
         
+        
+
         [HttpGet]
         public async Task<ActionResult<PetsitterDTO[]>> GetPetsittersBySearchParameters
             ([FromQuery] PetsittersSearchParameters petsittersSearchParameters)
@@ -97,7 +101,14 @@ namespace Petsupport.API2.Controllers
         //     
         // }
 
+        [HttpGet]
+        public IEnumerable<Petsitter> GetPettsittersWithPaging([FromQuery] PagingParameters pagingParameters)
+        {
+            var source = _petsitterRepository.GetAllAsync().
+
+        }
        
 
     }
+   
 }

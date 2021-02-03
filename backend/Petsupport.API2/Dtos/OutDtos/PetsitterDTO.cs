@@ -1,3 +1,5 @@
+using System;
+
 namespace Petsupport.API2.Dtos.OutDtos
 {
     public class PetsitterDTO
@@ -9,6 +11,7 @@ namespace Petsupport.API2.Dtos.OutDtos
         public string City { get; set; }
         public string Street { get; set; }
         public string Description { get; set; }
+        public string AvailabilityTo { get; set; }
         //TODO: check this
         public decimal Price { get; set; }
     }
