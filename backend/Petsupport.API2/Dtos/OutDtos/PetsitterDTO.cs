@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using PetSupport.Core.Entities;
 
 namespace Petsupport.API2.Dtos.OutDtos
 {
@@ -14,6 +16,7 @@ namespace Petsupport.API2.Dtos.OutDtos
         public string Description { get; set; }
         public string AvailabilityTo { get; set; }
         //TODO: check this
-        public decimal Price { get; set; }
+        public double Price { get; set; }
+
     }
 }

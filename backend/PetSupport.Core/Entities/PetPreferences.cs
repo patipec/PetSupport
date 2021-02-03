@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PetSupport.Core.Entities
 {
-    class PetPreferences
+    public class PetPreferences
     {
     }
 }
