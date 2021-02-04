@@ -13,7 +13,6 @@ namespace PetSupport.Infrastructure.Data.Data
         public DbSet<Client> Clients { get; set; }
         public DbSet<Petsitter> Petsitters { get; set; }
         public DbSet<Service> Services { get; set; }
-        public DbSet<PetsitterService> PetSupportServices { get; set; }
         public DbSet<BookingMessage> BookingMessages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
