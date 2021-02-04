@@ -31,6 +31,15 @@ span {
   margin: 10px 0 10px 0;
 }
 
+button {
+  margin-top: 20px;
+  color: #0B814A;
+  border: solid 1px #0B814A;
+  width: 150px;
+  font-weight: bold;
+  border-radius: 40px;
+
+}
 @media(max-width: 700px) {
   .information {
     font-size: 16px;
