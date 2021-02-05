@@ -10,23 +10,23 @@ namespace PetSupport.Core.ResourceParameters
     public class PagingParameters
     {
         //Pagination
-        [Required]
-        public const int MaxPageSize = 20;
+        
+        [Required] 
+        public int PageNumber { get; set; }
 
-        [Required] public int PageNumber { get; set; } = 1;
+        private int PageSize {get;set;}
 
-        private int _pageSize = 20;
-
-        public int PageSize
+        public PagingParameters()
         {
-            get
-            {
-                return _pageSize;
-            }
-            set
-            {
-                _pageSize = (value > MaxPageSize) ? MaxPageSize : value;
-            }
+          this.PageNumber = 1
+          this.PageSize = 20
         }
+        public  PagingParameters(int pageNumber, int pageSize)
+        {
+            this.PageNumber = pageNumber < 1 ? 1 : pageNumber;
+            this.PageSize = pageSize > 10 ? 10 : pageSize;
+        }
+
     }
+
 }
