@@ -3,5 +3,5 @@ export enum Services {
   HouseSitting,
   DogWalking,
   DropInVisit,
-  DoggyDayCare
+  DoggyDaayCare
 }
