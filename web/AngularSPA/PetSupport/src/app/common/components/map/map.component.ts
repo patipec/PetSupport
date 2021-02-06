@@ -9,7 +9,7 @@ import {Petsitter} from '../../models/petsitter';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements AfterViewInit, OnChanges, OnInit {
+export class MapComponent implements OnChanges, OnInit {
   private map;
   lat: number;
   lng: number;
