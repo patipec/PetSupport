@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BroadcastService, MsalService} from '@azure/msal-angular';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-auth-button',
@@ -8,7 +9,7 @@ import {BroadcastService, MsalService} from '@azure/msal-angular';
 })
 export class AuthButtonComponent implements OnInit {
 
-  constructor(private broadcastService: BroadcastService, private authService: MsalService) {
+  constructor(private broadcastService: BroadcastService, private authService: MsalService, private myAuthService: AuthService) {
   }
 
   ngOnInit(): void {
@@ -36,7 +37,7 @@ export class AuthButtonComponent implements OnInit {
   }
 
   public isLogged(): boolean {
-    return !!localStorage.getItem('msal.idtoken');
+    return this.myAuthService.isLogged();
   }
 }
 
