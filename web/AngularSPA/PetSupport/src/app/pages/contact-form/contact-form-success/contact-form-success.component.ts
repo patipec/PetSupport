@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-contact-form-success',
@@ -11,9 +12,14 @@ export class ContactFormSuccessComponent implements OnInit {
   startDate = '28.10.2020';
   endDate = '02.11.2020';
   services = 'Doggy Day Care';
-  constructor() { }
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
+  backToHome() {
+    void this.router.navigateByUrl('/home');
+  }
 }
