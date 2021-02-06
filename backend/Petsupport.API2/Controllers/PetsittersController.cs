@@ -27,9 +27,7 @@ namespace Petsupport.API2.Controllers
             this._petsitterRepository = petsitterRepository;
             this._mapper = mapper;
         }
-        
-        
-        
+          
 
         [HttpGet]
         public async Task<ActionResult<PetsitterDTO[]>> GetPetsittersBySearchParameters
@@ -122,12 +120,33 @@ namespace Petsupport.API2.Controllers
         // }
 
         [HttpGet]
-        public IEnumerable<Petsitter> GetPettsittersWithPaging([FromQuery] PagingParameters pagingParameters)
+        public async Task<IActionResult> GetPettsittersWithPaging([FromQuery] PagingParameters parameters)
         {
-            var source = _petsitterRepository.GetAllAsync().
+            try
+            {
+                var validParameter = new PagingParameters(parameters.PageNumber, parameters.PageSize);
 
-        }
-       
+                var petsitersFillteredByQuery = await _petsitterRepository
+                    .GetAllPetsitersBySearchParametersAsync(petsittersSearchParameters);
+                
+                var listPetsittersDto = _mapper.Map<PetsitterDTO[]>(petsittersFiltered);
+                                
+                
+
+                var pagedData = await petsittersFilteredByQuery
+                .Skip((validParameter.PageNumber -1) * validParameter.PageSize)
+                .Take(validParameter.PageSize)
+                .ToListAsync();
+                var totalRecords = await _petsitterRepository.CountAsync();
+
+
+                return Ok(new PagedResponse<listPetsittersDto>(pagedData, validParameter.PageNumber, validParameter.Pagesize));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+        }  
 
     }
    
