@@ -34,7 +34,7 @@ namespace Petsupport.API2.Controllers
             try
             {
                 var petsittersFiltered = await _petsitterRepository
-                    .GetAllPetsitersBySearchPatametersAsync(petsittersSearchParameters);
+                    .GetAllPetsittersBySearchParametersAsync(petsittersSearchParameters);
                 
                 var listPetsittersDto = _mapper.Map<PetsitterDTO[]>(petsittersFiltered);
                 
