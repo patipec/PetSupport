@@ -3,10 +3,10 @@
       <app-long-form (longForm)="updateLongForm($event)"></app-long-form>
     </div>
     <div class="petsitter-list-container">
-      <app-petsitters-list [longForm]="longForm" class="petsitter-list"></app-petsitters-list>
+      <app-petsitters-list [petsitterList]="petsitterList" class="petsitter-list"></app-petsitters-list>
     </div>
     <div class="map-container">
-      <app-map></app-map>
+      <app-map [petsitterList]="petsitterList"></app-map>
     </div>
 </div>
 
