@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -31,10 +33,20 @@ namespace Petsupport.API2.Controllers
         {
             try
             {
-                var petsitersFillteredByQuery = await _petsitterRepository
+                var petsittersFiltered = await _petsitterRepository
                     .GetAllPetsitersBySearchPatametersAsync(petsittersSearchParameters);
                 
-                return Ok(_mapper.Map<PetsitterDTO[]>(petsitersFillteredByQuery));
+                var listPetsittersDto = _mapper.Map<PetsitterDTO[]>(petsittersFiltered);
+                
+                foreach (var petsitter in listPetsittersDto)
+                {
+                    petsitter.Price = petsittersFiltered
+                        .FirstOrDefault(p => p.Id == petsitter.Id)
+                        .Services
+                        .FirstOrDefault(s => (int) s.Name == petsittersSearchParameters.ServiceId)
+                        .Price;
+                }
+                return Ok(listPetsittersDto);
             }
             catch (Exception ex)
             {
@@ -46,12 +58,20 @@ namespace Petsupport.API2.Controllers
         [HttpGet("{id:int}", Name = "PetsitterById")]
         public async Task<ActionResult<PetsitterDTO>> GetPetsitterById(int id)
         {
-            var petsitter = await _petsitterRepository.GetByIdAsync(id);
-            if (petsitter == null)
-            { 
-                return NotFound();
+            try
+            {
+                var petsitter = await _petsitterRepository.GetByIdAsync(id);
+                if (petsitter == null)
+                { 
+                    return NotFound();
+                }
+                return Ok(_mapper.Map<PetsitterDTO>(petsitter));
             }
-            return Ok(_mapper.Map<PetsitterDTO>(petsitter));
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+
         }
 
         
