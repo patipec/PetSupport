@@ -1,6 +1,7 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnChanges, OnInit} from '@angular/core';
 import * as L from 'leaflet';
-import {MapService} from "./map.service";
+import {MapService} from './map.service';
+import {Petsitter} from '../../models/petsitter';
 
 
 @Component({
@@ -8,14 +9,23 @@ import {MapService} from "./map.service";
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements AfterViewInit {
+export class MapComponent implements AfterViewInit, OnChanges {
   private map;
+  @Input()
+  public petsitterList: Petsitter[];
 
-  constructor(private markerService: MapService) { }
+  constructor(private markerService: MapService) {
+  }
 
-  ngAfterViewInit(): void {
+  public ngAfterViewInit(): void {
     this.initMap();
-    // this.markerService.makeMarkers(this.map);
+  }
+
+  public ngOnChanges(data): void {
+    if (data && this.map) {
+      this.markerService.makeMarkers(this.map, this.petsitterList);
+    }
+
   }
 
   private initMap(): void {
