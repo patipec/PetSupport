@@ -51,9 +51,9 @@
     <div class="service">
       <label for="service"><span class="material-icons">support</span><b>Service</b><br></label>
       <select name="service" id="service" formControlName="service">
-        <option value="boarding">Boarding</option>
-        <option value="HouseSitting">House Sitting</option>
-        <option value="walking">Walking</option>
+        <option [value]="service.key" *ngFor="let service of services">
+          {{service.name}}
+        </option>
       </select>
     </div>
 
