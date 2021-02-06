@@ -15,7 +15,7 @@ namespace Petsupport.API2.Profiles
                     opt.MapFrom(p => p.PhotoId))
                 .ReverseMap();
             
-            this.CreateMap<Coordinate, CoordinateDTO>()
+            this.CreateMap<Coordinates, CoordinateDTO>()
                 .ReverseMap();;
             
             

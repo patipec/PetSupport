@@ -13,7 +13,7 @@ namespace PetSupport.Infrastructure.Data.Seed
             modelBuilder.Entity<Petsitter>().HasData(fakeData.FakePetsitters);
             modelBuilder.Entity<Service>().HasData(fakeData.FakeServices);
             modelBuilder.Entity<BookingMessage>().HasData(fakeData.FakeBookingMessages);
-            modelBuilder.Entity<Coordinate>().HasData(fakeData.FakeCoordinates);
+            modelBuilder.Entity<Coordinates>().HasData(fakeData.FakeCoordinates);
         }
     }
 }

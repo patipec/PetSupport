@@ -12,7 +12,7 @@ namespace PetSupport.Infrastructure.Data.Seed
         private const int NumberOfFakeDataToGenerate = 100;
         public List<Client> FakeClients { get; }
         public List<Service> FakeServices { get; protected set; } = new List<Service>();
-        public List<Coordinate> FakeCoordinates { get; } 
+        public List<Coordinates> FakeCoordinates { get; } 
         public List<Petsitter> FakePetsitters { get; protected set; } = new List<Petsitter>();
         public List<BookingMessage> FakeBookingMessages { get; }
 
@@ -97,7 +97,7 @@ namespace PetSupport.Infrastructure.Data.Seed
             
             var coordinateId = 1;
             var petsitterPriamaryId = 101;
-            var coordinateFaker = new Faker<Coordinate>()
+            var coordinateFaker = new Faker<Coordinates>()
                 .StrictMode(false)
                 .RuleFor(c => c.Id, f => coordinateId++)
                 .RuleFor(c => c.PetsitterId, f => petsitterPriamaryId++)
