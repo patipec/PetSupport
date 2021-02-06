@@ -9,10 +9,7 @@ import {publish} from 'rxjs/operators';
 })
 export class MapService {
   marker = [];
-  public petsitterCurrentPositionService = {
-    latitude: navigator.geolocation.getCurrentPosition(c => c.coords.latitude),
-    longitude: navigator.geolocation.getCurrentPosition(c => c.coords.longitude),
-  };
+
 
   public makeMarkers(map1: L.map, petsitterList: Petsitter[]): void {
 
