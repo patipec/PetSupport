@@ -15,6 +15,8 @@ import { EndOfRegistrationComponent } from './forms/register-form/end-of-registr
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { BiFormComponent } from './forms/register-form/basic-info/bi-form/bi-form.component';
 import { UploadPhotosComponent } from './forms/register-form/upload-photos/upload-photos.component';
+import {LoginAuthGuard} from './common/auth/login-guard';
+import {NotAuthorizedComponent} from './common/auth/not-authorized/not-authorized.component';
 
 
 const routes: Routes = [
@@ -30,7 +32,7 @@ const routes: Routes = [
 
   {path: 'register-form/upload-photos', component: UploadPhotosComponent},
 
-  {path: 'contact-form', component: ContactFormComponent},
+  {path: 'contact-form', component: ContactFormComponent, canActivate: [LoginAuthGuard]},
   {path: 'contact-form/success', component: ContactFormSuccessComponent},
   {path: 'register-form/login', component: LoginFormComponent},
   {path: 'login', component: LoginFormComponent},
@@ -38,6 +40,7 @@ const routes: Routes = [
   {path: 'register-form/login', component: LoginFormComponent},
   {path: 'login', component: LoginFormComponent},
   {path: 'register-form/end-of-registration', component: EndOfRegistrationComponent},
+  {path: 'not-authorized', component: NotAuthorizedComponent},
   {path: '', redirectTo: '/main-page', pathMatch: 'full'},
   /*   ** is last route, add new only above ^^^  */
   {path: '**', component: MainPageComponent} // We can add 404 page here later

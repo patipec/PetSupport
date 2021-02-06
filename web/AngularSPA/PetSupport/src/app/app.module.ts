@@ -53,7 +53,7 @@ import {BiFormComponent} from './forms/register-form/basic-info/bi-form/bi-form.
 import {UploadPhotosComponent} from './forms/register-form/upload-photos/upload-photos.component';
 import {ServicesPartComponent} from './forms/services-part/services-part.component';
 // @ts-ignore
-import {clientId, authority, redirectUri, postLogoutRedirectUri} from './auth.json';
+import {clientId, authority, redirectUri, postLogoutRedirectUri } from './auth.json';
 import {FullCalendarModule} from '@fullcalendar/angular'; // the main connector. must go first
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
@@ -73,6 +73,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 import {AngularFileUploaderModule} from 'angular-file-uploader';
 import {MsalModule, MsalInterceptor} from '@azure/msal-angular';
 import {AuthButtonComponent} from './common/auth/auth-button/auth-button.component';
+import {LoginAuthGuard} from './common/auth/login-guard';
+import { NotAuthorizedComponent } from './common/auth/not-authorized/not-authorized.component';
 
 @NgModule({
   declarations: [
@@ -115,6 +117,7 @@ import {AuthButtonComponent} from './common/auth/auth-button/auth-button.compone
     PiFormComponent,
     SFormComponent,
     AuthButtonComponent,
+    NotAuthorizedComponent,
   ],
 
   imports: [
@@ -144,7 +147,8 @@ import {AuthButtonComponent} from './common/auth/auth-button/auth-button.compone
         clientId,
         authority,
         redirectUri,
-        postLogoutRedirectUri
+        postLogoutRedirectUri,
+        validateAuthority: false
       },
       cache: {
         cacheLocation: 'localStorage',
@@ -172,7 +176,8 @@ import {AuthButtonComponent} from './common/auth/auth-button/auth-button.compone
       provide: HTTP_INTERCEPTORS,
       useClass: MsalInterceptor,
       multi: true
-    }
+    },
+    LoginAuthGuard
   ],
   bootstrap: [AppComponent]
 })
