@@ -1,12 +1,12 @@
 <div class="page-container" #host>
     <div class="long-form-container">
-      <app-long-form></app-long-form>
+      <app-long-form (longForm)="updateLongForm($event)"></app-long-form>
     </div>
     <div class="petsitter-list-container">
-      <app-petsitters-list class="petsitter-list"></app-petsitters-list>
+      <app-petsitters-list [petsitterList]="petsitterList" class="petsitter-list"></app-petsitters-list>
     </div>
     <div class="map-container">
-      <app-map></app-map>
+      <app-map [petsitterList]="petsitterList"></app-map>
     </div>
 </div>
 
