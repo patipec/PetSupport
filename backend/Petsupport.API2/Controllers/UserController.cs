@@ -11,7 +11,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Graph;
 using Microsoft.Graph.Auth;
 using Petsupport.API2.Dtos.InDtos;
+using Petsupport.API2.Controllers;
+using Petsupport.API2.Dtos.OutDtos;
 using Petsupport.API2.GraphServiceFactory;
+using PetSupport.Core.Entities;
+using PetSupport.Core.Interfaces;
+using User = Microsoft.Graph.User;
 
 
 namespace Petsupport.API2.Controllers
@@ -22,11 +27,13 @@ namespace Petsupport.API2.Controllers
     {
         private readonly IGraphService _graphService;
         private readonly IMapper _mapper;
+        private readonly IPetsitterRepository _petsitterRepository;
 
-        public UserController(IGraphService graphService, IMapper mapper)
+        public UserController(IGraphService graphService, IMapper mapper, IPetsitterRepository petsitterRepository)
         {
             _graphService = graphService;
             _mapper = mapper;
+            _petsitterRepository = petsitterRepository;
         }
 
         [Authorize]
@@ -34,7 +41,15 @@ namespace Petsupport.API2.Controllers
         public async Task<ActionResult<string>> GetUser()
         {
             var azureId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            return Ok(azureId);
+            var petsitter = await _petsitterRepository.GetByAzureId(azureId);
+            if (petsitter != null)
+            {
+                return Ok(_mapper.Map<PetsitterDTO>(petsitter));
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         [HttpPost]
@@ -54,9 +69,14 @@ namespace Petsupport.API2.Controllers
                     : StatusCode(StatusCodes.Status500InternalServerError, ex.Error);
             }
 
-            if (CreateUserInDatabase(createPetsitterDto))
+            var petsitter = CreateUserInDatabase(createPetsitterDto);
+            if (petsitter != null)
             {
-                return StatusCode(StatusCodes.Status201Created);
+                return CreatedAtAction(
+                    nameof(PetsittersController.GetPetsitterById),
+                    "Petsitters",
+                    new {id = petsitter.Id},
+                    _mapper.Map<PetsitterDTO>(petsitter));
             }
             else
             {
@@ -66,7 +86,7 @@ namespace Petsupport.API2.Controllers
             
         }
 
-        private bool CreateUserInDatabase(CreatePetsitterDTO createPetsitterDto)
+        private Petsitter CreateUserInDatabase(CreatePetsitterDTO createPetsitterDto)
         {
             throw new NotImplementedException();
         }

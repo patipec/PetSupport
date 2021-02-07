@@ -4,7 +4,7 @@ namespace PetSupport.Core.Entities
 {
     public class User : BaseEntity
     {
-        public Guid AzureId { get; set; }
+        public string AzureId { get; set; }
 
         public string Name { get; set; }
 
