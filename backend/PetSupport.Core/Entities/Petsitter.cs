@@ -1,6 +1,7 @@
 ﻿#nullable enable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace PetSupport.Core.Entities
@@ -31,7 +32,17 @@ namespace PetSupport.Core.Entities
         public string Title { get; set; }
 
         public string Environment { get; set; }
+
+        public ICollection<Coordinate> Coordinates { get; set; } 
         
-        public List<PetsitterService> Services { get; set; }
+        public ICollection<Service> Services { get; set; }
+    }
+
+    public class Coordinate : BaseEntity
+    { 
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public int PetsitterId { get; set; }
+        
     }
 }
