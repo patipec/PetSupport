@@ -3,7 +3,7 @@ using Microsoft.Graph;
 using Microsoft.Graph.Auth;
 using Microsoft.Identity.Client;
 
-namespace Petsupport.API2.GraphServicesFactory
+namespace Petsupport.API2.GraphServiceFactory
 {
     public class GraphService : IGraphService
     {

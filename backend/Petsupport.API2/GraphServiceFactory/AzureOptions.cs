@@ -1,4 +1,4 @@
-﻿namespace Petsupport.API2.GraphServicesFactory
+﻿namespace Petsupport.API2.GraphServiceFactory
 {
     public class AzureOptions
     {

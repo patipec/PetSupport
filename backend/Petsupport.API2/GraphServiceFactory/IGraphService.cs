@@ -1,6 +1,6 @@
 ﻿using Microsoft.Graph;
 
-namespace Petsupport.API2.GraphServicesFactory
+namespace Petsupport.API2.GraphServiceFactory
 {
     public interface IGraphService
     {

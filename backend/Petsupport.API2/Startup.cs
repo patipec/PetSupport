@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using PetSupport.API2.AuthorizationPolicies;
-using Petsupport.API2.GraphServicesFactory;
+using Petsupport.API2.GraphServiceFactory;
 using PetSupport.Core.Interfaces;
 using PetSupport.Infrastructure.Data.Data;
 using PetSupport.Infrastructure.Data.Repositories;
