@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnChanges, OnInit} from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import {MapService} from './map.service';
 import {Petsitter} from '../../models/petsitter';
@@ -19,6 +19,7 @@ export class MapComponent implements OnChanges, OnInit {
   }
 
   public ngOnInit(): void {
+
     this.getUserCurrentPostion();
 
     console.log(this.lng, this.lng);
@@ -26,7 +27,6 @@ export class MapComponent implements OnChanges, OnInit {
 
 
   public ngOnChanges(data): void {
-
     if (data && this.map) {
       this.markerService.clearMarkers(this.map);
       this.markerService.makeMarkers(this.map, this.petsitterList);
@@ -35,7 +35,6 @@ export class MapComponent implements OnChanges, OnInit {
   }
 
   private initMap(): void {
-    console.log(this.lng, 'ttootototo');
     this.map = L.map('map').setView([this.lat, this.lng], 13);
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 20,
@@ -49,8 +48,8 @@ export class MapComponent implements OnChanges, OnInit {
     navigator.geolocation.getCurrentPosition((position) => {
       this.lat = position.coords.latitude;
       this.lng = position.coords.longitude;
-      console.log('Lat: ', position.coords.latitude, 'Lng: ', position.coords.longitude);
       this.initMap();
+
     });
   }
 

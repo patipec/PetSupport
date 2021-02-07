@@ -20,13 +20,15 @@ export class RangeSlider implements OnInit{
   maxValue = 900;
   @Input()
   currSign = '$';
+  @Input()
+  step = 0.25;
 
   options: Options;
   ngOnInit(): void {
     this.options = {
       floor: this.floor,
       ceil: this.ceil,
-      step: 0.25,
+      step: this.step,
       translate: (value: number, label: LabelType): string => {
         switch (label) {
           case LabelType.Low:
