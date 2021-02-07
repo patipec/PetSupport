@@ -1,3 +1,5 @@
+using System;
+
 namespace PetSupport.Core.Wrappers
 {
     public class PagedResponse<T> : Response<T>

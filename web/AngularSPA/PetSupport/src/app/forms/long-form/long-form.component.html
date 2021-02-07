@@ -3,8 +3,8 @@
     <div class="priceRange" formGroupName="priceRange">
 
       <span class="material-icons">local_offer</span><b>Price Range</b><br>
-      <app-slider [currSign]="setSignForSlider('$')" [floor]="0" [ceil]="1000"
-                  [minValue]="30" [maxValue]="400"
+      <app-slider [currSign]="setSignForSlider('$')" [floor]="0" [ceil]="100"
+                  [minValue]="10" [maxValue]="60" [step]="1"
                   (getInfo)="onSliderPriceChange($event)">
 
       </app-slider>
@@ -61,6 +61,7 @@
       <div class="rate-label"><span class="material-icons">star_half</span><b>Rates</b><br></div>
       <app-slider [currSign]="setSignForSlider('★ ')"
                   [floor]="0" [ceil]="5" [minValue]="2" [maxValue]="4"
+                  [step]="0.25"
                   (getInfo)="onSliderRateChange($event)"></app-slider>
     </div>
 

@@ -107,22 +107,22 @@ namespace PetSupport.Infrastructure.Data.Seed
                     //Radom city coordinates
                     if (coordinateId >= 1 && coordinateId <= 100)
                     {
-                        o.Lattiude = f.Address.Latitude(51.39, 51.41);
-                        o.Longtitude = f.Address.Longitude(21.12, 21.19);
+                        o.Latitude = f.Address.Latitude(51.39, 51.41);
+                        o.Longitude = f.Address.Longitude(21.12, 21.19);
                         //o.PetsitterId = petsitterPriamaryId++;
                     }
                     //Warsaw city coordinates
                     if (coordinateId >= 100 && coordinateId <= 200)
                     {
-                        o.Lattiude = f.Address.Latitude(52.17, 52.27);
-                        o.Longtitude = f.Address.Longitude(20.91, 21.19);
+                        o.Latitude = f.Address.Latitude(52.17, 52.27);
+                        o.Longitude = f.Address.Longitude(20.91, 21.19);
                         //o.PetsitterId = petsitterPriamaryId++;
                     }
                     //Gdynia city coordinates
                     if (coordinateId >= 200 && coordinateId <= 302)
                     {
-                        o.Lattiude = f.Address.Latitude(54.47, 54.50);
-                        o.Longtitude = f.Address.Longitude(18.52, 18.55);
+                        o.Latitude = f.Address.Latitude(54.47, 54.50);
+                        o.Longitude = f.Address.Longitude(18.52, 18.55);
                         //o.PetsitterId = petsitterPriamaryId++;
                     }
                 });

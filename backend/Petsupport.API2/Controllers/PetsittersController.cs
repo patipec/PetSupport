@@ -36,8 +36,8 @@ namespace Petsupport.API2.Controllers
 
             try
             {
-                var petsitersFillteredByQuery = await _petsitterRepository
-                    .GetAllPetsitersBySearchParametersAsync(petsittersSearchParameters);
+                var petsittersFiltered = await _petsitterRepository
+                    .GetAllPetsittersBySearchParametersAsync(petsittersSearchParameters);
                 
                 var listPetsittersDto = _mapper.Map<PetsitterDTO[]>(petsittersFiltered);
                 
@@ -120,18 +120,28 @@ namespace Petsupport.API2.Controllers
         // }
 
         [HttpGet]
-        public async Task<IActionResult> GetPettsittersWithPaging([FromQuery] PagingParameters parameters)
+        public async Task<ActionResult<PetsitterDTO[]>> GetPettsittersWithPaging([FromQuery] PagingParameters parameters, PetsittersSearchParameters petsittersSearchParameters)
         {
             try
             {
                 var validParameter = new PagingParameters(parameters.PageNumber, parameters.PageSize);
 
-                var petsitersFillteredByQuery = await _petsitterRepository
-                    .GetAllPetsitersBySearchParametersAsync(petsittersSearchParameters);
+                var petsittersFiltered = await _petsitterRepository
+                    .GetAllPetsittersBySearchParametersAsync();
                 
                 var listPetsittersDto = _mapper.Map<PetsitterDTO[]>(petsittersFiltered);
-                                
+
+
+                foreach (var petsitter in listPetsittersDto)
+                {
+                    petsitter.Price = petsittersFiltered
+                        .FirstOrDefault(p => p.Id == petsitter.Id)
+                        .Services
+                        .FirstOrDefault(s => (int)s.Name == petsittersSearchParameters.ServiceId)
+                        .Price;
+                }
                 
+
 
                 var pagedData = await petsitersFillteredByQuery
                 .Skip((validParameter.PageNumber -1) * validParameter.PageSize)

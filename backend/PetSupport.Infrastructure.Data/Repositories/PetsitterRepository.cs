@@ -36,7 +36,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 .FirstOrDefaultAsync(p=>p.Id == id);
         }
 
-        public async Task<IEnumerable<Petsitter>> GetAllPetsitersBySearchPatametersAsync(
+        public async Task<IEnumerable<Petsitter>> GetAllPetsittersBySearchParametersAsync(
             PetsittersSearchParameters petsittersSearchParameters)
         {
             if (petsittersSearchParameters == null)
@@ -55,9 +55,9 @@ namespace PetSupport.Infrastructure.Data.Repositories
                     .AsQueryable()
                     .Include(p => p.Services)
                     .Include(p=>p.Coordinates)
-                    .Where(p => p.City == conditionCity)
+                    .Where(p => p.City.Contains(conditionCity))
                     .Where(p => p.Services
-                        .Any(s => (int) s.Name == petsittersSearchParameters.ServiceId))
+                        .All(s => (int) s.Name == petsittersSearchParameters.ServiceId))
                     .ToListAsync();
 
                 return await query;
@@ -74,11 +74,11 @@ namespace PetSupport.Infrastructure.Data.Repositories
                     .Include(p=>p.Coordinates)
                     .Where(p => p.City.Contains(conditionCity))
                     .Where(p => p.Services
-                        .Any(s => (int) s.Name == petsittersSearchParameters.ServiceId))
+                        .All(s => (int) s.Name == petsittersSearchParameters.ServiceId))
                     .Where(p => p.Services
-                        .Any(s => s.Price >= petsittersSearchParameters.MinPrice))
+                        .All(s => s.Price >= petsittersSearchParameters.MinPrice))
                     .Where(p => p.Services
-                        .Any(s => s.Price <= petsittersSearchParameters.MaxPrice))
+                        .All(s => s.Price <= petsittersSearchParameters.MaxPrice))
                     .ToListAsync();
                 return await query;
             }
@@ -98,13 +98,13 @@ namespace PetSupport.Infrastructure.Data.Repositories
                     .Where(p => p.City == conditionCity)
                     .Where(p => p.Street.Contains(conditionStreet))
                     .Where(p => p.Services
-                        .Any(s => (int) s.Name == petsittersSearchParameters.ServiceId))
+                        .All(s => (int) s.Name == petsittersSearchParameters.ServiceId))
                     .ToListAsync();
 
                 return await query;
             }
             
-            //filtering by City, SerrviceId, Street and  prices
+            //filtering by City, SerrviceId, Street and  Prices
             if (!string.IsNullOrWhiteSpace(petsittersSearchParameters.Street))
             {
                 var conditionCity = petsittersSearchParameters.City.Trim();
@@ -117,11 +117,11 @@ namespace PetSupport.Infrastructure.Data.Repositories
                     .Where(p => p.City.Contains(conditionCity))
                     .Where(p => p.Street.Contains(conditionStreet))
                     .Where(p => p.Services
-                        .Any(s => (int) s.Name == petsittersSearchParameters.ServiceId))
+                        .All(s => (int) s.Name == petsittersSearchParameters.ServiceId))
                     .Where(p => p.Services
-                        .Any(s => s.Price >= petsittersSearchParameters.MinPrice))
+                        .All(s => s.Price >= petsittersSearchParameters.MinPrice))
                     .Where(p => p.Services
-                        .Any(s => s.Price <= petsittersSearchParameters.MaxPrice))
+                        .All(s => s.Price <= petsittersSearchParameters.MaxPrice))
                     .ToListAsync();
                 return await query;
             }

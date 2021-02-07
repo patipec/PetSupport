@@ -1,7 +1,7 @@
 <div class="form-group" [formGroup]="services">
   <!--      PET SELECTION  -->
   <label for="boarding">
-    <div class="form-check-label" [ngStyle]="services.get('service').value == 0 &&
+    <div class="form-check-label" [ngStyle]="services.get('service').value == enumServices.Boarding &&
              {
                'background-color': 'rgb(254, 203, 64)'
               }">
@@ -16,7 +16,7 @@
     </div>
   </label>
   <label for="HouseSitting">
-    <div class="form-check-label" [ngStyle]="services.get('service').value == 1 &&
+    <div class="form-check-label" [ngStyle]="services.get('service').value == enumServices.HouseSitting &&
              {
               'background-color': 'rgb(254, 203, 64)'
              }">
@@ -32,7 +32,7 @@
     </div>
   </label>
   <label for="walking">
-    <div class="form-check-label" [ngStyle]="services.get('service').value == 2 &&
+    <div class="form-check-label" [ngStyle]="services.get('service').value == enumServices.DogWalking &&
              {
               'background-color': 'rgb(254, 203, 64)'
              }">
