@@ -6,6 +6,6 @@
         public string City { get; set; }
         public string ZipCode { get; set; }
         public string Housenr { get; set; }
-        public CoordinateDTO[] CoordinateDtos { get; set; }
+        public CoordinateDTO[] Coordinates { get; set; }
     }
 }

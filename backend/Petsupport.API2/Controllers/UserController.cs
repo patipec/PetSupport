@@ -11,12 +11,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Graph;
 using Microsoft.Graph.Auth;
 using Petsupport.API2.Dtos.InDtos;
-using Petsupport.API2.Controllers;
 using Petsupport.API2.Dtos.OutDtos;
 using Petsupport.API2.GraphServiceFactory;
 using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
-using User = Microsoft.Graph.User;
 
 
 namespace Petsupport.API2.Controllers
@@ -55,10 +53,10 @@ namespace Petsupport.API2.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateUser(CreatePetsitterDTO createPetsitterDto)
         {
-            var user = _mapper.Map<User>(createPetsitterDto);
+            var user = _mapper.Map<Microsoft.Graph.User>(createPetsitterDto);
             try
             {
-                await _graphService.GraphClient.Users
+                user = await _graphService.GraphClient.Users
                     .Request()
                     .AddAsync(user);
             }
@@ -69,26 +67,26 @@ namespace Petsupport.API2.Controllers
                     : StatusCode(StatusCodes.Status500InternalServerError, ex.Error);
             }
 
-            var petsitter = CreateUserInDatabase(createPetsitterDto);
-            if (petsitter != null)
+            var petsitter = _mapper.Map<Petsitter>(createPetsitterDto);
+            petsitter.AzureId = user.Id;
+            try
             {
+                _petsitterRepository.Add(petsitter);
+                await _petsitterRepository.SaveChangesAsync();
                 return CreatedAtAction(
                     nameof(PetsittersController.GetPetsitterById),
                     "Petsitters",
-                    new {id = petsitter.Id},
+                    new { id = petsitter.Id },
                     _mapper.Map<PetsitterDTO>(petsitter));
             }
-            else
+            catch (Exception e)
             {
+                await _graphService.GraphClient.Users["{" + user.Id + "}"]
+                    .Request()
+                    .DeleteAsync();
                 return BadRequest("Database error");
             }
 
-            
-        }
-
-        private Petsitter CreateUserInDatabase(CreatePetsitterDTO createPetsitterDto)
-        {
-            throw new NotImplementedException();
         }
     }
 }

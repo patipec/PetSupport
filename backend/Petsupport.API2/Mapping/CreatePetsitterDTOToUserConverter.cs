@@ -4,7 +4,7 @@ using Microsoft.Graph;
 using Petsupport.API2.Dtos.InDtos;
 using Petsupport.API2.GraphServiceFactory;
 
-namespace Petsupport.API2.Profiles
+namespace Petsupport.API2.Mapping
 {
     public class CreatePetsitterDTOToUserConverter : ITypeConverter<CreatePetsitterDTO, User>
     {

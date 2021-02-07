@@ -1,7 +1,6 @@
 using AutoMapper;
 using Petsupport.API2.Dtos.InDtos;
 using Petsupport.API2.Dtos.OutDtos;
-using Petsupport.API2.Profiles;
 using PetSupport.Core.Entities;
 using User = Microsoft.Graph.User;
 
@@ -29,6 +28,18 @@ namespace Petsupport.API2.Mapping
                 .ReverseMap();
 
             this.CreateMap<CreatePetsitterDTO, User>().ConvertUsing<CreatePetsitterDTOToUserConverter>();
+
+            CreateMap<BasicInfoDTO, Petsitter>();
+            CreateMap<PersonalInfoDTO, Petsitter>();
+            CreateMap<AddressDTO, Petsitter>();
+            CreateMap<PetSitterPhotosDTO, Petsitter>();
+            CreateMap<CreatePetsitterDTO, Petsitter>()
+                .IncludeMembers(
+                    c => c.BasicInfoDto,
+                    c => c.PersonalInfoDto,
+                    c => c.AddressDto,
+                    c => c.PetSitterPhotosDto);
+
         }
     }
 }
