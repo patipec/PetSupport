@@ -23,6 +23,11 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 .ToListAsync();
         }
 
+        public Task<IEnumerable<Petsitter>> GetAllPetsitersBySearchParametersAsync(PetsittersSearchParameters petsittersSearchParameters)
+        {
+            throw new NotImplementedException();
+        }
+
         public override async Task<Petsitter> GetByIdAsync(int id)
         {
             return await _context.Petsitters

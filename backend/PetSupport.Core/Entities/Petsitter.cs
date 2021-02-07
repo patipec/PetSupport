@@ -6,21 +6,14 @@ using System.Linq;
 
 namespace PetSupport.Core.Entities
 {
-    public class Petsitter 
+    public class Petsitter : User
     {
         
         public string PhotoId { get; set; }
         public double Rate { get; set; }
         public ICollection<Service> Services { get; set; }
-       }
-
-    public class BasicInfo : User
-    {
         public string Description { get; set; }
-    }
-
-    public class Address : Petsitter
-    {
+    
         public string City { get; set; }
         public string Street { get; set; }
         public string ParcelAndHouseNumbers { get; set; }
@@ -28,10 +21,7 @@ namespace PetSupport.Core.Entities
         public string Country { get; set; }
         public ICollection<Coordinates> Coordinates { get; set; }
 
-    }
-
-    public class PersonalInfo : Petsitter
-    {
+    
         public DateTime AvailabilityFrom { get; set; }
         public DateTime AvailabilityTo { get; set; }
         public DateTime DateOfBirth { get; set; }

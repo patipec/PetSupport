@@ -14,12 +14,12 @@ namespace PetSupport.Core.ResourceParameters
         [Required] 
         public int PageNumber { get; set; }
 
-        private int PageSize {get;set;}
+        public int PageSize {get;set;}
 
         public PagingParameters()
         {
-          this.PageNumber = 1
-          this.PageSize = 20
+            this.PageNumber = 1;
+            this.PageSize = 20;
         }
         public  PagingParameters(int pageNumber, int pageSize)
         {

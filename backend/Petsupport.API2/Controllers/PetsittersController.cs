@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Web.Http;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Petsupport.API2.Dtos.InDtos;
@@ -11,6 +10,7 @@ using Petsupport.API2.Dtos.OutDtos;
 using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
 using PetSupport.Core.ResourceParameters;
+using PetSupport.Core.Wrappers;
 
 namespace Petsupport.API2.Controllers
 {
@@ -133,14 +133,14 @@ namespace Petsupport.API2.Controllers
                                 
                 
 
-                var pagedData = await petsittersFilteredByQuery
+                var pagedData = await petsitersFillteredByQuery
                 .Skip((validParameter.PageNumber -1) * validParameter.PageSize)
                 .Take(validParameter.PageSize)
                 .ToListAsync();
                 var totalRecords = await _petsitterRepository.CountAsync();
 
 
-                return Ok(new PagedResponse<listPetsittersDto>(pagedData, validParameter.PageNumber, validParameter.Pagesize));
+                return Ok(new PagedResponse<listPetsittersDto>(pagedData, validParameter.PageNumber, validParameter.PageSize));
             }
             catch (Exception ex)
             {
