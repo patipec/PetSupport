@@ -127,31 +127,17 @@ namespace Petsupport.API2.Controllers
                 var validParameter = new PagingParameters(parameters.PageNumber, parameters.PageSize);
 
                 var petsittersFiltered = await _petsitterRepository
-                    .GetAllPetsittersBySearchParametersAsync();
+                    .GetAllPetsittersBySearchParametersAsync(petsittersSearchParameters);
                 
-                var listPetsittersDto = _mapper.Map<PetsitterDTO[]>(petsittersFiltered);
+                var petsittersToReturn = _mapper.Map<PetsitterDTO[]>(petsittersFiltered);
 
+                var usersListResult = new PagedResponse<PetsitterDTO[]>(petsittersToReturn, validParameter.PageNumber,
+                    validParameter.PageSize);
 
-                foreach (var petsitter in listPetsittersDto)
-                {
-                    petsitter.Price = petsittersFiltered
-                        .FirstOrDefault(p => p.Id == petsitter.Id)
-                        .Services
-                        .FirstOrDefault(s => (int)s.Name == petsittersSearchParameters.ServiceId)
-                        .Price;
-                }
                 
-
-
-                var pagedData = await petsitersFillteredByQuery
-                .Skip((validParameter.PageNumber -1) * validParameter.PageSize)
-                .Take(validParameter.PageSize)
-                .ToListAsync();
-                var totalRecords = await _petsitterRepository.CountAsync();
-
-
-                return Ok(new PagedResponse<listPetsittersDto>(pagedData, validParameter.PageNumber, validParameter.PageSize));
+                return Ok(usersListResult);
             }
+
             catch (Exception ex)
             {
                 return StatusCode(500, "Internal server error");

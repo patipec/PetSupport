@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PetSupport.Core.Enums
 {
-    enum PetType
+    public enum PetType
     {
         Cat,
         Dog,

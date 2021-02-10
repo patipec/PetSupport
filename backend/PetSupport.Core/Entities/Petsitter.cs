@@ -1,7 +1,8 @@
-﻿#nullable enable
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace PetSupport.Core.Entities
@@ -12,6 +13,7 @@ namespace PetSupport.Core.Entities
         public string PhotoId { get; set; }
         public double Rate { get; set; }
         public ICollection<Service> Services { get; set; }
+        [AllowNull]
         public string Description { get; set; }
     
         public string City { get; set; }
@@ -26,7 +28,9 @@ namespace PetSupport.Core.Entities
         public DateTime AvailabilityTo { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Title { get; set; }
+        [AllowNull]
         public string Environment { get; set; }
+        [AllowNull]
         public string Experience { get; set; }
 
     }
