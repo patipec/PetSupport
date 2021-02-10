@@ -9,5 +9,7 @@ namespace PetSupport.Core.Interfaces
     {
         Task<IEnumerable<Petsitter>> GetAllPetsittersBySearchParametersAsync
             (PetsittersSearchParameters petsittersSearchParameters);
+
+        Task<Petsitter> GetByAzureId(string azureId);
     }
 }

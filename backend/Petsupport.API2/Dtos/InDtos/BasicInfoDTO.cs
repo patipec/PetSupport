@@ -1,19 +1,11 @@
-﻿using System;
-
-namespace PetSupport.Core.Entities
+﻿namespace Petsupport.API2.Dtos.InDtos
 {
-    public class User : BaseEntity
+    public class BasicInfoDTO
     {
-        public string AzureId { get; set; }
-
         public string Name { get; set; }
-
         public string Surname { get; set; }
-
         public string Email { get; set; }
-
         public string PhoneNumber { get; set; }
-
-        
+        public string Password { get; set; }
     }
 }
