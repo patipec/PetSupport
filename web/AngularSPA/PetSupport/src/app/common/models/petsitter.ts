@@ -15,7 +15,7 @@ export interface Petsitter extends PetsitterUpdate {
     large: string;
     cat: string;
   };
-  coordinates: {lattiude, longtitude}[];
+  coordinates: {latitude, longitude}[];
 }
 
 export interface PetsitterCreate extends Petsitter {

@@ -3,7 +3,7 @@ export enum Services {
   HouseSitting,
   DogWalking,
   DropInVisit,
-  DoggyDayCare
+  DoggyDaayCare
 }
 
 export const fromEnum = (en: object): { name: string, label: string, key: number }[] => {
