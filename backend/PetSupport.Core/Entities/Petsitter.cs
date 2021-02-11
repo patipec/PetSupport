@@ -16,15 +16,14 @@ namespace PetSupport.Core.Entities
         public string ParcelAndHouseNumbers { get; set; }
         public string ZipCode { get; set; }
         public string Country { get; set; }
-        
-        public double Rate { get; set; }
-
-        public DateTime AvailabilityFrom { get; set; }
-        public DateTime AvailabilityTo { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Title { get; set; }
+        
+        public double Rate { get; set; }
+        public DateTime AvailabilityFrom { get; set; }
+        public DateTime AvailabilityTo { get; set; }
+        
         public string Environment { get; set; }
-
         public string Experience { get; set; }
         
         public ICollection<Coordinate> Coordinates { get; set; }
