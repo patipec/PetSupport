@@ -12,5 +12,6 @@ namespace PetSupport.Core.Interfaces
 
             (PetsittersSearchParameters petsittersSearchParameters);
 
+        Task<Petsitter> GetByAzureId(string azureId);
     }
 }

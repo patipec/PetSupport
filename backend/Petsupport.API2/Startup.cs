@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using PetSupport.API2.AuthorizationPolicies;
+using Petsupport.API2.GraphServiceFactory;
 using PetSupport.Core.Interfaces;
 using PetSupport.Core.Services;
 using PetSupport.Infrastructure.Data.Data;
@@ -76,6 +77,8 @@ namespace Petsupport.API2
 
             services.AddTransient<IPetsitterRepository, PetsitterRepository>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+            services.AddSingleton<IGraphService, GraphService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
