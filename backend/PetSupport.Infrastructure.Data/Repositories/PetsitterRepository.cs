@@ -131,7 +131,9 @@ namespace PetSupport.Infrastructure.Data.Repositories
             }
         }
 
-
-      
+        public Task<Petsitter> GetByAzureId(string azureId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

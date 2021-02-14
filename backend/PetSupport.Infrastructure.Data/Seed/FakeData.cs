@@ -4,6 +4,8 @@ using Bogus;
 using Bogus.Extensions;
 using PetSupport.Core.Entities;
 using PetSupport.Core.Enums;
+using PetType = PetSupport.Core.Entities.PetType;
+using PetWeight = PetSupport.Core.Entities.PetWeight;
 
 namespace PetSupport.Infrastructure.Data.Seed
 {
@@ -12,7 +14,7 @@ namespace PetSupport.Infrastructure.Data.Seed
         private const int NumberOfFakeDataToGenerate = 100;
         public List<Client> FakeClients { get; }
         public List<Service> FakeServices { get; protected set; } = new List<Service>();
-        public List<Coordinates> FakeCoordinates { get; } 
+        public List<Coordinate> FakeCoordinates { get; } 
         public List<Petsitter> FakePetsitters { get; protected set; } = new List<Petsitter>();
         public List<BookingMessage> FakeBookingMessages { get; }
 
@@ -94,7 +96,7 @@ namespace PetSupport.Infrastructure.Data.Seed
             
             var coordinateId = 1;
             var petsitterPriamaryId = 101;
-            var coordinateFaker = new Faker<Coordinates>()
+            var coordinateFaker = new Faker<Coordinate>()
                 .StrictMode(false)
                 .RuleFor(c => c.Id, f => coordinateId++)
                 .RuleFor(c => c.PetsitterId, f => petsitterPriamaryId++)

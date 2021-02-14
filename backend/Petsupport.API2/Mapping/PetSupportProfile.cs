@@ -16,7 +16,7 @@ namespace Petsupport.API2.Mapping
                 .ReverseMap();
 
             
-            this.CreateMap<Coordinates, CoordinateDTO>()
+            this.CreateMap<Coordinate, CoordinateDTO>()
                 .ReverseMap();;
 
 
