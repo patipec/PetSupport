@@ -3,7 +3,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AttributeRouting;
 using AutoMapper;
+// using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using Petsupport.API2.Dtos.InDtos;
 using Petsupport.API2.Dtos.OutDtos;
@@ -11,11 +13,13 @@ using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
 using PetSupport.Core.ResourceParameters;
 using PetSupport.Core.Wrappers;
+// using Microsoft.AspNetCore.Components;
 
 namespace Petsupport.API2.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("/api/[controller]")]
+   
     public class PetsittersController : ControllerBase
     {
         private readonly IPetsitterRepository _petsitterRepository;
@@ -29,11 +33,12 @@ namespace Petsupport.API2.Controllers
         }
           
 
-        [HttpGet]
+        [HttpGet("/api/petsitters/listpaged")]
+        
         public async Task<ActionResult<PetsitterDTO[]>> GetPetsittersBySearchParameters
             ([FromQuery] PetsittersSearchParameters petsittersSearchParameters)
         {
-
+        
             try
             {
                 var petsittersFiltered = await _petsitterRepository
@@ -119,25 +124,26 @@ namespace Petsupport.API2.Controllers
         //     
         // }
 
-        [HttpGet]
+        [HttpGet("/list")]
+        
         public async Task<ActionResult<PetsitterDTO[]>> GetPettsittersWithPaging([FromQuery] PagingParameters parameters, PetsittersSearchParameters petsittersSearchParameters)
         {
             try
             {
                 var validParameter = new PagingParameters(parameters.PageNumber, parameters.PageSize);
-
+        
                 var petsittersFiltered = await _petsitterRepository
                     .GetAllPetsittersBySearchParametersAsync(petsittersSearchParameters);
                 
                 var petsittersToReturn = _mapper.Map<PetsitterDTO[]>(petsittersFiltered);
-
+        
                 var usersListResult = new PagedResponse<PetsitterDTO[]>(petsittersToReturn, validParameter.PageNumber,
                     validParameter.PageSize);
-
+        
                 
                 return Ok(usersListResult);
             }
-
+        
             catch (Exception ex)
             {
                 return StatusCode(500, "Internal server error");

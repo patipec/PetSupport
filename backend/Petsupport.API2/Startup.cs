@@ -88,7 +88,7 @@ namespace Petsupport.API2
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/Petsupport/swagger/v1/swagger.json", "Petsupport.API2 v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Petsupport.API2 v1"));
             }
 
             app.UseHttpsRedirection();
