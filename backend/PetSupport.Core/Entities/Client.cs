@@ -3,7 +3,5 @@
     public class Client : User
     {
         
-        
-
     }
 }

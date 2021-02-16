@@ -13,6 +13,7 @@ using Microsoft.OpenApi.Models;
 using PetSupport.API2.AuthorizationPolicies;
 using Petsupport.API2.GraphServiceFactory;
 using PetSupport.Core.Interfaces;
+using PetSupport.Core.Services;
 using PetSupport.Infrastructure.Data.Data;
 using PetSupport.Infrastructure.Data.Repositories;
 
@@ -64,6 +65,7 @@ namespace Petsupport.API2
                     "SitterScope",
                     policy => policy.Requirements.Add(new ScopesRequirement("Sitter")));
             });
+            services.AddSingleton<ILoggerService, LoggerService>();
 
             services.AddCors(
                 options =>

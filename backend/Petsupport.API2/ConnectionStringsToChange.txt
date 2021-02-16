@@ -12,16 +12,3 @@
   "AllowedHosts": "*"
 }
 
-
-Do wklejenia jako Azure:
-{
-  "ConnectionStrings": { "DefaultConnection": "Server=tcp:petsittersupport.database.windows.net,1433;Initial Catalog=PetsitterSupport;Persist Security Info=False;User ID=pati;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" },
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft": "Warning",
-      "Microsoft.Hosting.Lifetime": "Information"
-    }
-  },
-  "AllowedHosts": "*"
-}

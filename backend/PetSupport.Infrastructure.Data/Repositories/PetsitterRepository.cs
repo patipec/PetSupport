@@ -23,6 +23,11 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 .ToListAsync();
         }
 
+        public Task<IEnumerable<Petsitter>> GetAllPetsitersBySearchParametersAsync(PetsittersSearchParameters petsittersSearchParameters)
+        {
+            throw new NotImplementedException();
+        }
+
         public override async Task<Petsitter> GetByIdAsync(int id)
         {
             return await _context.Petsitters
@@ -126,7 +131,9 @@ namespace PetSupport.Infrastructure.Data.Repositories
             }
         }
 
-        public async Task<Petsitter> GetByAzureId(string azureId) =>
-            await _context.Petsitters.FirstOrDefaultAsync(p => p.AzureId == azureId);
+        public Task<Petsitter> GetByAzureId(string azureId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
