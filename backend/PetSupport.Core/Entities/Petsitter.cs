@@ -28,6 +28,7 @@ namespace PetSupport.Core.Entities
         
         public ICollection<Coordinate> Coordinates { get; set; }
         public ICollection<Service> Services { get; set; }
+        public ICollection<BookingMessage> BookingMessages { get; set; }
     }
 
     public class Coordinate : BaseEntity

@@ -55,7 +55,7 @@ namespace Petsupport.API2.Controllers
         }
         
         
-        [HttpGet("{id}", Name = nameof(GetPetsitterById))]
+        [HttpGet("{id:int}", Name = nameof(GetPetsitterById))]
         public async Task<ActionResult<PetsitterDTO>> GetPetsitterById(int id)
         {
             try
