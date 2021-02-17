@@ -33,7 +33,7 @@ namespace Petsupport.API2.Controllers
         }
           
 
-        [HttpGet("/api/petsitters/listpaged")]
+        [HttpGet("petsitters/list")]
         
         public async Task<ActionResult<PetsitterDTO[]>> GetPetsittersBySearchParameters
             ([FromQuery] PetsittersSearchParameters petsittersSearchParameters)
@@ -124,7 +124,7 @@ namespace Petsupport.API2.Controllers
         //     
         // }
 
-        [HttpGet("/list")]
+        [HttpGet("petsitters/listpaged")]
         
         public async Task<ActionResult<PetsitterDTO[]>> GetPettsittersWithPaging([FromQuery] PagingParameters parameters, PetsittersSearchParameters petsittersSearchParameters)
         {
