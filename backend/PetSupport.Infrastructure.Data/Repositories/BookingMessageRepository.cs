@@ -14,12 +14,19 @@ namespace PetSupport.Infrastructure.Data.Repositories
         {
         }
 
-        public async Task<IEnumerable<BookingMessage>> GetBookingMessagesByClientId(int clientId)
+        public async Task<IEnumerable<BookingMessage>> GetBookingMessagesByClientIdAsync(int clientId)
         {
             return await _context.BookingMessages
                 .Where(m => m.ClientId == clientId)
                 .OrderBy(m=>m.SendData)
                 .ToListAsync();
+        }
+
+        public async Task<BookingMessage> GetBookingMessageByClientIdAsync(int clientId, int messageId)
+        {
+            return await _context.BookingMessages
+                .Where(m => m.ClientId == clientId && m.Id == messageId)
+                .FirstOrDefaultAsync();
         }
     }
 }
