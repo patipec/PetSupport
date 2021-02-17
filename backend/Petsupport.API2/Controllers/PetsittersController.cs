@@ -5,15 +5,14 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AttributeRouting;
 using AutoMapper;
-// using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Mvc;
+
 using Petsupport.API2.Dtos.InDtos;
 using Petsupport.API2.Dtos.OutDtos;
 using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
 using PetSupport.Core.ResourceParameters;
 using PetSupport.Core.Wrappers;
-// using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Petsupport.API2.Controllers
 {
@@ -33,7 +32,7 @@ namespace Petsupport.API2.Controllers
         }
           
 
-        [HttpGet("petsitters/list")]
+        [HttpGet("/list")]
         
         public async Task<ActionResult<PetsitterDTO[]>> GetPetsittersBySearchParameters
             ([FromQuery] PetsittersSearchParameters petsittersSearchParameters)
@@ -58,7 +57,7 @@ namespace Petsupport.API2.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Internal server error");
+                return NotFound("There are no petsitters to show");
             }
         }
         
@@ -124,7 +123,7 @@ namespace Petsupport.API2.Controllers
         //     
         // }
 
-        [HttpGet("petsitters/listpaged")]
+        [HttpGet("/listpaged")]
         
         public async Task<ActionResult<PetsitterDTO[]>> GetPettsittersWithPaging([FromQuery] PagingParameters parameters, PetsittersSearchParameters petsittersSearchParameters)
         {
@@ -132,10 +131,10 @@ namespace Petsupport.API2.Controllers
             {
                 var validParameter = new PagingParameters(parameters.PageNumber, parameters.PageSize);
         
-                var petsittersFiltered = await _petsitterRepository
+                var petsittersFilteredByParameter = await _petsitterRepository
                     .GetAllPetsittersBySearchParametersAsync(petsittersSearchParameters);
                 
-                var petsittersToReturn = _mapper.Map<PetsitterDTO[]>(petsittersFiltered);
+                var petsittersToReturn = _mapper.Map<PetsitterDTO[]>(petsittersFilteredByParameter);
         
                 var usersListResult = new PagedResponse<PetsitterDTO[]>(petsittersToReturn, validParameter.PageNumber,
                     validParameter.PageSize);

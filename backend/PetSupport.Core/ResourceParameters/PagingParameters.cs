@@ -10,8 +10,6 @@ namespace PetSupport.Core.ResourceParameters
     public class PagingParameters
     {
         //Pagination
-        
-        [Required] 
         public int PageNumber { get; set; }
 
         public int PageSize {get;set;}

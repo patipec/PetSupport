@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PetSupport.Core.ResourceParameters
 {
-    public class PetsittersSearchParameters : PagingParameters
+    public class PetsittersSearchParameters
     {
         //FindPetSitterShortFormDTO
         [Required]
