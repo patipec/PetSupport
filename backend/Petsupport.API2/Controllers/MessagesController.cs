@@ -9,7 +9,7 @@ using PetSupport.Core.Interfaces;
 namespace Petsupport.API2.Controllers
 {
     [ApiController]
-    [Route("api/clients/{id}/messages")]
+    [Route("api/clients/{clientId}/messages")]
     public class BookingMessagesController : ControllerBase
     {
         private readonly IBookingMessageRepository _bookingMessageRepository;
@@ -24,13 +24,29 @@ namespace Petsupport.API2.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<BookingMessageBriefDTO[]>> GetBookingMessagesByClientId(int id)
+        public async Task<ActionResult<BookingMessageBriefDTO[]>> GetBookingMessagesByClientId(int clientId)
         {
             try
             {
                 var clientBookingMessages = await _bookingMessageRepository
-                    .GetBookingMessagesByClientId(id);
+                    .GetBookingMessagesByClientIdAsync(clientId);
                 return Ok(_mapper.Map<BookingMessageBriefDTO[]>(clientBookingMessages));
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+        }
+        
+        [HttpGet ("{messageId:int}")]
+        public async Task<ActionResult<BookingMessageFullDTO>> GetBookingMessageById(int messageId, int clientId)
+        {
+            try
+            {
+                var bookingMessage = await _bookingMessageRepository
+                    .GetBookingMessageByClientIdAsync(clientId, messageId);
+                return Ok(_mapper.Map<BookingMessageFullDTO>(bookingMessage));
 
             }
             catch (Exception ex)
