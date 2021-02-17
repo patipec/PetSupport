@@ -45,6 +45,14 @@ namespace Petsupport.API2.Mapping
                 .ForMember(dto=>dto.SendDate,
                     opt=>
                         opt.MapFrom(m=>m.SendData.ToString()));
+            
+            this.CreateMap<BookingMessage, BookingMessageFullDTO>()
+                .ForMember(dto=>dto.SendDate,
+                    opt=>
+                        opt.MapFrom(m=>m.SendData.ToString()))
+                .ForMember(dto=>dto.Message,
+                opt=>
+                    opt.MapFrom(m=>m.Text));
         }
     }
 }
