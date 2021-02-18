@@ -7,9 +7,11 @@ namespace PetSupport.Core.Interfaces
 {
     public interface IPetsitterRepository : IBaseRepository<Petsitter>
     {
-        Task<IEnumerable<Petsitter>> GetAllPetsittersBySearchParametersAsync
-            (PetsittersSearchParameters petsittersSearchParameters);
 
+        Task<IEnumerable<Petsitter>> GetAllPetsittersBySearchParametersAsync
+
+            (PetsittersSearchParameters petsittersSearchParameters);
         Task<Petsitter> GetByAzureId(string azureId);
+
     }
 }
