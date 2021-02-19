@@ -32,8 +32,7 @@ namespace Petsupport.API2.Controllers
         }
           
 
-        [HttpGet("/list")]
-        
+        [HttpGet]
         public async Task<ActionResult<PetsitterDTO[]>> GetPetsittersBySearchParameters
             ([FromQuery] PetsittersSearchParameters petsittersSearchParameters)
         {
