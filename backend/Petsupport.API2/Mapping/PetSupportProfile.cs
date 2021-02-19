@@ -6,7 +6,7 @@ using User = Microsoft.Graph.User;
 
 namespace Petsupport.API2.Mapping
 {
-    public class PetSupportProfile: Profile
+    public class PetSupportProfile : Profile
     {
         public PetSupportProfile()
         {
@@ -15,15 +15,15 @@ namespace Petsupport.API2.Mapping
                     opt.MapFrom(p => p.PhotoId))
                 .ReverseMap();
 
-            
+
             this.CreateMap<Coordinate, CoordinateDTO>()
-                .ReverseMap();;
+                .ReverseMap(); ;
 
 
             this.CreateMap<Service, ServiceDTO>()
                 .ReverseMap();
-            
-            
+
+
             this.CreateMap<Petsitter, FullPetsitterDTO>()
                 .ReverseMap();
 

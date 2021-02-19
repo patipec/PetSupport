@@ -12,6 +12,6 @@
 
         public string SignUpSignInPolicyId { get; set; }
 
-        public string B2CExtensionAppClientId { get; set; } 
+        public string B2CExtensionAppClientId { get; set; }
     }
 }

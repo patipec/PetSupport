@@ -15,7 +15,7 @@ namespace PetSupport.Core.ResourceParameters
         public int? MinPrice { get; set; } = 0;
         public int? MaxPrice { get; set; } = Int32.MaxValue;
 
-       
+
 
     }
 }

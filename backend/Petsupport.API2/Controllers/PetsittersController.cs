@@ -1,56 +1,50 @@
-﻿using System;
-using System.ComponentModel;
-using System.Linq;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using AttributeRouting;
-using AutoMapper;
-
-using Petsupport.API2.Dtos.InDtos;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Petsupport.API2.Dtos.OutDtos;
-using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
 using PetSupport.Core.ResourceParameters;
 using PetSupport.Core.Wrappers;
-using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Petsupport.API2.Controllers
 {
     [ApiController]
     [Route("/api/[controller]")]
-   
+
     public class PetsittersController : ControllerBase
     {
         private readonly IPetsitterRepository _petsitterRepository;
         private readonly IMapper _mapper;
-        
+
 
         public PetsittersController(IPetsitterRepository petsitterRepository, IMapper mapper)
         {
             this._petsitterRepository = petsitterRepository;
             this._mapper = mapper;
         }
-          
 
-        [HttpGet("/list")]
-        
+
+        [HttpGet]
+
         public async Task<ActionResult<PetsitterDTO[]>> GetPetsittersBySearchParameters
             ([FromQuery] PetsittersSearchParameters petsittersSearchParameters)
         {
-        
+
             try
             {
                 var petsittersFiltered = await _petsitterRepository
                     .GetAllPetsittersBySearchParametersAsync(petsittersSearchParameters);
-                
+
                 var listPetsittersDto = _mapper.Map<PetsitterDTO[]>(petsittersFiltered);
-                
+
                 foreach (var petsitter in listPetsittersDto)
                 {
                     petsitter.Price = petsittersFiltered
                         .FirstOrDefault(p => p.Id == petsitter.Id)
                         .Services
-                        .FirstOrDefault(s => (int) s.Name == petsittersSearchParameters.ServiceId)
+                        .FirstOrDefault(s => (int)s.Name == petsittersSearchParameters.ServiceId)
                         .Price;
                 }
                 return Ok(listPetsittersDto);
@@ -60,8 +54,8 @@ namespace Petsupport.API2.Controllers
                 return NotFound("There are no petsitters to show");
             }
         }
-        
-        
+
+
         [HttpGet("{id}", Name = nameof(GetPetsitterById))]
         public async Task<ActionResult<PetsitterDTO>> GetPetsitterById(int id)
         {
@@ -69,7 +63,7 @@ namespace Petsupport.API2.Controllers
             {
                 var petsitter = await _petsitterRepository.GetByIdAsync(id);
                 if (petsitter == null)
-                { 
+                {
                     return NotFound();
                 }
                 return Ok(_mapper.Map<PetsitterDTO>(petsitter));
@@ -123,32 +117,36 @@ namespace Petsupport.API2.Controllers
         //     
         // }
 
-        [HttpGet("/listpaged")]
-        
-        public async Task<ActionResult<PetsitterDTO[]>> GetPettsittersWithPaging([FromQuery] PagingParameters parameters, PetsittersSearchParameters petsittersSearchParameters)
+        [HttpGet]
+        [Route("/api/[controller]/paged")]
+
+        public async Task<ActionResult<PetsitterDTO[]>> GetPettsittersWithPaging([FromQuery] PagingParameters parameters, [FromQuery] PetsittersSearchParameters petsittersSearchParameters)
         {
             try
             {
                 var validParameter = new PagingParameters(parameters.PageNumber, parameters.PageSize);
-        
+
                 var petsittersFilteredByParameter = await _petsitterRepository
                     .GetAllPetsittersBySearchParametersAsync(petsittersSearchParameters);
-                
+
                 var petsittersToReturn = _mapper.Map<PetsitterDTO[]>(petsittersFilteredByParameter);
-        
+
                 var usersListResult = new PagedResponse<PetsitterDTO[]>(petsittersToReturn, validParameter.PageNumber,
                     validParameter.PageSize);
-        
+
+
                 
                 return Ok(usersListResult);
+
+
             }
-        
+
             catch (Exception ex)
             {
                 return StatusCode(500, "Internal server error");
             }
-        }  
+        }
 
     }
-   
+
 }

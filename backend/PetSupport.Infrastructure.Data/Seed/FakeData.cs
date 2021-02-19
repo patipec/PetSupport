@@ -1,9 +1,9 @@
-using System;
-using System.Collections.Generic;
 using Bogus;
 using Bogus.Extensions;
 using PetSupport.Core.Entities;
 using PetSupport.Core.Enums;
+using System;
+using System.Collections.Generic;
 using PetType = PetSupport.Core.Entities.PetType;
 using PetWeight = PetSupport.Core.Entities.PetWeight;
 
@@ -14,7 +14,7 @@ namespace PetSupport.Infrastructure.Data.Seed
         private const int NumberOfFakeDataToGenerate = 1000;
         public List<Client> FakeClients { get; }
         public List<Service> FakeServices { get; protected set; } = new List<Service>();
-        public List<Coordinate> FakeCoordinates { get; } 
+        public List<Coordinate> FakeCoordinates { get; }
         public List<Petsitter> FakePetsitters { get; protected set; } = new List<Petsitter>();
         public List<BookingMessage> FakeBookingMessages { get; }
 
@@ -32,8 +32,8 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(c => c.PhoneNumber, f => f.Person.Phone)
                 .RuleFor(c => c.AzureId, f => Guid.NewGuid().ToString());
             FakeClients = clientFaker.Generate(NumberOfFakeDataToGenerate);
-            
-            
+
+
             var serviceId = 1;
             var serviceFaker = new Faker<Service>()
                 .RuleFor(s => s.Id, f => serviceId++)
@@ -42,7 +42,7 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(p => p.Price, f => double.Parse(f.Commerce.Price(min: 10, max: 50, 0)))
                 .RuleFor(s => s.PetType, f => f.PickRandom<PetType>())
                 .RuleFor(s => s.PetWeight, f => f.PickRandom<PetWeight>());
-                
+
 
             // Petsitter and Client entity inherit for user class so they have the same column with Id on the data table.
             var petsitterId = clientId;
@@ -57,7 +57,7 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(p => p.Description, f => f.Lorem.Sentence(30))
                 .RuleFor(p => p.PhotoId, f => f.Image.PicsumUrl())
                 //.RuleFor(p => p.City, f => f.PickRandomParam("Radom", "Warsaw", "Gdynia"))
-                .Rules((f,pet)=>
+                .Rules((f, pet) =>
                 {
                     if (petsitterId >= 1001 && petsitterId <= 2000)
                     {
@@ -65,11 +65,11 @@ namespace PetSupport.Infrastructure.Data.Seed
                     }
                     if (petsitterId >= 2001 && petsitterId <= 3000)
                     {
-                        pet.City =  "Warsaw";
+                        pet.City = "Warsaw";
                     }
                     if (petsitterId >= 3001 && petsitterId <= 4002)
                     {
-                        pet.City =  "Gdynia";
+                        pet.City = "Gdynia";
                     }
                 })
                 .RuleFor(p => p.Street, f => f.Address.StreetName())
@@ -90,10 +90,10 @@ namespace PetSupport.Infrastructure.Data.Seed
                     FakeServices.AddRange(fakeServices);
                     return null; // Petsitter.Services is a getter only. The return value has no impact.
                 });
-            var fakePetsitters = petsitterFaker.Generate(NumberOfFakeDataToGenerate*3);
+            var fakePetsitters = petsitterFaker.Generate(NumberOfFakeDataToGenerate * 3);
             FakePetsitters.AddRange(fakePetsitters);
 
-            
+
             var coordinateId = 1;
             var petsitterPriamaryId = 1001;
             var coordinateFaker = new Faker<Coordinate>()
@@ -123,7 +123,7 @@ namespace PetSupport.Infrastructure.Data.Seed
                     }
                 });
             FakeCoordinates = coordinateFaker.Generate(3000);
-            
+
             var bookingMessageId = 1;
             var bookingMessageFaker = new Faker<BookingMessage>()
                 .RuleFor(bm => bm.Id, f => bookingMessageId++)
@@ -131,7 +131,7 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(bm => bm.ClientId, f => f.PickRandom(FakeClients).Id)
                 .RuleFor(bm => bm.Text, f => f.Lorem.Paragraphs(4));
             FakeBookingMessages = bookingMessageFaker.Generate(NumberOfFakeDataToGenerate / 2);
-            
+
         }
     }
 }
