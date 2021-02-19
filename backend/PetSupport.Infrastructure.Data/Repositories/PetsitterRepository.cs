@@ -126,7 +126,9 @@ namespace PetSupport.Infrastructure.Data.Repositories
             }
         }
 
-        public async Task<Petsitter> GetByAzureId(string azureId) =>
-            await _context.Petsitters.FirstOrDefaultAsync(p => p.AzureId == azureId);
+        public Task<Petsitter> GetByAzureId(string azureId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

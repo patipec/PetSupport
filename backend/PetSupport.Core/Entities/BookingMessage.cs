@@ -14,6 +14,7 @@ namespace PetSupport.Core.Entities
         public DateTime SendData { get; private set; }
 
         public string Text { get; set; }
+        public DateTime SentDate { get; set; }
 
         //Relationships
         public int? PetsitterId { get; set; }

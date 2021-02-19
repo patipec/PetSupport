@@ -4,12 +4,14 @@ using Bogus;
 using Bogus.Extensions;
 using PetSupport.Core.Entities;
 using PetSupport.Core.Enums;
+using PetType = PetSupport.Core.Entities.PetType;
+using PetWeight = PetSupport.Core.Entities.PetWeight;
 
 namespace PetSupport.Infrastructure.Data.Seed
 {
     public class FakeData
     {
-        private const int NumberOfFakeDataToGenerate = 100;
+        private const int NumberOfFakeDataToGenerate = 1000;
         public List<Client> FakeClients { get; }
         public List<Service> FakeServices { get; protected set; } = new List<Service>();
         public List<Coordinate> FakeCoordinates { get; } 
@@ -57,15 +59,15 @@ namespace PetSupport.Infrastructure.Data.Seed
                 //.RuleFor(p => p.City, f => f.PickRandomParam("Radom", "Warsaw", "Gdynia"))
                 .Rules((f,pet)=>
                 {
-                    if (petsitterId >= 101 && petsitterId <= 200)
+                    if (petsitterId >= 1001 && petsitterId <= 2000)
                     {
                         pet.City = "Radom";
                     }
-                    if (petsitterId >= 201 && petsitterId <= 300)
+                    if (petsitterId >= 2001 && petsitterId <= 3000)
                     {
                         pet.City =  "Warsaw";
                     }
-                    if (petsitterId >= 301 && petsitterId <= 402)
+                    if (petsitterId >= 3001 && petsitterId <= 4002)
                     {
                         pet.City =  "Gdynia";
                     }
@@ -93,7 +95,7 @@ namespace PetSupport.Infrastructure.Data.Seed
 
             
             var coordinateId = 1;
-            var petsitterPriamaryId = 101;
+            var petsitterPriamaryId = 1001;
             var coordinateFaker = new Faker<Coordinate>()
                 .StrictMode(false)
                 .RuleFor(c => c.Id, f => coordinateId++)
@@ -102,25 +104,25 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .Rules((f, o) =>
                 {
                     //Radom city coordinates
-                    if (coordinateId >= 1 && coordinateId <= 100)
+                    if (coordinateId >= 1 && coordinateId <= 1000)
                     {
                         o.Latitude = f.Address.Latitude(51.39, 51.41);
                         o.Longitude = f.Address.Longitude(21.12, 21.19);
                     }
                     //Warsaw city coordinates
-                    if (coordinateId >= 100 && coordinateId <= 200)
+                    if (coordinateId >= 1000 && coordinateId <= 2000)
                     {
                         o.Latitude = f.Address.Latitude(52.17, 52.27);
                         o.Longitude = f.Address.Longitude(20.91, 21.19);
                     }
                     //Gdynia city coordinates
-                    if (coordinateId >= 200 && coordinateId <= 302)
+                    if (coordinateId >= 2000 && coordinateId <= 3002)
                     {
                         o.Latitude = f.Address.Latitude(54.47, 54.50);
                         o.Longitude = f.Address.Longitude(18.52, 18.55);
                     }
                 });
-            FakeCoordinates = coordinateFaker.Generate(300);
+            FakeCoordinates = coordinateFaker.Generate(3000);
             
             var bookingMessageId = 1;
             var bookingMessageFaker = new Faker<BookingMessage>()
