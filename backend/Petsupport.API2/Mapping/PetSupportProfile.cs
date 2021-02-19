@@ -27,8 +27,9 @@ namespace Petsupport.API2.Mapping
             this.CreateMap<Petsitter, FullPetsitterDTO>()
                 .ReverseMap();
 
+            
             this.CreateMap<CreatePetsitterDTO, User>().ConvertUsing<CreatePetsitterDTOToUserConverter>();
-
+            
             CreateMap<BasicInfoDTO, Petsitter>();
             CreateMap<PersonalInfoDTO, Petsitter>();
             CreateMap<AddressDTO, Petsitter>();
@@ -40,6 +41,25 @@ namespace Petsupport.API2.Mapping
                     c => c.AddressDto,
                     c => c.PetSitterPhotosDto);
 
+            this.CreateMap<BookingMessage, BookingMessageBriefDTO>()
+                .ForMember(dto=>dto.SendDate,
+                    opt=>
+                        opt.MapFrom(m=>m.SendData.ToString()));
+            
+            this.CreateMap<BookingMessage, BookingMessageFullDTO>()
+                .ForMember(dto=>dto.SendDate,
+                    opt=>
+                        opt.MapFrom(m=>m.SendData.ToString()))
+                .ForMember(dto=>dto.Message,
+                opt=>
+                    opt.MapFrom(m=>m.Text));
+
+
+            this.CreateMap<BookingMessage, CreateBookingMessageDTO>()
+                .ForMember(dto => dto.Message,
+                    opt =>
+                        opt.MapFrom(m => m.Text))
+                .ReverseMap();
         }
     }
 }

@@ -76,6 +76,7 @@ namespace Petsupport.API2
                 });
 
             services.AddTransient<IPetsitterRepository, PetsitterRepository>();
+            services.AddTransient<IBookingMessageRepository, BookingMessageRepository>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddSingleton<IGraphService, GraphService>();

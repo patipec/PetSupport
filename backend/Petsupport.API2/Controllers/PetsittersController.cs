@@ -54,6 +54,9 @@ namespace Petsupport.API2.Controllers
                 return NotFound("There are no petsitters to show");
             }
         }
+        
+        
+        [HttpGet("{id:int}", Name = nameof(GetPetsitterById))]
 
 
         [HttpGet("{id}", Name = nameof(GetPetsitterById))]
