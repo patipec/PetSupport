@@ -53,6 +53,13 @@ namespace Petsupport.API2.Mapping
                 .ForMember(dto=>dto.Message,
                 opt=>
                     opt.MapFrom(m=>m.Text));
+
+
+            this.CreateMap<BookingMessage, CreateBookingMessageDTO>()
+                .ForMember(dto => dto.Message,
+                    opt =>
+                        opt.MapFrom(m => m.Text))
+                .ReverseMap();
         }
     }
 }
