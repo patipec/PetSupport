@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
-
 using System.Linq;
 
 namespace PetSupport.Core.Entities
@@ -30,9 +28,8 @@ namespace PetSupport.Core.Entities
         
         public ICollection<Coordinate> Coordinates { get; set; }
         public ICollection<Service> Services { get; set; }
-
+        public ICollection<BookingMessage> BookingMessages { get; set; }
     }
-
 
     public class Coordinate : BaseEntity
     { 

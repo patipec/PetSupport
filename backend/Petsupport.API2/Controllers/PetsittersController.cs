@@ -32,8 +32,7 @@ namespace Petsupport.API2.Controllers
         }
           
 
-        [HttpGet("/list")]
-        
+        [HttpGet]
         public async Task<ActionResult<PetsitterDTO[]>> GetPetsittersBySearchParameters
             ([FromQuery] PetsittersSearchParameters petsittersSearchParameters)
         {
@@ -62,7 +61,7 @@ namespace Petsupport.API2.Controllers
         }
         
         
-        [HttpGet("{id}", Name = nameof(GetPetsitterById))]
+        [HttpGet("{id:int}", Name = nameof(GetPetsitterById))]
         public async Task<ActionResult<PetsitterDTO>> GetPetsitterById(int id)
         {
             try
