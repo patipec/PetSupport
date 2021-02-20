@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Petsitter} from '../../../common/models/petsitter';
+import {PetsittersService} from '../../petsitters/petsitters.service';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-contact-form-success',
@@ -12,11 +15,21 @@ export class ContactFormSuccessComponent implements OnInit {
   startDate = '28.10.2020';
   endDate = '02.11.2020';
   services = 'Doggy Day Care';
+  public petsitter: Petsitter;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private route: ActivatedRoute,
+              private petsitterService: PetsittersService) {
   }
 
   ngOnInit(): void {
+    this.route.params
+      .pipe(
+        switchMap(p =>
+          this.petsitterService.getPetsitter(p.id))
+      )
+      .subscribe(p => this.petsitter = p);
+
   }
 
   backToHome() {

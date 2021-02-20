@@ -1,0 +1,26 @@
+<div class="contact-form-page">
+  <mat-card class="contact-card-container">
+    <mat-card-title>My messages</mat-card-title>
+    <table *ngIf="isLoaded">
+      <tr>
+        <th>No.</th>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>City</th>
+        <th>Street</th>
+      </tr>
+      <tr *ngFor=" let message of messages; let i=index"
+          [routerLink]="[message.id]"
+          style="cursor: pointer"
+      >
+        <th>{{i+1}}. </th>
+        <th>{{message.sendDate}}</th>
+        <th>{{petsitterData[message.petsitterId].name}}</th>
+        <th>{{petsitterData[message.petsitterId].surname}}</th>
+        <th>{{petsitterData[message.petsitterId].city}}</th>
+        <th>{{petsitterData[message.petsitterId].street}}</th>
+      </tr>
+    </table>
+  </mat-card>
+</div>

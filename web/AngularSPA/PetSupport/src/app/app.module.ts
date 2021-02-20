@@ -75,6 +75,8 @@ import {MsalModule, MsalInterceptor} from '@azure/msal-angular';
 import {AuthButtonComponent} from './common/auth/auth-button/auth-button.component';
 import {LoginAuthGuard} from './common/auth/login-guard';
 import { NotAuthorizedComponent } from './common/auth/not-authorized/not-authorized.component';
+import { MessagesListComponent } from './user/messages/messages-list/messages-list.component';
+import { MessageComponent } from './user/messages/message/message.component';
 
 @NgModule({
   declarations: [
@@ -118,6 +120,8 @@ import { NotAuthorizedComponent } from './common/auth/not-authorized/not-authori
     SFormComponent,
     AuthButtonComponent,
     NotAuthorizedComponent,
+    MessagesListComponent,
+    MessageComponent,
   ],
 
   imports: [
