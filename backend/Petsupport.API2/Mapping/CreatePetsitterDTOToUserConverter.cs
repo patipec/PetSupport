@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.Graph;
 using Petsupport.API2.Dtos.InDtos;
 using Petsupport.API2.GraphServiceFactory;
+using System.Collections.Generic;
 
 namespace Petsupport.API2.Mapping
 {

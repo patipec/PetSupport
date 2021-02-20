@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PetSupport.Core.Enums
+﻿namespace PetSupport.Core.Enums
 {
     public enum PetType
     {
@@ -13,5 +7,5 @@ namespace PetSupport.Core.Enums
         Fishes,
         Hamster,
         GuineaPig
-    } 
+    }
 }

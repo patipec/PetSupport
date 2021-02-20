@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NLog;
+﻿using NLog;
 using PetSupport.Core.Interfaces;
 
 
 namespace PetSupport.Core.Services
 {
-    
+
     public class LoggerService : ILoggerService
     {
         private static ILogger logger = LogManager.GetCurrentClassLogger();
