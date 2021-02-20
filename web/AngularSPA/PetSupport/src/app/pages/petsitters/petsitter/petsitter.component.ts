@@ -38,7 +38,7 @@ export class PetsitterComponent implements OnInit, AfterViewInit {
   }
 
   public navigateToContactPage(): void {
-    void this.router.navigateByUrl('contact-form');
+    void this.router.navigateByUrl(`contact-form/${this.petsitterId}`);
   }
   private bindSliderArrows(trigger, target): void {
     trigger.addEventListener('click', () => {

@@ -11,12 +11,15 @@ import {ServicesComponent} from './forms/register-form/services/services.compone
 import {LoginFormComponent} from './forms/login-form/login-form.component';
 import {ContactFormComponent} from './pages/contact-form/contact-form.component';
 import {ContactFormSuccessComponent} from './pages/contact-form/contact-form-success/contact-form-success.component';
-import { EndOfRegistrationComponent } from './forms/register-form/end-of-registration/end-of-registration.component';
-import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
-import { BiFormComponent } from './forms/register-form/basic-info/bi-form/bi-form.component';
-import { UploadPhotosComponent } from './forms/register-form/upload-photos/upload-photos.component';
+import {EndOfRegistrationComponent} from './forms/register-form/end-of-registration/end-of-registration.component';
+import {EditProfileComponent} from './pages/edit-profile/edit-profile.component';
+import {BiFormComponent} from './forms/register-form/basic-info/bi-form/bi-form.component';
+import {UploadPhotosComponent} from './forms/register-form/upload-photos/upload-photos.component';
 import {LoginAuthGuard} from './common/auth/login-guard';
 import {NotAuthorizedComponent} from './common/auth/not-authorized/not-authorized.component';
+import {Message} from '@angular/compiler/src/i18n/i18n_ast';
+import {MessagesListComponent} from './user/messages/messages-list/messages-list.component';
+import {MessageComponent} from './user/messages/message/message.component';
 
 
 const routes: Routes = [
@@ -32,8 +35,11 @@ const routes: Routes = [
 
   {path: 'register-form/upload-photos', component: UploadPhotosComponent},
 
-  {path: 'contact-form', component: ContactFormComponent, canActivate: [LoginAuthGuard]},
-  {path: 'contact-form/success', component: ContactFormSuccessComponent},
+  {path: 'contact-form/:id', component: ContactFormComponent, canActivate: [LoginAuthGuard]},
+  {path: 'messages/:id', component: MessageComponent, canActivate: [LoginAuthGuard]},
+  {path: 'messages', component: MessagesListComponent, canActivate: [LoginAuthGuard]},
+
+  {path: 'contact-form/:id/success', component: ContactFormSuccessComponent, canActivate:[LoginAuthGuard]},
   {path: 'register-form/login', component: LoginFormComponent},
   {path: 'login', component: LoginFormComponent},
   {path: 'edit-profile', component: EditProfileComponent},
