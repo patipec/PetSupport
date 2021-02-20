@@ -8,6 +8,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace Petsupport.API2.Controllers
 {
     [ApiController]
@@ -37,6 +38,7 @@ namespace Petsupport.API2.Controllers
                 var petsittersFiltered = await _petsitterRepository
                     .GetAllPetsittersBySearchParametersAsync(petsittersSearchParameters);
 
+
                 var listPetsittersDto = _mapper.Map<PetsitterDTO[]>(petsittersFiltered);
 
                 foreach (var petsitter in listPetsittersDto)
@@ -57,9 +59,6 @@ namespace Petsupport.API2.Controllers
         
         
         [HttpGet("{id:int}", Name = nameof(GetPetsitterById))]
-
-
-        [HttpGet("{id}", Name = nameof(GetPetsitterById))]
         public async Task<ActionResult<PetsitterDTO>> GetPetsitterById(int id)
         {
             try
@@ -123,25 +122,28 @@ namespace Petsupport.API2.Controllers
         [HttpGet]
         [Route("/api/[controller]/paged")]
 
-        public async Task<ActionResult<PetsitterDTO[]>> GetPettsittersWithPaging([FromQuery] PagingParameters parameters, [FromQuery] PetsittersSearchParameters petsittersSearchParameters)
+        public async Task<ActionResult<PagedResponse<PetsitterDTO[]>>> GetPettsittersWithPaging([FromQuery] PagingParameters parameters, [FromQuery] PetsittersSearchParameters petsittersSearchParameters)
         {
             try
             {
+                
                 var validParameter = new PagingParameters(parameters.PageNumber, parameters.PageSize);
 
                 var petsittersFilteredByParameter = await _petsitterRepository
                     .GetAllPetsittersBySearchParametersAsync(petsittersSearchParameters);
 
-                var petsittersToReturn = _mapper.Map<PetsitterDTO[]>(petsittersFilteredByParameter);
+                var listPetsittersToReturn = _mapper.Map<PetsitterDTO[]>(petsittersFilteredByParameter);
 
-                var usersListResult = new PagedResponse<PetsitterDTO[]>(petsittersToReturn, validParameter.PageNumber,
-                    validParameter.PageSize);
-
-
+                var pagedData = listPetsittersToReturn
+                    .Skip((validParameter.PageNumber - 1) * validParameter.PageSize)
+                    .Take(validParameter.PageSize)
+                    .ToArray();
                 
-                return Ok(usersListResult);
+                var totalRecords = petsittersFilteredByParameter.Count();
 
 
+                return Ok(new PagedResponse<PetsitterDTO[]>(pagedData, validParameter.PageNumber,
+                  validParameter.PageSize));
             }
 
             catch (Exception ex)
