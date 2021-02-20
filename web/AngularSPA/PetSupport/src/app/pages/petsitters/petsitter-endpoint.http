@@ -1,0 +1,4 @@
+GET http://localhost:5001/api/petsitters/paged?city=warsaw&serviceId=1&pageNumber=2&minPrice=20&maxPrice=50
+Accept: application/json
+
+###

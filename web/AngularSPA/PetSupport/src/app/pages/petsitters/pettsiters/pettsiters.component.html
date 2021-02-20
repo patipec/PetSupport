@@ -3,6 +3,23 @@
       <app-long-form (longForm)="updateLongForm($event)"></app-long-form>
     </div>
     <div class="petsitter-list-container">
+      <div style="width: 100%; text-align: center; height: 24px; position: relative">
+        <img (click)=paginationPrev()
+             src="assets/arrow-left.svg"
+             alt="arrow-left"
+             style="cursor: pointer"
+             *ngIf="pagination.pageNumber > 1"
+        >
+        <span style="margin-top: 15px; position: relative; bottom: 6px"
+        >Page {{pagination.pageNumber}} of {{totalPages}}</span>
+        <img
+          (click)=paginationNext()
+          src="assets/arrow-right.svg"
+          alt="arrow-right"
+          style="cursor: pointer"
+          *ngIf="totalPages !== pagination.pageNumber"
+        >
+      </div>
       <app-petsitters-list [petsitterList]="petsitterList" class="petsitter-list"></app-petsitters-list>
     </div>
     <div class="map-container">

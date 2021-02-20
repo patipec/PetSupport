@@ -7,7 +7,21 @@ import { FindPetsitterShortForm} from '../../common/models/forms';
 
 const PETSITTER_URL = 'http://localhost:5001/api/Petsitters';
 
-
+export interface Pagination {
+  pageNumber: number;
+  pageSize: number;
+}
+export interface Page<T> {
+  pageNumber: number;
+  pageSize: number;
+/*  "firstPage": null,
+  "lastPage": null,*/
+  totalPages: number;
+  totalRecords: number;
+/*  "nextPage": null,
+  "previousPage": null,*/
+  data: T[];
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -20,6 +34,15 @@ export class PetsittersService {
     const params = this.getHttpParamsFromObject(formData);
 
     return this.http.get<Petsitter[]>(PETSITTER_URL, {params})
+      .pipe(
+        tap(data => console.log(data)),
+        catchError(this.handleError)
+      );
+  }
+  public getPetsittersPage(formData: FindPetsitterShortForm, paginationOptions: Pagination): Observable<Page<Petsitter>> {
+    const params = this.getHttpParamsFromObject({...formData, ...paginationOptions});
+
+    return this.http.get<Page<Petsitter>>(PETSITTER_URL + '/paged', {params})
       .pipe(
         tap(data => console.log(data)),
         catchError(this.handleError)
