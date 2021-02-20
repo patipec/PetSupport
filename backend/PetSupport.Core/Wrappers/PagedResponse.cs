@@ -13,10 +13,11 @@ namespace PetSupport.Core.Wrappers
         public Uri NextPage { get; set; }
         public Uri PreviousPage { get; set; }
 
-        public PagedResponse(T data, int pageNumber, int pageSize)
+        public PagedResponse(T data, int pageNumber, int pageSize, int totalRecords)
         {
             this.PageNumber = pageNumber;
             this.PageSize = pageSize;
+            this.TotalRecords = totalRecords;
             this.Data = data;
             this.Message = null;
             this.Succeeded = true;

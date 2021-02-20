@@ -133,7 +133,17 @@ namespace Petsupport.API2.Controllers
                     .GetAllPetsittersBySearchParametersAsync(petsittersSearchParameters);
 
                 var listPetsittersToReturn = _mapper.Map<PetsitterDTO[]>(petsittersFilteredByParameter);
-
+                
+                foreach (var petsitter in listPetsittersToReturn)
+                {
+                    petsitter.Price = petsittersFilteredByParameter
+                        .FirstOrDefault(p => p.Id == petsitter.Id)
+                        .Services
+                        .FirstOrDefault(s => (int)s.Name == petsittersSearchParameters.ServiceId)
+                        .Price;
+                }
+          
+                
                 var pagedData = listPetsittersToReturn
                     .Skip((validParameter.PageNumber - 1) * validParameter.PageSize)
                     .Take(validParameter.PageSize)
@@ -143,7 +153,7 @@ namespace Petsupport.API2.Controllers
 
 
                 return Ok(new PagedResponse<PetsitterDTO[]>(pagedData, validParameter.PageNumber,
-                  validParameter.PageSize));
+                  validParameter.PageSize, totalRecords ));
             }
 
             catch (Exception ex)
