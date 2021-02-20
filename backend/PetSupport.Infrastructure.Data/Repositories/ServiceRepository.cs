@@ -1,9 +1,9 @@
-﻿using System;
+﻿using PetSupport.Core.Entities;
+using PetSupport.Core.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using PetSupport.Core.Entities;
-using PetSupport.Core.Interfaces;
 
 namespace PetSupport.Infrastructure.Data.Repositories
 {

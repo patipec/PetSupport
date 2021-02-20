@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PetSupport.Core.Entities
+﻿namespace PetSupport.Core.Entities
 {
     public class User : BaseEntity
     {
@@ -14,6 +12,6 @@ namespace PetSupport.Core.Entities
 
         public string PhoneNumber { get; set; }
 
-        
+
     }
 }

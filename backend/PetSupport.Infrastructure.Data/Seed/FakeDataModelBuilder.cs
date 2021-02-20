@@ -5,7 +5,7 @@ namespace PetSupport.Infrastructure.Data.Seed
 {
     public static class FakeDataModelBuilder
     {
-        public static void  SeedFakeData(this ModelBuilder modelBuilder)
+        public static void SeedFakeData(this ModelBuilder modelBuilder)
         {
             var fakeData = new FakeData();
 
@@ -14,7 +14,7 @@ namespace PetSupport.Infrastructure.Data.Seed
             modelBuilder.Entity<Service>().HasData(fakeData.FakeServices);
             modelBuilder.Entity<BookingMessage>().HasData(fakeData.FakeBookingMessages);
             modelBuilder.Entity<Coordinate>().HasData(fakeData.FakeCoordinates);
-            
+
         }
     }
 }

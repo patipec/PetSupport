@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using Petsupport.API2.Dtos.OutDtos;
 using PetSupport.Core.Entities;
 
 namespace Petsupport.API2.Dtos.InDtos

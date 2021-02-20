@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Graph;
-using Microsoft.Graph.Auth;
 using Petsupport.API2.Dtos.InDtos;
 using Petsupport.API2.Dtos.OutDtos;
 using Petsupport.API2.GraphServiceFactory;
 using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
+using System;
+using System.Net;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 
 namespace Petsupport.API2.Controllers
