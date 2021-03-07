@@ -21,7 +21,7 @@ import {MaterialModule} from './common/shared/material.module';
 import {MainNavComponent} from './common/components/main-nav/main-nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import {BecomePetsitterComponent} from './pages/become-petsitter/become-petsitter.component';
-import {YellowWavesComponent} from './common/decorations/yellow-waves/yellow-waves.component';
+import {YellowWavesComponent} from './common/styles/yellow-waves/yellow-waves.component';
 import {PetsitterComponent} from './pages/petsitters/petsitter/petsitter.component';
 import {PetsittersListComponent} from './pages/petsitters/petsitters-list/petsitters-list.component';
 import {PetsitterListTileComponent} from './pages/petsitters/petsitters-list/petsitter-list-tile/petsitter-list-tile.component';
@@ -40,7 +40,7 @@ import {RangeSlider} from './forms/shared/slider/slider.component';
 import {MapComponent} from './common/components/map/map.component';
 import {LoginFormComponent} from './forms/login-form/login-form.component';
 
-import {RateComponent} from './common/shared/rate/rate.component';
+import {RateComponent} from './common/components/rate/rate.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import {PetsitterServicesComponent} from './pages/petsitters/petsitter/petsitter-services/petsitter-services.component';
 import {PetsitterCalendarComponent} from './pages/petsitters/petsitter/petsitter-calendar/petsitter-calendar.component';

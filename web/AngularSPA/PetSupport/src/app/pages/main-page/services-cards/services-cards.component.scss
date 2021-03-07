@@ -1,3 +1,4 @@
+@import 'colors.scss';
 /* Services */
 p {
   color: white;
@@ -52,7 +53,7 @@ section.services smart-card.service-card .services-content .services-title a {
 }
 
 section.services smart-card.service-card:hover {
-  background: #41B883;
+  background: $primary;
   color: #dedede;
   cursor: pointer;
 }
@@ -70,7 +71,7 @@ h2 {
 }
 
 .buttonBP {
-  border: 2px solid #0B814A;
+  border: 2px solid $primary;
   background-color: #1E1E2B;
   color: white;
   text-align: center;
