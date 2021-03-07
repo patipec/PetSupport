@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RegistrationService } from '../../registration.service';
-import {IBasicInfo} from '../../IRegistration-data';
+import {IBasicInfo} from '../../../../common/models/IRegistration-data';
 
 @Component({
   selector: 'app-bi-form',

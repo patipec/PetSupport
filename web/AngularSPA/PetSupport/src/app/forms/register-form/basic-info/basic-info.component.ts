@@ -1,8 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { RegistrationService } from '../registration.service';
-import {IBasicInfo} from '../IRegistration-data';
+import {IBasicInfo} from '../../../common/models/IRegistration-data';
 
 @Component({
   selector: 'app-basic-info',

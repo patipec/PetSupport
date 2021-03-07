@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { IPersonalInfo } from '../../IRegistration-data';
+import { IPersonalInfo } from '../../../../common/models/IRegistration-data';
 import { RegistrationService } from '../../registration.service';
 
 @Component({

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { RegistrationService } from '../registration.service';
-import { IPetsitterServices } from '../IRegistration-data';
+import { IPetsitterServices } from '../../../common/models/IRegistration-data';
 
 @Component({
   selector: 'app-services',

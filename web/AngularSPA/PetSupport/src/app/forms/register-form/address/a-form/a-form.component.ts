@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {IAddress} from '../../IRegistration-data';
+import {IAddress} from '../../../../common/models/IRegistration-data';
 import {RegistrationService} from '../../registration.service';
 
 @Component({

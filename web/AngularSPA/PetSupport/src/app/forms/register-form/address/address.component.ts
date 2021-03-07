@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import { Observable } from 'rxjs';
+import {Component} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RegistrationService } from '../registration.service';
-import { IAddress } from '../IRegistration-data';
+import { IAddress } from '../../../common/models/IRegistration-data';
 
 
 @Component({
