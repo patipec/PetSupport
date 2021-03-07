@@ -5,7 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 @Component({
   selector: 'app-petsitter-list-tile',
   templateUrl: './petsitter-list-tile.component.html',
-  styleUrls: ['./petsitter-list-tile.component.css']
+  styleUrls: ['./petsitter-list-tile.component.scss']
 })
 export class PetsitterListTileComponent implements OnInit {
   @Input() petsitter: Petsitter;

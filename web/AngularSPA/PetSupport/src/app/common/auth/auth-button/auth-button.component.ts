@@ -5,7 +5,7 @@ import {AuthService} from '../auth.service';
 @Component({
   selector: 'app-auth-button',
   templateUrl: './auth-button.component.html',
-  styleUrls: ['./auth-button.component.css']
+  styleUrls: ['./auth-button.component.scss']
 })
 export class AuthButtonComponent implements OnInit {
 

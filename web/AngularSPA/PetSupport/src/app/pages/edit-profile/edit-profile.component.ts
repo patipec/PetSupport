@@ -6,7 +6,7 @@ import { RegistrationService } from 'src/app/forms/register-form/registration.se
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
-  styleUrls: ['./edit-profile.component.css']
+  styleUrls: ['./edit-profile.component.scss']
 })
 export class EditProfileComponent {
 

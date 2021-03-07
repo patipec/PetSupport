@@ -3,7 +3,7 @@ import { Component, OnChanges, Input, EventEmitter, Output } from '@angular/core
 @Component({
   selector: 'app-rate',
   templateUrl: './rate.component.html',
-  styleUrls: ['./rate.component.css']
+  styleUrls: ['./rate.component.scss']
 })
 export class RateComponent implements OnChanges {
   @Input() rating: number;

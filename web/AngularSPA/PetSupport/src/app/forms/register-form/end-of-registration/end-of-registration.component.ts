@@ -4,7 +4,7 @@ import {RegistrationService} from '../registration.service';
 @Component({
   selector: 'app-end-of-registration',
   templateUrl: './end-of-registration.component.html',
-  styleUrls: ['./end-of-registration.component.css']
+  styleUrls: ['./end-of-registration.component.scss']
 })
 export class EndOfRegistrationComponent implements OnInit {
 

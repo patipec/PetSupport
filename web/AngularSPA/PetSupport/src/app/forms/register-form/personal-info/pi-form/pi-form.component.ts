@@ -7,7 +7,7 @@ import { RegistrationService } from '../../registration.service';
 @Component({
   selector: 'app-pi-form',
   templateUrl: './pi-form.component.html',
-  styleUrls: ['./pi-form.component.css']
+  styleUrls: ['./pi-form.component.scss']
 })
 export class PiFormComponent implements OnInit {
 

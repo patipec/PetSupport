@@ -5,7 +5,7 @@ import { AngularFileUploaderConfig } from 'angular-file-uploader';
 @Component({
   selector: 'app-photo-gallery',
   templateUrl: './photo-gallery.component.html',
-  styleUrls: ['./photo-gallery.component.css']
+  styleUrls: ['./photo-gallery.component.scss']
 })
 export class PhotoGalleryComponent  {
   resetUpload1: boolean;

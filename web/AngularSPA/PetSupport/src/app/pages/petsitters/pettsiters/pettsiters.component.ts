@@ -8,7 +8,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 @Component({
   selector: 'app-pettsiters',
   templateUrl: './pettsiters.component.html',
-  styleUrls: ['./pettsiters.component.css']
+  styleUrls: ['./pettsiters.component.scss']
 })
 export class PettsittersComponent implements OnInit{
   public petsitterList: Petsitter[];

@@ -8,7 +8,7 @@ import { IPersonalInfo } from '../IRegistration-data';
 @Component({
   selector: 'app-personal-info',
   templateUrl: './personal-info.component.html',
-  styleUrls: ['./personal-info.component.css']
+  styleUrls: ['./personal-info.component.scss']
 })
 
 

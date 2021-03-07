@@ -6,7 +6,7 @@ import { Services } from '../../common/models/services';
 @Component({
   selector: 'app-services-part',
   templateUrl: './services-part.component.html',
-  styleUrls: ['./services-part.component.css']
+  styleUrls: ['./services-part.component.scss']
 })
 export class ServicesPartComponent implements OnInit {
   @Input() services: FormGroup;

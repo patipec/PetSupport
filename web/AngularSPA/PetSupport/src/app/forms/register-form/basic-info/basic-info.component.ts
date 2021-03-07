@@ -7,7 +7,7 @@ import {IBasicInfo} from '../IRegistration-data';
 @Component({
   selector: 'app-basic-info',
   templateUrl: './basic-info.component.html',
-  styleUrls: ['./basic-info.component.css']
+  styleUrls: ['./basic-info.component.scss']
 })
 export class BasicInfoComponent {
   hide = true;

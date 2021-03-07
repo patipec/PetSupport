@@ -7,7 +7,7 @@ import { IPetsitterServices } from '../../IRegistration-data';
 @Component({
   selector: 'app-s-form',
   templateUrl: './s-form.component.html',
-  styleUrls: ['./s-form.component.css']
+  styleUrls: ['./s-form.component.scss']
 })
 export class SFormComponent implements OnInit {
 

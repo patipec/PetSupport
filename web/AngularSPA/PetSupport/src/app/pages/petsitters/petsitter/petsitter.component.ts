@@ -6,7 +6,7 @@ import {Petsitter} from '../../../common/models/petsitter';
 @Component({
   selector: 'app-petsitter',
   templateUrl: './petsitter.component.html',
-  styleUrls: ['./petsitter.component.css']
+  styleUrls: ['./petsitter.component.scss']
 })
 export class PetsitterComponent implements OnInit, AfterViewInit {
   private petsitterId: string;

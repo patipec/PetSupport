@@ -7,7 +7,7 @@ import {Petsitter} from '../../models/petsitter';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.css']
+  styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnChanges, OnInit {
   private map;

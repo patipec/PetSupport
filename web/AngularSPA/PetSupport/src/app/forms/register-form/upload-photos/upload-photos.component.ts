@@ -7,7 +7,7 @@ import { AngularFileUploaderConfig } from 'angular-file-uploader';
 @Component({
   selector: 'app-upload-photos',
   templateUrl: './upload-photos.component.html',
-  styleUrls: ['./upload-photos.component.css']
+  styleUrls: ['./upload-photos.component.scss']
 })
 export class UploadPhotosComponent  implements OnInit {
 

@@ -11,7 +11,7 @@ import {fromEnum, Services} from '../../common/models/services';
 @Component({
   selector: 'app-long-form',
   templateUrl: './long-form.component.html',
-  styleUrls: ['./long-form.component.css'],
+  styleUrls: ['./long-form.component.scss'],
   providers: [DatePipe]
 })
 export class LongFormComponent implements OnInit {

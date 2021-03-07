@@ -4,7 +4,7 @@ import { CalendarOptions } from '@fullcalendar/angular'; // useful for typecheck
 @Component({
   selector: 'app-petsitter-calendar',
   templateUrl: './petsitter-calendar.component.html',
-  styleUrls: ['./petsitter-calendar.component.css']
+  styleUrls: ['./petsitter-calendar.component.scss']
 })
 export class PetsitterCalendarComponent implements OnInit {
 

@@ -8,7 +8,7 @@ import {RegistrationService} from '../../registration.service';
 @Component({
   selector: 'app-a-form',
   templateUrl: './a-form.component.html',
-  styleUrls: ['./a-form.component.css']
+  styleUrls: ['./a-form.component.scss']
 })
 export class AFormComponent implements OnInit {
 

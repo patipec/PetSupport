@@ -7,7 +7,7 @@ import {IBasicInfo} from '../../IRegistration-data';
 @Component({
   selector: 'app-bi-form',
   templateUrl: './bi-form.component.html',
-  styleUrls: ['./bi-form.component.css']
+  styleUrls: ['./bi-form.component.scss']
 })
 export class BiFormComponent implements OnInit {
   @Output()

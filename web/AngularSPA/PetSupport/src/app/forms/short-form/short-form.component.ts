@@ -13,7 +13,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 @Component({
   selector: 'app-short-form',
   templateUrl: './short-form.component.html',
-  styleUrls: ['./short-form.component.css'],
+  styleUrls: ['./short-form.component.scss'],
   providers: [DatePipe]
 })
 export class ShortFormComponent implements OnInit {
