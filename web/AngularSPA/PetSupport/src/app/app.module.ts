@@ -15,7 +15,6 @@ import {MatDividerModule} from '@angular/material/divider';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {MainPageComponent} from './pages/main-page/main-page.component';
-import {ShortFormComponent} from './common/components/short-form/short-form.component';
 import {LongFormComponent} from './forms/long-form/long-form.component';
 import {MaterialModule} from './common/shared/material.module';
 import {MainNavComponent} from './common/components/main-nav/main-nav.component';
@@ -45,7 +44,7 @@ import {ContactFormComponent} from './pages/contact-form/contact-form.component'
 import {ContactFormSuccessComponent} from './pages/contact-form/contact-form-success/contact-form-success.component';
 import {EditProfileComponent} from './pages/edit-profile/edit-profile.component';
 // @ts-ignore
-import {clientId, authority, redirectUri, postLogoutRedirectUri } from './auth.json';
+import {clientId, authority, redirectUri, postLogoutRedirectUri} from './auth.json';
 import {FullCalendarModule} from '@fullcalendar/angular'; // the main connector. must go first
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
@@ -61,15 +60,16 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 import {MsalModule, MsalInterceptor} from '@azure/msal-angular';
 import {AuthButtonComponent} from './common/auth/auth-button/auth-button.component';
 import {LoginAuthGuard} from './common/auth/login-guard';
-import { NotAuthorizedComponent } from './common/auth/not-authorized/not-authorized.component';
-import { MessagesListComponent } from './user/messages/messages-list/messages-list.component';
-import { MessageComponent } from './user/messages/message/message.component';
+import {NotAuthorizedComponent} from './common/auth/not-authorized/not-authorized.component';
+import {MessagesListComponent} from './user/messages/messages-list/messages-list.component';
+import {MessageComponent} from './user/messages/message/message.component';
+import {ShortFormModule} from './common/components/short-form/short-form.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-    ShortFormComponent,
+
     LongFormComponent,
     MainNavComponent,
     BecomePetsitterComponent,
@@ -122,6 +122,7 @@ import { MessageComponent } from './user/messages/message/message.component';
     IvyCarouselModule,
     FullCalendarModule,
     BrowserModule,
+    ShortFormModule,
 
     MsalModule.forRoot({
       auth: {

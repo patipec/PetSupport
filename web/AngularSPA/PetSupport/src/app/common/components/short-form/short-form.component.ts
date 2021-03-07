@@ -1,17 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormGroup, NgForm, ValidatorFn, Validators } from '@angular/forms';
-import { FormBuilder, FormControl } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, ValidatorFn, Validators} from '@angular/forms';
+import {FormBuilder} from '@angular/forms';
 
-import { DatePipe } from '@angular/common';
-import { DateAdapter } from '@angular/material/core';
+import {DatePipe} from '@angular/common';
+import {DateAdapter} from '@angular/material/core';
 
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import {FindPetsitterShortForm} from '../../common/models/forms';
+import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-short-form',
+  selector: ' app-short-form',
   templateUrl: './short-form.component.html',
   styleUrls: ['./short-form.component.scss'],
   providers: [DatePipe]
@@ -25,7 +23,7 @@ export class ShortFormComponent implements OnInit {
               private dateAdapter: DateAdapter<Date>,
               private http: HttpClient,
               private router: Router,
-              private route: ActivatedRoute) {
+  ) {
     this.dateAdapter.setLocale('en-GB');
   }
 
@@ -54,17 +52,18 @@ export class ShortFormComponent implements OnInit {
       invalid = new Date(startFrom).valueOf() > new Date(endTo).valueOf();
       console.log(startFrom);
     }
-    return invalid ? { invalidRange: true} : null;
-}
+    return invalid ? {invalidRange: true} : null;
+  }
 
-public sendForm(): void {
+  public sendForm(): void {
     const formData = {
       city: this.shortFormSettings.get('location').value,
       serviceId: '1'
     };
     void this.router.navigateByUrl('/petsitters', {state: formData});
-}
+  }
 
-onSubmit(): void {}
+  onSubmit(): void {
+  }
 
 }

@@ -14,8 +14,8 @@ import {MaterialModule} from '../../common/shared/material.module';
 import {RegisterRoutingModule} from './register-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AngularFileUploaderModule} from 'angular-file-uploader';
-import {ServicesPartComponent} from '../services-part/services-part.component';
 import {CommonModule} from '@angular/common';
+import {ServicesPartModule} from '../../common/components/services-part/services-part.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,6 @@ import {CommonModule} from '@angular/common';
     AFormComponent,
     PiFormComponent,
     SFormComponent,
-    ServicesPartComponent
 
   ],
   imports: [
@@ -38,8 +37,8 @@ import {CommonModule} from '@angular/common';
     RegisterRoutingModule,
     ReactiveFormsModule,
     AngularFileUploaderModule,
-    AngularFileUploaderModule,
     CommonModule,
+    ServicesPartModule
 
   ],
 })
