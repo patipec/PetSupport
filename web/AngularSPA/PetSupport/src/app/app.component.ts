@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {BroadcastService, MsalService} from '@azure/msal-angular';
 
 @Component({
   selector: 'app-root',

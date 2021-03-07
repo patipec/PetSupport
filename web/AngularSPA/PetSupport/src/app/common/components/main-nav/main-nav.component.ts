@@ -21,6 +21,6 @@ export class MainNavComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private authService:AuthService) {}
+  constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService) {}
 
 }

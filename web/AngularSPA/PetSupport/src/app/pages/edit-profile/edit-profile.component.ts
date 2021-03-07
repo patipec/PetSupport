@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {IAddress, IBasicInfo, IPersonalInfo, IPetsitterServices} from 'src/app/common/models/IRegistration-data';
-import { RegistrationService } from 'src/app/forms/register-form/registration.service';
+import { RegistrationService } from 'src/app/pages/register/registration.service';
 
 @Component({
   selector: 'app-edit-profile',
