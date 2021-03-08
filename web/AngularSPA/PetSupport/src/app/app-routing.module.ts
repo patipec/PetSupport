@@ -10,21 +10,23 @@ import {ContactFormSuccessComponent} from './pages/contact-form/contact-form-suc
 import {EditProfileComponent} from './pages/edit-profile/edit-profile.component';
 import {LoginAuthGuard} from './common/auth/login-guard';
 import {NotAuthorizedComponent} from './common/auth/not-authorized/not-authorized.component';
-import {MessagesListComponent} from './user/messages/messages-list/messages-list.component';
-import {MessageComponent} from './user/messages/message/message.component';
 
 
 const routes: Routes = [
   {path: 'main-page', component: MainPageComponent},
   {path: 'become-petsitter', component: BecomePetsitterComponent},
-  {path: 'register-form', loadChildren: () =>
+  {
+    path: 'register-form', loadChildren: () =>
       import('./pages/register/register.module').then((m) => m.RegisterModule),
   },
-  {path: 'petsitters', loadChildren: () =>
+  {
+    path: 'petsitters', loadChildren: () =>
       import('./pages/petsitters/petsitters.module').then((m) => m.PetsittersModule),
   },
-  {path: 'messages/:id', component: MessageComponent, canActivate: [LoginAuthGuard]},
-  {path: 'messages', component: MessagesListComponent, canActivate: [LoginAuthGuard]},
+  {
+    path: 'user', loadChildren: () =>
+      import('./pages/user/user.module').then((m) => m.UserModule),
+  },
 
   {path: 'contact-form/:id', component: ContactFormComponent, canActivate: [LoginAuthGuard]},
   {path: 'contact-form/:id/success', component: ContactFormSuccessComponent, canActivate: [LoginAuthGuard]},

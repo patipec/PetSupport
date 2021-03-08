@@ -19,7 +19,7 @@ import {MaterialModule} from './common/modules/material.module';
 import {MainNavComponent} from './common/components/main-nav/main-nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import {BecomePetsitterComponent} from './pages/become-petsitter/become-petsitter.component';
-import {YellowWavesComponent} from './common/styles/yellow-waves/yellow-waves.component';
+import {YellowWavesComponent} from './common/styles/decorations/yellow-waves/yellow-waves.component';
 import {FooterComponent} from './common/components/footer/footer.component';
 import {MatCarouselModule} from '@ngmodule/material-carousel';
 import {CardCaruselComponent} from './pages/main-page/card-carusel/card-carusel.component';
@@ -37,44 +37,33 @@ import {clientId, authority, redirectUri, postLogoutRedirectUri} from './auth.js
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
 
-
 import {MsalModule, MsalInterceptor} from '@azure/msal-angular';
 import {AuthButtonComponent} from './common/auth/auth-button/auth-button.component';
 import {LoginAuthGuard} from './common/auth/login-guard';
 import {NotAuthorizedComponent} from './common/auth/not-authorized/not-authorized.component';
-import {MessagesListComponent} from './user/messages/messages-list/messages-list.component';
-import {MessageComponent} from './user/messages/message/message.component';
 import {ShortFormModule} from './common/components/short-form/short-form.module';
 
 @NgModule({
   declarations: [
-    /*Angular*/
     AppComponent,
-
-    /*Components*/
-    MainNavComponent,
     FooterComponent,
-    YellowWavesComponent,
-
-
-    /*Pages*/
+    MainNavComponent,
     MainPageComponent,
-    BecomePetsitterComponent,
+    YellowWavesComponent,
     CardCaruselComponent,
     ServicesCardsComponent,
+    BecomePetsitterComponent,
 
-
+    /*Auth module*/
     LoginFormComponent,
     AuthButtonComponent,
     NotAuthorizedComponent,
+    /*Probably user module*/
+    EditProfileComponent,
 
     ContactFormComponent,
     ContactFormSuccessComponent,
 
-    EditProfileComponent,
-
-    MessagesListComponent,
-    MessageComponent,
   ],
 
   imports: [

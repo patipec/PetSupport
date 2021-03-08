@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {MessagesService} from '../messages.service';
-import {MessageBrief} from '../../../common/models/message';
+import {MessageBrief} from '../../../../common/models/message';
 import {switchMap, tap} from 'rxjs/operators';
-import {PetsittersService} from '../../../pages/petsitters/petsitters.service';
+import {PetsittersService} from '../../../petsitters/petsitters.service';
 import {merge} from 'rxjs';
-import {Petsitter} from '../../../common/models/petsitter';
+import {Petsitter} from '../../../../common/models/petsitter';
 
 @Component({
   selector: 'app-messages-list',
@@ -25,7 +25,6 @@ export class MessagesListComponent implements OnInit {
         switchMap(messages => {
           this.messages = messages;
           const petsittersDataRequests = this.messages.map(message => this.petsitterService.getPetsitter(message.petsitterId));
-          console.log(petsittersDataRequests);
           return merge(...petsittersDataRequests);
         }),
         tap(c => console.log(c))

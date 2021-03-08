@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Message, MessageBrief, MessageNew} from '../../common/models/message';
+import {Message, MessageBrief, MessageNew} from '../../../common/models/message';
 
 const MESSAGES_URL = 'http://localhost:5001/api/clients';
 const getUrl = (clientId) => `${MESSAGES_URL}/${clientId}/messages`;
