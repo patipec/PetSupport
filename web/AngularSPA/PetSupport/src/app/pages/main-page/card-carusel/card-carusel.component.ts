@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { MatCarousel } from '@ngmodule/material-carousel';
 
 @Component({
   selector: 'app-card-carusel',

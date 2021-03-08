@@ -2,16 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-
-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import {MatButtonModule} from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatDividerModule} from '@angular/material/divider';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {MainPageComponent} from './pages/main-page/main-page.component';
@@ -25,23 +16,20 @@ import {MatCarouselModule} from '@ngmodule/material-carousel';
 import {CardCaruselComponent} from './pages/main-page/card-carusel/card-carusel.component';
 import {ServicesCardsComponent} from './pages/main-page/services-cards/services-cards.component';
 import {LoginFormComponent} from './common/components/login-form/login-form.component';
-
-import {IvyCarouselModule} from 'angular-responsive-carousel';
 import {ContactFormComponent} from './pages/contact-form/contact-form.component';
 import {ContactFormSuccessComponent} from './pages/contact-form/contact-form-success/contact-form-success.component';
 import {EditProfileComponent} from './pages/edit-profile/edit-profile.component';
-// @ts-ignore
-import {clientId, authority, redirectUri, postLogoutRedirectUri} from './auth.json';
-
-
-const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
-
-
 import {MsalModule, MsalInterceptor} from '@azure/msal-angular';
 import {AuthButtonComponent} from './common/auth/auth-button/auth-button.component';
 import {LoginAuthGuard} from './common/auth/login-guard';
 import {NotAuthorizedComponent} from './common/auth/not-authorized/not-authorized.component';
 import {ShortFormModule} from './common/components/short-form/short-form.module';
+
+
+
+// @ts-ignore
+import {clientId, authority, redirectUri, postLogoutRedirectUri} from './auth.json';
+const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
 @NgModule({
   declarations: [
@@ -68,24 +56,16 @@ import {ShortFormModule} from './common/components/short-form/short-form.module'
 
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule,
-    MatIconModule,
-    LayoutModule,
-    MatDividerModule,
-    MatGridListModule,
     FormsModule,
-    MaterialModule,
     ReactiveFormsModule,
-    MatCarouselModule.forRoot(),
+    HttpClientModule,
+    BrowserAnimationsModule,
     BrowserModule,
+    AppRoutingModule,
+    LayoutModule,
+    MaterialModule,
     ShortFormModule,
-
+    MatCarouselModule,
     MsalModule.forRoot({
       auth: {
         clientId,
