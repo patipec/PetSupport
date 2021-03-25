@@ -7,6 +7,6 @@ namespace Petsupport.API2.Dtos.OutDtos
         public int Id { get; set; }
         public string SendDate { get; set; }
         public int ClientId { get; set; }
-        public int PetsitterId { get; set; }
+        public PetsitterDTO Petsitter { get; set; }
     }
 }
