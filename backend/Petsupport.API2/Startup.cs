@@ -1,19 +1,21 @@
 
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Identity.Web;
-using System.Reflection;
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Models;
+using Petsupport.API2.GraphServiceFactory;
 using PetSupport.API2.AuthorizationPolicies;
 using PetSupport.Core.Interfaces;
+using PetSupport.Core.Services;
 using PetSupport.Infrastructure.Data.Data;
 using PetSupport.Infrastructure.Data.Repositories;
+using System.Reflection;
 
 namespace Petsupport.API2
 {
@@ -35,15 +37,15 @@ namespace Petsupport.API2
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Petsupport.API2", Version = "v1"});
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Petsupport.API2", Version = "v1" });
             });
 
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-                        options=>options.MigrationsAssembly("Petsupport.API2"))
+                        options => options.MigrationsAssembly("Petsupport.API2"))
                     .EnableSensitiveDataLogging()
                     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
-          
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApi(
                     options =>
@@ -63,6 +65,7 @@ namespace Petsupport.API2
                     "SitterScope",
                     policy => policy.Requirements.Add(new ScopesRequirement("Sitter")));
             });
+            services.AddSingleton<ILoggerService, LoggerService>();
 
             services.AddCors(
                 options =>
@@ -73,7 +76,10 @@ namespace Petsupport.API2
                 });
 
             services.AddTransient<IPetsitterRepository, PetsitterRepository>();
+            services.AddTransient<IBookingMessageRepository, BookingMessageRepository>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+            services.AddSingleton<IGraphService, GraphService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -93,7 +99,7 @@ namespace Petsupport.API2
 
             app.UseAuthentication();
             app.UseAuthorization();
-            
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

@@ -1,28 +1,34 @@
-import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 import * as L from 'leaflet';
+import {Petsitter} from '../../models/petsitter';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MapService {
+  marker = [];
 
-  // baseUrl = 'http://localhost:3000/data';
 
-  constructor(private http: HttpClient) { }
+  public makeMarkers(map1: L.map, petsitterList: Petsitter[]): void {
 
-  // makeMarkers(map: L.map): void {
-  //   this.http.get(this.baseUrl).subscribe((res: any) => {
-  //     for ( const c of res ){
-  //       const lat = c.coordinates[0];
-  //       const lon = c.coordinates[1];
-  //       const marker = L.marker([lat, lon]).addTo(map);
-  //       marker.bindPopup(`<strong>${c.Name}</strong><br> <img src="${c.imageId != null ? c.imageId : 'assets/PetsitterDetail/default-petsitter-image.png'}" style="width: 40px; height:40px">
-  //                       <p style="display: flex">${c.Price} $/h</p>`);
-  //     }
-  //   });
-  // }
+    if (map1 && petsitterList) {
+      petsitterList.map(petsitter => {
+        const lat = petsitter.coordinates[0].latitude;
+        const lon = petsitter.coordinates[0].longitude;
+        const marker = L.marker([lat, lon]).addTo(map1);
+        marker.bindPopup(`<a href="${this.goToPetsitter()}"><strong>${petsitter.name}</strong><br> <img alt="Petsitter Image" src="${petsitter.imageId != null ? petsitter.imageId : 'assets/PetsitterDetail/default-petsitter-image.png'}" style="width: 40px; height:40px">
+                      <p style="display: flex">${petsitter.price} $/h</p></a>`);
+        this.marker.push(marker);
+
+      });
+    }
+  }
+  public goToPetsitter(): void {
+  }
+  public clearMarkers(map: L.map): void{
+    for (let i = 0; i < this.marker.length; i++){
+      map.removeLayer(this.marker[i]);
+    }
+  }
+
 }
-// STEPS TO REPRODUCE JSON SERVER
-// OneDrive/Desktop/PetSupport/web/AngularSPA/PetSupport
-// json-server --watch data.json

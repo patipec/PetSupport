@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -21,54 +21,62 @@ import {MaterialModule} from './common/shared/material.module';
 import {MainNavComponent} from './common/components/main-nav/main-nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import {BecomePetsitterComponent} from './pages/become-petsitter/become-petsitter.component';
-import { YellowWavesComponent } from './common/decorations/yellow-waves/yellow-waves.component';
-import { PetsitterComponent } from './pages/petsitters/petsitter/petsitter.component';
-import { PetsittersListComponent } from './pages/petsitters/petsitters-list/petsitters-list.component';
-import { PetsitterListTileComponent } from './pages/petsitters/petsitters-list/petsitter-list-tile/petsitter-list-tile.component';
+import {YellowWavesComponent} from './common/decorations/yellow-waves/yellow-waves.component';
+import {PetsitterComponent} from './pages/petsitters/petsitter/petsitter.component';
+import {PetsittersListComponent} from './pages/petsitters/petsitters-list/petsitters-list.component';
+import {PetsitterListTileComponent} from './pages/petsitters/petsitters-list/petsitter-list-tile/petsitter-list-tile.component';
 import {PettsittersComponent} from './pages/petsitters/pettsiters/pettsiters.component';
-import { BasicInfoComponent } from './forms/register-form/basic-info/basic-info.component';
-import { AddressComponent } from './forms/register-form/address/address.component';
-import { ServicesComponent } from './forms/register-form/services/services.component';
-import { PersonalInfoComponent } from './forms/register-form/personal-info/personal-info.component';
-import { EndOfRegistrationComponent } from './forms/register-form/end-of-registration/end-of-registration.component';
-import { FooterComponent } from './common/components/footer/footer.component';
-import { MatCarouselModule } from '@ngmodule/material-carousel';
-import { CardCaruselComponent } from './pages/main-page/card-carusel/card-carusel.component';
-import { ServicesCardsComponent } from './pages/main-page/services-cards/services-cards.component';
-import { NgxSliderModule } from '@angular-slider/ngx-slider';
-import { RangeSlider } from './forms/shared/slider/slider.component';
-import { MapComponent } from './common/components/map/map.component';
-import { LoginFormComponent } from './forms/login-form/login-form.component';
+import {BasicInfoComponent} from './forms/register-form/basic-info/basic-info.component';
+import {AddressComponent} from './forms/register-form/address/address.component';
+import {ServicesComponent} from './forms/register-form/services/services.component';
+import {PersonalInfoComponent} from './forms/register-form/personal-info/personal-info.component';
+import {EndOfRegistrationComponent} from './forms/register-form/end-of-registration/end-of-registration.component';
+import {FooterComponent} from './common/components/footer/footer.component';
+import {MatCarouselModule} from '@ngmodule/material-carousel';
+import {CardCaruselComponent} from './pages/main-page/card-carusel/card-carusel.component';
+import {ServicesCardsComponent} from './pages/main-page/services-cards/services-cards.component';
+import {NgxSliderModule} from '@angular-slider/ngx-slider';
+import {RangeSlider} from './forms/shared/slider/slider.component';
+import {MapComponent} from './common/components/map/map.component';
+import {LoginFormComponent} from './forms/login-form/login-form.component';
 
-import { RateComponent } from './common/shared/rate/rate.component';
-import { IvyCarouselModule } from 'angular-responsive-carousel';
-import { PetsitterServicesComponent } from './pages/petsitters/petsitter/petsitter-services/petsitter-services.component';
-import { PetsitterCalendarComponent } from './pages/petsitters/petsitter/petsitter-calendar/petsitter-calendar.component';
-import { PetsitterReviewsComponent } from './pages/petsitters/petsitter/petsitter-reviews/petsitter-reviews.component';
-import { PetsitterCanHostComponent } from './pages/petsitters/petsitter/petsitter-can-host/petsitter-can-host.component';
-import { ContactFormComponent } from './pages/contact-form/contact-form.component';
-import { ContactFormSuccessComponent } from './pages/contact-form/contact-form-success/contact-form-success.component';
-import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
-import { BiFormComponent } from './forms/register-form/basic-info/bi-form/bi-form.component';
-import { UploadPhotosComponent } from './forms/register-form/upload-photos/upload-photos.component';
-import { ServicesPartComponent } from './forms/services-part/services-part.component';
-
-import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
+import {RateComponent} from './common/shared/rate/rate.component';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+import {PetsitterServicesComponent} from './pages/petsitters/petsitter/petsitter-services/petsitter-services.component';
+import {PetsitterCalendarComponent} from './pages/petsitters/petsitter/petsitter-calendar/petsitter-calendar.component';
+import {PetsitterReviewsComponent} from './pages/petsitters/petsitter/petsitter-reviews/petsitter-reviews.component';
+import {PetsitterCanHostComponent} from './pages/petsitters/petsitter/petsitter-can-host/petsitter-can-host.component';
+import {ContactFormComponent} from './pages/contact-form/contact-form.component';
+import {ContactFormSuccessComponent} from './pages/contact-form/contact-form-success/contact-form-success.component';
+import {EditProfileComponent} from './pages/edit-profile/edit-profile.component';
+import {BiFormComponent} from './forms/register-form/basic-info/bi-form/bi-form.component';
+import {UploadPhotosComponent} from './forms/register-form/upload-photos/upload-photos.component';
+import {ServicesPartComponent} from './forms/services-part/services-part.component';
+// @ts-ignore
+import {clientId, authority, redirectUri, postLogoutRedirectUri } from './auth.json';
+import {FullCalendarModule} from '@fullcalendar/angular'; // the main connector. must go first
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
-import { CustomSliderComponent } from './pages/petsitters/petsitter/custom-slider/custom-slider.component';
-import { PhotoGalleryComponent } from './forms/register-form/upload-photos/photo-gallery/photo-gallery.component';
-import { AFormComponent } from './forms/register-form/address/a-form/a-form.component';
-import { PiFormComponent } from './forms/register-form/personal-info/pi-form/pi-form.component';
-import { SFormComponent } from './forms/register-form/services/s-form/s-form.component';
+import {CustomSliderComponent} from './pages/petsitters/petsitter/custom-slider/custom-slider.component';
+import {PhotoGalleryComponent} from './forms/register-form/upload-photos/photo-gallery/photo-gallery.component';
+import {AFormComponent} from './forms/register-form/address/a-form/a-form.component';
+import {PiFormComponent} from './forms/register-form/personal-info/pi-form/pi-form.component';
+import {SFormComponent} from './forms/register-form/services/s-form/s-form.component';
 
+const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin
 ]);
 
-import { AngularFileUploaderModule } from "angular-file-uploader";
+import {AngularFileUploaderModule} from 'angular-file-uploader';
+import {MsalModule, MsalInterceptor} from '@azure/msal-angular';
+import {AuthButtonComponent} from './common/auth/auth-button/auth-button.component';
+import {LoginAuthGuard} from './common/auth/login-guard';
+import { NotAuthorizedComponent } from './common/auth/not-authorized/not-authorized.component';
+import { MessagesListComponent } from './user/messages/messages-list/messages-list.component';
+import { MessageComponent } from './user/messages/message/message.component';
 
 @NgModule({
   declarations: [
@@ -110,6 +118,10 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     AFormComponent,
     PiFormComponent,
     SFormComponent,
+    AuthButtonComponent,
+    NotAuthorizedComponent,
+    MessagesListComponent,
+    MessageComponent,
   ],
 
   imports: [
@@ -133,10 +145,44 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     IvyCarouselModule,
     FullCalendarModule,
     BrowserModule,
-    AngularFileUploaderModule
+    AngularFileUploaderModule,
+    MsalModule.forRoot({
+      auth: {
+        clientId,
+        authority,
+        redirectUri,
+        postLogoutRedirectUri,
+        validateAuthority: false
+      },
+      cache: {
+        cacheLocation: 'localStorage',
+        storeAuthStateInCookie: isIE, // Set to true for Internet Explorer 11
+      },
+    }, {
+      popUp: !isIE,
+      consentScopes: [
+        'user.read',
+        'openid',
+        'profile',
+      ],
+      unprotectedResources: [],
+      protectedResourceMap: [
+        ['https://graph.microsoft.com/v1.0/me', ['user.read']]
+      ],
+      extraQueryParameters: {}
+    })
+
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MsalInterceptor,
+      multi: true
+    },
+    LoginAuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

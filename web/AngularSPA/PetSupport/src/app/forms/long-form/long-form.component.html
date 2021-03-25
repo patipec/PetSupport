@@ -2,9 +2,10 @@
   <form [formGroup]="longFormSettings" (ngSubmit)="onSubmit()">
     <div class="priceRange" formGroupName="priceRange">
 
-      <span class="material-icons ">local_offer</span><b>Price Range</b><br>
-      <app-slider [currSign]="setSignForSlider('$')" [floor]="0" [ceil]="1000"
-                  [minValue]="30" [maxValue]="400"
+
+      <span class="material-icons">local_offer</span><b>Price Range</b><br>
+      <app-slider [currSign]="setSignForSlider('$')" [floor]="0" [ceil]="100"
+                  [minValue]="10" [maxValue]="60" [step]="1"
                   (getInfo)="onSliderPriceChange($event)">
 
       </app-slider>
@@ -51,9 +52,9 @@
     <div class="service">
       <label for="service"><span class="material-icons">support</span><b>Service</b><br></label>
       <select name="service" id="service" formControlName="service">
-        <option value="boarding">Boarding</option>
-        <option value="HouseSitting">House Sitting</option>
-        <option value="walking">Walking</option>
+        <option [value]="service.key" *ngFor="let service of services">
+          {{service.name}}
+        </option>
       </select>
     </div>
 
@@ -61,6 +62,7 @@
       <div class="rate-label"><span class="material-icons">star_half</span><b>Rates</b><br></div>
       <app-slider [currSign]="setSignForSlider('★ ')"
                   [floor]="0" [ceil]="5" [minValue]="2" [maxValue]="4"
+                  [step]="0.25"
                   (getInfo)="onSliderRateChange($event)"></app-slider>
     </div>
 

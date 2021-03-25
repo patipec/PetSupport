@@ -4,8 +4,10 @@ namespace Petsupport.API2.Dtos.OutDtos
 {
     public class BookingMessageFullDTO
     {
-        public DateTime SendDate { get; set; }
+        public int Id { get; set; }
+        public string SendDate { get; set; }
         public string Message { get; set; }
-        public ClientDTO Client { get; set; }
+        public int ClientId { get; set; }
+        public int PetsitterId { get; set; }
     }
 }

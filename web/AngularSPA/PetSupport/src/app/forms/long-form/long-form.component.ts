@@ -1,6 +1,12 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn, FormArray, NgForm} from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import {PetsittersService} from '../../pages/petsitters/petsitters.service';
+import {ActivatedRoute} from '@angular/router';
+import {EventEmitter} from '@angular/core';
+import {FindPetsitterShortForm} from '../../common/models/forms';
+import {filter} from 'rxjs/operators';
+import {fromEnum, Services} from '../../common/models/services';
 
 @Component({
   selector: 'app-long-form',
@@ -11,7 +17,12 @@ import { DatePipe } from '@angular/common';
 export class LongFormComponent implements OnInit {
   longFormSettings: FormGroup;
   currSign: string;
-  constructor(private fb: FormBuilder, private datePipe: DatePipe) { }
+  public services = fromEnum(Services);
+  @Output()
+  public longForm = new EventEmitter<FindPetsitterShortForm>();
+
+
+  constructor(private fb: FormBuilder, private datePipe: DatePipe, private petsitterService: PetsittersService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.longFormSettings = this.fb.group({
@@ -21,7 +32,7 @@ export class LongFormComponent implements OnInit {
         stopDate: [this.datePipe.transform(new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd'),
           [Validators.required]]
       }),
-      location: [''],
+      location: ['Warsaw', Validators.required],
       numberOfPets: [1],
       priceRange: this.fb.group({
         minValue: ['30', [Validators.required]],
@@ -31,16 +42,25 @@ export class LongFormComponent implements OnInit {
         minRate: ['2', [Validators.required]],
         maxRate: ['4', [Validators.required]]
       }),
-      service: ['boarding', [Validators.required]],
+      service: [1, [Validators.required]],
       petType: ['dog', [Validators.required]],
       hasPet: [true],
     });
   }
 
   onSubmit(): void{
-    console.log(this.longFormSettings.value);
-    console.log('Saved: ' + JSON.stringify(this.longFormSettings.value));
+    const value = this.longFormSettings.value;
+
+    const filters = {
+      city: value.location,
+      serviceId: value.service.toString(),
+      street: '',
+      minPrice: value.priceRange.minValue,
+      maxPrice: value.priceRange.maxValue,
+    };
+    this.longForm.emit(filters);
   }
+
 
   onSliderPriceChange(event: any): void{
     this.longFormSettings.patchValue({

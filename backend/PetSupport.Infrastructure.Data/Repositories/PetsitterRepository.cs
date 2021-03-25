@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using PetSupport.Core.Entities;
 using PetSupport.Core.Interfaces;
 using PetSupport.Core.ResourceParameters;
 using PetSupport.Infrastructure.Data.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace PetSupport.Infrastructure.Data.Repositories
 {
@@ -15,7 +15,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
         public PetsitterRepository(DataContext _context) : base(_context)
         {
         }
-        
+
         public override async Task<IEnumerable<Petsitter>> GetAllAsync()
         {
             return await _context.Petsitters
@@ -28,10 +28,10 @@ namespace PetSupport.Infrastructure.Data.Repositories
             return await _context.Petsitters
                 .Include(p => p.Services)
                 .Include(p => p.Coordinates)
-                .FirstOrDefaultAsync(p=>p.Id == id);
+                .FirstOrDefaultAsync(p => p.Id == id);
         }
 
-        public async Task<IEnumerable<Petsitter>> GetAllPetsitersBySearchPatametersAsync(
+        public async Task<IEnumerable<Petsitter>> GetAllPetsittersBySearchParametersAsync(
             PetsittersSearchParameters petsittersSearchParameters)
         {
             if (petsittersSearchParameters == null)
@@ -49,15 +49,15 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 var query = _context.Petsitters
                     .AsQueryable()
                     .Include(p => p.Services)
-                    .Include(p=>p.Coordinates)
-                    .Where(p => p.City == conditionCity)
+                    .Include(p => p.Coordinates)
+                    .Where(p => p.City.Contains(conditionCity))
                     .Where(p => p.Services
-                        .Any(s => (int) s.Name == petsittersSearchParameters.ServiceId))
+                        .All(s => (int)s.Name == petsittersSearchParameters.ServiceId))
                     .ToListAsync();
 
                 return await query;
             }
-            
+
             //filtering by City, ServiceId and Price
             if (string.IsNullOrWhiteSpace(petsittersSearchParameters.Street))
             {
@@ -66,18 +66,18 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 var query = _context.Petsitters
                     .AsQueryable()
                     .Include(p => p.Services)
-                    .Include(p=>p.Coordinates)
+                    .Include(p => p.Coordinates)
                     .Where(p => p.City.Contains(conditionCity))
                     .Where(p => p.Services
-                        .Any(s => (int) s.Name == petsittersSearchParameters.ServiceId))
+                        .All(s => (int)s.Name == petsittersSearchParameters.ServiceId))
                     .Where(p => p.Services
-                        .Any(s => s.Price >= petsittersSearchParameters.MinPrice))
+                        .All(s => s.Price >= petsittersSearchParameters.MinPrice))
                     .Where(p => p.Services
-                        .Any(s => s.Price <= petsittersSearchParameters.MaxPrice))
+                        .All(s => s.Price <= petsittersSearchParameters.MaxPrice))
                     .ToListAsync();
                 return await query;
             }
-             
+
             //filtering by City, ServiceId, street 
             if (!string.IsNullOrWhiteSpace(petsittersSearchParameters.Street)
                 && petsittersSearchParameters.MaxPrice.Equals(Int32.MaxValue)
@@ -89,17 +89,17 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 var query = _context.Petsitters
                     .AsQueryable()
                     .Include(p => p.Services)
-                    .Include(p=>p.Coordinates)
+                    .Include(p => p.Coordinates)
                     .Where(p => p.City == conditionCity)
                     .Where(p => p.Street.Contains(conditionStreet))
                     .Where(p => p.Services
-                        .Any(s => (int) s.Name == petsittersSearchParameters.ServiceId))
+                        .All(s => (int)s.Name == petsittersSearchParameters.ServiceId))
                     .ToListAsync();
 
                 return await query;
             }
-            
-            //filtering by City, SerrviceId, Street and  prices
+
+            //filtering by City, SerrviceId, Street and  Prices
             if (!string.IsNullOrWhiteSpace(petsittersSearchParameters.Street))
             {
                 var conditionCity = petsittersSearchParameters.City.Trim();
@@ -108,15 +108,15 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 var query = _context.Petsitters
                     .AsQueryable()
                     .Include(p => p.Services)
-                    .Include(p=>p.Coordinates)
+                    .Include(p => p.Coordinates)
                     .Where(p => p.City.Contains(conditionCity))
                     .Where(p => p.Street.Contains(conditionStreet))
                     .Where(p => p.Services
-                        .Any(s => (int) s.Name == petsittersSearchParameters.ServiceId))
+                        .All(s => (int)s.Name == petsittersSearchParameters.ServiceId))
                     .Where(p => p.Services
-                        .Any(s => s.Price >= petsittersSearchParameters.MinPrice))
+                        .All(s => s.Price >= petsittersSearchParameters.MinPrice))
                     .Where(p => p.Services
-                        .Any(s => s.Price <= petsittersSearchParameters.MaxPrice))
+                        .All(s => s.Price <= petsittersSearchParameters.MaxPrice))
                     .ToListAsync();
                 return await query;
             }
@@ -124,6 +124,11 @@ namespace PetSupport.Infrastructure.Data.Repositories
             {
                 return await GetAllAsync();
             }
+        }
+
+        public Task<Petsitter> GetByAzureId(string azureId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

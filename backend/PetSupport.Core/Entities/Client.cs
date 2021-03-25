@@ -2,8 +2,6 @@
 {
     public class Client : User
     {
-        
-        
 
     }
 }
