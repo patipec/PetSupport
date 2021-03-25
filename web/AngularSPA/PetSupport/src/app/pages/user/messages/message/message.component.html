@@ -1,0 +1,13 @@
+<div class="contact-form-page">
+  <mat-card class="contact-card-container" *ngIf="message$ | async as message">
+
+    <mat-card-title>Message {{message.sendDate}}</mat-card-title>
+    <div class="message-text-container">
+      {{message.message}}
+
+    </div>
+    <button [routerLink]="['../']">
+      Back to list
+    </button>
+  </mat-card>
+</div>

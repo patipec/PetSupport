@@ -1,0 +1,28 @@
+!README.md
+
+# Rider files
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+.idea
+
+# VS files
+vs
+v16/
+.vs
+.v16
+vs/
+
+# Binary files
+obj
+bin
+obj/
+bin/
+
+
+# Database project files
+*.dbmdl
+*.jfm
+
+# Other
+*.user

@@ -1,0 +1,14 @@
+﻿Do wklejenia w appsettings.json dla local:
+
+{
+  "ConnectionStrings": { "DefaultConnection": "Server= localhost\\SQLEXPRESS; Database=PetSupport; Trusted_Connection=True" },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*"
+}
+

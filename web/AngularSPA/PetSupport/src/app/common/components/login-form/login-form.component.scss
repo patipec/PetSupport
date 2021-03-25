@@ -1,0 +1,142 @@
+.container {
+  margin: 10px auto;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.pets-icon img{
+  width: 130px;
+  position: relative;
+  left: 200px;
+  top: 112px;
+}
+mat-card{
+  justify-content: center;
+  width: 450px;
+  margin: 20px;
+  padding: 80px 60px;
+  margin: 100px auto;
+  border: solid black 1px;
+  box-shadow: 5px 5px 30px 1px lightblue !important;
+}
+h2 {
+  text-align: left;
+  font-size: 26px;
+  margin: 10px 0px 30px 25px;
+  font-weight: bold;
+}
+mat-form-field {
+  display: block;
+  border: solid #41B883 2px;
+  -moz-border-radius: 15px;
+  border-radius: 35px;
+  padding: 0px 0px 2px;
+  font-size: 12px;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  margin: 0px auto 30px;
+  width: 90%;
+}
+mat-form-field input {
+
+  justify-content: center;
+
+}
+::ng-deep.mat-form-field-wrapper{
+  width: 80%;
+}
+
+.continue-btn{
+  background-color:#0B814A;
+  color: white;
+  font-size: 12px;
+  font-weight: normal;
+  width: 90%;
+  -moz-border-radius: 15px;
+  border-radius: 35px;
+  padding: 5px 0 ;
+}
+.continue-btn:hover{
+  background-color: #41B883;
+}
+
+.or-container{
+  display: inline-flex;
+  font-size: 10px;
+}
+.or-container span {
+  bottom: 10px;
+  line-height: 2.5em;
+  font-weight: bold;
+}
+.green-or-space{
+  width: 60px;
+  height: 5px;
+  margin: 10px 10px;
+  background-color: #99ffcc;
+  border-radius: 10px;
+}
+.social-media{
+  margin: 15px auto;
+  display: flex;
+  flex-direction: column;
+}
+.facebook{
+  display: flex;
+  border-color: #0B814A;
+  background-color: white;
+  margin: 15px 0px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 90%;
+  -moz-border-radius: 15px;
+  border-radius: 35px;
+  padding: 10px 0 ;
+  margin: 15px auto;
+}
+.facebook:hover{
+  border-color: #41B883;
+}
+
+.google{
+  display: flex;
+  border-color: #0B814A;
+  background-color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 90%;
+  -moz-border-radius: 15px;
+  border-radius: 35px;
+  padding: 10px 0 ;
+  text-align: center;
+  margin: 15px auto;
+}
+
+.google:hover{
+  border-color: #41B883;
+}
+
+.img-facebook{
+  width: 20%;
+}
+.desc-facebook{
+  width: 60%;
+  text-align: center;
+}
+
+.img-google{
+  width: 20%;
+}
+.desc-google{
+  width: 60%;
+  text-align: center;
+}
+
+
+.social-media button img {
+  width: 20px;
+  height: 20px;
+  justify-content: left;
+}

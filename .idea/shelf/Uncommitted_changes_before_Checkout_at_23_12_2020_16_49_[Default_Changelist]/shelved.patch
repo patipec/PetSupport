@@ -1,0 +1,88 @@
+Index: web/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { Component, OnInit } from '@angular/core';\r\nimport {NgForm, NgModel} from '@angular/forms';\r\nimport { ServiceType } from '../form-data/service-type.service';\r\nimport { IShortForm } from '../form-data/IShortForm';\r\nimport { Observable } from 'rxjs';\r\nimport {FormGroup, FormControl} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-short-form',\r\n  templateUrl: './short-form.component.html',\r\n  styleUrls: ['./short-form.component.css']\r\n})\r\nexport class ShortFormComponent implements OnInit {\r\n\r\n    shortFormSettings: IShortForm = {\r\n    service: '',\r\n    city: '',\r\n    range: new FormGroup({\r\n      start: new FormControl(),\r\n      end: new FormControl()\r\n    }),\r\n    startDate: new FormControl(),\r\n    stopDate: new FormControl(),\r\n    typePet: '',\r\n  };\r\n  servicesTypes$: Observable<string[]>;\r\n\r\n  btnCheck: boolean;\r\n  btnStyle = 'form-check-label';\r\n\r\n  // onServiceClick(): void{\r\n  //   this.\r\n  //   this.btnCheck === true ? 'btn-default' : 'btn-change';\r\n  // }\r\n\r\n  // setBackgroundColor(): void{\r\n  //   this.btnStyle === 'btn-default' ? this.btnStyle = 'btn-change' : this.btnStyle = 'btn-default';\r\n  // }\r\n  ngOnInit(): void {\r\n  }\r\n  //\r\n  // checkTest = function(boolChecked){\r\n  //   console.log(boolChecked);\r\n  // }\r\n  onSubmit(form: NgForm): void{\r\n    // if (form.valid){\r\n    //   this.servicesTypes.postUserSettingsForm(this.userSettings).subscribe(\r\n    //     result => console.log('success: ', result),\r\n    //     error => this.onHttpError(error)\r\n    //   );\r\n    // }else{\r\n    //   this.postError = true;\r\n    //   this.postErrorMessage = 'Please fix above errors';\r\n    // }\r\n  }\r\n  onBlur(field: NgModel): void{\r\n    console.log('in OnBlur', field.valid);\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.ts	(revision c0fdb452f5865676c53361f882fcb7cd6f241744)
++++ web/AngularSPA/PetSupport/src/app/forms/short-form/short-form.component.ts	(date 1608738522455)
+@@ -1,59 +1,42 @@
+ import { Component, OnInit } from '@angular/core';
+-import {NgForm, NgModel} from '@angular/forms';
+-import { ServiceType } from '../form-data/service-type.service';
+-import { IShortForm } from '../form-data/IShortForm';
++// import {Form, NgForm, NgModel} from '@angular/forms';
++import { FormBuilder} from '@angular/forms';
+ import { Observable } from 'rxjs';
+ import {FormGroup, FormControl} from '@angular/forms';
++import {DatePipe} from '@angular/common';
+ 
+ @Component({
+   selector: 'app-short-form',
+   templateUrl: './short-form.component.html',
+-  styleUrls: ['./short-form.component.css']
++  styleUrls: ['./short-form.component.css'],
++  providers: [DatePipe]
+ })
+ export class ShortFormComponent implements OnInit {
+ 
+-    shortFormSettings: IShortForm = {
+-    service: '',
+-    city: '',
+-    range: new FormGroup({
+-      start: new FormControl(),
+-      end: new FormControl()
++  constructor(private fb: FormBuilder,  private datePipe: DatePipe) {}
++
++    shortFormSettings = this.fb.group({
++    service: [''],
++    location: [''],
++    range: this.fb.group({
++      startDate: this.datePipe.transform(new Date(), 'yyyy-MM-dd'),
++      stopDate: this.datePipe.transform(new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd')
+     }),
+-    startDate: new FormControl(),
+-    stopDate: new FormControl(),
+     typePet: '',
+-  };
++  });
+   servicesTypes$: Observable<string[]>;
+ 
+-  btnCheck: boolean;
+-  btnStyle = 'form-check-label';
+-
+-  // onServiceClick(): void{
+-  //   this.
+-  //   this.btnCheck === true ? 'btn-default' : 'btn-change';
+-  // }
+-
+-  // setBackgroundColor(): void{
+-  //   this.btnStyle === 'btn-default' ? this.btnStyle = 'btn-change' : this.btnStyle = 'btn-default';
+-  // }
+   ngOnInit(): void {
+   }
+   //
+   // checkTest = function(boolChecked){
+   //   console.log(boolChecked);
+   // }
+-  onSubmit(form: NgForm): void{
+-    // if (form.valid){
+-    //   this.servicesTypes.postUserSettingsForm(this.userSettings).subscribe(
+-    //     result => console.log('success: ', result),
+-    //     error => this.onHttpError(error)
+-    //   );
+-    // }else{
+-    //   this.postError = true;
+-    //   this.postErrorMessage = 'Please fix above errors';
+-    // }
++  onSubmit(): void{
++
+   }
+-  onBlur(field: NgModel): void{
+-    console.log('in OnBlur', field.valid);
++  onServiceClick(serviceValue: string): void{
++
+   }
++
+ }

@@ -1,0 +1,31 @@
+<div class="services">
+  <h1>Services:</h1>
+  <div class="singe-service">
+    <div class="service-component" *ngFor="let item of petsitter.Services | keyvalue">
+      <div class="services-top-row">
+        <div class="service-name">
+          {{item.key}}
+        </div>
+        <div class="service-price">{{item.value}} $</div>
+      </div>
+
+      <div class="services-bottom-row">
+        <div class="service-description">
+          <div *ngIf="item.key == 'Boarding'">
+            in the sitter's home
+          </div>
+          <div *ngIf="item.key == 'HouseSitting'">
+            in your home
+          </div>
+          <div *ngIf="item.key == 'Walking'">
+            in your neighborhood
+          </div>
+        </div>
+        <div class="service-price-description">
+          Per night
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,50 @@
+section.main-container {
+    height: 80vh;
+    min-height: 450px;
+    background-image: url(/../../../../../../assets/Backgrounds/bg-registration.png);
+    background-size: cover;
+}
+
+.container {
+    margin: 10px auto;
+    text-align: center;
+    justify-content: center;
+  
+  }
+  
+  mat-card{
+    justify-content: center;
+    width: 300px;
+    margin: 20px;
+    padding: 80px 60px;
+    margin: 100px auto;
+    border-radius: 30px;
+    box-shadow: 3px 0 6px rgba(0,0,0,.24) !important;
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  h2 {
+    font-size: 26px;
+    margin: 10px 0px 30px 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .continue-btn{
+    background-color:white;
+    color: black;
+    font-size: 13px;
+    border: 3px solid #ffbb00;
+    font-weight:500;
+    width: 140px;
+    -moz-border-radius: 15px;
+    border-radius: 25px;
+    padding: 3px 0 ;
+    margin-left: 13px !important;
+    margin-right: 13px !important;
+  }
+  .continue-btn:hover{
+    background-color:#ffbb00;
+  }
