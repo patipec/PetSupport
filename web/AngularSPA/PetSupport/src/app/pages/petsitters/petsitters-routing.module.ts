@@ -11,8 +11,8 @@ const routes: Routes = [
     children: [
       {path: '', component: PettsittersComponent, pathMatch: 'full'},
       {path: ':id', component: PetsitterComponent},
-      {path: 'contact-form/:id', component: ContactFormComponent, canActivate: []},
-      {path: 'contact-form/:id/success', component: ContactFormSuccessComponent, canActivate: []},
+      {path: ':id/contact-form', component: ContactFormComponent, canActivate: []},
+      {path: ':id/contact-form/success', component: ContactFormSuccessComponent, canActivate: []},
     ],
   },
 ];

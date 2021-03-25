@@ -38,7 +38,8 @@ export class PetsitterComponent implements OnInit, AfterViewInit {
   }
 
   public navigateToContactPage(): void {
-    void this.router.navigate(['contact-form', this.petsitterId]);
+    console.log(this.petsitterId);
+    void this.router.navigate(['contact-form'], {relativeTo: this.route});
   }
 
   private bindSliderArrows(trigger, target): void {
