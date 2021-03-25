@@ -18,6 +18,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
         {
             return await _context.BookingMessages
                 .Where(m => m.ClientId == clientId)
+                .Include(m => m.Petsitter)
                 .OrderBy(m=>m.SendData)
                 .ToListAsync();
         }

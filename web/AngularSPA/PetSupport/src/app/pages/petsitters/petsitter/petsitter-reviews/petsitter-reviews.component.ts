@@ -4,7 +4,7 @@ import {Petsitter} from '../../../../common/models/petsitter';
 @Component({
   selector: 'app-petsitter-reviews',
   templateUrl: './petsitter-reviews.component.html',
-  styleUrls: ['./petsitter-reviews.component.css']
+  styleUrls: ['./petsitter-reviews.component.scss']
 })
 export class PetsitterReviewsComponent implements OnInit {
   @Input() petsitter: Petsitter;

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
-import {MessagesService} from '../../user/messages/messages.service';
+import {MessagesService} from '../user/messages/messages.service';
 import {MessageNew} from '../../common/models/message';
-import {UserService} from '../../user/user.service';
+import {UserService} from '../user/user.service';
 
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
-  styleUrls: ['./contact-form.component.css']
+  styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent implements OnInit {
   public petsitterId: number;

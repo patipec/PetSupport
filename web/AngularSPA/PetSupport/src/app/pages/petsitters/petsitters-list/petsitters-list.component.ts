@@ -6,7 +6,7 @@ import {Petsitter} from '../../../common/models/petsitter';
 @Component({
   selector: 'app-petsitters-list',
   templateUrl: './petsitters-list.component.html',
-  styleUrls: ['./petsitters-list.component.css']
+  styleUrls: ['./petsitters-list.component.scss']
 })
 export class PetsittersListComponent {
   @Input()

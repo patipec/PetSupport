@@ -7,7 +7,7 @@ import {switchMap} from 'rxjs/operators';
 @Component({
   selector: 'app-contact-form-success',
   templateUrl: './contact-form-success.component.html',
-  styleUrls: ['./contact-form-success.component.css']
+  styleUrls: ['./contact-form-success.component.scss']
 })
 export class ContactFormSuccessComponent implements OnInit {
   name = 'Agata';

@@ -44,7 +44,7 @@
 <!--        <button mat-menu-item routerLink="/contact-form" routerLinkActive="active">Contact-form</button>-->
         <button mat-menu-item routerLink="/contact-form/success" routerLinkActive="active">Contact-form</button>
         <button mat-menu-item routerLink="/edit-profile" routerLinkActive="active">Edit prof</button>
-        <button mat-menu-item routerLink="/messages" routerLinkActive="active">Messages</button>
+        <button mat-menu-item routerLink="user/messages" routerLinkActive="active">Messages</button>
 
       </mat-menu>
 
@@ -64,7 +64,7 @@
       <div *ngIf="!(isHandset$ | async)" >
         <ul  class="navigation-items">
           <app-auth-button></app-auth-button>
-          <a *ngIf="isLogged"  routerLink="/messages">My messages</a>
+          <a *ngIf="isLogged"  routerLink="/user/messages">My messages</a>
           <a href="./register-form/basic-info">Register</a>
         </ul>
       </div>

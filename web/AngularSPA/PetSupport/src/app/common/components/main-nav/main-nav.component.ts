@@ -7,7 +7,7 @@ import {AuthService} from '../../auth/auth.service';
 @Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
-  styleUrls: ['./main-nav.component.css']
+  styleUrls: ['./main-nav.component.scss']
 })
 export class MainNavComponent {
 
@@ -21,6 +21,6 @@ export class MainNavComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private authService:AuthService) {}
+  constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService) {}
 
 }
