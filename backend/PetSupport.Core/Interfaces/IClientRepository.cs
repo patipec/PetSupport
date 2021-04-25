@@ -2,7 +2,7 @@ using PetSupport.Core.Entities;
 
 namespace PetSupport.Core.Interfaces
 {
-    public interface IClientRepository : IBaseRepository<Client>
+    public interface IClientRepository : IBaseRepository<User.Client>
     {
         
     }

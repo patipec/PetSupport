@@ -11,7 +11,7 @@ namespace PetSupport.Core.Entities
         public PetType PetType { get; set; }
         public PetWeight PetWeight { get; set; }
         public int PetsitterId { get; set; }
-        public Petsitter Petsitter { get; set; }
+        public User.Petsitter Petsitter { get; set; }
 
     }
 

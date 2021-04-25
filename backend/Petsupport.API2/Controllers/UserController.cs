@@ -12,6 +12,7 @@ using System;
 using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using User = PetSupport.Core.Entities.User;
 
 
 namespace Petsupport.API2.Controllers
@@ -64,7 +65,7 @@ namespace Petsupport.API2.Controllers
                     : StatusCode(StatusCodes.Status500InternalServerError, ex.Error);
             }
 
-            var petsitter = _mapper.Map<Petsitter>(createPetsitterDto);
+            var petsitter = _mapper.Map<User.Petsitter>(createPetsitterDto);
             petsitter.AzureId = user.Id;
             try
             {

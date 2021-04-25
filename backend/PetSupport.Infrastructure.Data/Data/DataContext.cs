@@ -10,8 +10,8 @@ namespace PetSupport.Infrastructure.Data.Data
         {
         }
 
-        public DbSet<Client> Clients { get; set; }
-        public DbSet<Petsitter> Petsitters { get; set; }
+        public DbSet<User.Client> Clients { get; set; }
+        public DbSet<User.Petsitter> Petsitters { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<BookingMessage> BookingMessages { get; set; }
 

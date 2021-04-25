@@ -10,13 +10,13 @@ namespace Petsupport.API2.Mapping
     {
         public PetSupportProfile()
         {
-            this.CreateMap<Petsitter, PetsitterDTO>()
+            this.CreateMap<PetSupport.Core.Entities.User.Petsitter, PetsitterDTO>()
                 .ForMember(dto => dto.ImageId, opt =>
                     opt.MapFrom(p => p.PhotoId))
                 .ReverseMap();
 
 
-            this.CreateMap<Coordinate, CoordinateDTO>()
+            this.CreateMap<PetSupport.Core.Entities.User.Coordinate, CoordinateDTO>()
                 .ReverseMap(); ;
 
 
@@ -24,17 +24,17 @@ namespace Petsupport.API2.Mapping
                 .ReverseMap();
 
 
-            this.CreateMap<Petsitter, FullPetsitterDTO>()
+            this.CreateMap<PetSupport.Core.Entities.User.Petsitter, FullPetsitterDTO>()
                 .ReverseMap();
 
             
             this.CreateMap<CreatePetsitterDTO, User>().ConvertUsing<CreatePetsitterDTOToUserConverter>();
             
-            CreateMap<BasicInfoDTO, Petsitter>();
-            CreateMap<PersonalInfoDTO, Petsitter>();
-            CreateMap<AddressDTO, Petsitter>();
-            CreateMap<PetSitterPhotosDTO, Petsitter>();
-            CreateMap<CreatePetsitterDTO, Petsitter>()
+            CreateMap<BasicInfoDTO, PetSupport.Core.Entities.User.Petsitter>();
+            CreateMap<PersonalInfoDTO, PetSupport.Core.Entities.User.Petsitter>();
+            CreateMap<AddressDTO, PetSupport.Core.Entities.User.Petsitter>();
+            CreateMap<PetSitterPhotosDTO, PetSupport.Core.Entities.User.Petsitter>();
+            CreateMap<CreatePetsitterDTO, PetSupport.Core.Entities.User.Petsitter>()
                 .IncludeMembers(
                     c => c.BasicInfoDto,
                     c => c.PersonalInfoDto,

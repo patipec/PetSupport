@@ -18,9 +18,9 @@ namespace PetSupport.Core.Entities
 
         //Relationships
         public int? PetsitterId { get; set; }
-        public Petsitter Petsitter { get; set; }
+        public User.Petsitter Petsitter { get; set; }
 
         public int? ClientId { get; set; }
-        public Client Client { get; set; }
+        public User.Client Client { get; set; }
     }
 }

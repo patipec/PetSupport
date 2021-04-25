@@ -10,20 +10,20 @@ using System.Threading.Tasks;
 
 namespace PetSupport.Infrastructure.Data.Repositories
 {
-    public class PetsitterRepository : BaseRepository<Petsitter>, IPetsitterRepository
+    public class PetsitterRepository : BaseRepository<User.Petsitter>, IPetsitterRepository
     {
         public PetsitterRepository(DataContext _context) : base(_context)
         {
         }
 
-        public override async Task<IEnumerable<Petsitter>> GetAllAsync()
+        public override async Task<IEnumerable<User.Petsitter>> GetAllAsync()
         {
             return await _context.Petsitters
                 .OrderBy(p => p.Name)
                 .ToListAsync();
         }
 
-        public override async Task<Petsitter> GetByIdAsync(int id)
+        public override async Task<User.Petsitter> GetByIdAsync(int id)
         {
             return await _context.Petsitters
                 .Include(p => p.Services)
@@ -31,7 +31,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
 
-        public async Task<IEnumerable<Petsitter>> GetAllPetsittersBySearchParametersAsync(
+        public async Task<IEnumerable<User.Petsitter>> GetAllPetsittersBySearchParametersAsync(
             PetsittersSearchParameters petsittersSearchParameters)
         {
             if (petsittersSearchParameters == null)
@@ -126,7 +126,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
             }
         }
 
-        public Task<Petsitter> GetByAzureId(string azureId)
+        public Task<User.Petsitter> GetByAzureId(string azureId)
         {
             throw new NotImplementedException();
         }

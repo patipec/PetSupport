@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace PetSupport.Core.Interfaces
 {
-    public interface IPetsitterRepository : IBaseRepository<Petsitter>
+    public interface IPetsitterRepository : IBaseRepository<User.Petsitter>
     {
 
-        Task<IEnumerable<Petsitter>> GetAllPetsittersBySearchParametersAsync
+        Task<IEnumerable<User.Petsitter>> GetAllPetsittersBySearchParametersAsync
 
             (PetsittersSearchParameters petsittersSearchParameters);
-        Task<Petsitter> GetByAzureId(string azureId);
+        Task<User.Petsitter> GetByAzureId(string azureId);
 
     }
 }

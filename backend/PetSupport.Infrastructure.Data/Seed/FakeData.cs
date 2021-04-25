@@ -4,18 +4,17 @@ using PetSupport.Core.Entities;
 using PetSupport.Core.Enums;
 using System;
 using System.Collections.Generic;
-using PetType = PetSupport.Core.Entities.PetType;
-using PetWeight = PetSupport.Core.Entities.PetWeight;
+
 
 namespace PetSupport.Infrastructure.Data.Seed
 {
     public class FakeData
     {
         private const int NumberOfFakeDataToGenerate = 1000;
-        public List<Client> FakeClients { get; }
+        public List<User.Client> FakeClients { get; }
         public List<Service> FakeServices { get; protected set; } = new List<Service>();
-        public List<Coordinate> FakeCoordinates { get; }
-        public List<Petsitter> FakePetsitters { get; protected set; } = new List<Petsitter>();
+        public List<User.Coordinate> FakeCoordinates { get; }
+        public List<User.Petsitter> FakePetsitters { get; protected set; } = new List<User.Petsitter>();
         public List<BookingMessage> FakeBookingMessages { get; }
 
         public FakeData()
@@ -24,7 +23,7 @@ namespace PetSupport.Infrastructure.Data.Seed
             Randomizer.Seed = new Random(8675309);
 
             var clientId = 1;
-            var clientFaker = new Faker<Client>()
+            var clientFaker = new Faker<User.Client>()
                 .RuleFor(c => c.Id, f => clientId++)
                 .RuleFor(c => c.Name, f => f.Person.FirstName)
                 .RuleFor(c => c.Surname, f => f.Person.LastName)
@@ -46,7 +45,7 @@ namespace PetSupport.Infrastructure.Data.Seed
 
             // Petsitter and Client entity inherit for user class so they have the same column with Id on the data table.
             var petsitterId = clientId;
-            var petsitterFaker = new Faker<Petsitter>()
+            var petsitterFaker = new Faker<User.Petsitter>()
                 .StrictMode(false)
                 .RuleFor(p => p.Id, f => petsitterId++)
                 .RuleFor(p => p.AzureId, f => Guid.NewGuid().ToString())
@@ -96,7 +95,7 @@ namespace PetSupport.Infrastructure.Data.Seed
 
             var coordinateId = 1;
             var petsitterPriamaryId = 1001;
-            var coordinateFaker = new Faker<Coordinate>()
+            var coordinateFaker = new Faker<User.Coordinate>()
                 .StrictMode(false)
                 .RuleFor(c => c.Id, f => coordinateId++)
                 .RuleFor(c => c.PetsitterId, f => petsitterPriamaryId++)
@@ -134,4 +133,5 @@ namespace PetSupport.Infrastructure.Data.Seed
 
         }
     }
+
 }
