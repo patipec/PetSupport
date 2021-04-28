@@ -49,3 +49,6 @@ Thumbs.db
 
 # auth secret
 src/app/auth.json
+
+# tailwind for autocomplete
+tailwind.css
