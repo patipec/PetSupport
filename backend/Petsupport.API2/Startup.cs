@@ -16,6 +16,7 @@ using PetSupport.Core.Services;
 using PetSupport.Infrastructure.Data.Data;
 using PetSupport.Infrastructure.Data.Repositories;
 using System.Reflection;
+using Microsoft.Extensions.Logging;
 
 namespace Petsupport.API2
 {
@@ -83,14 +84,26 @@ namespace Petsupport.API2
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
         {
             if (env.IsDevelopment())
             {
+                
+                logger.LogInformation("In Development");
+
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Petsupport.API2 v1"));
             }
+            else
+            {
+                
+                logger.LogInformation("Not Development");
+
+                app.UseExceptionHandler("/Error");
+                app.UseHsts();
+            }
+            
 
             app.UseHttpsRedirection();
 
