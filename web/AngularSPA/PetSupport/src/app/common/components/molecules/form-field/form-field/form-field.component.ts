@@ -55,7 +55,6 @@ export class FormFieldComponent implements AfterViewInit {
     this.setFocusBehaviour();
     this.setCss();
     this.setPlaceholder();
-    this.setValidationCss();
   }
 
   public setCss(): void {
@@ -81,21 +80,11 @@ export class FormFieldComponent implements AfterViewInit {
   }
 
   public setNoValueInputLogic(): void {
+    if (this.control.value) {
+      this.renderer.addClass(this.labelEl, 'small-label');
+    }
     const [empty$, notEmpty$] = partition(this.control.valueChanges, (v) => !v);
     notEmpty$.subscribe(() => this.renderer.addClass(this.labelEl, 'small-label'));
     empty$.subscribe(() => this.renderer.removeClass(this.labelEl, 'small-label'));
   }
-
-  public setValidationCss(): void {
-    this.control.valueChanges.subscribe(() => {
-      if (!this.control.pristine && this.control.invalid) {
-        this.renderer.addClass(this.inputEl, 'error');
-        this.renderer.addClass(this.labelEl, 'error');
-      } else {
-        this.renderer.removeClass(this.inputEl, 'error');
-        this.renderer.removeClass(this.labelEl, 'error');
-      }
-    });
-  }
-
 }

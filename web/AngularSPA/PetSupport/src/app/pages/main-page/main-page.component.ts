@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FindPetsitterShortForm} from '../../common/models/forms';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
+import {appValidators} from '../../common/validators/validators';
 
 @Component({
   selector: 'app-main-page',
@@ -10,7 +11,7 @@ import {FormBuilder} from '@angular/forms';
 })
 export class MainPageComponent {
   public testGroup = this.fb.group({
-    test: [''],
+    test: ['', appValidators.name],
   });
   public value = '4';
 

@@ -9,8 +9,9 @@
   box-sizing: border-box;
 
   &:not(:focus)::placeholder {
-      opacity:  0;
+    opacity: 0;
   }
+
   &::placeholder {
     opacity: 0.6;
   }
@@ -33,4 +34,15 @@
 
 .focused {
   @extend .small-label;
+}
+
+input.ng-invalid:not(.ng-untouched), textarea.ng-invalid:not(.ng-untouched) {
+  border-color: #dc3545;
+  color: #dc3545;
+  &:focus {
+    border-color: #dc3545;
+  }
+  &::placeholder {
+    color: #dc3545;
+  }
 }

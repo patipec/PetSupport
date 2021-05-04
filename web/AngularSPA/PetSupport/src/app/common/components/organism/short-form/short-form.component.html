@@ -1,6 +1,6 @@
 <div class="container">
 
-  <form [formGroup]="shortFormSettings" (ngSubmit)="onSubmit()">
+  <form [formGroup]="shortFormSettings" errorTailor (ngSubmit)="onSubmit()">
 
     <app-services-part [services]="shortFormSettings"></app-services-part>
     <!-- SEARCH USER SELECTION-->
@@ -11,14 +11,14 @@
         <div class="location">
           <app-form-field>
             <label appLabel>Location</label>
-            <input appInput formControlName="location">
+            <input appInput formControlName="location" controlErrorsClass="mb-6">
             <app-input-error>
-              <span class="error-form-display" *ngIf="shortFormSettings.get('location').errors?.required">
+<!--              <span class="error-form-display" *ngIf="shortFormSettings.get('location').errors?.required">
                Please enter location where you want to do a service!
             </span>
               <span class="error-form-display" *ngIf="shortFormSettings.get('location').errors?.pattern">
               The location should contains only letters!
-            </span>
+            </span>-->
             </app-input-error>
           </app-form-field>
         </div>

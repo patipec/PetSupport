@@ -1,9 +1,9 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {Observable} from 'rxjs';
+import {FormBuilder} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {IAddress} from '../../../../../common/models/IRegistration-data';
 import {RegistrationService} from '../../../registration.service';
+import {appValidators} from '../../../../../common/validators/validators';
 
 @Component({
   selector: 'app-a-form',
@@ -25,12 +25,11 @@ export class AFormComponent implements OnInit {
 
   signupForm = this.fb.group({
 
-    street: ['waww', [Validators.required, Validators.maxLength(25), Validators.minLength(3)]],
-    housenr: ['1/2 a', [Validators.required, Validators.maxLength(10),
-      Validators.pattern('^[a-zA-Z0-9_.+-]+/[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
-    city: ['asasasaa', [Validators.required, Validators.maxLength(30), Validators.minLength(3)]],
-    zipcode: ['12345', Validators.required, this.forbiddenZipCode],
-    country: ['Poland', [Validators.required, Validators.maxLength(30), Validators.minLength(3)]],
+    street: ['waww', appValidators.street],
+    houseNr: ['1/ 2 a', appValidators.houseNr],
+    city: ['asasasaa', appValidators.city],
+    zipCode: ['12345', appValidators.zipCode],
+    country: ['Poland', appValidators.country],
     coordinates: []
   });
 
@@ -47,22 +46,6 @@ export class AFormComponent implements OnInit {
     this.getUserCurrentPostion();
   }
 
-  forbiddenZipCode(control: FormControl): Promise<any> | Observable<any> {
-    const promise = new Promise<any>((resolve, reject) => {
-      setTimeout(() => {
-        if (control.value === '00-000') {
-          resolve({ZipCodeIsForbidden: true});
-        }
-        if (control.value === '00000') {
-          resolve({ZipCodeIsForbidden: true});
-        } else {
-          resolve(null);
-        }
-
-      }, 1000);
-    });
-    return promise;
-  }
   getUserCurrentPostion(): void {
     navigator.geolocation.getCurrentPosition((position) => {
       this.lat = position.coords.latitude;
@@ -72,9 +55,9 @@ export class AFormComponent implements OnInit {
   }
 
   convertAddressToQuery(): string {
-    const zip = this.signupForm.get('zipcode').value;
+    const zip = this.signupForm.get('zipCode').value;
     const street = this.signupForm.get('street').value;
-    const housenr = this.signupForm.get('housenr').value;
+    const housenr = this.signupForm.get('houseNr').value;
     const city = this.signupForm.get('city').value;
     return `address=${zip}+${street}+${housenr},+${city}`;
   }
@@ -82,8 +65,8 @@ export class AFormComponent implements OnInit {
   convertAddressToCords(): void {
     this.http.get(`${this.GOOGLE_API}${this.convertAddressToQuery()}${this.WOJTEK_GOOGLE_KEY}`)
       .subscribe((res: any) => {
-      console.log(res);
-    });
+        console.log(res);
+      });
   }
 
 }

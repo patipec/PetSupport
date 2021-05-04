@@ -5,7 +5,7 @@ import {Directive, ElementRef} from '@angular/core';
 })
 export class LabelDirective {
 
-  constructor(public el: ElementRef<HTMLLabelElement>) {
+  constructor() {
   }
 
 }

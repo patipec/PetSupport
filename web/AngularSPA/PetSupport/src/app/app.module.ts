@@ -31,8 +31,10 @@ import {clientId, authority, redirectUri, postLogoutRedirectUri} from './auth.js
 import {ButtonModule} from './common/components/atoms/button/button.module';
 import {RegisterModule} from './pages/register/register.module';
 import {SharedModule} from './common/modules/shared.module';
-
+import {CustomErrorTailorModule} from './providers/error-tailor';
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
+
+
 
 @NgModule({
   declarations: [
@@ -51,7 +53,6 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     NotAuthorizedComponent,
     /*Probably user module*/
     EditProfileComponent,
-
     ContactFormComponent,
     ContactFormSuccessComponent,
 
@@ -70,6 +71,8 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     ShortFormModule,
     MatCarouselModule,
     ButtonModule,
+    CustomErrorTailorModule,
+
     MsalModule.forRoot({
       auth: {
         clientId,
@@ -107,7 +110,6 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
       useClass: MsalInterceptor,
       multi: true
     },
-    LoginAuthGuard
   ],
   bootstrap: [AppComponent]
 })

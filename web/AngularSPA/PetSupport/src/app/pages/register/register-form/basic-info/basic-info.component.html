@@ -1,14 +1,6 @@
-<div class="example-container">
-  <div class="card-title">Basic Info</div>
-  <app-bi-form (onFormChanged)="onFormChange($event)" (formValid)="onStatusChange($event)"></app-bi-form>
-  <a appButton="error" routerLink="/main-page">Cancel</a>
-  <button
-    appButton
-    [disabled]="!isFormValid"
-    routerLink="/register-form/address"
-    (click)="onSubmit()">
-    Next</button>
-</div>
+<div class="container-xs margin-auto">Basic Info</div>
+<app-bi-form></app-bi-form>
+
 
 
 
