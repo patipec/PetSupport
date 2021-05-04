@@ -1,4 +1,3 @@
-
 <div class="container">
 
   <form [formGroup]="shortFormSettings" (ngSubmit)="onSubmit()">
@@ -10,21 +9,23 @@
 
       <div class="form-group">
         <div class="location">
-          <mat-form-field color="accent" appearance="fill">
-            <mat-label >Location</mat-label>
-            <input matInput formControlName="location">
-            <span class="error-form-display" *ngIf="shortFormSettings.get('location').errors?.required">
+          <app-form-field>
+            <label appLabel>Location</label>
+            <input appInput formControlName="location">
+            <app-input-error>
+              <span class="error-form-display" *ngIf="shortFormSettings.get('location').errors?.required">
                Please enter location where you want to do a service!
             </span>
-            <span class="error-form-display" *ngIf="shortFormSettings.get('location').errors?.pattern">
+              <span class="error-form-display" *ngIf="shortFormSettings.get('location').errors?.pattern">
               The location should contains only letters!
             </span>
-          </mat-form-field>
+            </app-input-error>
+          </app-form-field>
         </div>
 
         <div formGroupName="dateRange">
           <mat-form-field color="accent" appearance="fill">
-            <mat-label >From</mat-label>
+            <mat-label>From</mat-label>
             <input matInput [matDatepicker]="picker1" formControlName="startDate">
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
@@ -39,16 +40,19 @@
         </div>
 
         <div class="row">
-          <mat-form-field color="accent" appearance="fill">
-            <mat-label >Pet</mat-label>
-            <input matInput formControlName="typePet">
-            <span class="error-form-display" *ngIf="shortFormSettings.get('typePet').errors?.pattern">
+          <app-form-field>
+            <label appLabel>Pet</label>
+            <input appInput formControlName="typePet">
+            <app-input-error>
+              <span class="error-form-display" *ngIf="shortFormSettings.get('typePet').errors?.pattern">
               Pet type should contain only letters!
-            </span>
-          </mat-form-field>
+              </span>
+            </app-input-error>
+
+          </app-form-field>
         </div>
         <button (click)="sendForm()">
-          <img src="../../../../assets/shortFormImages/search.png">
+          <img src="../../../../../assets/shortFormImages/search.png">
         </button>
       </div>
     </div>

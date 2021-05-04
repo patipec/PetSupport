@@ -1,0 +1,36 @@
+.app-input-primary {
+  @apply w-full my-1 pl-2
+  text-lg
+  border-2 rounded-xl border-green-500 focus:border-green-200;
+  background: transparent;
+
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+
+  &:not(:focus)::placeholder {
+      opacity:  0;
+  }
+  &::placeholder {
+    opacity: 0.6;
+  }
+}
+
+.app-label-primary {
+  color: #868686;
+  position: relative;
+  top: 32px;
+  left: 10px;
+  z-index: -1;
+}
+
+.small-label {
+  position: relative;
+  font-size: 10px;
+  top: 0;
+  left: 0;
+}
+
+.focused {
+  @extend .small-label;
+}
