@@ -20,5 +20,4 @@ import {ReactiveFormsModule} from '@angular/forms';
     })
   ],
 })
-export class CustomErrorTailorModule {
-}
+export class CustomErrorTailorModule {}

@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {FormGroup} from '@angular/forms';
-import { Services } from '../../../models/services';
 
 
 @Component({
@@ -8,21 +7,15 @@ import { Services } from '../../../models/services';
   templateUrl: './services-part.component.html',
   styleUrls: ['./services-part.component.scss']
 })
-export class ServicesPartComponent implements OnInit {
-  @Input() services: FormGroup;
-  constructor() { }
-  enumServices = Services;
-  ngOnInit(): void {
-  }
-  // serviceNameConverter(serviceName: string): number{
-  //   //   Boarding = 0,
-  //   //   HouseSitting = 1,
-  //   //   DogWalking = 2,
-  //   //   DropInVisit = 3,
-  //   //   DoggyDayCare = 4
-  //   // return Services[serviceName];
-  // }
-  onServiceClick(serviceValue: number): void {
-    this.services.get('service').setValue(serviceValue);
+export class ServicesPartComponent {
+  @Input() servicesForm: FormGroup;
+  public services = [
+    {name: 'Boarding', value: 0, src: '/assets/shortFormImages/cocker-spaniel.png'},
+    {name: 'House Sitting', value: 1, src: '/assets/shortFormImages/dog-heart.png'},
+    {name: 'Boarding', value: 2, src: '/assets/shortFormImages/dog-smiley.png'}
+  ];
+
+  public changeChosenService(value: number): void {
+    this.servicesForm.get('service').setValue(value);
   }
 }

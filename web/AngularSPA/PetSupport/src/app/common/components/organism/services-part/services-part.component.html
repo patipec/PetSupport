@@ -1,50 +1,8 @@
-<div class="form-group" [formGroup]="services">
-  <!--      PET SELECTION  -->
-  <label for="boarding">
-    <div class="form-check-label" [ngStyle]="services.get('service').value == enumServices.Boarding &&
-             {
-               'background-color': 'rgb(254, 203, 64)'
-              }">
-      <input type="button"
-             name="boarding"
-             value=""
-             formControlName="service"
-             id="boarding"
-             (click)="onServiceClick(0)">
-      <img src="../../../../../assets/shortFormImages/cocker-spaniel.png">
-      Boarding
-    </div>
-  </label>
-  <label for="HouseSitting">
-    <div class="form-check-label" [ngStyle]="services.get('service').value == enumServices.HouseSitting &&
-             {
-              'background-color': 'rgb(254, 203, 64)'
-             }">
-      <input type="button"
-             name="HouseSitting"
-             value=""
-             formControlName="service"
-             id="HouseSitting"
-             (click)="onServiceClick(1)">
-
-      <img src="../../../../../assets/shortFormImages/dog-heart.png">
-      House Sitting
-    </div>
-  </label>
-  <label for="walking">
-    <div class="form-check-label" [ngStyle]="services.get('service').value == enumServices.DogWalking &&
-             {
-              'background-color': 'rgb(254, 203, 64)'
-             }">
-
-      <input type="button" class="form-check-label"
-             value=""
-             formControlName="service"
-             id="walking"
-             (click)="onServiceClick(2)">
-
-      <img src="../../../../../assets/shortFormImages/dog-smiley.png">
-      Walking
-    </div>
-  </label>
+<div class="form-group" [formGroup]="servicesForm">
+  <app-single-service-input
+    *ngFor=" let service of services"
+    [serviceForm]="servicesForm"
+    [data]="service"
+    (serviceChoose)="changeChosenService($event)">
+  </app-single-service-input>
 </div>
