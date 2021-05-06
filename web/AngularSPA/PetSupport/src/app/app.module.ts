@@ -32,6 +32,7 @@ import {ButtonModule} from './common/components/atoms/button/button.module';
 import {RegisterModule} from './pages/register/register.module';
 import {SharedModule} from './common/modules/shared.module';
 import {CustomErrorTailorModule} from './providers/error-tailor';
+import {AngularMyDatePickerModule} from 'angular-mydatepicker';
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
 
@@ -72,6 +73,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     MatCarouselModule,
     ButtonModule,
     CustomErrorTailorModule,
+    AngularMyDatePickerModule,
 
     MsalModule.forRoot({
       auth: {

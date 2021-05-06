@@ -10,6 +10,7 @@ import {InputDirective} from '../input/input.directive';
 import {LabelDirective} from '../label/label.directive';
 import {FormControl, FormControlDirective, FormControlName, NgModel} from '@angular/forms';
 import {partition} from 'rxjs';
+import {ButtonIconComponent} from '../../../atoms/button/button-icon/button-icon/button-icon.component';
 
 @Component({
   selector: 'app-form-field',
@@ -27,13 +28,19 @@ export class FormFieldComponent implements AfterViewInit {
   public templateInputModel: NgModel;
   @ContentChild(FormControlName)
   reactiveInputModel: FormControlDirective;
+  @ContentChild(ButtonIconComponent, {read: ElementRef})
+  public button?: ElementRef<HTMLButtonElement>;
 
   public get inputEl(): HTMLInputElement | HTMLTextAreaElement {
     return this.input.nativeElement;
   }
 
+  public get buttonEl(): HTMLButtonElement {
+    return this.button?.nativeElement;
+  }
+
   public get labelEl(): HTMLLabelElement {
-    return this.label.nativeElement;
+    return this.label?.nativeElement;
   }
 
   public get control(): FormControl {
@@ -60,6 +67,9 @@ export class FormFieldComponent implements AfterViewInit {
   public setCss(): void {
     this.renderer.addClass(this.inputEl, 'app-input-primary');
     this.renderer.addClass(this.labelEl, 'app-label-primary');
+    if (this.buttonEl) {
+      this.renderer.addClass(this.buttonEl, 'button');
+    }
   }
 
   public setPlaceholder(): void {

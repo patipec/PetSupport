@@ -1,52 +1,49 @@
-<div class="container">
-
-  <form [formGroup]="shortFormSettings" (ngSubmit)="onSubmit()">
+<div class="mx-auto">
+  <form [formGroup]="shortFormSettings" errorTailor (ngSubmit)="onSubmit()">
     <app-services-part [servicesForm]="shortFormSettings"></app-services-part>
+    <div class="form-second-part">
+      <app-form-field>
+        <label appLabel>Location</label>
+        <input appInput formControlName="location" controlErrorsClass="hidden">
+      </app-form-field>
 
-    <div class="secondFormPart">
+      <ng-container formGroupName="dateRange">
+        <app-form-field>
+          <label appLabel>Start Date</label>
+          <input
+            angular-mydatepicker
+            appInput
+            locale="pl"
+            placeholder="Select a date"
+            formControlName="startDate"
+            [options]="myOptions"
+            #dp1="angular-mydatepicker"/>
+          <button appButtonIcon type="button" (click)="dp1.toggleCalendar()"></button>
+        </app-form-field>
+        <app-form-field style="position:relative;">
+          <label appLabel>End Date</label>
+          <input
+            angular-mydatepicker
+            appInput
+            locale="pl"
+            placeholder="Select a date"
+            formControlName="endDate"
+            [options]="myOptions"
+            #dp2="angular-mydatepicker"/>
+          <button appButtonIcon type="button" (click)="dp2.toggleCalendar()"></button>
+        </app-form-field>
+      </ng-container>
 
-      <div class="form-group">
-        <div class="location">
-          <app-form-field>
-            <label appLabel>Location</label>
-            <input appInput formControlName="location" controlErrorsClass="hidden">
-          </app-form-field>
-        </div>
+      <app-form-field>
+        <label appLabel>Pet</label>
+        <input appInput formControlName="typePet">
+      </app-form-field>
 
-        <div formGroupName="dateRange">
-          <mat-form-field color="accent" appearance="fill">
-            <mat-label>From</mat-label>
-            <input matInput [matDatepicker]="picker1" formControlName="startDate">
-            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-            <mat-datepicker #picker1></mat-datepicker>
-          </mat-form-field>
 
-          <mat-form-field color="accent" appearance="fill">
-            <mat-label>To</mat-label>
-            <input matInput [matDatepicker]="picker2" formControlName="stopDate">
-            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-            <mat-datepicker #picker2 color="primary"></mat-datepicker>
-          </mat-form-field>
-        </div>
-
-        <div class="row">
-          <app-form-field>
-            <label appLabel>Pet</label>
-            <input appInput formControlName="typePet">
-            <app-input-error>
-              <span class="error-form-display" *ngIf="shortFormSettings.get('typePet').errors?.pattern">
-              Pet type should contain only letters!
-              </span>
-            </app-input-error>
-
-          </app-form-field>
-        </div>
-        <button (click)="sendForm()">
-          <img src="../../../../../assets/shortFormImages/search.png">
-        </button>
-      </div>
+      <button class="search-button">
+        <img src="../../../../../assets/shortFormImages/search.png" alt="search-icon">
+      </button>
     </div>
-
   </form>
 </div>
 

@@ -1,9 +1,9 @@
 .app-input-primary {
-  @apply w-full my-1 pl-2
+  @apply w-full mt-4 pl-2
   text-lg
   border-2 rounded-xl border-green-500 focus:border-green-200;
   background: transparent;
-
+  z-index: 2;
   outline: none;
   resize: none;
   box-sizing: border-box;
@@ -19,17 +19,17 @@
 
 .app-label-primary {
   color: #868686;
-  position: relative;
-  top: 32px;
+  position: absolute;
+  top: 20px;
   left: 10px;
-  z-index: -1;
+  z-index: 1;
 }
 
 .small-label {
-  position: relative;
+  position: absolute;
   font-size: 10px;
   top: 0;
-  left: 0;
+  left: 5px;
 }
 
 .focused {
@@ -45,4 +45,12 @@ input.ng-invalid:not(.ng-untouched), textarea.ng-invalid:not(.ng-untouched) {
   &::placeholder {
     color: #dc3545;
   }
+}
+
+.button {
+  width: 20px;
+  position: absolute;
+  left: calc(100% - 35px);
+  top: 20px;
+  z-index: 3;
 }

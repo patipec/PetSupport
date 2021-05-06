@@ -1,48 +1,54 @@
-import {Component, OnInit} from '@angular/core';
-import {FormGroup, ValidatorFn, Validators} from '@angular/forms';
+import {Component} from '@angular/core';
+import {FormGroup, Validators} from '@angular/forms';
 import {FormBuilder} from '@angular/forms';
-
-import {DatePipe} from '@angular/common';
-import {DateAdapter} from '@angular/material/core';
-
-import {HttpClient} from '@angular/common/http';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Router} from '@angular/router';
+import {IAngularMyDpOptions} from 'angular-mydatepicker';
 
 @Component({
   selector: ' app-short-form',
   templateUrl: './short-form.component.html',
   styleUrls: ['./short-form.component.scss'],
-  providers: [DatePipe]
 })
-export class ShortFormComponent implements OnInit {
+export class ShortFormComponent {
+  myOptions: IAngularMyDpOptions = {
+    dateRange: false,
+    dateFormat: 'dd.mm.yyyy'
+    // other options...
+  };
 
-  public shortFormSettings: FormGroup;
+  public shortFormSettings: FormGroup = this.fb.group({
+    service: [1, Validators.required],
+    location: ['Warsaw', Validators.required],
+    dateRange: this.fb.group({
+      startDate: [{isRange: false, singleDate: {jsDate: new Date()}, dateRange: null}, Validators.required],
+      endDate: [{isRange: false, singleDate: {jsDate: new Date()}, dateRange: null}, Validators.required],
+    }),
+    typePet: ['Dog']
+  });
 
-  constructor(private fb: FormBuilder,
-              private datePipe: DatePipe,
-              private dateAdapter: DateAdapter<Date>,
-              private http: HttpClient,
-              private router: Router,
-  ) {
-    this.dateAdapter.setLocale('en-GB');
+  constructor(private fb: FormBuilder, private router: Router) {
   }
 
-  ngOnInit(): void {
-    this.shortFormSettings = this.fb.group({
-      service: [1],
-      location: ['Warsaw', [Validators.required, Validators.pattern(/^[a-zA-Z-,]+(\s{0, 1}[a-zA-Z-, ])*$/)]],
-      dateRange: this.fb.group({
-        startDate: [this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [Validators.required]],
-        stopDate: [this.datePipe.transform(new Date(Date.now() + 2 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd'), [Validators.required]]
-      }, this.compareTwoDates),
-      typePet: ['Dog', [Validators.required, Validators.pattern(/^[a-zA-Z-,]+(\s{0, 1}[a-zA-Z-, ])*$/)]]
-    });
+  public onSubmit(): void {
+    console.log(this.shortFormSettings.value);
   }
 
-  onServiceClick(serviceValue: string): void {
-    this.shortFormSettings.get('service').setValue(serviceValue);
+  clearDate(): void {
+    // Clear the date using the patchValue function
+    this.shortFormSettings.patchValue({myDate: null});
   }
 
+  public sendForm(): void {
+    const formData = {
+      city: this.shortFormSettings.get('location').value,
+      serviceId: '1'
+    };
+    /*    void this.router.navigateByUrl('/petsitters', {state: formData});*/
+  }
+}
+
+
+/*
   compareTwoDates: ValidatorFn = (): { [key: string]: any; } | null => {
     let invalid = false;
     const startFrom = this.shortFormSettings.get('dateRange.startDate').value;
@@ -55,15 +61,4 @@ export class ShortFormComponent implements OnInit {
     return invalid ? {invalidRange: true} : null;
   }
 
-  public sendForm(): void {
-    const formData = {
-      city: this.shortFormSettings.get('location').value,
-      serviceId: '1'
-    };
-    void this.router.navigateByUrl('/petsitters', {state: formData});
-  }
-
-  onSubmit(): void {
-  }
-
-}
+*/
