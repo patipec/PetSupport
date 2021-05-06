@@ -1,30 +1,16 @@
 <section>
-    <mat-card cols="1" rowHeight="800px">
-        <mat-card-content style="position:inherit;">
-            <div class="example-container">
-                <div class="card-title">Personal Informations</div>
-                <hr>
-                <br><br>
-                <app-pi-form (onFormChanged)="onFormChange($event)" (formValid)="onStatusChange($event)"></app-pi-form>
-                    <br>
-                    <mat-card-actions>
-                        <a mat-raised-button
-                        class="back-btn"
-                        routerLink="/register-form/services"
-                        >Back</a>
+  <div class="example-container">
+    <div class="card-title">Personal Informations</div>
+    <app-pi-form (onFormChanged)="onFormChange($event)" (formValid)="onStatusChange($event)"></app-pi-form>
+    <a appButton routerLink="/register-form/services">Back</a>
 
-                        <button mat-raised-button
-                            [disabled]="!isFormValid"
-                            class="continue-btn"
-                            type="submit"
-                            color="primary"
-                            routerLink="/register-form/end-of-registration"
-                            (click)="onSubmit()"
-                        >Save</button>
-                     </mat-card-actions>
-
-            </div>
-        </mat-card-content>
-    </mat-card>
+    <button
+      [disabled]="!isFormValid"
+      appButton
+      routerLink="/register-form/end-of-registration"
+      (click)="onSubmit()"
+    >Save
+    </button>
+  </div>
 </section>
 

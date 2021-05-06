@@ -1,16 +1,14 @@
-<div class="contact-form-success-page">
-  <mat-card class="contact-form-success-card" *ngIf="petsitter">
-    <mat-card-title>
-      <h1>Your booking</h1>
-    </mat-card-title>
-    <mat-card-content>
+<section class="contact-form-success-page">
+  <article class="contact-form-success-card" *ngIf="petsitter">
+    <h1>Your booking</h1>
+    <div class="flex-column align-center">
       <span>You choose</span>
       <span class="information">[{{petsitter.name}} {{petsitter.surname}}]</span>
       <span>for dates</span>
       <span class="information">{{startDate}} - {{endDate}}</span>
       <span>services with you choose</span>
       <span class="information">{{services}}</span>
-    </mat-card-content>
-    <button mat-button (click)="backToHome()">Back</button>
-  </mat-card>
-</div>
+    </div>
+    <button appButton (click)="backToHome()">Back</button>
+  </article>
+</section>

@@ -16,6 +16,7 @@ using PetSupport.Core.Services;
 using PetSupport.Infrastructure.Data.Data;
 using PetSupport.Infrastructure.Data.Repositories;
 using System.Reflection;
+using System.Text.Json;
 
 namespace Petsupport.API2
 {

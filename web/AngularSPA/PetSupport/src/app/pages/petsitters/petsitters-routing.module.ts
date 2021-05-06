@@ -4,6 +4,7 @@ import {PetsitterComponent} from './petsitter/petsitter.component';
 import {PettsittersComponent} from './pettsiters.component';
 import {ContactFormComponent} from '../contact-form/contact-form.component';
 import {ContactFormSuccessComponent} from '../contact-form/contact-form-success/contact-form-success.component';
+import {MsalGuard} from '@azure/msal-angular';
 
 const routes: Routes = [
   {
@@ -11,8 +12,8 @@ const routes: Routes = [
     children: [
       {path: '', component: PettsittersComponent, pathMatch: 'full'},
       {path: ':id', component: PetsitterComponent},
-      {path: ':id/contact-form', component: ContactFormComponent, canActivate: []},
-      {path: ':id/contact-form/success', component: ContactFormSuccessComponent, canActivate: []},
+      {path: ':id/contact-form', component: ContactFormComponent, canActivate: [MsalGuard]},
+      {path: ':id/contact-form/success', component: ContactFormSuccessComponent, canActivate: [MsalGuard]},
     ],
   },
 ];

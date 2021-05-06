@@ -1,30 +1,14 @@
-
-    <mat-card>
-        <mat-card-content style="position:inherit;">
-            <div class="example-container">
-                <div class="card-title">Address</div>
-                <hr>
-                <br><br>
-                <app-a-form (onFormChanged)="onFormChange($event)" (formValid)="onStatusChange($event)"></app-a-form>
-
-                    <br>
-
-                    <mat-card-actions>
-                         <a mat-raised-button
-                            class="back-btn"
-                            routerLink="/register-form/basic-info"
-                            >Back</a>
-                        <button mat-raised-button
-                                [disabled]="!isFormValid"
-                                class="continue-btn"
-                                type="submit"
-                                color="primary"
-                                routerLink="/register-form/services"
-                                (click)="onSubmit()"
-                        >Next
-                        </button>
-                    </mat-card-actions>
-
-        </div>
-    </mat-card-content>
-</mat-card>
+<div class="example-container">
+  <div class="card-title">Address</div>
+  <app-a-form (onFormChanged)="onFormChange($event)" (formValid)="onStatusChange($event)"></app-a-form>
+  <a appButton
+     routerLink="/register-form/basic-info">
+    Back
+  </a>
+  <button
+    [disabled]="!isFormValid"
+    routerLink="/register-form/services"
+    (click)="onSubmit()">
+    Next
+  </button>
+</div>

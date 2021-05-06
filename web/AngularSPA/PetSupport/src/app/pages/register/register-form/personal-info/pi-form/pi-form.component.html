@@ -1,19 +1,11 @@
-<div class="width-100 center">
 <form [formGroup]="signupForm">
-    <div class="title-name">
-        Birthday
-    </div>
-    <mat-form-field class="width-100 center">
-        <mat-label>Birthday</mat-label>
-        <input matInput
-        type="text"
-        id="birthday"
-        name="birthday"
-        formControlName="birthday">
-        <span *ngIf="!signupForm.get('birthday').valid && signupForm.get('birthday').touched" 
-        class="help-block">Please enter a valid Street</span>
-    </mat-form-field>
-    <br>
+    <div class="title-name">Birthday</div>
+    <app-form-field>
+        <label appLabel>Birthday</label>
+      <textarea appInput formControlName="birthday"></textarea>
+    </app-form-field>
+
+
     <div class="label">
     <div class="title-name">
         Short title about you
@@ -22,17 +14,14 @@
             when they search for service.
         </div>
     </div></div>
-    <mat-form-field class="width-100">
-        <mat-label>Short title about you</mat-label>
-        <input matInput
-        type="text"
-        id="title"
-        name="title"
-        formControlName="title">
-        <span *ngIf="!signupForm.get('title').valid && signupForm.get('title').touched" 
-        class="help-block">Please enter a valid value</span>
-    </mat-form-field>
-    <br>
+
+
+    <app-form-field>
+        <label appLabel>Short title about you</label>
+      <textarea appInput formControlName="title"></textarea>
+    </app-form-field>
+
+
     <div class="title-name">
         Experience
         <div class="title-info">
@@ -40,17 +29,13 @@
             sitters. Do you have any special skills?
         </div>
     </div>
-    <mat-form-field class="width-100">
-        <mat-label>Experience</mat-label>
-        <input matInput
-        type="text"
-        id="experience"
-        name="experience"
-        formControlName="experience">
-        <span *ngIf="!signupForm.get('experience').valid && signupForm.get('experience').touched" 
-        class="help-block">Please enter a valid value</span>
-    </mat-form-field>
-    <br>
+
+
+    <app-form-field>
+        <label appLabel>Experience</label>
+      <textarea appInput formControlName="experience"></textarea>
+    </app-form-field>
+
     <div class="title-name">
         Availability
         <div class="title-info">
@@ -58,16 +43,12 @@
             you work full time or part time etc.
         </div>
     </div>
-    <mat-form-field class="width-100">
-        <mat-label>Availability</mat-label>
-        <input matInput 
-        id="availability"
-        name="availability"
-        formControlName="availability">
-        <span *ngIf="!signupForm.get('availability').valid && signupForm.get('availability').touched" 
-        class="help-block">Please enter a valid value</span>
-    </mat-form-field>
-    <br>
+
+    <app-form-field>
+        <label appLabel>Availability</label>
+      <textarea appInput formControlName="availability"></textarea>
+    </app-form-field>
+
     <div class="title-name">
         Environment
         <div class="title-info">
@@ -75,15 +56,10 @@
             apart such as large yards, daily runs, nearby dog parks etc.
         </div>
     </div>
-    <mat-form-field class="width-100">
-        <mat-label>Environment</mat-label>
-        <input matInput
-        type="text"
-        id="environment"
-        name="environment"
-        formControlName="environment">
-        <span *ngIf="!signupForm.get('environment').valid && signupForm.get('environment').touched" 
-        class="help-block">Please enter a valid value</span>
-    </mat-form-field>
+
+    <app-form-field>
+        <label appLabel>Environment</label>
+      <textarea appInput formControlName="environment"></textarea>
+    </app-form-field>
+    <button appButton>Submit</button>
 </form>
-</div>

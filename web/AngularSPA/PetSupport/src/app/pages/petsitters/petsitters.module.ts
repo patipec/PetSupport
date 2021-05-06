@@ -6,13 +6,12 @@ import {PetsitterListTileComponent} from './petsitters-list/petsitter-list-tile/
 import {PettsittersComponent} from './pettsiters.component';
 import {RangeSliderComponent} from './long-form/slider/slider.component';
 import {MapComponent} from './map/map.component';
-import {RateComponent} from '../../common/components/rate/rate.component';
+import {RateComponent} from '../../common/components/molecules/rate/rate.component';
 import {PetsitterServicesComponent} from './petsitter/petsitter-services/petsitter-services.component';
 import {PetsitterCalendarComponent} from './petsitter/petsitter-calendar/petsitter-calendar.component';
 import {PetsitterReviewsComponent} from './petsitter/petsitter-reviews/petsitter-reviews.component';
 import {PetsitterCanHostComponent} from './petsitter/petsitter-can-host/petsitter-can-host.component';
 import {HttpClientModule} from '@angular/common/http';
-import {MaterialModule} from '../../common/modules/material.module';
 import {LongFormComponent} from './long-form/long-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgxSliderModule} from '@angular-slider/ngx-slider';
@@ -46,7 +45,6 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MaterialModule,
     NgxSliderModule,
     PetsittersRoutingModule,
     FullCalendarModule,

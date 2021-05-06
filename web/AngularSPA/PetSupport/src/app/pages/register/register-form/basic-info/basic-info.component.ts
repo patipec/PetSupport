@@ -15,12 +15,6 @@ export class BasicInfoComponent {
   constructor(private http: HttpClient,
               private registrationService: RegistrationService) {}
 
-  onFormChange(basicInfo: IBasicInfo): void {
-    this.basicInfo = basicInfo;
-  }
-  onStatusChange(status: boolean): void {
-    this.isFormValid = status;
-  }
   onSubmit(): void {
     console.log(this.basicInfo);
     console.log(this.isFormValid);

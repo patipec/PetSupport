@@ -1,10 +1,7 @@
-<div class="contact-form-page">
-  <mat-card class="contact-card-container">
-    <mat-card-title>
-      Contact Form
-    </mat-card-title>
-    <mat-card-content [formGroup]="contactForm">
-      <mat-divider style="position: relative"></mat-divider>
+<section class="contact-form-page">
+  <article class="contact-card-container">
+    <h1> Contact Form</h1>
+    <div [formGroup]="contactForm">
       <mat-form-field appearance="outline">
         <mat-label>Name</mat-label>
         <input matInput formControlName="name">
@@ -25,11 +22,11 @@
         <mat-label>Message</mat-label>
         <textarea matInput formControlName="message"></textarea>
       </mat-form-field>
-    </mat-card-content>
+    </div>
 
-    <button mat-raised-button
-    (click)="sendForm()">
+    <button appButton
+            (click)="sendForm()">
       Send
     </button>
-  </mat-card>
-</div>
+  </article>
+</section>
