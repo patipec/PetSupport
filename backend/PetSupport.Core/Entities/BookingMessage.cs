@@ -1,26 +1,19 @@
 ﻿using System;
+using PetSupport.Core.Enums;
 
 namespace PetSupport.Core.Entities
 
 {
-    public class BookingMessage : BaseEntity
+    public class BookingMessage 
     {
-
-        public BookingMessage()
-        {
-            SendData = DateTime.Now;
-        }
+        public PetType PetType { get; set; }
+        public PetWeight PetWeight { get; set; }
         
-        public DateTime SendData { get; private set; }
-
-        public string Text { get; set; }
-        public DateTime SentDate { get; set; }
-
-        //Relationships
-        public int? PetsitterId { get; set; }
-        public User.Petsitter Petsitter { get; set; }
-
-        public int? ClientId { get; set; }
-        public User.Client Client { get; set; }
+      //Relationships
+        public int[] UserId { get; set; }
+     
+        //Jak tutaj zakodować żeby była od razu tablica dwuelementowa i jak ma relacja wygladać 
+        public MessageText MessageText { get; set; }
+        
     }
 }

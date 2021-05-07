@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PetSupport.Core.Entities
 {
-    public class PetsitterProfile
+    public class PetsitterProfile: BaseEntity
     {
         public string Description { get; set; }
         public string PhotoId { get; set; }
@@ -13,5 +14,8 @@ namespace PetSupport.Core.Entities
         public DateTime AvailabilityTo { get; set; }
         public string Environment { get; set; }
         public string Experience { get; set; }
+        
+        public User User { get; set; }
+        public ICollection<Service> PetsitterService {get; set; }
     }
 }

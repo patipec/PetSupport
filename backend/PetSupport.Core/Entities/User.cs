@@ -11,13 +11,18 @@ namespace PetSupport.Core.Entities
         public string Surname { get; set; }    
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        
         public bool IsPettsitter { get; set; }
+        public bool PetsitterProfileCompleted { get; set; }
+        
 
-        public AdressDetails AdressDetails { get; set; }
-        public PetsitterProfile PetsitterProfile { get; set; }
-        public Coordinate Coordinates { get; set; }
-        public Service Services { get; set; }
+        // Relational
+        #nullable enable
+        public ICollection<BookingMessage>? BookingMessage { get; set; }
+        public AdressDetails? AdressDetails { get; set; }
+        public PetsitterProfile? PetsitterProfile { get; set; }
+        public Coordinate? Coordinates { get; set; }
+        public ICollection<PetDescription>? Pets {get; set; }
+        
 
 
     }
