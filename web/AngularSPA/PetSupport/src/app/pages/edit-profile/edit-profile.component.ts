@@ -10,8 +10,7 @@ import { RegistrationService } from 'src/app/pages/register/registration.service
 })
 export class EditProfileComponent {
 
-  constructor(private http: HttpClient,
-              private registrationService: RegistrationService) {}
+  constructor(private registrationService: RegistrationService) {}
 
   basicInfo: IBasicInfo;
   address: IAddress;

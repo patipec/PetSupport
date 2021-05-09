@@ -1,29 +1,23 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {Observable, of, throwError} from 'rxjs';
-import {catchError, map, tap} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {tap} from 'rxjs/operators';
 import {Petsitter, PetsitterCreate, PetsitterUpdate} from '../../common/models/petsitter';
-import { FindPetsitterShortForm} from '../../common/models/forms';
+import {FindPetsitterShortForm} from '../../common/models/forms';
+import {HttpService} from '../../common/services/http.service';
 
-const PETSITTER_URL = 'http://localhost:5001/api/Petsitters';
-
+const PETSITTER_URL = 'Petsitters';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PetsittersService {
-
-  constructor(private http: HttpClient) {}
-
-
+  constructor(private http: HttpService) {
+  }
   public getPetsitters(formData: FindPetsitterShortForm): Observable<Petsitter[]> {
-    const params = this.getHttpParamsFromObject(formData);
+    const params = this.http.objectToParams(formData);
 
     return this.http.get<Petsitter[]>(PETSITTER_URL, {params})
-      .pipe(
-        tap(data => console.log(data)),
-        catchError(this.handleError)
-      );
+      .pipe(tap(data => console.log(data)));
   }
 
   public getPetsitter(petsitterId: number): Observable<Petsitter> {
@@ -36,27 +30,6 @@ export class PetsittersService {
 
   public updatePetsitter(petsitter: PetsitterUpdate): Observable<Petsitter> {
     return this.http.put<Petsitter>(PETSITTER_URL, petsitter);
-  }
-
-
-  private handleError(err): Observable<never> {
-    let errorMessage: string;
-    if (err.error instanceof ErrorEvent) {
-      errorMessage = `An error occurred: ${err.error.message}`;
-    } else {
-      errorMessage = `Backend returned code ${err.status}: ${err.body.error}`;
-    }
-    console.error(err);
-    return throwError(errorMessage);
-  }
-
-  private getHttpParamsFromObject(obj: unknown): HttpParams {
-    let params = new HttpParams();
-
-    Object.entries(obj).map(([k, v]) => {
-      params = params.append(k, v);
-    });
-    return params;
   }
 }
 

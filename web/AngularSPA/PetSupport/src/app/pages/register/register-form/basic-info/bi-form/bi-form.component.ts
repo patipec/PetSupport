@@ -1,7 +1,5 @@
-import {HttpClient} from '@angular/common/http';
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {RegistrationService} from '../../../registration.service';
+import {Component, Output, EventEmitter} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {appValidators} from '../../../../../common/validators/validators';
 
 @Component({
@@ -23,10 +21,7 @@ export class BiFormComponent {
     confirmPassword: ['', [Validators.required, Validators.minLength(5), this.passwordCheck]]*/
   });
 
-  constructor(private http: HttpClient,
-              private registrationService: RegistrationService,
-              private fb: FormBuilder) {
-  }
+  constructor(private fb: FormBuilder) {}
 
 
   public onSubmit(): void {
