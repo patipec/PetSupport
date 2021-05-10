@@ -1,0 +1,30 @@
+.form-second-part {
+  @apply
+  relative
+  mx-auto p-2 px-4
+  flex justify-center
+  rounded-full;
+  background-color: white;
+  app-form-field {
+    margin-right: 20px;
+  }
+  @media(max-width: 1280px) {
+    app-form-field {
+      max-width: 140px;
+    }
+  }
+}
+.search-button {
+  position: relative;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  padding: 10px 13px 10px 10px;
+  border: solid 1px slategray;
+  border-radius: 50%;
+  background-color: rgb(254, 203, 64);
+
+  &:hover, &:focus {
+   opacity: 0.8;
+  }
+}

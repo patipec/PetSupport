@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {BecomePetsitterComponent} from './pages/become-petsitter/become-petsitter.component';
 import {MainPageComponent} from './pages/main-page/main-page.component';
-import {LoginFormComponent} from './common/components/login-form/login-form.component';
+import {LoginFormComponent} from './common/components/organism/login-form/login-form.component';
 import {EditProfileComponent} from './pages/edit-profile/edit-profile.component';
 import {NotAuthorizedComponent} from './common/auth/not-authorized/not-authorized.component';
 

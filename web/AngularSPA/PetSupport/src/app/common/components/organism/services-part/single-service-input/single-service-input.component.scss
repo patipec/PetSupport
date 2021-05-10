@@ -1,0 +1,20 @@
+label {
+  @apply
+  block rounded-full
+  font-bold text-xs
+  cursor-pointer
+  hover:opacity-90;
+  max-width: 140px;
+  padding: 20px 30px;
+  background-color: white;
+
+}
+input {
+  color: white;
+  font-size: 0;
+  display: none;
+}
+
+.active {
+  background-color: rgb(254, 203, 64)
+}

@@ -1,0 +1,49 @@
+<div class="mx-auto">
+  <form [formGroup]="shortFormSettings" errorTailor (ngSubmit)="onSubmit()">
+    <app-services-part [servicesForm]="shortFormSettings"></app-services-part>
+    <div class="form-second-part">
+      <app-form-field>
+        <label appLabel>Location</label>
+        <input appInput formControlName="location" controlErrorsClass="hidden">
+      </app-form-field>
+
+      <ng-container formGroupName="dateRange">
+        <app-form-field>
+          <label appLabel>Start Date</label>
+          <input
+            angular-mydatepicker
+            appInput
+            locale="pl"
+            placeholder="Select a date"
+            formControlName="startDate"
+            [options]="myOptions"
+            #dp1="angular-mydatepicker"/>
+          <button appButtonIcon type="button" (click)="dp1.toggleCalendar()"></button>
+        </app-form-field>
+        <app-form-field style="position:relative;">
+          <label appLabel>End Date</label>
+          <input
+            angular-mydatepicker
+            appInput
+            locale="pl"
+            placeholder="Select a date"
+            formControlName="endDate"
+            [options]="myOptions"
+            #dp2="angular-mydatepicker"/>
+          <button appButtonIcon type="button" (click)="dp2.toggleCalendar()"></button>
+        </app-form-field>
+      </ng-container>
+
+      <app-form-field>
+        <label appLabel>Pet</label>
+        <input appInput formControlName="typePet">
+      </app-form-field>
+
+
+      <button class="search-button">
+        <img src="../../../../../assets/shortFormImages/search.png" alt="search-icon">
+      </button>
+    </div>
+  </form>
+</div>
+

@@ -1,0 +1,56 @@
+.app-input-primary {
+  @apply w-full mt-4 pl-2
+  text-lg
+  border-2 rounded-xl border-green-500 focus:border-green-200;
+  background: transparent;
+  z-index: 2;
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+
+  &:not(:focus)::placeholder {
+    opacity: 0;
+  }
+
+  &::placeholder {
+    opacity: 0.6;
+  }
+}
+
+.app-label-primary {
+  color: #868686;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  z-index: 1;
+}
+
+.small-label {
+  position: absolute;
+  font-size: 10px;
+  top: 0;
+  left: 5px;
+}
+
+.focused {
+  @extend .small-label;
+}
+
+input.ng-invalid:not(.ng-untouched), textarea.ng-invalid:not(.ng-untouched) {
+  border-color: #dc3545;
+  color: #dc3545;
+  &:focus {
+    border-color: #dc3545;
+  }
+  &::placeholder {
+    color: #dc3545;
+  }
+}
+
+.button {
+  width: 20px;
+  position: absolute;
+  left: calc(100% - 35px);
+  top: 20px;
+  z-index: 3;
+}

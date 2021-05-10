@@ -1,9 +1,7 @@
 <div class="container">
   <div class="pets-icon">
-    <img src="../../../../assets/LoginIcons/pets.png" alt="Friendly pets icon">
+    <img src="../../../../../assets/LoginIcons/pets.png" alt="Friendly pets icon">
   </div>
-  <mat-card>
-    <mat-card-content>
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <h2>Log In</h2>
         <mat-error *ngIf="loginInvalid">
@@ -21,9 +19,8 @@
             Please provide a valid password
           </mat-error>
         </mat-form-field>
-        <button mat-raised-button class="continue-btn">Continue</button>
+        <button appButton>Continue</button>
       </form>
-    </mat-card-content>
     <div class="or-container">
       <div class="green-or-space"></div>
       <span>or</span>
@@ -31,15 +28,14 @@
     </div>
     <div class="social-media">
       <button class="facebook">
-        <div class="img-facebook"><img src="../../../../assets/LoginIcons/facebook.png" alt="facebook icon"></div>
+        <div class="img-facebook"><img src="../../../../../assets/LoginIcons/facebook.png" alt="facebook icon"></div>
         <div class="desc-facebook"> LOGIN WITH FACEBOOK</div>
       </button>
       <button class="google">
-        <div class="img-google"><img src="../../../../assets/LoginIcons/google.png" alt="google icon"></div>
+        <div class="img-google"><img src="../../../../../assets/LoginIcons/google.png" alt="google icon"></div>
         <div class="desc-google"> LOGIN WITH GOOGLE</div>
       </button>
     </div>
-  </mat-card>
 
 
 </div>

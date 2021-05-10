@@ -15,7 +15,8 @@ import {RegisterRoutingModule} from './register-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AngularFileUploaderModule} from 'angular-file-uploader';
 import {CommonModule} from '@angular/common';
-import {ServicesPartModule} from '../../common/components/services-part/services-part.module';
+import {ServicesPartModule} from '../../common/components/organism/services-part/services-part.module';
+import {SharedModule} from '../../common/modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -38,9 +39,17 @@ import {ServicesPartModule} from '../../common/components/services-part/services
     ReactiveFormsModule,
     AngularFileUploaderModule,
     CommonModule,
-    ServicesPartModule
+    ServicesPartModule,
+    SharedModule
 
   ],
+  exports: [
+    BiFormComponent,
+    AFormComponent,
+    SFormComponent,
+    SFormComponent,
+    PiFormComponent
+  ]
 })
 export class RegisterModule {
 }

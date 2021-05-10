@@ -6,7 +6,7 @@ import {AddressComponent} from './register-form/address/address.component';
 import {ServicesComponent} from './register-form/services/services.component';
 import {PersonalInfoComponent} from './register-form/personal-info/personal-info.component';
 import {UploadPhotosComponent} from './register-form/upload-photos/upload-photos.component';
-import {LoginFormComponent} from '../../common/components/login-form/login-form.component';
+import {LoginFormComponent} from '../../common/components/organism/login-form/login-form.component';
 import {EndOfRegistrationComponent} from './register-form/end-of-registration/end-of-registration.component';
 
 const routes: Routes = [

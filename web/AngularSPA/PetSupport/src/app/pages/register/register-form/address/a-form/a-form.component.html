@@ -1,66 +1,31 @@
-<form [formGroup]="signupForm">
-    <mat-form-field class="width-100">
-        <mat-label>Street</mat-label>
-        <input matInput
-        type="text"
-        id="street"
-        name="street"
-        formControlName="street">
-        <span *ngIf="!signupForm.get('street').valid && signupForm.get('street').touched" 
-        class="help-block">Please enter a valid Street</span>
-        
-        <!--
-        <mat-error *ngFor="let validation of validation_messages.street">
-            <mat-error class="error-message" *ngIf="signupForm.get('street').hasError(validation.type) && (signupForm.get('street').dirty || signupForm.get('fullname').touched)">{{validation.message}}</mat-error>
-          </mat-error>
-        -->  
-    </mat-form-field>
-    
-    <br>
-    <mat-form-field class="width-100">
-        <mat-label>House nr / Flat nr</mat-label>
-        <input matInput
-        type="text"
-        id="housenr"
-        name="housenr"
-        formControlName="housenr">
-        <span *ngIf="!signupForm.get('housenr').valid && signupForm.get('housenr').touched" 
-        class="help-block">Please enter a valid value</span>
-    </mat-form-field>
-    <br>
+<form [formGroup]="signupForm" errorTailor class="flex flex-col m-auto">
+  <app-form-field>
+    <label appLabel>Street</label>
+    <input appInput formControlName="street">
+  </app-form-field>
 
-    <mat-form-field class="width-100">
-        <mat-label>City</mat-label>
-        <input matInput
-        type="text"
-        id="city"
-        name="city"
-        formControlName="city">
-        <span *ngIf="!signupForm.get('city').valid && signupForm.get('city').touched" 
-        class="help-block">Please enter a valid value</span>
-    </mat-form-field>
+  <app-form-field>
+    <label appLabel>House nr / Flat nr</label>
+    <input appInput
+           formControlName="houseNr">
+  </app-form-field>
 
-    <br>
-    <mat-form-field class="width-100">
-        <mat-label>Zip Code</mat-label>
-        <input matInput 
-        placeholder="Ex. 12-345"
-        id="zipcode"
-        name="zipcode"
-        formControlName="zipcode">
-        <span *ngIf="!signupForm.get('zipcode').valid && signupForm.get('zipcode').touched" 
-        class="help-block">Please enter a valid value</span>
-    </mat-form-field>
-    <br>
+  <app-form-field>
+    <label appLabel>City</label>
+    <input appInput
+           formControlName="city">
+  </app-form-field>
 
-    <mat-form-field class="width-100">
-        <mat-label>Country</mat-label>
-        <input matInput
-        type="text"
-        id="country"
-        name="country"
-        formControlName="country">
-        <span *ngIf="!signupForm.get('country').valid && signupForm.get('country').touched" 
-        class="help-block">Please enter a valid value</span>
-    </mat-form-field>
-    </form>
+  <app-form-field>
+    <label appLabel>Zip Code</label>
+    <input appInput
+           placeholder="Ex. 12-345"
+           formControlName="zipCode">
+  </app-form-field>
+
+  <app-form-field>
+    <label appLabel>Country</label>
+    <input appInput
+           formControlName="country">
+  </app-form-field>
+</form>
