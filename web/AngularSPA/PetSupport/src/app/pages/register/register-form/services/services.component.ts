@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { RegistrationService } from '../../registration.service';
 import { IPetsitterServices } from '../../../../common/models/IRegistration-data';
 
@@ -11,9 +10,7 @@ import { IPetsitterServices } from '../../../../common/models/IRegistration-data
 export class ServicesComponent {
   petsitterServices: IPetsitterServices;
   isFormValid: boolean;
-  constructor(private http: HttpClient,
-              private registrationService: RegistrationService) {
-  }
+  constructor(private registrationService: RegistrationService) {}
 
   onFormChange(personalServiceInfo: IPetsitterServices): void {
     this.petsitterServices = personalServiceInfo;
