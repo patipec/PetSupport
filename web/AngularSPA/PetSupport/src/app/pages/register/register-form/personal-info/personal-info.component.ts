@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+
 import { RegistrationService } from '../../registration.service';
 import { IPersonalInfo } from '../../../../common/models/IRegistration-data';
 
@@ -16,8 +16,7 @@ export class PersonalInfoComponent {
     personalInfo: IPersonalInfo;
     isFormValid: boolean;
 
-    constructor( private http: HttpClient,
-                 private registrationService: RegistrationService) { }
+    constructor(private registrationService: RegistrationService) { }
 
   onFormChange(personalInfo: IPersonalInfo): void {
     this.personalInfo = personalInfo;

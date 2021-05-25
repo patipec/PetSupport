@@ -12,8 +12,8 @@ const routes: Routes = [
     children: [
       {path: '', component: PettsittersComponent, pathMatch: 'full'},
       {path: ':id', component: PetsitterComponent},
-      {path: ':id/contact-form', component: ContactFormComponent, canActivate: [MsalGuard]},
-      {path: ':id/contact-form/success', component: ContactFormSuccessComponent, canActivate: [MsalGuard]},
+      {path: ':id/contact-form', component: ContactFormComponent},
+      {path: ':id/contact-form/success', component: ContactFormSuccessComponent},
     ],
   },
 ];

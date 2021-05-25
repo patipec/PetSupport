@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 
 export interface Client {
   name: string;
@@ -14,8 +13,7 @@ export interface Client {
 })
 export class UserService {
 
-  constructor(private http: HttpClient) {
-  }
+  constructor() {}
 
   public getClient(): Client {
     return {name: 'Paweł', surname: 'Bednarczyk', email: 'bedpaw97@gmail.com', phone: '666666666', clientId: 1};

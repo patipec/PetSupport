@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { RegistrationService } from '../../../registration.service';
 import { IPetsitterServices } from '../../../../../common/models/IRegistration-data';
 
@@ -29,7 +28,6 @@ export class SFormComponent implements OnInit {
     // DO NOT REMOVE THIS IS FOR FEATURE
   });
   constructor(private fb: FormBuilder,
-              private http: HttpClient,
               private registrationService: RegistrationService) {
   }
 

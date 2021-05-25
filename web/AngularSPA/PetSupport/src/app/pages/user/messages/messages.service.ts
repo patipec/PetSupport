@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Message, MessageBrief, MessageNew} from '../../../common/models/message';
+import {HttpService} from '../../../common/services/http.service';
 
-const MESSAGES_URL = 'http://localhost:5001/api/clients';
+const MESSAGES_URL = 'clients';
 const getUrl = (clientId) => `${MESSAGES_URL}/${clientId}/messages`;
 
 @Injectable({
@@ -11,7 +11,7 @@ const getUrl = (clientId) => `${MESSAGES_URL}/${clientId}/messages`;
 })
 export class MessagesService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpService) {
   }
   public getMessages(clientId= 1): Observable<MessageBrief[]> {
     return this.http.get<MessageBrief[]>(getUrl(clientId));
@@ -20,6 +20,6 @@ export class MessagesService {
     return this.http.get<Message>(`${getUrl(clientId)}/${messageId}`);
   }
   public sendMessage(clientId = 1, message: MessageNew): Observable<MessageBrief> {
-    return this.http.post<MessageBrief>(`http://localhost:5001/api/clients/${clientId}/messages`, message);
+    return this.http.post<MessageBrief>(`${getUrl(clientId)}`, message);
   }
 }
