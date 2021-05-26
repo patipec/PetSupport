@@ -1,6 +1,6 @@
 ﻿namespace PetSupport.Core.Enums
 {
-    public enum Unit
+    public enum TimeUnit
     {
         Day,
         Hour,
