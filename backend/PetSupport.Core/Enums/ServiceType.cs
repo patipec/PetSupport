@@ -6,7 +6,7 @@
         HouseSitting,
         DogWalking,
         DropInVisit,
-        DoggyDayCare
+        Other
     }
 
 

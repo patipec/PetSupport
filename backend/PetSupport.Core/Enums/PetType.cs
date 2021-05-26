@@ -3,9 +3,7 @@
     public enum PetType
     {
         Cat,
-        Dog,
-        Fishes,
-        Hamster,
-        GuineaPig
+        Dog, 
+        Other
     }
 }
