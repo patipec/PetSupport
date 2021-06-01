@@ -8,7 +8,5 @@ namespace PetSupport.Core.Entities
     {
         public BasicPetsitterProfile BasicPetsitterProfile { get; set; }
         
-        //czy tu nie powinna być kolekcja serwisów ??
-        public PetsitterService PetsitterServices { get; set; }
     }
 }

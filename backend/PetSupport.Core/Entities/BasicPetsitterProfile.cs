@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace PetSupport.Core.Entities
 {
@@ -9,5 +11,8 @@ namespace PetSupport.Core.Entities
         public string Experience { get; set; }
         public string Availability { get; set; }
         public string Environment { get; set; }
+
+        public ICollection<PetSpecification> PetsitterPetPreferences { get; set; }
+        public ICollection<PetService> PetServices { get; set; }
     }
 }

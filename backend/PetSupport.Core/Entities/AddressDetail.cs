@@ -9,7 +9,9 @@ namespace PetSupport.Core.Entities
         public string ZipCode { get; set; }
         public string Country { get; set; }
         
-        //TODO: Czy robimy tu "kontener Localization" czy może bezpośrednio wrzucamy tu propercje ??
-        public Localization? Localization { get; set; }
+        //Localization 
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public double? Range { get; set; }
     }
 }

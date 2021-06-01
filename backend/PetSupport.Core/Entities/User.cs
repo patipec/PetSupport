@@ -9,16 +9,16 @@ namespace PetSupport.Core.Entities
         
         public BasicUserInfo BasicUserInfo { get; set; }
         
-        public AddressDetail? AddressDetail { get; set; }
+        public AddressDetail AddressDetail { get; set; }
         
         public bool WantsToBePetsitter { get; set; }
         
-        public  bool IsProfileCompleted { get; set; }
-        
+        public bool IsProfileCompleted { get; set; }
+
         public Petsitter Petsitter { get; set; }
         public PetClient PetClient { get; set; }
         
-        private ICollection<BookingMessage>? BookingMessage { get; set; }
+        public ICollection<BookingMessage>BookingMessages { get; set; }
         
     }
 }
