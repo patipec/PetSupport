@@ -1,16 +1,16 @@
 
  <!-- od gostka
-<input 
-    style="display: none;" 
-    type="file" 
+<input
+    style="display: none;"
+    type="file"
     (change)="onFileSelected($event)"
     #fileInput>
 <button type="button" (click)="fileInput.click()"></button>
 <button type="button" (click)="onUpload()">upload</button>
 -->
- 
 
-<!-- dzialajace z obrazkiem 
+
+<!-- dzialajace z obrazkiem
  <div class="c-mat container">
     <div style="position:inherit;">
         <div class="example-container">
@@ -19,7 +19,7 @@
             <br><br>
             <div>
                 <label class="hoverable" for="fileInput">
-                    <img [src]="url ? url : '/../assets/PetsitterDetail/default-petsitter-image.png'">
+                    <img [src]="url ? url : '/assets/PetsitterDetail/default-petsitter-image.png'">
                     <div class="hover-text">
                     Choose file
                     </div>
@@ -46,13 +46,13 @@
                 <div class="title-name">
                     Profile photo
                     <div class="title-info">
-                        Build trust! 
+                        Build trust!
                         This is the first photo pet owners will see.<br>
                         Click on area and choose an image
                     </div>
                 </div>
                 <label class="hoverable" for="fileInput">
-                    <img [src]="url ? url : '/../assets/PetsitterDetail/default-petsitter-image.png'">
+                    <img [src]="url ? url : '/assets/PetsitterDetail/default-petsitter-image.png'">
                     <div class="hover-text">
                         <div style="color: black; font-weight: bold;">Choose Photo</div>
                     </div>
@@ -60,14 +60,14 @@
                 </label>
             </div>
             <br/>
-            <input 
+            <input
                 id="fileInput"
-                style="display: none;" 
-                type="file" 
+                style="display: none;"
+                type="file"
                 (change)="onSelectFile($event)"
                 #fileInput>
         </div>
-        <button type="button" (click)="onUpload()">upload</button> 
+        <button type="button" (click)="onUpload()">upload</button>
         <div class="title-name">
             Photo Gallery
             <div class="title-info">
