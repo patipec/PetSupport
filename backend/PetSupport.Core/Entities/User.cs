@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 
-#nullable enable
 namespace PetSupport.Core.Entities
 {
     public class User : BaseEntity

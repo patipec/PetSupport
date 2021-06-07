@@ -6,6 +6,6 @@ namespace PetSupport.Core.Entities
     public class PetSpecification
     {
         public PetType PetType { get; set; }
-        public ICollection<PetWeight> PetWeight { get; set; }
+        public ICollection<PetWeight> PetWeights { get; set; }
     }
 }

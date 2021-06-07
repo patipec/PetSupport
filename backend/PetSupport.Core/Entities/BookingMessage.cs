@@ -13,8 +13,8 @@ namespace PetSupport.Core.Entities
         }
 
         public ServiceType ServiceType;
-        public PetType? PetType { get; set; }
-        public PetWeight? PetWeight { get; set; }
+        public PetType PetType { get; set; }
+        public PetWeight   PetWeight { get; set; }
         
         public DateTime SentData { get; private set; }
         public DateTime? DateFrom { get; set; }
