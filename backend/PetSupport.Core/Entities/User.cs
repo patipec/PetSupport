@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace PetSupport.Core.Entities
 {
@@ -9,15 +10,15 @@ namespace PetSupport.Core.Entities
         public BasicUserInfo BasicUserInfo { get; set; }
         
         public AddressDetail AddressDetail { get; set; }
-        
-        public bool WantsToBePetsitter { get; set; }
-        
-        public bool IsProfileCompleted { get; set; }
 
-        public Petsitter Petsitter { get; set; }
-        public PetClient PetClient { get; set; }
-        
+        public ICollection<Animal> Animals { get; set; }
+
         public ICollection<BookingMessage>BookingMessages { get; set; }
+        
+        //Petsitter
+        public bool WantsToBePetsitter { get; set; }
+        public bool IsProfileCompleted { get; set; }
+        public BasicPetsitterProfile BasicPetsitterProfile { get; set; }
         
     }
 }

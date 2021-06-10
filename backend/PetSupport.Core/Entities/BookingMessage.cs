@@ -4,14 +4,14 @@ using PetSupport.Core.Enums;
 namespace PetSupport.Core.Entities
 
 {
+    //TODO: Logic  BookingMessage to improve.
     public class BookingMessage : BaseEntity
     {
-
         public BookingMessage()
         {
             SentData = DateTime.Now;
         }
-
+        
         public ServiceType ServiceType;
         public PetType PetType { get; set; }
         public PetWeight   PetWeight { get; set; }
@@ -22,8 +22,6 @@ namespace PetSupport.Core.Entities
         public string Message { get; set; }
 
         //Relationships
-        public int? PetsitterId { get; set; }
-        public Petsitter Petsitter { get; set; }
 
         public int? UserId { get; set; }
         public User User { get; set; }
