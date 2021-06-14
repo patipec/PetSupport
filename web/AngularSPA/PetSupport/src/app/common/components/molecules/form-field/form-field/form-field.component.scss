@@ -1,7 +1,7 @@
 .app-input-primary {
   @apply w-full mt-4 pl-2
   text-lg
-  border-2 rounded-xl border-green-500 focus:border-green-200;
+  border-2 rounded-xl border-green-dark focus:border-green-light;
   background: transparent;
   z-index: 2;
   outline: none;
