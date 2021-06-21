@@ -6,6 +6,7 @@ import {ServicesPartModule} from '../services-part/services-part.module';
 import {CommonModule} from '@angular/common';
 import {SharedModule} from '../../../modules/shared.module';
 import {AngularMyDatePickerModule} from 'angular-mydatepicker';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {AngularMyDatePickerModule} from 'angular-mydatepicker';
         ReactiveFormsModule,
         ServicesPartModule,
         SharedModule,
-        AngularMyDatePickerModule
+        AngularMyDatePickerModule,
+        RouterModule
     ],
   exports: [
     ShortFormComponent
