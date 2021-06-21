@@ -15,6 +15,8 @@ import { UserPasswordComponent } from './user-password/user-password.component';
 import { UserGalleryComponent } from './user-gallery/user-gallery.component';
 import {SharedModule} from '../../common/modules/shared.module';
 import {ReactiveFormsModule} from '@angular/forms';
+import {SingleServiceInputModule} from '../../common/components/atoms/single-service-input/single-service-input.module';
+import {DisableControlModule} from '../../common/directives/disable-control/disable-control.module';
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     HttpClientModule,
     SharedModule,
     ReactiveFormsModule,
+    SingleServiceInputModule,
+    DisableControlModule,
   ],
   providers: [
     LoginAuthGuard
