@@ -21,7 +21,6 @@ import {ContactFormSuccessComponent} from './pages/contact-form/contact-form-suc
 import {EditProfileComponent} from './pages/edit-profile/edit-profile.component';
 import {MsalModule, MsalInterceptor} from '@azure/msal-angular';
 import {AuthButtonComponent} from './common/auth/auth-button/auth-button.component';
-import {LoginAuthGuard} from './common/auth/login-guard';
 import {NotAuthorizedComponent} from './common/auth/not-authorized/not-authorized.component';
 import {ShortFormModule} from './common/components/organism/short-form/short-form.module';
 
@@ -33,6 +32,8 @@ import {RegisterModule} from './pages/register/register.module';
 import {SharedModule} from './common/modules/shared.module';
 import {CustomErrorTailorModule} from './providers/error-tailor';
 import {AngularMyDatePickerModule} from 'angular-mydatepicker';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { environment } from '../environments/environment';
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
 
@@ -101,7 +102,8 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
       extraQueryParameters: {}
     }),
     RegisterModule,
-    SharedModule
+    SharedModule,
+    environment.production ? [] : AkitaNgDevtools.forRoot()
 
 
   ],

@@ -35,6 +35,9 @@
 .focused {
   @extend .small-label;
 }
+.app-input-disabled {
+  @apply border-gray text-gray;
+}
 
 input.ng-invalid:not(.ng-untouched), textarea.ng-invalid:not(.ng-untouched) {
   border-color: #dc3545;

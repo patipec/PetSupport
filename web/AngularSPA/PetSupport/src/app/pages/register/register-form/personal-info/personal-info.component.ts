@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { RegistrationService } from '../../registration.service';
-import { IPersonalInfo } from '../../../../common/models/IRegistration-data';
+import { IPersonalInfo } from '../../../../common/models/old-models/IRegistration-data';
 
 
 @Component({

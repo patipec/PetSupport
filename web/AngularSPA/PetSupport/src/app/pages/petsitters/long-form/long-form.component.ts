@@ -2,8 +2,8 @@ import {Component, OnInit, Output} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {DatePipe} from '@angular/common';
 import {EventEmitter} from '@angular/core';
-import {FindPetsitterShortForm} from '../../../common/models/forms';
-import {fromEnum, Services} from '../../../common/models/services';
+import {FindPetsitterShortForm} from '../../../common/models/old-models/forms';
+import {fromEnum, Services} from '../../../common/models/old-models/services';
 
 @Component({
   selector: 'app-long-form',

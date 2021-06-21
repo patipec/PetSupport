@@ -4,7 +4,6 @@ import {PetsitterComponent} from './petsitter/petsitter.component';
 import {PettsittersComponent} from './pettsiters.component';
 import {ContactFormComponent} from '../contact-form/contact-form.component';
 import {ContactFormSuccessComponent} from '../contact-form/contact-form-success/contact-form-success.component';
-import {MsalGuard} from '@azure/msal-angular';
 
 const routes: Routes = [
   {

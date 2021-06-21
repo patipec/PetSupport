@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import { RegistrationService } from '../../registration.service';
-import { IAddress } from '../../../../common/models/IRegistration-data';
+import { IAddress } from '../../../../common/models/old-models/IRegistration-data';
 
 
 @Component({

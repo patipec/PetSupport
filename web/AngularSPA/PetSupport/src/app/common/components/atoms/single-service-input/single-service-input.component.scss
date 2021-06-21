@@ -1,0 +1,67 @@
+label {
+  --label-width: 160px;
+  --label-height: 160px;
+  --image-width: 80px;
+  --image-height: 80px;
+  --image-from-top: 30px;
+  @apply
+  block relative w-0 rounded-full bg-white
+  text-xs
+  cursor-pointer;
+  padding: calc(var(--label-height) / 2) calc(var(--label-width) / 2);
+  &.active {
+    @apply bg-yellow;
+  }
+
+  &.no-image {
+    --image-width: 0px !important;
+    --image-height: 0px !important;
+  }
+
+  img {
+    @apply absolute;
+    top: var(--image-from-top);
+    left: calc((var(--label-width) - var(--image-width)) / 2);
+    width: var(--image-width);
+    height: var(--image-height);
+  }
+
+  div {
+    @apply absolute text-center left-0;
+    top: calc(var(--image-from-top) + var(--image-height) + 5px);
+    width: var(--label-width);
+  }
+}
+
+
+:host-context(.ghost) {
+  label {
+    @apply border-2 border-gray;
+    &.active {
+      @apply bg-white border-4 border-yellow;
+      margin-bottom: -4px; // remove diff (4px) between border-2 and border-4, which coz jumping content
+    }
+  }
+}
+
+:host-context(.small) {
+  label {
+    --label-width: 100px;
+    --label-height: 80px;
+    --image-width: 30px;
+    --image-height: 30px;
+    --image-from-top: 15px;
+  }
+}
+
+:host-context(.tiny) {
+  label {
+    --label-width: 70px;
+    --label-height: 70px;
+    --image-width: 30px;
+    --image-height: 30px;
+    --image-from-top: 15px;
+  }
+}
+
+

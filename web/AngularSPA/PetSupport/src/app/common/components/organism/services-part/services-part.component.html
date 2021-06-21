@@ -1,8 +1,8 @@
 <div class="form-group" [formGroup]="servicesForm">
   <app-single-service-input
     *ngFor=" let service of services"
-    [serviceForm]="servicesForm"
+    [formValue]="+servicesForm.value.service"
     [data]="service"
-    (serviceChoose)="changeChosenService($event)">
+    (inputChanged)="changeChosenService($event)">
   </app-single-service-input>
 </div>

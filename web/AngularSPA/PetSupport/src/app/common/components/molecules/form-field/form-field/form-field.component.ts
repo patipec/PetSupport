@@ -60,11 +60,12 @@ export class FormFieldComponent implements AfterViewInit {
   public ngAfterViewInit(): void {
     this.setNoValueInputLogic();
     this.setFocusBehaviour();
+    this.setDisabledBehaviour();
     this.setCss();
     this.setPlaceholder();
   }
 
-  public setCss(): void {
+  private setCss(): void {
     this.renderer.addClass(this.inputEl, 'app-input-primary');
     this.renderer.addClass(this.labelEl, 'app-label-primary');
     if (this.buttonEl) {
@@ -72,7 +73,7 @@ export class FormFieldComponent implements AfterViewInit {
     }
   }
 
-  public setPlaceholder(): void {
+  private setPlaceholder(): void {
     const hasPlaceholder = this.input.nativeElement.placeholder !== '';
     if (hasPlaceholder) {
       return;
@@ -80,7 +81,7 @@ export class FormFieldComponent implements AfterViewInit {
     this.renderer.setProperty(this.inputEl, 'placeholder', this.labelEl.innerText);
   }
 
-  public setFocusBehaviour(): void {
+  private setFocusBehaviour(): void {
     this.inputEl.onfocus = event => {
       this.renderer.addClass(this.labelEl, 'focused');
     };
@@ -89,12 +90,22 @@ export class FormFieldComponent implements AfterViewInit {
     };
   }
 
-  public setNoValueInputLogic(): void {
+  private setNoValueInputLogic(): void {
     if (this.control.value) {
       this.renderer.addClass(this.labelEl, 'small-label');
     }
     const [empty$, notEmpty$] = partition(this.control.valueChanges, (v) => !v);
     notEmpty$.subscribe(() => this.renderer.addClass(this.labelEl, 'small-label'));
     empty$.subscribe(() => this.renderer.removeClass(this.labelEl, 'small-label'));
+  }
+
+  private setDisabledBehaviour(): void {
+    this.control.disabled
+      ? this.renderer.addClass(this.inputEl, 'app-input-disabled')
+      : this.renderer.removeClass(this.inputEl, 'app-input-disabled');
+    this.control.registerOnDisabledChange(isDisabled => isDisabled
+      ? this.renderer.addClass(this.inputEl, 'app-input-disabled')
+      : this.renderer.removeClass(this.inputEl, 'app-input-disabled')
+    );
   }
 }

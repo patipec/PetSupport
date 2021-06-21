@@ -1,19 +1,22 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {FormGroup} from '@angular/forms';
+import {ServiceType} from '../../../models/services';
+import {PetsitterServicesService} from '../../../services/petsitter-services.service';
 
 
 @Component({
   selector: 'app-services-part',
   templateUrl: './services-part.component.html',
-  styleUrls: ['./services-part.component.scss']
+  styleUrls: ['./services-part.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ServicesPartComponent {
-  @Input() servicesForm: FormGroup;
-  public services = [
-    {name: 'Boarding', value: 0, src: '/assets/shortFormImages/cocker-spaniel.png'},
-    {name: 'House Sitting', value: 1, src: '/assets/shortFormImages/dog-heart.png'},
-    {name: 'Boarding', value: 2, src: '/assets/shortFormImages/dog-smiley.png'}
-  ];
+  @Input()
+  servicesForm: FormGroup;
+  public services = this.petsitterServicesService.getAsList([ServiceType.Boarding, ServiceType.HouseSitting, ServiceType.DogWalking]);
+
+  constructor(private petsitterServicesService: PetsitterServicesService) {
+  }
 
   public changeChosenService(value: number): void {
     this.servicesForm.get('service').setValue(value);

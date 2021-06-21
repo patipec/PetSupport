@@ -1,20 +1,22 @@
-export enum Services {
+export enum ServiceType {
   Boarding,
   HouseSitting,
   DogWalking,
   DropInVisit,
-  DoggyDaayCare
+  Other,
 }
-
-export const fromEnum = (en: object): { name: string, label: string, key: number }[] => {
-  const array = Object.entries(en);
-  const singleValuesPair = array.slice(array.length / 2, array.length);
-  const transformed = singleValuesPair.map(([value, key]) => {
-    const splitName = value.split(/(?=[A-Z])/);
-
-    const label = splitName.join('');
-    const name = splitName.join(' ');
-    return {name, label, key};
-  });
-  return transformed;
-};
+export interface ServiceTypeDetails {
+  type?: 'serviceTypeDetails';
+  value: ServiceType;
+  name: string;
+  shortDescription: string;
+  longDescription: string;
+  icon: string;
+}
+export interface UserServiceType extends ServiceTypeDetails{
+  price: number;
+}
+export interface UserServiceTypeShort {
+  price: number;
+  serviceType: ServiceType;
+}

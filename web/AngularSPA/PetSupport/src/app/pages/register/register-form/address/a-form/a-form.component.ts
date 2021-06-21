@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
-import {IAddress} from '../../../../../common/models/IRegistration-data';
+import {IAddress} from '../../../../../common/models/old-models/IRegistration-data';
 import {RegistrationService} from '../../../registration.service';
 import {appValidators} from '../../../../../common/validators/validators';
 

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IAddress, IBasicInfo, IPersonalInfo,
-         IRegistrationForm, IPetsitterServices } from '../../common/models/IRegistration-data';
+         IRegistrationForm, IPetsitterServices } from '../../common/models/old-models/IRegistration-data';
 
 @Injectable({
   providedIn: 'root'

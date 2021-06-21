@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {MessagesService} from '../messages.service';
-import {MessageBrief} from '../../../../common/models/message';
+import {MessageBrief} from '../../../../common/models/old-models/message';
 import {switchMap, tap} from 'rxjs/operators';
 import {PetsittersService} from '../../../petsitters/petsitters.service';
 import {merge} from 'rxjs';
-import {Petsitter} from '../../../../common/models/petsitter';
+import {Petsitter} from '../../../../common/models/old-models/petsitter';
 
 @Component({
   selector: 'app-messages-list',

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import * as L from 'leaflet';
-import {Petsitter} from '../../../common/models/petsitter';
+import {Petsitter} from '../../../common/models/old-models/petsitter';
 
 @Injectable({
   providedIn: 'root'

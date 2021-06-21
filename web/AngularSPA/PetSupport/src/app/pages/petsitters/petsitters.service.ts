@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
-import {Petsitter, PetsitterCreate, PetsitterUpdate} from '../../common/models/petsitter';
-import {FindPetsitterShortForm} from '../../common/models/forms';
+import {Petsitter, PetsitterCreate, PetsitterUpdate} from '../../common/models/old-models/petsitter';
+import {FindPetsitterShortForm} from '../../common/models/old-models/forms';
 import {HttpService} from '../../common/services/http.service';
 
 const PETSITTER_URL = 'Petsitters';

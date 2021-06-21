@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistrationService } from '../../registration.service';
-import { IPetsitterServices } from '../../../../common/models/IRegistration-data';
+import { IPetsitterServices } from '../../../../common/models/old-models/IRegistration-data';
 
 @Component({
   selector: 'app-services',

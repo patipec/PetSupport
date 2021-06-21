@@ -1,0 +1,6 @@
+.custom-width {
+  width: 260px;
+  @media screen and (min-width: 500px) {
+  width: 500px;
+  }
+}

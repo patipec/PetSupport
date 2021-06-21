@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FindPetsitterShortForm} from '../../common/models/forms';
+import {FindPetsitterShortForm} from '../../common/models/old-models/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, Validators} from '@angular/forms';
 import {appValidators} from '../../common/validators/validators';

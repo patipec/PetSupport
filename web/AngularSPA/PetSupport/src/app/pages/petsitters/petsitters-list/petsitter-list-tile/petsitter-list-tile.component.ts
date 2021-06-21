@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Petsitter} from '../../../../common/models/petsitter';
+import {Petsitter} from '../../../../common/models/old-models/petsitter';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({

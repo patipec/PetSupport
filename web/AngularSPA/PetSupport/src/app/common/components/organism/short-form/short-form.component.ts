@@ -43,7 +43,7 @@ export class ShortFormComponent {
       city: this.shortFormSettings.get('location').value,
       serviceId: '1'
     };
-    /*    void this.router.navigateByUrl('/petsitters', {state: formData});*/
+    void this.router.navigateByUrl('/petsitters', {state: formData});
   }
 }
 

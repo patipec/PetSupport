@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FindPetsitterShortForm} from '../../common/models/forms';
-import {Petsitter} from '../../common/models/petsitter';
+import {FindPetsitterShortForm} from '../../common/models/old-models/forms';
+import {Petsitter} from '../../common/models/old-models/petsitter';
 import {PetsittersService} from './petsitters.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 

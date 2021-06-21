@@ -1,7 +1,0 @@
-<label [formGroup]="serviceForm" [ngClass]="{'active': chosenService === data.value}">
-  <input type="button"
-         formControlName="service"
-         (click)="serviceChoose.emit(data.value)">
-  <img [src]="data.src" alt="service-image">
-  <span>{{data.name}}</span>
-</label>

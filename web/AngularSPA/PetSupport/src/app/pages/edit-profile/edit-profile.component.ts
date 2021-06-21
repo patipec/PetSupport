@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {IAddress, IBasicInfo, IPersonalInfo, IPetsitterServices} from 'src/app/common/models/IRegistration-data';
+import {IAddress, IBasicInfo, IPersonalInfo, IPetsitterServices} from 'src/app/common/models/old-models/IRegistration-data';
 import { RegistrationService } from 'src/app/pages/register/registration.service';
 
 @Component({

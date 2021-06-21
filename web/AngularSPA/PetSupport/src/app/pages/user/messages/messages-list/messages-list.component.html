@@ -1,6 +1,6 @@
 <div class="contact-form-page">
-  <mat-card class="contact-card-container">
-    <mat-card-title>My messages</mat-card-title>
+  <div class="contact-card-container">
+    <h1>My messages</h1>
     <table *ngIf="isLoaded">
       <tr>
         <th>No.</th>
@@ -22,5 +22,5 @@
         <th>{{petsitterData[message.petsitterId].street}}</th>
       </tr>
     </table>
-  </mat-card>
+  </div>
 </div>

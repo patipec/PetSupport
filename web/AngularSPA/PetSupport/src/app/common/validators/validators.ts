@@ -27,7 +27,7 @@ export let appValidators: AppValidators<Validators[]> = {
   street: validatorsFactory(3, 25),
   city: validatorsFactory(3, 30),
   zipCode: validatorsFactory(3, 6, /*[forbiddenZipCode]*/),
-  name: validatorsFactory(3, 15),
+  name: validatorsFactory(2, 15),
   country: validatorsFactory(3, 30),
   surname: validatorsFactory(2, 25),
   email: validatorsFactory(5, 100, /*[Validators.email]*/),
