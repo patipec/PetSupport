@@ -1,0 +1,9 @@
+<label *ngIf="mappedData" [ngClass]="{'active': isActive(), 'no-image': !mappedData.icon}"
+       (click)="inputChanged.emit(mappedData.value)">
+  <img *ngIf="mappedData.icon" [src]="mappedData.icon" alt="pet-image">
+  <div>
+    <span class="font-bold">{{mappedData.name}}</span>
+    <br>
+    <span>{{mappedData.subtitle}}</span>
+  </div>
+</label>
