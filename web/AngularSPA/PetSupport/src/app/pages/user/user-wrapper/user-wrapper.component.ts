@@ -41,7 +41,6 @@ export class UserWrapperComponent implements OnInit {
       tap(url => this.title = this.userRoutes.find(route => url.endsWith(route.path))?.name)
     );
     this.isMenuVisible$ = combineLatest([this.isDesktop$, this.navEnd$]).pipe(
-      tap(([isDesktop, url]) => console.log(isDesktop, url)),
       tap(([isDesktop, url]) => this.handleNavigation(isDesktop, url)),
       map(([isDesktop, url]) => isDesktop || this.isUserRootPath(url))
     );
