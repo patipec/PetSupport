@@ -4,6 +4,10 @@
 @import '~tailwindcss/components';
 @import '~tailwindcss/utilities';
 
+main {
+  /*It remove layout shifts*/
+  min-height: 80vh;
+}
 
 /*error-tailor classes - move to seperate file*/
 .control-error {
