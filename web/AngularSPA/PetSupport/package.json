@@ -9,7 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ngcc",
-    "tailwind": "npx tailwindcss-cli@latest build -o tailwind.css"
+    "tailwind": "npx tailwindcss-cli@latest build -o tailwind.css",
+    "build-size": "ng build --stats-json",
+    "build-size-watch": "webpack-bundle-analyzer dist/PetSupport/stats.json"
   },
   "private": true,
   "dependencies": {
