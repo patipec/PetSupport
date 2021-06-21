@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Petsitter} from '../../../common/models/petsitter';
+import {Petsitter} from '../../../common/models/old-models/petsitter';
 import {PetsittersService} from '../../petsitters/petsitters.service';
 import {switchMap} from 'rxjs/operators';
 

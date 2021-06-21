@@ -31,7 +31,7 @@
       <a class="hover:bg-green-light py-2 px-4 hover:rounded-xl font-sans" *ngIf="!(isHandset$ | async)"
          href="\become-petsitter">Become Petsitter</a>
 
-      <details class="border border-white rounded hover:border-gray-200 text-gray-100 hover:bg-green-400 py-2 px-4">
+      <details class="border border-white rounded hover:border-gray-200 text-gray-100 hover:bg-green-400 py-2 px-4 cursor-pointer">
         <summary>Dev Routes</summary>
         <ul>
           <li>
@@ -96,7 +96,7 @@
             </mat-menu>
        -->
 
-      <li class="mr-3 nav-item logo">
+      <li class="mr-3 nav-item logo cursor-pointer" [routerLink]="['/']">
         <img
           width="40"
           alt="Angular Logo"

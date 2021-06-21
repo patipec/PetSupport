@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Message, MessageBrief, MessageNew} from '../../../common/models/message';
+import {Message, MessageBrief, MessageNew} from '../../../common/models/old-models/message';
 import {HttpService} from '../../../common/services/http.service';
 
 const MESSAGES_URL = 'clients';

@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import * as L from 'leaflet';
 import {MapService} from './map.service';
-import {Petsitter} from '../../../common/models/petsitter';
+import {Petsitter} from '../../../common/models/old-models/petsitter';
 
 
 @Component({
