@@ -2,6 +2,7 @@ import {AfterViewInit, Component, ElementRef, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {PetsittersService} from '../petsitters.service';
 import {Petsitter} from '../../../common/models/petsitter';
+import {petsitterMock} from '../../../common/mocks/petsitter.mock';
 
 @Component({
   selector: 'app-petsitter',
@@ -10,19 +11,19 @@ import {Petsitter} from '../../../common/models/petsitter';
 })
 export class PetsitterComponent implements OnInit, AfterViewInit {
   private petsitterId: string;
-  public petsitter: Petsitter;
+  public petsitter: Petsitter = petsitterMock;
   private blockSlider = false;
 
   constructor(private route: ActivatedRoute, private petsittersService: PetsittersService, private router: Router) {
   }
 
   ngOnInit(): void {
-    this.petsitterId = this.route.snapshot.paramMap.get('id') as string;
+/*    this.petsitterId = this.route.snapshot.paramMap.get('id') as string;
 
-    /*    this.route.params.subscribe(params =>  {
+    /!*    this.route.params.subscribe(params =>  {
           this.petsitterId = params.id;
-        });*/
-    this.petsittersService.getPetsitter(+this.petsitterId).subscribe(data => this.petsitter = data);
+        });*!/
+    this.petsittersService.getPetsitter(+this.petsitterId).subscribe(data => this.petsitter = data);*/
   }
 
   ngAfterViewInit(): void {
@@ -38,7 +39,6 @@ export class PetsitterComponent implements OnInit, AfterViewInit {
   }
 
   public navigateToContactPage(): void {
-    console.log(this.petsitterId);
     void this.router.navigate(['contact-form'], {relativeTo: this.route});
   }
 

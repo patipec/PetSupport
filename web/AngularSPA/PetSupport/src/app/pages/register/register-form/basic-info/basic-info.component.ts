@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RegistrationService } from '../../registration.service';
-import {IBasicInfo} from '../../../../common/models/IRegistration-data';
+import {IBasicInfo} from '../../../../common/models/old-models/IRegistration-data';
 
 @Component({
   selector: 'app-basic-info',

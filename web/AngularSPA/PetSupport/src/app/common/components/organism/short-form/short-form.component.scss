@@ -3,10 +3,11 @@
   relative
   mx-auto p-2 px-4
   flex justify-center
-  rounded-full;
-  background-color: white;
+  rounded-full
+  bg-white;
+
   app-form-field {
-    margin-right: 20px;
+    @apply mr-6;
   }
   @media(max-width: 1280px) {
     app-form-field {
@@ -15,14 +16,10 @@
   }
 }
 .search-button {
-  position: relative;
-  left: 0;
+  @apply bg-yellow relative left-0 border-2 border-gray rounded-full;
   width: 60px;
   height: 60px;
   padding: 10px 13px 10px 10px;
-  border: solid 1px slategray;
-  border-radius: 50%;
-  background-color: rgb(254, 203, 64);
 
   &:hover, &:focus {
    opacity: 0.8;

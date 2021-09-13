@@ -9,7 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ngcc",
-    "tailwind": "npx tailwindcss-cli@latest build -o tailwind.css"
+    "tailwind": "npx tailwindcss-cli@latest build -o tailwind.css",
+    "build-size": "ng build --stats-json",
+    "build-size-watch": "webpack-bundle-analyzer dist/PetSupport/stats.json"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +28,7 @@
     "@angular/platform-browser-dynamic": "~11.2.7",
     "@angular/router": "~11.2.7",
     "@azure/msal-angular": "^1.1.2",
+    "@datorama/akita": "^6.1.3",
     "@fullcalendar/angular": "^5.6.0",
     "@fullcalendar/core": "^5.6.0",
     "@fullcalendar/daygrid": "^5.6.0",
@@ -51,6 +54,7 @@
     "@angular-devkit/build-angular": "^0.1102.6",
     "@angular/cli": "^11.2.6",
     "@angular/compiler-cli": "^11.2.7",
+    "@datorama/akita-ngdevtools": "^6.0.0",
     "@types/jasmine": "~3.6.9",
     "@types/jasminewd2": "~2.0.8",
     "@types/node": "^14.14.37",

@@ -1,0 +1,31 @@
+<form [formGroup]="form" errorTailor (ngSubmit)="onSubmit(form.value)">
+  <app-form-field>
+    <label appLabel>Name</label>
+    <input appInput
+           autocomplete="given-name"
+           formControlName="name">
+  </app-form-field>
+  <app-form-field>
+    <label appLabel>Surname</label>
+    <input appInput
+           autocomplete="family-name"
+           formControlName="surname">
+  </app-form-field>
+  <app-form-field>
+    <label appLabel>Email</label>
+    <input appInput
+           formControlName="email"
+           type="email"
+           autocomplete="email"
+           placeholder="example@example.pl">
+  </app-form-field>
+  <app-form-field>
+    <label appLabel>Phone number</label>
+    <input appInput
+           formControlName="phoneNumber"
+           autocomplete="tel"
+           type="tel"
+           placeholder="123345678">
+  </app-form-field>
+  <button appButton [disabled]="form.invalid">Save</button>
+</form>

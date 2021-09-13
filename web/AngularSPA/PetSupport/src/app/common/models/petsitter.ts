@@ -1,36 +1,19 @@
-export interface Petsitter extends PetsitterUpdate {
-  Services?: {}; //  TODO Services[]
-  Reviews?: [
-    {
-      ReviewerFirstName: string;
-      ReviewerSurName: string;
-      ReviewerComment: string;
-      ReviewerRate: number;
-      ReviewDate: Date;
-      ReviewerImage: string;
-    }]; //  TODO Reviews[]
-  PetsitterCanHost: {
-    small: string;
-    medium: string;
-    large: string;
-    cat: string;
-  };
-  coordinates: {latitude, longitude}[];
-}
+import {UserServiceTypeShort} from './services';
+import {PetPreference} from './user';
 
-export interface PetsitterCreate extends Petsitter {
-  PhoneNumber: string;
-}
-
-export interface PetsitterUpdate {
+export interface Petsitter {
   id: number;
   name: string;
   surname: string;
-  imageId: string;
-  address?: string;
+  avatarId: string;
   city: string;
-  zipCode?: string;
-  description: string;
-  price: number;
-  rate: number;
+  photoGallery: string;
+  basicPetsitterProfile: {
+    shortDescription: string;
+    availability: string;
+    environment: string;
+    experience: string;
+    petServices: UserServiceTypeShort[];
+    petPreferences: PetPreference[];
+  };
 }

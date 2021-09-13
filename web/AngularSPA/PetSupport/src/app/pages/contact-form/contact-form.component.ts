@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MessagesService} from '../user/messages/messages.service';
-import {MessageNew} from '../../common/models/message';
+import {MessageNew} from '../../common/models/old-models/message';
 import {UserService} from '../user/user.service';
 
 @Component({

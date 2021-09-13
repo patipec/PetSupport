@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { RegistrationService } from '../../../registration.service';
-import { IPetsitterServices } from '../../../../../common/models/IRegistration-data';
+import { IPetsitterServices } from '../../../../../common/models/old-models/IRegistration-data';
 
 @Component({
   selector: 'app-s-form',

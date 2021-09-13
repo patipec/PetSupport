@@ -1,0 +1,23 @@
+<main class="flex p-8">
+  <section *ngIf="isMenuVisible$ | async"
+           class="my-2 mx-auto w-64 shadow-xl p-8 flex flex-col items-center content-start gap-12
+                  xl:m-0 xl:ml-24 xl:shadow-none xl:border-r-2 xl:border-gray-light">
+    <h1 class="m-0 -mb-4 font-bold ">User Information</h1>
+    <ul class="flex flex-col items-center gap-6">
+      <li *ngFor="let route of userRoutes">
+        <a [routerLink]="[route.path]" routerLinkActive="bg-yellow"
+           class="hover:bg-yellow-lightest focus:bg-yellow p-3 px-8 rounded-full">
+          {{route.name}}
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="xl:ml-12 xl:mt-8">
+    <header *ngIf="(isDesktop$ | async) === false && (isMenuVisible$ | async) === false"
+    class="mb-4 pb-2 flex justify-between border-b-2 border-gray-light">
+      <h3>{{title}}</h3>
+      <a [routerLink]="['./']">Back</a>
+    </header>
+    <router-outlet></router-outlet>
+  </section>
+</main>

@@ -1,0 +1,50 @@
+<section>
+  <article class="flex gap-8 flex-col items-center xl:flex-row">
+    <span>Services</span>
+    <form [formGroup]="priceForm" class="flex gap-8 justify-center flex-wrap">
+      <div *ngFor="let service of services; index as i" class="w-32 flex flex-col gap-1 items-center ">
+        <app-single-service-input
+          [data]="service"
+          [formValue]="form.value.services"
+          (inputChanged)="changeChosenService($event)"
+          class="small ghost">
+        </app-single-service-input>
+        <app-form-field>
+          <label appLabel>Price</label>
+          <input appInput [formControlName]="service.value" [appDisableControl]="!form.controls.services.value.includes(i)">
+        </app-form-field>
+      </div>
+    </form>
+  </article>
+
+  <article class="flex gap-8 flex-col xl:flex-row">
+    <span class="text-center">Pet Type</span>
+    <form [formGroup]="petPreferenceForm" class="flex relative">
+      <div *ngFor="let petPreference of petPreferences; first as isFirst"
+           [formGroupName]="petPreference.petType"
+           class="flex flex-col gap-1 absolute">
+
+        <app-single-service-input
+          [data]="petPreference"
+          [formValue]="chosenPetTypes"
+          (inputChanged)="changeChosenPetType($event)"
+          class="tiny ghost"
+          [ngClass]="{'ml-20': !isFirst, 'z-10': chosenPetTypes !== petPreference.petType}"
+        >
+        </app-single-service-input>
+        <div class="flex gap-1 flex-wrap custom-width" *ngIf="chosenPetTypes === petPreference.petType">
+          <app-single-service-input
+            *ngFor="let petInformation of petPreference.petInformation"
+            [data]="petInformation"
+            [formValue]="petPreferenceForm.value[petPreference.petType]"
+            (inputChanged)="changeChosenPetWeight($event, petPreference.petType)"
+            class="tiny ghost">
+          </app-single-service-input>
+        </div>
+      </div>
+    </form>
+  </article>
+  <button appButton class=" mt-60 xl:mt-40 medium" (click)="getFormsValue()">Save</button>
+
+</section>
+

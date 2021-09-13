@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Petsitter} from '../../../../common/models/petsitter';
+import {Petsitter} from '../../../../common/models/old-models/petsitter';
 
 @Component({
   selector: 'app-petsitter-services',
