@@ -1,4 +1,4 @@
-namespace PetSupport.Core.Entities
+namespace PetSupport.Domain.Entities
 {
     public class BasicUserInfo
     {

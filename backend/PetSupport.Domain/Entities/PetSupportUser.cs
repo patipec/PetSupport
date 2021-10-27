@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace PetSupport.Core.Entities
+namespace PetSupport.Domain.Entities
 {
-    public class User : BaseEntity
+    public class PetSupportUser
     {
-        public string AzureId { get; set; }
+        public int Id { get; set; }
         
+        public string AzureId { get; set; }
+                
         public BasicUserInfo BasicUserInfo { get; set; }
         
         public AddressDetail AddressDetail { get; set; }
@@ -15,10 +16,12 @@ namespace PetSupport.Core.Entities
 
         public ICollection<BookingMessage>BookingMessages { get; set; }
         
-        //Petsitter
         public bool WantsToBePetsitter { get; set; }
+        
         public bool IsProfileCompleted { get; set; }
-        public BasicPetsitterProfile BasicPetsitterProfile { get; set; }
+        
+        //Only when WantsToBePetsitter = true;
+        public PetsitterProfile PetsitterProfile { get; set; }
         
     }
 }
