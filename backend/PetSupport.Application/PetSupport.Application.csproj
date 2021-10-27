@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\PetSupport.Domain\PetSupport.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="10.1.1" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+      <PackageReference Include="FluentValidation" Version="10.3.0" />
+      <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.0" />
+      <PackageReference Include="MediatR" Version="9.0.0" />
+      <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Functions\PetServices\Commands\DeletePetService" />
+      <Folder Include="Functions\PetServices\Commands\UpdatePetService" />
+      <Folder Include="Functions\PetServices\Queries" />
+      <Folder Include="Functions\Users\Commands\DeleteUser" />
+      <Folder Include="Functions\Users\Commands\UpdateUser" />
+      <Folder Include="Functions\Users\Queries\GetUserDetail" />
+      <Folder Include="Functions\Users\Queries\GetUsersList" />
+    </ItemGroup>
+
+</Project>
