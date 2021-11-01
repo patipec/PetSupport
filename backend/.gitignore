@@ -26,3 +26,5 @@ bin/
 
 # Other
 *.user
+.fake
+.ionide
