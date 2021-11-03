@@ -19,13 +19,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Functions\PetServices\Commands\CreatePetService" />
       <Folder Include="Functions\PetServices\Commands\DeletePetService" />
       <Folder Include="Functions\PetServices\Commands\UpdatePetService" />
       <Folder Include="Functions\PetServices\Queries" />
-      <Folder Include="Functions\Users\Commands\DeleteUser" />
-      <Folder Include="Functions\Users\Commands\UpdateUser" />
-      <Folder Include="Functions\Users\Queries\GetUserDetail" />
-      <Folder Include="Functions\Users\Queries\GetUsersList" />
     </ItemGroup>
 
 </Project>
