@@ -5,7 +5,7 @@ namespace PetSupport.Domain.Entities
 {
     public class PetsitterProfile
     {
-        public int Id { get; set; }
+        public int PetsitterProfileId { get; set; }
 
         public DateTime DateOfBirth { get; set; }
 

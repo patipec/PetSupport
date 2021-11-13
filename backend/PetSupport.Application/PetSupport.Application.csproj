@@ -19,10 +19,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Functions\PetServices\Commands\CreatePetService" />
       <Folder Include="Functions\PetServices\Commands\DeletePetService" />
       <Folder Include="Functions\PetServices\Commands\UpdatePetService" />
       <Folder Include="Functions\PetServices\Queries" />
+      <Folder Include="Functions\PetSitters\Queries" />
     </ItemGroup>
 
 </Project>
