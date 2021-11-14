@@ -6,7 +6,8 @@ namespace PetSupport.Application.Functions.PetSitters.Commands.CreatePetsitter
     public class CreatedPetsitterCommandResponse: BaseResponse
     {
         public int? PetsitterProfileId { get; set; }
-
+        //user where petsitterprofile is not null
+        
         public CreatedPetsitterCommandResponse() : base()
         { }
 

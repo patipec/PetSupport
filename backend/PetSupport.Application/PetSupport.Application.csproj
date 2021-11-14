@@ -23,6 +23,7 @@
       <Folder Include="Functions\PetServices\Commands\UpdatePetService" />
       <Folder Include="Functions\PetServices\Queries" />
       <Folder Include="Functions\PetSitters\Queries" />
+      <Folder Include="Functions\PetSupportUser" />
     </ItemGroup>
 
 </Project>

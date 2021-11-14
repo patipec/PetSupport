@@ -10,9 +10,7 @@ namespace PetSupport.Domain.Entities
 
     {
         public int Id { get; set; }
-
         public PetType PetType { get; set; }
-
         public ICollection<PetWeight> PetWeights { get; set; }
 
         public int PetsitterProfileId { get; set; }
