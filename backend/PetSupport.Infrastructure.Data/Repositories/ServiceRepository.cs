@@ -7,30 +7,30 @@ using System.Threading.Tasks;
 
 namespace PetSupport.Infrastructure.Data.Repositories
 {
-    public class ServiceRepository : IServiceRepository
+    public class PetServiceRepository : IPetServiceRepository
     {
-        public Task<Service> GetByIdAsync(int id)
+        public Task<PetService> GetByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Service>> GetAllAsync()
+        public Task<IEnumerable<PetService>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Service>> FindByConditionAsync(Expression<Func<Service, bool>> expression)
+        public Task<IEnumerable<PetService>> FindByConditionAsync(Expression<Func<PetService, bool>> expression)
         {
             throw new NotImplementedException();
         }
 
 
-        public void Add(Service entity)
+        public void Add(PetService entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Service entity)
+        public void Update(PetService entity)
         {
             throw new NotImplementedException();
         }

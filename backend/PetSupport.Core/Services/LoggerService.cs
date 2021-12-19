@@ -4,10 +4,10 @@ using PetSupport.Core.Interfaces;
 
 namespace PetSupport.Core.Services
 {
-
     public class LoggerService : ILoggerService
     {
         private static ILogger logger = LogManager.GetCurrentClassLogger();
+
         public void LogDebug(string message)
         {
             logger.Debug(message);
@@ -28,5 +28,4 @@ namespace PetSupport.Core.Services
             logger.Warn(message);
         }
     }
-
 }

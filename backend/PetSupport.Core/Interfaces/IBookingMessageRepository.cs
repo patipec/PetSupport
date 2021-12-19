@@ -4,11 +4,10 @@ using PetSupport.Core.Entities;
 
 namespace PetSupport.Core.Interfaces
 {
-    public interface IBookingMessageRepository: IBaseRepository<BookingMessage>
+    public interface IBookingMessageRepository : IBaseRepository<BookingMessage>
     {
-        Task<IEnumerable<BookingMessage>> GetBookingMessagesByClientIdAsync (int clientId);
-        
-        Task<BookingMessage> GetBookingMessageByClientIdAsync (int clientId, int messageId);
-        
+        Task<IEnumerable<BookingMessage>> GetBookingMessagesByClientIdAsync(int userId);
+
+        Task<BookingMessage> GetBookingMessageByClientIdAsync(int userId, int messageId);
     }
 }

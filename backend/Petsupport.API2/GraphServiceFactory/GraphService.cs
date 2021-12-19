@@ -16,9 +16,9 @@ namespace Petsupport.API2.GraphServiceFactory
             configuration.Bind("AzureAdB2C", AzureOptions);
             // Initialize the client credential auth provider
             var confidentialClientApplication = ConfidentialClientApplicationBuilder
-                .Create(AzureOptions.ClientId)
+                .Create(AzureOptions.UserId)
                 .WithTenantId(AzureOptions.Domain)
-                .WithClientSecret(AzureOptions.ClientSecret)
+                .WithClientSecret(AzureOptions.UserSecret)
                 .Build();
             var authProvider = new ClientCredentialProvider(confidentialClientApplication);
 

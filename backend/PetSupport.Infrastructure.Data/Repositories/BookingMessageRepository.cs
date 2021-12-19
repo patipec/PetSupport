@@ -8,26 +8,20 @@ using PetSupport.Infrastructure.Data.Data;
 
 namespace PetSupport.Infrastructure.Data.Repositories
 {
-    public class BookingMessageRepository: BaseRepository<BookingMessage>, IBookingMessageRepository
+    public class BookingMessageRepository : BaseRepository<BookingMessage>, IBookingMessageRepository
     {
         public BookingMessageRepository(DataContext context) : base(context)
         {
         }
 
-        public async Task<IEnumerable<BookingMessage>> GetBookingMessagesByClientIdAsync(int clientId)
+        public Task<IEnumerable<BookingMessage>> GetBookingMessagesByClientIdAsync(int userId)
         {
-            return await _context.BookingMessages
-                .Where(m => m.ClientId == clientId)
-                .Include(m => m.Petsitter)
-                .OrderBy(m=>m.SendData)
-                .ToListAsync();
+            throw new System.NotImplementedException();
         }
 
-        public async Task<BookingMessage> GetBookingMessageByClientIdAsync(int clientId, int messageId)
+        public Task<BookingMessage> GetBookingMessageByClientIdAsync(int userId, int messageId)
         {
-            return await _context.BookingMessages
-                .Where(m => m.ClientId == clientId && m.Id == messageId)
-                .FirstOrDefaultAsync();
+            throw new System.NotImplementedException();
         }
     }
 }

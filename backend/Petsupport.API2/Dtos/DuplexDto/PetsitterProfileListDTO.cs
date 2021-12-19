@@ -11,7 +11,7 @@ namespace Petsupport.API2.Dtos.OutDtos
         public string Name { get; set; }
         public string Surname { get; set; }
         public string AvatarId { get; set; }
-        public string PhotoGallery { get; set;}
+        public string PhotoGallery { get; set; }
         public string City { get; set; }
         public string Street { get; set; }
         public string ShortDescription { get; set; }
@@ -19,9 +19,5 @@ namespace Petsupport.API2.Dtos.OutDtos
         public string Experience { get; set; }
         public PetService PetService { get; set; }
         public PetPreference PetPreference { get; set; }
-        
-        
-        
-
     }
 }

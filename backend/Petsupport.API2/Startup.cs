@@ -1,4 +1,3 @@
-
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -38,7 +37,7 @@ namespace Petsupport.API2
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Petsupport.API2", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Petsupport.API2", Version = "v1"});
             });
 
             services.AddDbContext<DataContext>(options =>
@@ -101,10 +100,7 @@ namespace Petsupport.API2
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }

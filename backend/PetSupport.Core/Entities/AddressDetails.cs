@@ -8,7 +8,7 @@ namespace PetSupport.Core.Entities
         public string FlatNumber { get; set; }
         public string ZipCode { get; set; }
         public string Country { get; set; }
-        
+
         //Localization 
         public double Latitude { get; set; }
         public double Longitude { get; set; }

@@ -2,7 +2,7 @@ using PetSupport.Core.Enums;
 
 namespace PetSupport.Core.Entities
 {
-    public class Animal: BaseEntity
+    public class Animal : BaseEntity
     {
         public string Name { get; set; }
         public PetType PetType { get; set; }

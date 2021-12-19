@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-
+/*
 namespace PetSupport.Infrastructure.Data.Data
 {
     public static class MigrationManager
@@ -24,7 +24,8 @@ namespace PetSupport.Infrastructure.Data.Data
                     }
                 }
             }
+
             return host;
         }
     }
-}
+}*/

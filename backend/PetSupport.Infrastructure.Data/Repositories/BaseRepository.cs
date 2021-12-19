@@ -53,6 +53,5 @@ namespace PetSupport.Infrastructure.Data.Repositories
             //return true if one ore more entities were changed
             return (await _context.SaveChangesAsync()) > 0;
         }
-
     }
 }

@@ -2,9 +2,9 @@
 {
     public class AzureOptions
     {
-        public string ClientId { get; set; }
+        public string UserId { get; set; }
 
-        public string ClientSecret { get; set; }
+        public string UserSecret { get; set; }
 
         public string Instance { get; set; }
 
