@@ -9,7 +9,7 @@ namespace PetSupport.Core.Entities
         
         public BasicUserInfo BasicUserInfo { get; set; }
         
-        public AddressDetail AddressDetail { get; set; }
+        public AddressDetails AddressDetails { get; set; }
 
         public ICollection<Animal> Animals { get; set; }
 
@@ -18,6 +18,7 @@ namespace PetSupport.Core.Entities
         //Petsitter
         public bool WantsToBePetsitter { get; set; }
         public bool IsProfileCompleted { get; set; }
+        
         public BasicPetsitterProfile BasicPetsitterProfile { get; set; }
         
     }

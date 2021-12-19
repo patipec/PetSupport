@@ -12,7 +12,7 @@ namespace PetSupport.Core.Entities
         public string Availability { get; set; }
         public string Environment { get; set; }
 
-        public ICollection<PetSpecification> PetsitterPetPreferences { get; set; }
+        public ICollection<PetPreference> PetsitterPetPreferences { get; set; }
         public ICollection<PetService> PetServices { get; set; }
     }
 }

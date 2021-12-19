@@ -1,4 +1,5 @@
 using System;
+using PetSupport.Core.Entities;
 
 namespace Petsupport.API2.Dtos.OutDtos
 {
@@ -7,6 +8,6 @@ namespace Petsupport.API2.Dtos.OutDtos
         public int Id { get; set; }
         public string SendDate { get; set; }
         public int ClientId { get; set; }
-        public PetsitterDTO Petsitter { get; set; }
+        public BasicPetsitterProfile Petsitter { get; set; }
     }
 }

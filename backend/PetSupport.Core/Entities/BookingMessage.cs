@@ -9,14 +9,14 @@ namespace PetSupport.Core.Entities
     {
         public BookingMessage()
         {
-            SentData = DateTime.Now;
+            SentDate = DateTime.Now;
         }
         
         public ServiceType ServiceType;
         public PetType PetType { get; set; }
         public PetWeight   PetWeight { get; set; }
         
-        public DateTime SentData { get; private set; }
+        public DateTime SentDate { get; private set; }
         public DateTime? DateFrom { get; set; }
         public DateTime? DateTo { get; set; }
         public string Message { get; set; }

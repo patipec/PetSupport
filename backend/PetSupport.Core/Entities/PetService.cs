@@ -5,7 +5,7 @@ namespace PetSupport.Core.Entities
     public class PetService : BaseEntity
     {
         public double Price { get; set; }
-        public ServiceType Name { get; set; }
+        public ServiceType ServiceType { get; set; }
     }
 
 }
