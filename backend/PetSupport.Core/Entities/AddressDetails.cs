@@ -1,6 +1,6 @@
 namespace PetSupport.Core.Entities
 {
-    public class AddressDetails
+    public class AddressDetails: BaseEntity
     {
         public string City { get; set; }
         public string Street { get; set; }

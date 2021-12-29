@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace PetSupport.Core.Entities
 {
-    public class BasicPetsitterProfile
+    public class BasicPetsitterProfile : BaseEntity
     {
         public DateTime DateOfBirth { get; set; }
         public string ShortDescription { get; set; }

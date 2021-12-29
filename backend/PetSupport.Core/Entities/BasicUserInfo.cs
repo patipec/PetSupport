@@ -1,6 +1,6 @@
 namespace PetSupport.Core.Entities
 {
-    public class BasicUserInfo
+    public class BasicUserInfo : BaseEntity
     {
         public string Name { get; set; }
 
