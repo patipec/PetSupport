@@ -6,7 +6,7 @@ namespace PetSupport.Core.Entities
 
         public string Surname { get; set; }
 
-        string Email { get; set; }
+        public string Email { get; set; }
 
         public string PhoneNumber { get; set; }
 
