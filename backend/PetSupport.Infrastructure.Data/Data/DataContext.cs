@@ -15,9 +15,10 @@ namespace PetSupport.Infrastructure.Data.Data
         public DbSet<PetService> Services { get; set; }
         public DbSet<BookingMessage> BookingMessages { get; set; }
 
-        /*protected override void OnModelCreating(ModelBuilder modelBuilder)
+        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.SeedFakeData();
-        }*/
+        }
     }
 }
