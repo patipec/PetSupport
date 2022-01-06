@@ -13,6 +13,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Mapping\**" />
+	  <Content Remove="Mapping\**" />
+	  <EmbeddedResource Remove="Mapping\**" />
+	  <None Remove="Mapping\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="10.1.1" />
 		<PackageReference Include="AutoMapper.Collection" Version="7.0.1" />
 		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
@@ -51,7 +58,6 @@
 
 	<ItemGroup>
 	  <Folder Include="Dtos\OutDtos" />
-	  <Folder Include="Mapping" />
 	</ItemGroup>
 
 	<ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

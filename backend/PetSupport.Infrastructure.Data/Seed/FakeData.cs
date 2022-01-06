@@ -149,36 +149,25 @@ namespace PetSupport.Infrastructure.Data.Seed
                 // .StrictMode(false)
                 .RuleFor(u => u.Id, f => uIds++)
                 .RuleFor(u => u.AzureId, f => Guid.NewGuid().ToString())
-                .RuleFor(u => u.BasicUserInfo, (f, p) =>
-                {
-                    basicUserInfo.RuleFor(s => s.Id, _ => p.Id);
-                    return null;
-                })
-                .RuleFor(u => u.AddressDetails, (f, p) =>
-                {
-                    addressDetails.RuleFor(s => s.Id, _ => p.Id);
-                    return null;
-                })
-            .RuleFor(u => u.Animals, (f, a) =>
-            {
-                animals.RuleFor(a => a.Id, _ => aaaIds++);
-                var fakeAnimals = animals // TU     JEST     ZLE
-                FakeAnimals.AddRange(fakeAnimals);
-                return null;
-            })
-            .RuleFor(u => u.BookingMessages, u =>
-            {
-                var counter = u.Random.Number(1, 18);
-                List<BookingMessage> temporaryListOfBookingMessages = bookingMessage.Generate(counter);
-                return temporaryListOfBookingMessages;
-            })
-            .RuleFor(u => u.WantsToBePetsitter, f => false)
-            .RuleFor(u => u.IsProfileCompleted, f => false)
-            .RuleFor(u => u.BasicPetsitterProfile, (f, p) =>
-            {
-                basicPetsitterProfile.RuleFor(s => s.Id, _ => p.Id);
-                return null;
-            });
+                .RuleFor(u => u.BasicUserInfoId, f => f.PickRandom(FakeBasicUserInfo).Id)
+                .RuleFor(u => u.AddressDetailsId, f => f.PickRandom(FakeAddressDetails).Id)
+
+                // .RuleFor(u => u.Animals, (f, a) =>
+                // {
+                //     animals.RuleFor(a => a.Id, _ => aaaIds++);
+                //     var fakeAnimals = animals // TU     JEST     ZLE
+                //     FakeAnimals.AddRange(fakeAnimals);
+                //     return null;
+                // })
+                // .RuleFor(u => u.BookingMessages, u =>
+                // {
+                //     var counter = u.Random.Number(1, 18);
+                //     List<BookingMessage> temporaryListOfBookingMessages = bookingMessage.Generate(counter);
+                //     return temporaryListOfBookingMessages;
+                // })
+                .RuleFor(u => u.WantsToBePetsitter, f => false)
+                .RuleFor(u => u.IsProfileCompleted, f => false)
+                .RuleFor(u => u.BasicPetsitterProfileId, f => f.PickRandom(FakeBasicPetsitterProfile).Id);
 
             FakeUsers = userFakeData.Generate(NumberOfFakeDataToGenerate / 2);
         }
