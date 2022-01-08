@@ -11,7 +11,7 @@ namespace PetSupport.Core.Entities
         {
             SentDate = DateTime.Now;
         }
-
+    
         public ServiceType ServiceType;
         public PetType PetType { get; set; }
         public PetWeight PetWeight { get; set; }
@@ -21,9 +21,8 @@ namespace PetSupport.Core.Entities
         public DateTime? DateTo { get; set; }
         public string Message { get; set; }
 
-        //Relationships
-
+        //Relations
         public int? UserId { get; set; }
-        public User User { get; set; }
+        public virtual User User { get; set; }
     }
 }

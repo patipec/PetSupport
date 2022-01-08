@@ -1,3 +1,4 @@
+using System.IO;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -16,6 +17,7 @@ using PetSupport.Infrastructure.Data.Data;
 using PetSupport.Infrastructure.Data.Repositories;
 using System.Reflection;
 using System.Text.Json;
+using NLog;
 
 namespace Petsupport.API2
 {
@@ -23,6 +25,8 @@ namespace Petsupport.API2
     {
         public Startup(IConfiguration configuration)
         {
+            LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), 
+                "/nlog.config"));
             Configuration = configuration;
         }
 
@@ -30,22 +34,21 @@ namespace Petsupport.API2
 
         // This method gets called by the runtime. Use this method to add services to the container.
         readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
+        
+        
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ILoggerService, LoggerService>();
             services.AddControllers();
-
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Petsupport.API2", Version = "v1"});
             });
-
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                         options => options.MigrationsAssembly("Petsupport.API2"))
                     .EnableSensitiveDataLogging()
                     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
-
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApi(
                     options =>
@@ -65,8 +68,7 @@ namespace Petsupport.API2
                     "SitterScope",
                     policy => policy.Requirements.Add(new ScopesRequirement("Sitter")));
             });
-            services.AddSingleton<ILoggerService, LoggerService>();
-
+            
             services.AddCors(
                 options =>
                 {
@@ -74,13 +76,14 @@ namespace Petsupport.API2
                         "CorsDevelopmentPolicy",
                         builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
                 });
-
+            services.Configure<IISOptions>(options =>{});
             services.AddTransient<IPetsitterRepository, PetsitterRepository>();
             services.AddTransient<IBookingMessageRepository, BookingMessageRepository>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
             services.AddSingleton<IGraphService, GraphService>();
+            
         }
+        
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -93,13 +96,10 @@ namespace Petsupport.API2
             }
 
             app.UseHttpsRedirection();
-
             app.UseCors(env.IsDevelopment() ? "CorsDevelopmentPolicy" : "CorsReleasePolicy");
             app.UseRouting();
-
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
