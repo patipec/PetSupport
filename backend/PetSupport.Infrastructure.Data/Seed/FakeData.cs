@@ -96,20 +96,7 @@ namespace PetSupport.Infrastructure.Data.Seed
 
 
 
-            // BookingMessage
-            var startDate = new DateTime(2022, 1, 5);
-            var endDate = new DateTime(2022, 1, 10);
-            var mIds = 1;
-            var bookingMessage = new Faker<BookingMessage>()
-                .RuleFor(m => m.Id, x => mIds++)
-                .RuleFor(s => s.ServiceType, f => f.PickRandom<ServiceType>())
-                .RuleFor(s => s.DateFrom, f => f.Date.Between(startDate, endDate))
-                .RuleFor(s => s.DateTo, f => f.Date.Between(new DateTime(2022, 1, 10), new DateTime(2022, 1, 15)))
-                .RuleFor(s => s.PetType, f => f.PickRandom<PetType>())
-                .RuleFor(s => s.PetWeight, f => f.PickRandom<PetWeight>())
-                .RuleFor(s => s.Message, f => lorem.Sentence(10));
 
-            FakeBookingMessages = bookingMessage.Generate(NumberOfFakeDataToGenerate / 2);
 
 
             // BasicPetsitterProfile
@@ -161,6 +148,24 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(u => u.BasicPetsitterProfileId, f => f.PickRandom(FakeBasicPetsitterProfile).Id);
 
             FakeUsers = userFakeData.Generate(NumberOfFakeDataToGenerate / 2);
+
+
+
+            // BookingMessage
+            var startDate = new DateTime(2022, 1, 5);
+            var endDate = new DateTime(2022, 1, 10);
+            var mIds = 1;
+            var bookingMessage = new Faker<BookingMessage>()
+                .RuleFor(m => m.Id, x => mIds++)
+                .RuleFor(s => s.ServiceType, f => f.PickRandom<ServiceType>())
+                .RuleFor(s => s.DateFrom, f => f.Date.Between(startDate, endDate))
+                .RuleFor(s => s.DateTo, f => f.Date.Between(new DateTime(2022, 1, 10), new DateTime(2022, 1, 15)))
+                .RuleFor(s => s.PetType, f => f.PickRandom<PetType>())
+                .RuleFor(s => s.PetWeight, f => f.PickRandom<PetWeight>())
+                .RuleFor(s => s.Message, f => lorem.Sentence(10))
+                .RuleFor(u => u.UserId, f => f.PickRandom(FakeUsers).Id);
+
+            FakeBookingMessages = bookingMessage.Generate(NumberOfFakeDataToGenerate / 2);
 
             // Animals
             //
