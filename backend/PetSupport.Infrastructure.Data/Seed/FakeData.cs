@@ -93,16 +93,7 @@ namespace PetSupport.Infrastructure.Data.Seed
             //
             FakeAddressDetails = addressDetails.Generate(NumberOfFakeDataToGenerate / 2);
 
-            // PetPreference
 
-            var pIds = 1;
-
-            var petPreferences = new Faker<PetPreference>()
-                .RuleFor(p => p.Id, f => pIds++)
-                .RuleFor(p => p.PetType, f => f.PickRandom<PetType>())
-                .RuleFor(p => p.PetWeights, f => f.PickRandom<PetWeight>());
-
-            FakePetPreferences = petPreferences.Generate(NumberOfFakeDataToGenerate / 2);
 
 
             // BookingMessage
@@ -133,6 +124,19 @@ namespace PetSupport.Infrastructure.Data.Seed
 
             FakeBasicPetsitterProfile = basicPetsitterProfile.Generate(NumberOfFakeDataToGenerate / 2);
 
+
+            // PetPreference
+
+            var pIds = 1;
+
+            var petPreferences = new Faker<PetPreference>()
+                .RuleFor(p => p.Id, f => pIds++)
+                .RuleFor(p => p.PetType, f => f.PickRandom<PetType>())
+                .RuleFor(p => p.PetWeights, f => f.PickRandom<PetWeight>())
+                .RuleFor(u => u.BasicPetsitterProfileId, f => f.PickRandom(FakeBasicPetsitterProfile).Id);
+
+
+            FakePetPreferences = petPreferences.Generate(NumberOfFakeDataToGenerate / 2);
 
             var psIds = 1;
 
