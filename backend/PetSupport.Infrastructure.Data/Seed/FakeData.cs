@@ -24,6 +24,8 @@ namespace PetSupport.Infrastructure.Data.Seed
         public List<User> FakeUsers { get; }
         public List<PetPreference> FakePetPreferences { get; set; }
 
+        public List<PetService> FakePetServices {  get; }
+
 
         public FakeData()
         {
@@ -130,6 +132,15 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(s => s.Environment, f => lorem.Sentence(5));
 
             FakeBasicPetsitterProfile = basicPetsitterProfile.Generate(NumberOfFakeDataToGenerate / 2);
+
+
+            var psIds = 1;
+
+            var petServices = new Faker<PetService>()
+                .RuleFor(x => x.Id, x => psIds++)
+                .RuleFor(x => x.Price, x => x.Random.Number(1, 100))
+                .RuleFor(u => u.ServiceType, f => f.PickRandom<ServiceType>())
+                .RuleFor(u => u.BasicUserInfoId, f => f.PickRandom(FakeBasicUserInfo).Id);
 
             // User
             var userIds = 1;
