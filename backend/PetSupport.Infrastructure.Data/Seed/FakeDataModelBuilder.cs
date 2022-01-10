@@ -21,6 +21,7 @@ namespace PetSupport.Infrastructure.Data.Seed
             modelBuilder.Entity<BookingMessage>().HasData(fakeData.FakeBookingMessages);
             
             modelBuilder.Entity<PetPreference>().HasData(fakeData.FakePetPreferences);
+            modelBuilder.Entity<PetService>().HasData(fakeData.FakePetServices);
             modelBuilder.Entity<User>().HasData(fakeData.FakeUsers); 
 
 

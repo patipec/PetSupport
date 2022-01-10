@@ -13,9 +13,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Dtos\OutDtos\**" />
 	  <Compile Remove="Mapping\**" />
+	  <Content Remove="Dtos\OutDtos\**" />
 	  <Content Remove="Mapping\**" />
+	  <EmbeddedResource Remove="Dtos\OutDtos\**" />
 	  <EmbeddedResource Remove="Mapping\**" />
+	  <None Remove="Dtos\OutDtos\**" />
 	  <None Remove="Mapping\**" />
 	</ItemGroup>
 
@@ -54,10 +58,6 @@
 		<ProjectReference Include="..\PetSupport.Core\PetSupport.Core.csproj" />
 		<ProjectReference Include="..\PetSupport.Infrastructure.Data\PetSupport.Infrastructure.Data.csproj" />
 
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Dtos\OutDtos" />
 	</ItemGroup>
 
 	<ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

@@ -140,7 +140,9 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(x => x.Id, x => psIds++)
                 .RuleFor(x => x.Price, x => x.Random.Number(1, 100))
                 .RuleFor(u => u.ServiceType, f => f.PickRandom<ServiceType>())
-                .RuleFor(u => u.BasicUserInfoId, f => f.PickRandom(FakeBasicUserInfo).Id);
+                .RuleFor(u => u.BasicPetsitterProfileId, f => f.PickRandom(FakeBasicPetsitterProfile).Id);
+
+            FakePetServices = petServices.Generate(NumberOfFakeDataToGenerate / 2);
 
             // User
             var userIds = 1;
