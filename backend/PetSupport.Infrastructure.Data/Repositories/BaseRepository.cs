@@ -22,7 +22,7 @@ namespace PetSupport.Infrastructure.Data.Repositories
         {
             return await _context.FindAsync<T>(id);
         }
-
+        
         public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
             return await _context.Set<T>()
@@ -38,13 +38,15 @@ namespace PetSupport.Infrastructure.Data.Repositories
         }
 
         public virtual void Add(T entity)
-        {
+        { 
             _context.Add(entity);
+           _context.SaveChanges();
         }
 
         public virtual void Update(T entity)
         {
             _context.Update(entity);
+            _context.SaveChanges();
         }
 
 

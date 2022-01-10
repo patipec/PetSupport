@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿/*using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,7 +14,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using User = PetSupport.Core.Entities.User;
 
-/*
+
 namespace Petsupport.API2.Controllers
 {
     [Route("api/[controller]")]

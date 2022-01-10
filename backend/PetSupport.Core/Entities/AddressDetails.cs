@@ -1,6 +1,6 @@
 namespace PetSupport.Core.Entities
 {
-    public class AddressDetails
+    public class AddressDetails: BaseEntity
     {
         public string City { get; set; }
         public string Street { get; set; }
@@ -13,5 +13,8 @@ namespace PetSupport.Core.Entities
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public double? Range { get; set; }
+        
+        public int? UserId { get; set; }
+        public virtual User User { get; set; }
     }
 }
