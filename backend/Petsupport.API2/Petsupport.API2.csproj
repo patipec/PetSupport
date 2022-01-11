@@ -13,6 +13,17 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Dtos\OutDtos\**" />
+	  <Compile Remove="Mapping\**" />
+	  <Content Remove="Dtos\OutDtos\**" />
+	  <Content Remove="Mapping\**" />
+	  <EmbeddedResource Remove="Dtos\OutDtos\**" />
+	  <EmbeddedResource Remove="Mapping\**" />
+	  <None Remove="Dtos\OutDtos\**" />
+	  <None Remove="Mapping\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="10.1.1" />
 		<PackageReference Include="AutoMapper.Collection" Version="7.0.1" />
 		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
