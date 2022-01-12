@@ -9,7 +9,7 @@ namespace PetSupport.Core.Entities
         public PetWeight PetWeights { get; set; }
 
         //relations        
-        public virtual BasicPetsitterProfile BasicPetsitterProfile {get; set;}
+        public virtual BasicPetsitterProfileId BasicPetsitterProfile {get; set;}
         public int BasicPetsitterProfileId { get; set; }
     }
 }

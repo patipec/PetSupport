@@ -24,13 +24,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="AutoMapper" Version="10.1.1" />
-		<PackageReference Include="AutoMapper.Collection" Version="7.0.1" />
-		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
-		<PackageReference Include="Bogus" Version="32.0.2" />
+	  <Compile Include="Mapping\UserProfile.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="11.0.0" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+		<PackageReference Include="Bogus" Version="34.0.1" />
 		<PackageReference Include="JW.Pager" Version="1.0.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.2" NoWarn="NU1605" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.2" NoWarn="NU1605" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.13" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.13" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.13">
 		  <PrivateAssets>all</PrivateAssets>
@@ -43,15 +45,15 @@
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.3" />
-		<PackageReference Include="Microsoft.Graph" Version="3.23.0" />
+		<PackageReference Include="Microsoft.Graph" Version="4.14.0" />
 		<PackageReference Include="Microsoft.Graph.Auth" Version="1.0.0-preview.6" />
-		<PackageReference Include="Microsoft.Identity.Web" Version="1.5.1" />
-		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.1" />
-		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-		<PackageReference Include="NLog" Version="4.7.7" />
-		<PackageReference Include="NLog.Extensions.Logging" Version="1.7.0" />
-		<PackageReference Include="NLog.Web.AspNetCore" Version="4.10.0" />
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+		<PackageReference Include="Microsoft.Identity.Web" Version="1.22.1" />
+		<PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="6.15.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="NLog" Version="4.7.13" />
+		<PackageReference Include="NLog.Extensions.Logging" Version="1.7.4" />
+		<PackageReference Include="NLog.Web.AspNetCore" Version="4.14.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -62,7 +64,6 @@
 
 	<ItemGroup>
 	  <Folder Include="Dtos\OutDtos" />
-	  <Folder Include="Mapping" />
 	</ItemGroup>
 
 	<ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

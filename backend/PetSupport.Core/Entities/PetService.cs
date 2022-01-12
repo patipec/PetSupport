@@ -8,7 +8,7 @@ namespace PetSupport.Core.Entities
         public double Price { get; set; }
         public ServiceType ServiceType { get; set; }
         
-        public virtual BasicPetsitterProfile BasicPetsitterProfile {get; set;}
+        public virtual BasicPetsitterProfileId BasicPetsitterProfile {get; set;}
         public int BasicPetsitterProfileId { get; set; }
     }
 }

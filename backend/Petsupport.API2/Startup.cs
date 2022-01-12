@@ -1,13 +1,13 @@
 using System.IO;
 using AutoMapper;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Identity.Web;
+
 using Microsoft.OpenApi.Models;
 using Petsupport.API2.GraphServiceFactory;
 using PetSupport.API2.AuthorizationPolicies;
@@ -49,7 +49,7 @@ namespace Petsupport.API2
                         options => options.MigrationsAssembly("Petsupport.API2"))
                     .EnableSensitiveDataLogging()
                     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            /*services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApi(
                     options =>
                     {
@@ -57,7 +57,7 @@ namespace Petsupport.API2
 
                         options.TokenValidationParameters.NameClaimType = "name";
                     },
-                    options => { Configuration.Bind("AzureAdB2C", options); });
+                    options => { Configuration.Bind("AzureAdB2C", options); });*/
 
             services.AddAuthorization(options =>
             {

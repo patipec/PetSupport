@@ -10,19 +10,19 @@ using System.Threading.Tasks;
 
 namespace PetSupport.Infrastructure.Data.Repositories
 {
-    public class PetsitterRepository : BaseRepository<BasicPetsitterProfile>, IPetsitterRepository
+    public class PetsitterRepository : BaseRepository<BasicPetsitterProfileId>, IPetsitterRepository
     {
         public PetsitterRepository(DataContext _context) : base(_context)
         {
         }
 
-        public Task<IEnumerable<BasicPetsitterProfile>> GetAllPetsittersBySearchParametersAsync(
+        public Task<IEnumerable<BasicPetsitterProfileId>> GetAllPetsittersBySearchParametersAsync(
             PetsittersSearchParameters petsittersSearchParameters)
         {
             throw new NotImplementedException();
         }
 
-        public Task<BasicPetsitterProfile> GetByAzureId(string azureId)
+        public Task<BasicPetsitterProfileId> GetByAzureId(string azureId)
         {
             throw new NotImplementedException();
         }

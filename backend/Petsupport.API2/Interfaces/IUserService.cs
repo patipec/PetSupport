@@ -6,8 +6,8 @@ namespace PetSupport.Core.Services
 {
     public interface IUserService
     {
-        IEnumerable<PetsitterProfileListDTO> GetAllPetsitters();
-        PetsitterBriefDtoDTO GetUserById(int id);
+        IEnumerable<PetsitterProfileDTO> GetAllPetsitters();
+        PetsitterListDTO GetUserById(int id);
 
     }
 }

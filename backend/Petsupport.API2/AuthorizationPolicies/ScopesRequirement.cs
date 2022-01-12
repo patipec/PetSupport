@@ -12,7 +12,7 @@ namespace PetSupport.API2.AuthorizationPolicies
     /// </summary>
     public class ScopesRequirement : AuthorizationHandler<ScopesRequirement>, IAuthorizationRequirement
     {
-        string[] _acceptedScopes;
+        readonly string[] _acceptedScopes;
 
         public ScopesRequirement(params string[] acceptedScopes)
         {

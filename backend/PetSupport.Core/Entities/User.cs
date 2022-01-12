@@ -6,16 +6,22 @@ namespace PetSupport.Core.Entities
     public class User : BaseEntity
     {
         public string AzureId { get; set; }
-        public virtual BasicUserInfo BasicUserInfo { get; set; }
-        public virtual AddressDetails AddressDetails { get; set; }
+        public  BasicUserInfo BasicUserInfo { get; set; }
+
+        public int BasicUserInfoId { get; set; }
+        public  AddressDetails AddressDetails { get; set; }
+        public int AddressDetailsId { get; set; }
+        public BasicPetsitterProfileId BasicPetsitterProfile { get; set; }
+        public int BasicPetsitterProfileId { get; set; }
 
         //relations
-        public virtual ICollection<Animal> Animals { get; set; }
-        public virtual ICollection<BookingMessage> BookingMessages { get; set; }
+        public  ICollection<Animal> Animals { get; set; }
+        public  ICollection<BookingMessage> BookingMessages { get; set; }
+
 
         //Petsitter
         public bool WantsToBePetsitter { get; set; }
         public bool IsProfileCompleted { get; set; }
-        public virtual BasicPetsitterProfile BasicPetsitterProfile { get; set; }
+        
     }
 }
