@@ -11,7 +11,7 @@ namespace PetSupport.Core.Entities
         public int BasicUserInfoId { get; set; }
         public  AddressDetails AddressDetails { get; set; }
         public int AddressDetailsId { get; set; }
-        public BasicPetsitterProfileId BasicPetsitterProfile { get; set; }
+        public BasicPetsitterProfile BasicPetsitterProfile { get; set; }
         public int BasicPetsitterProfileId { get; set; }
 
         //relations

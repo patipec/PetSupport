@@ -13,10 +13,12 @@ namespace Petsupport.API2.Mapping
     {
         public UserProfile()
         {
+            
             CreateMap<User, PetsitterListDTO>()
                 .ForMember(m => m.Name, map => map.MapFrom(user => user.BasicUserInfo.Name))
                 .ForMember(m => m.City, map => map.MapFrom(user => user.AddressDetails.City))
                 .ForMember(m => m.AvatarId, map => map.MapFrom(user => user.BasicUserInfo.AvatarId));
+                /*.ForMember(m=>m.Price,map=>map.MapFrom(user=>user.BasicPetsitterProfile.PetServices.Contains(PetService)*/
                 
             CreateMap<PetService, PetsitterListDTO>()
                 .ForMember(m => m.Price, map => map.MapFrom(user => user.Price));

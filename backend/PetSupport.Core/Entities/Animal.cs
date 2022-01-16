@@ -10,8 +10,7 @@ namespace PetSupport.Core.Entities
         public int? Age { get; set; }
         public string Description { get; set; }
         public string PhotoGallery { get; set; }
-        
-        public int? UserId { get; set; }
-        public virtual User User { get; set; }
+        public int UserId { get; set; }
+
     }
 }

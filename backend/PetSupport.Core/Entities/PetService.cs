@@ -7,8 +7,8 @@ namespace PetSupport.Core.Entities
         //TODO  setting price should be not only service type and price for it. Petpreference should be there as well
         public double Price { get; set; }
         public ServiceType ServiceType { get; set; }
-        
-        public virtual BasicPetsitterProfileId BasicPetsitterProfile {get; set;}
+
+        public BasicPetsitterProfile BasicPetsitterProfile { get; set; }
         public int BasicPetsitterProfileId { get; set; }
     }
 }

@@ -31,7 +31,7 @@ namespace Petsupport.API2.Controllers
         {
             var users = _dataContext.Users.ToList();
             var userDtos = _mapper.Map<List<PetsitterListDTO>>(users);
-            return Ok(userDtos);
+            return Ok(users);
         }
 
         // GET api/<UsersController>/5

@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace PetSupport.Core.Interfaces
 {
-    public interface IPetsitterRepository : IBaseRepository<BasicPetsitterProfileId>
+    public interface IPetsitterRepository : IBaseRepository<BasicPetsitterProfile>
     {
         
         //TODO check if it is ok - maybe it should return User that fulfill some conditions
-        Task<IEnumerable<BasicPetsitterProfileId>> GetAllPetsittersBySearchParametersAsync
+        Task<IEnumerable<BasicPetsitterProfile>> GetAllPetsittersBySearchParametersAsync
             (PetsittersSearchParameters petsittersSearchParameters);
         
     }
