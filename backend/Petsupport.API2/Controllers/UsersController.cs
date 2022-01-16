@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Graph;
+using Petsupport.API2.Dtos.DuplexDto;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -25,13 +27,14 @@ namespace Petsupport.API2.Controllers
             _dataContext = dataContext;
             _mapper = mapper;
         }
+
         // GET: api/<UsersController>
         [HttpGet]
         public ActionResult<List<PetsitterListDTO>> Get()
         {
             var users = _dataContext.Users.ToList();
             var userDtos = _mapper.Map<List<PetsitterListDTO>>(users);
-            return Ok(users);
+            return Ok(userDtos);
         }
 
         // GET api/<UsersController>/5

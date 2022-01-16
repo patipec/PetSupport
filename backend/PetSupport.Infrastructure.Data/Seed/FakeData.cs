@@ -94,11 +94,6 @@ namespace PetSupport.Infrastructure.Data.Seed
             FakeAddressDetails = addressDetails.Generate(NumberOfFakeDataToGenerate / 2);
 
 
-
-
-
-
-
             // BasicPetsitterProfile
             var bpIds = 1;
             var basicPetsitterProfile = new Faker<BasicPetsitterProfile>()

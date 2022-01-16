@@ -1,4 +1,5 @@
 ﻿using Petsupport.API2.Dtos.DuplexDto;
+using PetSupport.Core.Entities;
 
 namespace Petsupport.API2.Dtos.InDtos
 {

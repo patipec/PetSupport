@@ -9,19 +9,22 @@ using System.Threading.Tasks;
 
 namespace Petsupport.API2.Mapping
 {
-    public class UserProfile: Profile
+    public class UserProfile : Profile
     {
         public UserProfile()
         {
-            
+
             CreateMap<User, PetsitterListDTO>()
                 .ForMember(m => m.Name, map => map.MapFrom(user => user.BasicUserInfo.Name))
                 .ForMember(m => m.City, map => map.MapFrom(user => user.AddressDetails.City))
-                .ForMember(m => m.AvatarId, map => map.MapFrom(user => user.BasicUserInfo.AvatarId));
-                /*.ForMember(m=>m.Price,map=>map.MapFrom(user=>user.BasicPetsitterProfile.PetServices.Contains(PetService)*/
-                
-            CreateMap<PetService, PetsitterListDTO>()
-                .ForMember(m => m.Price, map => map.MapFrom(user => user.Price));
+                .ForMember(m => m.AvatarId, map => map.MapFrom(user => user.BasicUserInfo.AvatarId))
+            .ForMember(m => m.Price, map => map.MapFrom(user => user.BasicPetsitterProfile.PetServices.FirstOrDefault().Price));
+            //
+            // CreateMap<PetsitterListDTO, PetsitterListNestedMapDTO>()
+            //     .ForMember(m => m.Price, map => map.MapFrom(petSitter => petSitter.PetService.Price));
+
+            // CreateMap<PetService, PetsitterListDTO>()
+            //     .ForMember(m => m.Price, map => map.MapFrom(user => user.Price));
 
 
 
