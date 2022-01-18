@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Petsupport.API2.Dtos.DuplexDto;
 using Petsupport.API2.Dtos.InDtos;
 using PetSupport.Core.Entities;
 
@@ -16,7 +17,7 @@ namespace Petsupport.API2.Dtos.OutDtos
         public string ShortDescription { get; set; }
         public string Environment { get; set; }
         public string Experience { get; set; }
-        public PetService PetService { get; set; }
-        public PetPreference PetPreference { get; set; }
+        public IEnumerable<PetServiceDTO> PetService { get; set; }
+        public IEnumerable<PetPreferenceDTO> PetPreference { get; set; }
     }
 }

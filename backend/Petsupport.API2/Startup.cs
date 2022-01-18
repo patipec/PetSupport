@@ -79,7 +79,7 @@ namespace Petsupport.API2
             services.Configure<IISOptions>(options =>{});
             services.AddTransient<IPetsitterRepository, PetsitterRepository>();
             services.AddTransient<IBookingMessageRepository, BookingMessageRepository>();
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddAutoMapper(this.GetType().Assembly);
             services.AddSingleton<IGraphService, GraphService>();
             
         }

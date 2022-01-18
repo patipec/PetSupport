@@ -2,6 +2,10 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/Petsupport.API2",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:59084",
       "sslPort": 44356

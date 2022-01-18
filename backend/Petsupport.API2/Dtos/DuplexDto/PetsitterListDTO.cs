@@ -11,5 +11,7 @@ namespace Petsupport.API2.Dtos.InDtos
         public string AvatarId { get; set; }
         public string City { get; set; }
         public string ShortDescription { get; set; }
+
+        
     }
 }
