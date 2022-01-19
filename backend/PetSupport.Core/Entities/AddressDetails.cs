@@ -1,7 +1,12 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace PetSupport.Core.Entities
 {
-    public class AddressDetails: BaseEntity
+    public class AddressDetails
     {
+        [Key]
+        public int Id { get; set; }
         public string City { get; set; }
         public string Street { get; set; }
         public string HouseNumber { get; set; }
@@ -9,10 +14,13 @@ namespace PetSupport.Core.Entities
         public string ZipCode { get; set; }
         public string Country { get; set; }
 
-        //Localization 
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
-        public double? Range { get; set; }
+        
+        public int UserId { get; set; }
+
+        [ForeignKey("UserId")]
+        public User User { get; set; }
+
+       
    
         
     }

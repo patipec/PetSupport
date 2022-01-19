@@ -42,14 +42,14 @@ namespace PetSupport.Infrastructure.Data.Seed
                     .RuleFor(x => x.Email, x => x.Person.Email)
                     .RuleFor(x => x.PhoneNumber, x => x.Person.Phone)
                     .RuleFor(x => x.AvatarId, x => basicUserInfIds++.ToString())
-                    .RuleFor(x => x.PhotoGallery, x => Guid.NewGuid().ToString());
-
+                    .RuleFor(x => x.PhotoGallery, x => Guid.NewGuid().ToString())
+                    .RuleFor(x => x.UserId, x => x.PickRandom(FakeUsers).Id);
+                   
             FakeBasicUserInfo = basicUserInfo.Generate(NumberOfFakeDataToGenerate / 2);
 
+
             // AddressDetails
-
             var addressDetailIds = 1;
-
             var addressDetails = new Faker<AddressDetails>()
                 .StrictMode(false)
                 .RuleFor(x => x.Id, f => addressDetailIds++)
@@ -59,38 +59,9 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(x => x.FlatNumber, x => x.Address.BuildingNumber() + 20)
                 .RuleFor(x => x.ZipCode, x => x.Address.ZipCode())
                 .RuleFor(x => x.Country, x => x.Address.Country())
-                .RuleFor(x => x.Latitude, (f, x) =>
-                {
-                    if (x.City == "Warsaw")
-                    {
-                        return x.Latitude = f.Address.Latitude(52.17, 52.27);
-                    }
-
-                    if (x.City == "Radom")
-                    {
-                        return x.Latitude = f.Address.Latitude(51.39, 51.41);
-                    }
-
-                    // Gdynia
-                    return x.Latitude = f.Address.Latitude(54.47, 54.50);
-                })
-                .RuleFor(x => x.Longitude, (f, x) =>
-                {
-                    if (x.City == "Warsaw")
-                    {
-                        return x.Longitude = f.Address.Longitude(20.91, 21.19);
-                    }
-
-                    if (x.City == "Radom")
-                    {
-                        return x.Longitude = f.Address.Longitude(21.12, 21.19);
-                    }
-
-                    // Gdynia
-                    return x.Longitude = f.Address.Longitude(18.52, 18.55);
-                })
-                .RuleFor(x => x.Range, x => 10);
-            //
+                .RuleFor(x => x.UserId, x => x.PickRandom(FakeUsers).Id);
+                
+           
             FakeAddressDetails = addressDetails.Generate(NumberOfFakeDataToGenerate / 2);
 
 
@@ -102,31 +73,30 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(s => s.ShortDescription, f => f.Lorem.Sentence(10))
                 .RuleFor(s => s.Experience, f => lorem.Sentence(5))
                 .RuleFor(s => s.Availability, f => lorem.Sentence(3))
-                .RuleFor(s => s.Environment, f => lorem.Sentence(5));
+                .RuleFor(s => s.Environment, f => lorem.Sentence(5))
+                .RuleFor(x => x.UserId, x => x.PickRandom(FakeUsers).Id);
 
             FakeBasicPetsitterProfile = basicPetsitterProfile.Generate(NumberOfFakeDataToGenerate / 2);
 
 
             // PetPreference
-
             var pIds = 1;
-
             var petPreferences = new Faker<PetPreference>()
                 .RuleFor(p => p.Id, f => pIds++)
                 .RuleFor(p => p.PetType, f => f.PickRandom<PetType>())
                 .RuleFor(p => p.PetWeights, f => f.PickRandom<PetWeight>())
-                .RuleFor(u => u.BasicPetsitterProfileId, f => f.PickRandom(FakeBasicPetsitterProfile).Id);
+                .RuleFor(p => p.BasicPetsitterProfileId, f => f.PickRandom(FakeBasicPetsitterProfile).Id);
 
 
             FakePetPreferences = petPreferences.Generate(NumberOfFakeDataToGenerate / 2);
 
+            //PetService
             var psIds = 1;
-
             var petServices = new Faker<PetService>()
                 .RuleFor(x => x.Id, x => psIds++)
                 .RuleFor(x => x.Price, x => x.Random.Number(1, 100))
                 .RuleFor(u => u.ServiceType, f => f.PickRandom<ServiceType>())
-                .RuleFor(u => u.BasicPetsitterProfileId, f => f.PickRandom(FakeBasicPetsitterProfile).Id);
+                .RuleFor(x => x.BasicPetsitterProfileId, x => x.PickRandom(FakeBasicPetsitterProfile).Id);
 
             FakePetServices = petServices.Generate(NumberOfFakeDataToGenerate / 2);
 
@@ -157,13 +127,11 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(s => s.DateTo, f => f.Date.Between(new DateTime(2022, 1, 10), new DateTime(2022, 1, 15)))
                 .RuleFor(s => s.PetType, f => f.PickRandom<PetType>())
                 .RuleFor(s => s.PetWeight, f => f.PickRandom<PetWeight>())
-                .RuleFor(s => s.Message, f => lorem.Sentence(10))
-                .RuleFor(u => u.UserId, f => f.PickRandom(FakeUsers).Id);
+                .RuleFor(s => s.Message, f => lorem.Sentence(10));
 
             FakeBookingMessages = bookingMessage.Generate(NumberOfFakeDataToGenerate / 2);
 
             // Animals
-            //
             var animalsIds = 1;
             var animals = new Faker<Animal>()
                 .RuleFor(a => a.Id, f => animalsIds++)
@@ -173,7 +141,7 @@ namespace PetSupport.Infrastructure.Data.Seed
                 .RuleFor(x => x.Age, x => x.Random.Number(1, 25))
                 .RuleFor(p => p.Description, f => lorem.Sentence(30))
                 .RuleFor(p => p.PhotoGallery, f => f.Image.PicsumUrl())
-                .RuleFor(u => u.UserId, f => f.PickRandom(FakeUsers).Id);
+                .RuleFor(x => x.UserId, x => x.PickRandom(FakeUsers).Id);
 
             FakeAnimals = animals.Generate(NumberOfFakeDataToGenerate / 2);
         }

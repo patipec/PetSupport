@@ -19,12 +19,11 @@ namespace PetSupport.Infrastructure.Data.Data
         public DbSet<PetService> Services { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<BasicPetsitterProfile> Petsitters { get; set; }
-       
-        
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.SeedFakeData();
+            /*modelBuilder.SeedFakeData();*/
         }
     }
 }

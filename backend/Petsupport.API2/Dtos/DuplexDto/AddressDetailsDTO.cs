@@ -13,5 +13,6 @@ namespace Petsupport.API2.Dtos.DuplexDto
         public string FlatNumber { get; set; }
         public string ZipCode { get; set; }
         public string Country { get; set; }
+
     }
 }

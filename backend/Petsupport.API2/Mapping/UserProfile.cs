@@ -21,15 +21,21 @@ namespace Petsupport.API2.Mapping
                 .ForMember(m => m.AvatarId, map => map.MapFrom(user => user.BasicUserInfo.AvatarId))
             .ForMember(m => m.Price, map => map.MapFrom(user => user.BasicPetsitterProfile.PetServices.FirstOrDefault().Price)).ReverseMap();*/
 
-            CreateMap<BasicUserInfo, PetsitterListDTO>()
+            /*CreateMap<BasicUserInfo, PetsitterListDTO>()
                 .ForMember(m => m.Name, map => map.MapFrom(info=>info.Name))
-                .ForMember(m => m.AvatarId, map => map.MapFrom(info=>info.AvatarId));
+                .ForMember(m => m.AvatarId, map => map.MapFrom(info=>info.AvatarId));*/
 
-            CreateMap<User,UserDTO>().ReverseMap();
-            CreateMap<AddressDetails, AddressDetailsDTO>().ReverseMap();
+            CreateMap<User, UserDTO>();
+            CreateMap<UserDTO, User>();
+            CreateMap<AddressDetailsDTO, AddressDetails>().ReverseMap();
             CreateMap<PetService, PetServiceDTO>().ReverseMap();
-            CreateMap<BasicUserInfo, BasicUserInfoDTO>().ReverseMap();
-            CreateMap<BasicPetsitterProfile, PetsitterProfileDTO>().ReverseMap();
+            CreateMap<BasicUserInfoDTO, BasicUserInfo>().ReverseMap();
+            CreateMap<BasicPetsitterProfile, PetsitterProfileDTO>();
+            CreateMap<BasicPetsitterProfileDTO, BasicPetsitterProfile>().ReverseMap();
+            CreateMap<PetPreferenceDTO, PetPreference>().ReverseMap();
+            CreateMap<AnimalDTO, Animal>().ReverseMap();
+            CreateMap<BookingMessageDTO, BookingMessage>().ReverseMap();
+
 
         }
     }

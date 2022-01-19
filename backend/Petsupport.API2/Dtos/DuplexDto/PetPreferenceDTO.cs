@@ -8,7 +8,8 @@ namespace Petsupport.API2.Dtos.DuplexDto
 {
     public class PetPreferenceDTO
     {
-        public int PetType { get; set; }
-        public int PetWeights { get; set; }
+        public int PetPreferenceId { get; set; }
+        public PetType PetType { get; set; }
+        public PetWeight PetWeights { get; set; }
     }
 }

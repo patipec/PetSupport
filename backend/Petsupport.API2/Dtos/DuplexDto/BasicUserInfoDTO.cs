@@ -7,11 +7,15 @@ namespace Petsupport.API2.Dtos.DuplexDto
 {
     public class BasicUserInfoDTO
     {
+        public int BasicUserInfoId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string AvatarId { get; set; }
         public string PhotoGallery { get; set; }
+
+        public int UserId { get; set; }
+    
     }
 }

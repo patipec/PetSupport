@@ -19,5 +19,5 @@ namespace Petsupport.API2.Dtos.OutDtos
         public string Experience { get; set; }
         public IEnumerable<PetServiceDTO> PetService { get; set; }
         public IEnumerable<PetPreferenceDTO> PetPreference { get; set; }
-    }
-}
+       
+}}

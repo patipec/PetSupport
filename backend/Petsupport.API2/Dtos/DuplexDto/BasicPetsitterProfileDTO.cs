@@ -8,6 +8,7 @@ namespace Petsupport.API2.Dtos.DuplexDto
 {
     public class BasicPetsitterProfileDTO
     {
+        public int BasicPetsitterProfileId { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string ShortDescription { get; set; }
         public string Experience { get; set; }
@@ -15,5 +16,7 @@ namespace Petsupport.API2.Dtos.DuplexDto
         public string Environment { get; set; }
         public IEnumerable<PetPreferenceDTO> PetsitterPetPreferences { get; set; }
         public IEnumerable<PetServiceDTO> PetServices { get; set; }
+
+        
     }
 }

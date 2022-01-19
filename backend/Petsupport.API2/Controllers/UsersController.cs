@@ -29,29 +29,61 @@ namespace Petsupport.API2.Controllers
 
         // GET: api/<UsersController>
         [HttpGet]
-        public ActionResult<List<User>> Get()
+        public ActionResult<List<UserDTO>> Get()
         {
             var users = _dataContext.Users.ToList();
-            var userDtos = _mapper.Map<List<User>>(users);
+
+            var userDtos = _mapper.Map<List<UserDTO>>(users);
             return Ok(userDtos);
         }
 
-        // GET api/<UsersController>/5
-        /*[HttpGet("{id}")]
-        public List<User> GetUserById(int id)
+        // GET api/<UsersController>/Radom
+        [HttpGet("{city}")]
+        public ActionResult<UserDTO> GetUserByCity(string city)
         {
-            var user = _dataContext.Users.ToList();
-            return user;
-            
-        }*/
+            var user = _dataContext.Users
+                .FirstOrDefault(m => m.AddressDetails.City.ToLower() == city.ToLower());
+           
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var userDTO = _mapper.Map<UserDTO>(user);
+            return Ok(userDTO);
+
+        }
+        [HttpGet("{id}")]
+        public ActionResult<UserDTO> GetUserById(int id)
+        {
+            var user = _dataContext.Users
+                .FirstOrDefault(m => m.Id == id);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var userDTO = _mapper.Map<UserDTO>(user);
+            return Ok(userDTO);
+
+        }
 
         // POST api/<UsersController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult Post([FromBody] UserDTO userDto)
         {
+            var user = _mapper.Map<User>(userDto);
+            _dataContext.Users.Add(user);
+            _dataContext.SaveChanges();
+
+            var key = user.AddressDetails.City.ToLower();
+
+            return Created("api/users/" + key,null);
+
         }
 
-        // PUT api/<UsersController>/5
+        /*// PUT api/<UsersController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
@@ -61,6 +93,6 @@ namespace Petsupport.API2.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-        }
+        }*/
     }
 }
